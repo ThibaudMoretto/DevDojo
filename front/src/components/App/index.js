@@ -9,6 +9,7 @@ import Footer from 'src/components/Footer';
 import Home from '../Home';
 import ListMentors from '../ListMentors';
 import ListRessources from '../ListRessources';
+import SearchResults from '../SearchResults';
 
 import './styles.scss';
 
@@ -36,6 +37,11 @@ const App = () => (
       <Route exact path="/mentors/:id">
         <FicheMentor />
       </Route>
+
+      <Route exact path="/search-results">
+        <SearchResults />
+      </Route>
+
       <Error />
     </Switch>
     <Footer />
