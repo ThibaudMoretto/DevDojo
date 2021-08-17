@@ -1,12 +1,12 @@
 import React from 'react';
 import './styles.scss';
 
-function Error() {
+function HeroBanner() {
   return (
     <div>
-      ERROR
+      HeroBanner
     </div>
   )
 }
 
-export default Error;
+export default HeroBanner;
