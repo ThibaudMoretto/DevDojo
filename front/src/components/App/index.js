@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Home from 'src/components/Home';
 import ListMentors from 'src/components/ListMentors';
 import ListRessources from 'src/containers/ListRessources';
-import FicheRessource from 'src/components/FicheRessource';
+import FicheRessource from 'src/containers/FicheRessource';
 import FicheMentor from 'src/components/FicheMentor';
 import SearchResults from 'src/components/SearchResults';
 import Footer from 'src/components/Footer';
@@ -35,8 +35,7 @@ function App({ getRessources }) {
           <ListMentors />
         </Route>
 
-        <Route exact path="/ressources/:id">
-          <FicheRessource />
+        <Route exact path="/ressources/:link" component={FicheRessource}>
         </Route>
 
         <Route exact path="/mentors/:id">

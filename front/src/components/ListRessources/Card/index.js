@@ -17,7 +17,7 @@ const Card = ({
       </a>
     </div>
     {/* Lien vers la fiche ressource avec /ressources/+title/+id */}
-    <Link to={`/ressources/${title}/${id}`} className="card-button">En savoir plus</Link>
+    <Link to={`/ressources/${link}`} className="card-button">En savoir plus</Link>
   </article>
 );
 
