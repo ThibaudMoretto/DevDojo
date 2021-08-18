@@ -1,0 +1,23 @@
+@use 'sass:color';
+@use 'src/styles/vars';
+
+.nav {
+  padding: vars.$halfGutter 0;
+  background-color: white;
+  display: flex;
+  
+  &-link {
+    padding: vars.$halfGutter vars.$gutter;
+    transition: color .3s, box-shadow .4s;
+    color: black;
+
+    &:hover:not(&--active) {
+      color: red;
+    }
+
+    &--active {
+      color : red;
+      font-weight: bold;
+    }
+  }
+}
