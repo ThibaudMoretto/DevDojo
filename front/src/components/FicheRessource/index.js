@@ -6,7 +6,7 @@ function FicheRessource() {
     <div>
       FicheRessource
     </div>
-  )
+  );
 }
 
 export default FicheRessource;

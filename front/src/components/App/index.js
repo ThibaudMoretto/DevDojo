@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Header from 'src/components/Header'
 import Home from 'src/components/Home';
 import ListMentors from 'src/components/ListMentors';
 import ListRessources from 'src/containers/ListRessources';
@@ -10,11 +9,11 @@ import FicheMentor from 'src/components/FicheMentor';
 import SearchResults from 'src/components/SearchResults';
 import Footer from 'src/components/Footer';
 import Error from 'src/components/Error';
+import Header from 'src/components/Header';
 
 import './styles.scss';
 
 function App({ getRessources }) {
-
   useEffect(() => {
     getRessources();
   }, []);
@@ -53,6 +52,6 @@ function App({ getRessources }) {
       <Footer />
     </div>
   );
-};
+}
 
 export default App;
