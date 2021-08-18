@@ -16,7 +16,7 @@ const Card = ({
       </Link>
     </div>
     {/* Lien vers la fiche mentor avec /ressources/+name/+id */}
-    <Link to={`/mentors/${name}/${id}`} className="card-button">En savoir plus</Link>
+    <Link to={`/mentors/${name}`} className="card-button">En savoir plus</Link>
   </article>
 );
 
