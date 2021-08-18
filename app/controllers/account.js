@@ -1,4 +1,5 @@
 const accountDatamapper = require('../datamappers/account')
+const jwt = require('./jwt')
 const bcrypt = require('bcrypt')
 
 module.exports = {
@@ -22,8 +23,6 @@ module.exports = {
                 // mot de passe chiffré stocké en BDD
                 account.password
             );
-                console.log(bcrypt.hashSync(request.body.password, 10))
-                console.log(passwordIsValid, request.body.password, account.password);
 
             //Si le mot de passe donné par le user ne correspons pas, on renvoie un message d'erreur
             if (!passwordIsValid) {
@@ -35,9 +34,13 @@ module.exports = {
             // Pour des raisons de sécurité, on supprime le mot de passe avant de renvoyer les infos du compte
             delete account.password;
 
+            //On récupère un accessToken pour le user, et on le renvoie dans les infos du user
+            account.accessToken = jwt.getAccessToken(account.email)
+
+
             // on renvoie les infos du user si tout va bien
             response.json({
-                data: account
+                data: account,
             });
 
         } catch (error) {

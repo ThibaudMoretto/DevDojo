@@ -13,12 +13,16 @@ module.exports = {
         return result.rows[0];
     },
 
-    addRessource() {
-        client.query('INSERT INTO ressource () VALUES ($1, $2, $3) RETURNING id', [], callback);
+    async getByAuthorId(id) {
+        const result = await client.query(`SELECT * FROM ressource WHERE author_id = $1`, [id]);
+        return result.rows;
     },
 
-    deleteRessource(id, callback) {
-        client.query('DELETE FROM ressource WHERE id=$1', [id], callback)
-    }
+    // addRessource() {
+    //     client.query('INSERT INTO ressource () VALUES ($1, $2, $3) RETURNING id', [], callback);
+    // },
 
+    // deleteRessource(id, callback) {
+    //     client.query('DELETE FROM ressource WHERE id=$1', [id], callback)
+    // }
 }
