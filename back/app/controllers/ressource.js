@@ -1,4 +1,5 @@
 const ressourceDatamapper = require("../datamappers/ressource")
+const authorDatamapper = require("../datamappers/author")
 
 
 module.exports = {
@@ -7,6 +8,12 @@ module.exports = {
         // C'est ici qu'on utilise le try catch, pas dans le datamapper
         try {
             const ressources = await ressourceDatamapper.getAll();
+
+            //Pour chaque ressource, on ajoute son auteur dans la réponse
+            for (const ressource of ressources) {
+                ressource.author = await authorDatamapper.getById(ressource.author_id)
+            }
+
             response.json({
                 data: ressources
             });
@@ -27,6 +34,9 @@ module.exports = {
                 return next();
             }
 
+            //On ajoute l'auteur de la ressource à la réponse
+            ressource.author = await authorDatamapper.getById(ressource.author_id)
+
             response.json({
                 data: ressource
             });
@@ -40,7 +50,7 @@ module.exports = {
     },
 
     addRessource() {
-        
+
     }
 
 }
