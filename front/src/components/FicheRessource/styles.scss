@@ -1,0 +1,36 @@
+
+
+.container--card{
+  box-shadow: 0 2px 2px 2px #ccc;
+  width:20rem;
+  padding:1rem;
+  height:20rem;
+  border-radius: 5%;
+  
+}
+
+.card-title{
+  font-size: 1.3rem;
+  color:red;
+  
+}
+.card-description{
+  font-weight: bold;
+  line-height: 1.1rem;
+}
+.card-button {
+  color:white;
+  background: red;
+  border: none;
+  border-radius: 5%;
+  padding:0.8rem;
+  font-size: 0.8rem;
+}
+
+.card-button:hover {
+  
+    color:black;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 2px black;
+  
+}

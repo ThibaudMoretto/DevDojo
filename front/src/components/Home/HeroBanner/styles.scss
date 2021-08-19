@@ -1,0 +1,72 @@
+.herobanner{
+  
+    &--container{
+   
+    padding:1.5rem;
+    display: flex;
+  }
+
+  &--title{ //contient toute la partie de gauche
+   
+    width: 50%;
+   
+  }
+
+  &--subTitle{
+  
+    font-size: 2rem;
+    font-weight: bolder; 
+    width: 50%;
+    line-height: 1.2em;
+    
+
+     &--color{
+      color:red;
+    }
+  }
+
+  &--description{
+   
+    width: 80%;
+    margin: 1.5em;
+    font-weight: bold;
+    line-height: 1.2rem;
+  }
+}
+
+.description--color{
+  font-size:1.2rem ;
+  
+}
+
+.container--button{
+
+  flex-wrap: wrap;
+  align-items: center;
+  display: flex;
+  width: 53%;
+  justify-content: space-between;
+  margin-left: 1.4rem;
+
+}
+
+.button--source,.button--mentors {
+  color:white;
+  background: red;
+  border: none;
+  border-radius: 8%;
+  padding:0.8rem;
+  font-size: 0.8rem;
+}
+
+
+.button--source:hover {
+  color:black;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 2px black;
+}
+.button--mentors:hover {
+  color:black;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 2px black;
+}

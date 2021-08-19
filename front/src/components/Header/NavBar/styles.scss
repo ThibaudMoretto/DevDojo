@@ -3,8 +3,16 @@
 
 .nav {
   padding: vars.$halfGutter 0;
-  background-color: white;
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+
+  &--home,  &--source, &--mentor{
+    padding:5px;
+    margin :0 30px ;
+    font-weight: bold;
+  }
   
   &-link {
     padding: vars.$halfGutter vars.$gutter;
@@ -12,7 +20,9 @@
     color: black;
 
     &:hover:not(&--active) {
+     
       color: red;
+      font-size: 1.8rem;
     }
 
     &--active {

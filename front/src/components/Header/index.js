@@ -8,15 +8,18 @@ function Header() {
 
   return (
     <div className="header">
-      <div>
-        <img src={logo} className="header-logo" alt="logo Dev Dojo" />
-      </div>
-      <div className="header-nav">
-        <NavBar />
-      </div>
-      <div className="header-search">
-        <SearchBar />
-      </div>
+      <div className="header--container">
+        <div className="header--logo_container">
+          <img src={logo} className="header-logo" alt="logo Dev Dojo" />
+        </div>
+            <div className="header-nav">
+              <NavBar />
+            
+            <div className="header-search">
+              <SearchBar />
+            </div>
+          </div>
+        </div>
     </div>
   )
 }

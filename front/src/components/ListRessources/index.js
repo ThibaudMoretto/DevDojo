@@ -4,7 +4,7 @@ import Card from 'src/components/ListRessources/Card';
 import './styles.scss';
 
 const ListRessources = ({ ressources }) => (
-  <div>
+  <div className="sources">
     {ressources.map((ressource) => (
       <Card
         key={ressource.id}
