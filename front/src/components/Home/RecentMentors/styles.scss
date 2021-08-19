@@ -9,11 +9,16 @@
     }
 
     &-title {
-        color: vars.$primaryContent
+        color: vars.$primaryContent;
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin-bottom: 2.5rem ;
+        
     }
 
     &-container {
     padding: vars.$gutter;
+    
     }
 
     &-list {
@@ -31,12 +36,13 @@
     }
 
     &-list-card-content-title {
+      
        font-weight: bold;
-       font-size: 22px;
+       font-size: 1.3rem;
     }
 
     &-list-card-content-role {
-        font-size: 18px;
+        font-size: 1.1rem;
     }
 
     &-btnContainer {
@@ -50,8 +56,8 @@
         text-transform: uppercase;
         padding: vars.$halfGutter;
         border-radius: 10px;
-        width: 366px;
-        height: 50px;
+        width: 25rem;
+        height: 3rem;
     }
 
 }

@@ -42,8 +42,9 @@ function RecentRessources() {
                     Vivamus sed blandit nisi.</p>            
               </div>
         </div>
-        <div className="button--position"></div>
-        <button className="button--last_sources">clickclick</button>
+          <div className="button--position">
+            <button className="button--last_sources">clickclick</button>
+          </div>
       </div>
     </div>
   )
@@ -55,20 +56,3 @@ export default RecentRessources
 
 
 
-{/* 
-
-
-
-
-
-<div className="lastRessources-card">
-<div className="lastRessources-card-img">
-<img src={cardImg} alt="Apprendre le HTML" />
-</div>
-<div className="lastRessources-card-content">
-<h3>Apprendre le HTML</h3>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed blandit nisi.
-</p>
-</div>
-</div> */}
