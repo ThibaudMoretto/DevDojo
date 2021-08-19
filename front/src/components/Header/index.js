@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from 'src/components/Header/NavBar';
-import SearchBar from 'src/components/Header/SearchBar';
+import SearchBar from 'src/containers/SearchBar';
 import logo from 'src/components/Header/logo.png'
 import './styles.scss';
 

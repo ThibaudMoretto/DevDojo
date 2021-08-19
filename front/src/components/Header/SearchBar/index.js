@@ -1,21 +1,34 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Form, Input, Segment } from 'semantic-ui-react';
 import './styles.scss';
 
-function SearchBar() {
+// NOE
+const SearchBar = ({ isLoading, searchValue, onSearchChange, onSearchSubmit, }) => {
+
   return (
-    <form
-      className='form'
-    // action="/" 
-    // method="get"
-    >
-      <input
-        className='form-input'
-        type="text"
-        id="header-search"
-        placeholder="Recherche ressource et mentor"
-      />
-    </form>
-  )
-}
+    <Segment>
+      <Form onSubmit={onSearchSubmit}>
+        <Input
+          className="search"
+          fluid
+          // loading={isLoading}
+          icon="search"
+          placeholder="Chercher des ressources et mentors"
+          value={searchValue}
+          onChange={(event) => onSearchChange(event.target.value)}
+        />
+      </Form>
+    </Segment>
+  );
+};
+
+SearchBar.propTypes = {
+  // isLoading: PropTypes.bool.isRequired,
+  searchValue: PropTypes.string.isRequired,
+  onSearchChange: PropTypes.func.isRequired,
+  onSearchSubmit: PropTypes.func.isRequired,
+};
+
 
 export default SearchBar;
