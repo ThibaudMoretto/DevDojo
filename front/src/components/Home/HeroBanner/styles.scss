@@ -1,3 +1,5 @@
+@use '../../../styles/vars';
+
 .herobanner{
   
     &--container{
@@ -21,7 +23,7 @@
     
 
      &--color{
-      color:red;
+      color: vars.$primaryColor;
     }
   }
 

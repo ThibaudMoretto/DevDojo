@@ -1,0 +1,41 @@
+@use '../../../styles/vars';
+
+h2 {
+    font-size: 52px;
+    font-weight: bold;
+    margin-bottom: vars.$gutter;;
+}
+
+.lastRessources {
+
+    // width: 1140px;
+    // margin: 0 auto;
+    // border: 1px green solid;
+  
+    span {
+        color: vars.$primaryColor;
+    }
+
+    &-card {
+        width: 367px;
+        background-color: vars.$backgroundDiv;
+        border-radius: 10px;
+    }
+
+    &-card-content {
+        text-align: center;
+        padding: vars.$gutter;
+
+    }
+
+    &-card-content h3 {
+        font-weight: bold;
+        font-size: 22px;
+    }
+
+    &-card-content p {
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+}
