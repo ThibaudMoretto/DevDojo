@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles.scss';
+import cardImg from '../../../assets/images/Card_Img.png'
 
 const Card = ({
   id,
@@ -10,16 +11,18 @@ const Card = ({
 }) => (
   <article className="card">
     <div className="container--card">
+    <img src={cardImg} alt="une image"/>
     <div className="card-content">
       {/* Lien externe d'origine de la ressource sur toute la div article*/}
       <a href={`https://www.youtube.com/watch?v=oavMtUWDBTM`} target="_blank">
-      <img src="#" alt="une image"/>
+     
         <h2 className="card-title">{title}</h2>
         <p className="card-description">{description}</p>
       </a>
+      <Link to={`/ressources/${title}/${id}`} className="card-button">En savoir plus</Link>
     </div>
     {/* Lien vers la fiche ressource avec /ressources/+title/+id */}
-    <Link to={`/ressources/${title}/${id}`} className="card-button">En savoir plus</Link>
+   
     </div>
     
   </article>
