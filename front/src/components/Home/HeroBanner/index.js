@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.scss';
-import ninja from '../../../assets/images/ninja.png';
+import heroBanner from '../../../assets/images/Herobanner.png';
 
 function HeroBanner() {
   return (
@@ -19,7 +19,7 @@ function HeroBanner() {
         </div>
       </div>
     
-    <img src={ninja} alt="une image de ninja qui fonctionne pas "/> 
+    <img src={heroBanner} alt="une image de ninja qui fonctionne pas "/> 
    
      </div>
    </div>
