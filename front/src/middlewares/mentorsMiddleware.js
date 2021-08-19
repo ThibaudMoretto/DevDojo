@@ -7,7 +7,7 @@ const ressourcesMiddleware = (store) => (next) => (action) => {
     case 'GET_MENTORS':
       axios.get(`${process.env.API_URL}/author`)
         .then((response) => {
-          // console.log('Réponse API mentors list :', response.data.data)
+          console.log('Réponse API mentors list :', response.data.data)
           store.dispatch(createGetMentorsSuccessAction(response.data.data));
         });
       next(action);

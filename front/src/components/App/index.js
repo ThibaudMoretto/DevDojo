@@ -19,6 +19,7 @@ function App({ getRessources, getMentors, loading }) {
 
   useEffect(() => {
     getMentors();
+    getRessources();
   }, []);
 
   if (loading) {
@@ -41,8 +42,7 @@ function App({ getRessources, getMentors, loading }) {
           <ListMentors />
         </Route>
 
-        <Route exact path="/ressources/:slug">
-          <FicheRessource />
+        <Route exact path="/ressources/:slug" component={FicheRessource}>
         </Route>
 
         <Route exact path="/mentors/:name" component={FicheMentor}>
@@ -62,6 +62,7 @@ function App({ getRessources, getMentors, loading }) {
 App.propTypes = {
   loading: PropTypes.bool,
   getMentors: PropTypes.func.isRequired,
+  getRessources: PropTypes.func.isRequired,
 };
 
 App.defaultProps = {
