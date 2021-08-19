@@ -124,6 +124,7 @@ CREATE TABLE IF NOT EXISTS "author" (
 CREATE TABLE IF NOT EXISTS "ressource" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "title" TEXT UNIQUE NOT NULL,
+    "slug" TEXT UNIQUE NOT NULL,
     "description" TEXT UNIQUE NOT NULL,
     "link" TEXT UNIQUE NOT NULL,
     "publication_date" TIMESTAMPTZ NOT NULL,
@@ -147,8 +148,8 @@ CREATE TABLE IF NOT EXISTS "ressource" (
 -- Table "user_vote_ressource" => Pour stocker les votes (quel user vote sur quelle ressource)
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS "user_vote_ressource" (
-  "account_id" integer REFERENCES "account"("id"),
-  "ressource_id" integer REFERENCES "ressource" ("id"),
+  "account_id" integer REFERENCES "account"("id") ON DELETE CASCADE,
+  "ressource_id" integer REFERENCES "ressource" ("id") ON DELETE CASCADE,
   PRIMARY KEY ("account_id", "ressource_id")
 );
 
@@ -156,8 +157,8 @@ CREATE TABLE IF NOT EXISTS "user_vote_ressource" (
 -- Table "user_saved_ressource" => Pour stocker les favoris
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS "user_saved_ressource" (
-  "account_id" integer REFERENCES "account"("id"),
-  "ressource_id" integer REFERENCES "ressource" ("id"),
+  "account_id" integer REFERENCES "account"("id") ON DELETE CASCADE,
+  "ressource_id" integer REFERENCES "ressource" ("id") ON DELETE CASCADE,
   PRIMARY KEY ("account_id", "ressource_id")
 );
 
@@ -165,26 +166,17 @@ CREATE TABLE IF NOT EXISTS "user_saved_ressource" (
 -- Table "user_checked_ressource" => Pour stocker les ressources consultées par user
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS "user_checked_ressource" (
-  "account_id" integer REFERENCES "account"("id"),
-  "ressource_id" integer REFERENCES "ressource" ("id"),
+  "account_id" integer REFERENCES "account"("id") ON DELETE CASCADE,
+  "ressource_id" integer REFERENCES "ressource" ("id") ON DELETE CASCADE,
   PRIMARY KEY ("account_id", "ressource_id")
-);
-
--- -----------------------------------------------------
--- Table "author_uses_technology" => Pour stocker les technos utilisées par les auteurs
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS "author_uses_technology" (
-  "author_id" integer REFERENCES "author"("id"),
-  "technology_id" integer REFERENCES "technology" ("id"),
-  PRIMARY KEY ("author_id", "technology_id")
 );
 
 -- -----------------------------------------------------
 -- Table "ressource_requires_technology" => Pour stocker les technos prérequises par une ressource
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS "ressource_requires_technology" (
-  "ressource_id" integer REFERENCES "ressource"("id"),
-  "technology_id" integer REFERENCES "technology" ("id"),
+  "ressource_id" integer REFERENCES "ressource"("id") ON DELETE CASCADE,
+  "technology_id" integer REFERENCES "technology" ("id") ON DELETE CASCADE,
   PRIMARY KEY ("ressource_id", "technology_id")
 );
 
@@ -192,8 +184,8 @@ CREATE TABLE IF NOT EXISTS "ressource_requires_technology" (
 -- Table "ressource_relates_technology" => Pour stocker les technos dont est relative la ressource
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS "ressource_relates_technology" (
-  "ressource_id" integer REFERENCES "ressource"("id"),
-  "technology_id" integer REFERENCES "technology" ("id"),
+  "ressource_id" integer REFERENCES "ressource"("id") ON DELETE CASCADE,
+  "technology_id" integer REFERENCES "technology" ("id") ON DELETE CASCADE,
   PRIMARY KEY ("ressource_id", "technology_id")
 );
 
@@ -201,8 +193,8 @@ CREATE TABLE IF NOT EXISTS "ressource_relates_technology" (
 -- Table "technology_belongsto_category" => Pour stocker affectations des technos aux catégories
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS "technology_belongsto_category" (
-  "category_id" integer REFERENCES "category"("id"),
-  "technology_id" integer REFERENCES "technology" ("id"),
+  "category_id" integer REFERENCES "category"("id") ON DELETE CASCADE,
+  "technology_id" integer REFERENCES "technology" ("id") ON DELETE CASCADE,
   PRIMARY KEY ("category_id", "technology_id")
 );
 

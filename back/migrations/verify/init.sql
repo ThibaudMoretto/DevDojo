@@ -14,7 +14,6 @@ SELECT * FROM "author";
 SELECT * FROM "user_vote_ressource";
 SELECT * FROM "user_saved_ressource";
 SELECT * FROM "user_checked_ressource";
-SELECT * FROM "author_uses_technology";
 SELECT * FROM "ressource_requires_technology";
 SELECT * FROM "ressource_relates_technology";
 SELECT * FROM "technology_belongsto_category";
