@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { Switch, Route, useLocation } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Home from 'src/components/Home';
 import ListMentors from 'src/containers/ListMentors';
 import ListRessources from 'src/containers/ListRessources';
 import FicheRessource from 'src/containers/FicheRessource';
-import FicheMentor from 'src/components/FicheMentor';
+import FicheMentor from 'src/containers/FicheMentor';
 import SearchResults from 'src/components/SearchResults';
 import Footer from 'src/components/Footer';
 import Error from 'src/components/Error';
@@ -18,7 +18,6 @@ import './styles.scss';
 function App({ getRessources, getMentors, loading }) {
 
   useEffect(() => {
-    getRessources();
     getMentors();
   }, []);
 
@@ -46,8 +45,7 @@ function App({ getRessources, getMentors, loading }) {
           <FicheRessource />
         </Route>
 
-        <Route exact path="/mentors/:id">
-          <FicheMentor />
+        <Route exact path="/mentors/:name" component={FicheMentor}>
         </Route>
 
         <Route exact path="/search-results">

@@ -1,18 +1,15 @@
 import { connect } from 'react-redux';
 
-import { createGetRessourcesAction } from 'src/actions/ressources';
 import { createGetMentorsAction } from 'src/actions/mentors';
 
 import App from 'src/components/App';
 
 const mapStateToProps = (state) => ({
   loading: state.ressources.isLoading,
+  loading: state.mentors.isLoading,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getRessources: () => {
-    dispatch(createGetRessourcesAction());
-  },
   getMentors: () => {
     dispatch(createGetMentorsAction());
   },
