@@ -12,14 +12,26 @@ module.exports = {
         return result.rows[0];
     },
 
-    async getByAuthorId(id) {
+    async getRessourceRelated(id) {
         const result = await client.query(`
         SELECT technology.*
-        FROM author_uses_technology
+        FROM ressource_relates_technology
         JOIN technology
-        ON author_uses_technology.technology_id = technology.id
-        WHERE author_uses_technology.author_id = id
-        `);
+        ON ressource_relates_technology.technology_id = technology.id
+        WHERE ressource_relates_technology.ressource_id = $1
+        `, [id]);
         return result.rows;
     },
+
+    async getRessourceNeeds(id) {
+        const result = await client.query(`
+        SELECT technology.*
+        FROM ressource_requires_technology
+        JOIN technology
+        ON ressource_requires_technology.technology_id = technology.id
+        WHERE ressource_requires_technology.ressource_id = $1
+        `, [id]);
+        return result.rows;
+    },
+
 }

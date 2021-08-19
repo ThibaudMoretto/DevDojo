@@ -15,7 +15,6 @@ DROP TABLE IF EXISTS
 "user_vote_ressource",
 "user_saved_ressource",
 "user_checked_ressource",
-"author_uses_technology",
 "ressource_requires_technology",
 "ressource_relates_technology",
 "technology_belongsto_category";
