@@ -1,15 +1,19 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
 import FicheRessource from 'src/components/FicheRessource';
 
 import { findRessource } from 'src/selectors/ressource';
 
 const mapStateToProps = (state, ownProps) => ({
-  // ressource: findRessource(state.ressources.list, ownProps.match.params.id),
-  ressource: findRessource(state.ressources.list, ownProps.match.params.link),
+  ressource: findRessource(state.ressources.list, ownProps.match.params.slug),
 });
 
 const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(FicheRessource);
+const container = connect(mapStateToProps, mapDispatchToProps)(FicheRessource);
+const containerWithRouter = withRouter(container);
+
+export default containerWithRouter;
 
 

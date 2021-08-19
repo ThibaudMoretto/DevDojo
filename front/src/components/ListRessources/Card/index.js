@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 import './styles.scss';
 
 const Card = ({
-  id,
   title,
   description,
-  link,
+  slug,
 }) => (
   <article className="card">
     <div className="card-content">
@@ -16,8 +15,8 @@ const Card = ({
         <p className="card-description">{description}</p>
       </a>
     </div>
-    {/* Lien vers la fiche ressource avec /ressources/id */}
-    <Link to={`/ressources/${id}`} className="card-button">En savoir plus</Link>
+    {/* Lien vers la fiche ressource avec /slug */}
+    <Link to={`/ressources/${slug}`} className="card-button">En savoir plus</Link>
   </article>
 );
 

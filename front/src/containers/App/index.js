@@ -5,6 +5,10 @@ import { createGetMentorsAction } from 'src/actions/mentors';
 
 import App from 'src/components/App';
 
+const mapStateToProps = (state) => ({
+  loading: state.ressources.isLoading,
+});
+
 const mapDispatchToProps = (dispatch) => ({
   getRessources: () => {
     dispatch(createGetRessourcesAction());
@@ -14,4 +18,4 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

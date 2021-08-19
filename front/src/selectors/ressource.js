@@ -4,12 +4,12 @@
 /**
  *  on trouve la ressource voulue dans la liste des ressources
  * @param {Array} ressources - toutes les ressources
- * @param {string} searchedId - le link de la ressource recherchée
+ * @param {string} searchedSlug - le link de la ressource recherchée
  * @return {Object} - La ressource trouvée
  */
-export function findRessource(ressources, searchedLink) {
+export function findRessource(ressources, searchedSlug) {
   const ressource = ressources.find((testedRessource) => {
-    return testedRessource.link === searchedLink;
+    return testedRessource.slug === searchedSlug;
   });
   return ressource;
 }
