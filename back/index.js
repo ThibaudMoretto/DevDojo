@@ -3,7 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const apiRouter = require('./app/routers/api');
-const sanitizer = require('sanitizer');
+const sanitizer = require('./app/middleware/sanitizer');
 const cors = require('cors');
 const port = process.env.PORT || `11000`;
 
@@ -17,17 +17,7 @@ app.use(express.json());
 app.use(cors());
 
 // Pour prévenir des failles XSS, on met en place un sanitizer qui permettra d'empêcher l'utilisateur de saisir du HTML
-app.use((request, _, next) => {
-   // Pour chaque champ de notre body (qui contient les données à sauvegarder), on va sanitizer chacun des champs
-   for(const key in request.body) {
-      request.body[key] = sanitizer.escape(request.body[key]);
-   }
- 
-   // On continue d'envoyer notre requête avec les données sécurisées
-   next();
- });
-
-
+app.use(sanitizer.sanitize);
 
 //URL de connexion à l'API
 app.use('/api/v1.0', apiRouter)

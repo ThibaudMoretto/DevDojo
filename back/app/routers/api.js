@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+const jwt = require('../middleware/jwt')
+
 const ressourceController = require('../controllers/ressource');
 const authorController = require('../controllers/author');
 const accountController = require('../controllers/account');

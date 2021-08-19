@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Home from 'src/components/Home';
-import ListMentors from 'src/components/ListMentors';
+import ListMentors from 'src/containers/ListMentors';
 import ListRessources from 'src/containers/ListRessources';
 import FicheRessource from 'src/containers/FicheRessource';
 import FicheMentor from 'src/components/FicheMentor';
@@ -13,9 +13,10 @@ import Header from 'src/components/Header';
 
 import './styles.scss';
 
-function App({ getRessources }) {
+function App({ getRessources, getMentors }) {
   useEffect(() => {
     getRessources();
+    getMentors();
   }, []);
 
   return (
