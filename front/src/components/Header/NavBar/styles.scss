@@ -21,12 +21,12 @@
 
     &:hover:not(&--active) {
      
-      color: red;
+      color: vars.$primaryColor;
       font-size: 1.8rem;
     }
 
     &--active {
-      color : red;
+      color :  vars.$primaryColor;
       font-weight: bold;
     }
   }

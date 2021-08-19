@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from 'src/components/Header/NavBar';
 import SearchBar from 'src/components/Header/SearchBar';
-import logo from 'src/components/Header/logo.png'
+import logo from 'src/assets/images/Logo.png'
 import './styles.scss';
 
 function Header() {
