@@ -10,13 +10,13 @@ const Card = ({
   <article className="card">
     <div className="card-content">
       {/* Lien vers la fiche mentor avec /ressources/+name/+id */}
-      <Link to={`/mentors/${name}/${id}`}>
+      <Link to={`/mentors/${name}`}>
         <h2 className="card-name">{name}</h2>
         <p className="card-description">{description}</p>
       </Link>
     </div>
     {/* Lien vers la fiche mentor avec /ressources/+name/+id */}
-    <Link to={`/mentors/${name}/${id}`} className="card-button">En savoir plus</Link>
+    <Link to={`/mentors/${name}`} className="card-button">En savoir plus</Link>
   </article>
 );
 
