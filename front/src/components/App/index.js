@@ -35,7 +35,8 @@ function App({ getRessources }) {
           <ListMentors />
         </Route>
 
-        <Route exact path="/ressources/:link" component={FicheRessource}>
+        <Route exact path="/ressources/:id">
+          <FicheRessource />
         </Route>
 
         <Route exact path="/mentors/:id">
