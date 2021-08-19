@@ -1,8 +1,13 @@
 import React from 'react';
 import Card from '../ListMentors/Card';
+import PropTypes from 'prop-types';
 import './styles.scss';
+import { Redirect } from 'react-router-dom';
 
 function FicheMentor({ mentor }) {
+  if (!mentor) {
+    return <Redirect to="/error" />;
+  }
   console.log(mentor);
   return (
     <div>
@@ -31,6 +36,14 @@ function FicheMentor({ mentor }) {
       {/* <ListRessources /> */}
     </div>
   )
-}
+};
+
+FicheMentor.propTypes = {
+  mentor: PropTypes.object.isRequired,
+};
+
+FicheMentor.defaultProps = {
+  mentor: null, 
+};
 
 export default FicheMentor;
