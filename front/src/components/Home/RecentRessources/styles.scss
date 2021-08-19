@@ -1,41 +1,58 @@
 @use '../../../styles/vars';
 
-h2 {
-    font-size: 52px;
-    font-weight: bold;
-    margin-bottom: vars.$gutter;;
+.lastRessources{
+  background-color: #ccc;
+  width:100%;
+}
+.lastRessources--title{
+  padding:1.2rem;
+  font-size: 2.2rem;
+  font-weight: bold;
 }
 
-.lastRessources {
+.color--title{
+  color:red;
+}
 
-    // width: 1140px;
-    // margin: 0 auto;
-    // border: 1px green solid;
+
+
+.container--cards{
+  background-color: white;
+  box-shadow: 0 2px 2px 2px rgb(157, 156, 156);
+  width:20rem;
+  padding:0.5rem;
+  height:20rem;
+  border-radius: 5%;
+  margin-top: 2.5rem;
   
-    span {
-        color: vars.$primaryColor;
-    }
+}
 
-    &-card {
-        width: 367px;
-        background-color: vars.$backgroundDiv;
-        border-radius: 10px;
-    }
+.card--title{
+  font-size: 1.2rem;
+  font-weight: bold; 
+}
 
-    &-card-content {
-        text-align: center;
-        padding: vars.$gutter;
+.container{
+ display:flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ align-items: center;
+ padding:2rem;
+ 
+}
 
-    }
+.button--last_sources{
+  color:white;
+  background: red;
+  border: none;
+  border-radius: 8%;
+  padding:0.8rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
 
-    &-card-content h3 {
-        font-weight: bold;
-        font-size: 22px;
-    }
 
-    &-card-content p {
-        font-size: 18px;
-        font-weight: normal;
-    }
+.button--position{
+  border:1px solid purple;
 
 }

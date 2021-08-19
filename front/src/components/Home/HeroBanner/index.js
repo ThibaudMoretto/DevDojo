@@ -19,7 +19,7 @@ function HeroBanner() {
         </div>
       </div>
     
-    <img src={heroBanner} alt="une image de ninja qui fonctionne pas "/> 
+    <img src={heroBanner} alt="une image de ninja qui fonctionne pas " className="home--picture"/> 
    
      </div>
    </div>
