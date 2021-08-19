@@ -8,6 +8,7 @@ import App from 'src/components/App';
 const mapStateToProps = (state) => ({
   loading: state.ressources.isLoading,
   loading: state.mentors.isLoading,
+  submited: state.searchBar.submited,
 });
 
 const mapDispatchToProps = (dispatch) => ({

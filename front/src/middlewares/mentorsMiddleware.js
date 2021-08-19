@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { createGetMentorsSuccessAction } from 'src/actions/mentors';
 
-const ressourcesMiddleware = (store) => (next) => (action) => {
+const mentorsMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case 'GET_MENTORS':
       axios.get(`${process.env.API_URL}/author`)
@@ -18,4 +18,4 @@ const ressourcesMiddleware = (store) => (next) => (action) => {
   }
 };
 
-export default ressourcesMiddleware;
+export default mentorsMiddleware;

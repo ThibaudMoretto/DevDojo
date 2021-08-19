@@ -8,7 +8,9 @@ const SearchBar = ({ isLoading, searchValue, onSearchChange, onSearchSubmit, }) 
 
   return (
     <Segment>
-      <Form onSubmit={onSearchSubmit}>
+      <Form
+        onSubmit={onSearchSubmit}
+      >
         <Input
           className="search"
           fluid
@@ -17,6 +19,7 @@ const SearchBar = ({ isLoading, searchValue, onSearchChange, onSearchSubmit, }) 
           placeholder="Chercher des ressources et mentors"
           value={searchValue}
           onChange={(event) => onSearchChange(event.target.value)}
+
         />
       </Form>
     </Segment>

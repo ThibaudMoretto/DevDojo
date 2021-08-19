@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Home from 'src/components/Home';
@@ -15,18 +15,25 @@ import Loading from './Loading'
 
 import './styles.scss';
 
-function App({ getRessources, getMentors, loading }) {
+function App({ getRessources, getMentors, loading, submited }) {
+
+  console.log(submited);
 
   useEffect(() => {
-    getMentors();
     getRessources();
+    getMentors();
   }, []);
 
   if (loading) {
     return <Loading />;
-  }
+  };
+
   return (
     <div className="app">
+
+      {submited && (
+        <Redirect to="/search-results" />)}
+
       <Header />
       <Switch>
 
@@ -63,6 +70,7 @@ App.propTypes = {
   loading: PropTypes.bool,
   getMentors: PropTypes.func.isRequired,
   getRessources: PropTypes.func.isRequired,
+  submited: PropTypes.bool,
 };
 
 App.defaultProps = {

@@ -6,6 +6,7 @@ import {
 export const initialState = {
   searchValue: '',
   submitValue: '',
+  submited: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -13,13 +14,15 @@ const reducer = (state = initialState, action = {}) => {
     case SET_SEARCH_VALUE:
       return {
         ...state,
-        submitValue: action.value,
         searchValue: action.value,
+        submitValue: action.value,
+        submited: false,
       };
     case SUBMIT_SEARCH:
       return {
         ...state,
-        searchValue: ''
+        searchValue: '',
+        submited: true,
       };
     default:
       return state;
