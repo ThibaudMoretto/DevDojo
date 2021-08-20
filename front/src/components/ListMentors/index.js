@@ -4,7 +4,7 @@ import Card from 'src/components/ListMentors/Card';
 import './styles.scss';
 
 const ListMentors = ({ mentors }) => (
-  <div>
+  <div className="mentorsPage">
     {mentors.map((mentor) => (
       <Card
         key={mentor.id}

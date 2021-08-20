@@ -7,15 +7,17 @@ const Card = ({
   description,
 }) => (
   <article className="card">
+    <div className="card--container">
     <div className="card-content">
       {/* Lien vers la fiche mentor avec /ressources/+name */}
       <Link to={`/mentors/${name}`}>
-        <h2 className="card-name">{name}</h2>
+        <h2 className="card-title">{name}</h2>
         <p className="card-description">{description}</p>
       </Link>
     </div>
     {/* Lien vers la fiche mentor avec /ressources/+name */}
-    <Link to={`/mentors/${name}`} className="card-button">En savoir plus</Link>
+   
+    </div>
   </article>
 );
 
