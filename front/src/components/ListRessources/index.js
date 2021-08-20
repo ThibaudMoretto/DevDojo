@@ -5,7 +5,7 @@ import './styles.scss';
 
 const ListRessources = ({ ressources }) => {
 
-  console.log(ressources)
+  // console.log(ressources)
 
   return (
     <div className="sources">

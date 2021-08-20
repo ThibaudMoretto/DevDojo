@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './styles.scss';
 
-function NavBar() {
+function NavBar({ resetSubmitValue }) {
   return (
     <nav className="nav">
       <div className="nav--home">
@@ -11,6 +11,7 @@ function NavBar() {
           activeClassName="nav-link--active"
           className="nav-link"
           to="/"
+          onClick={() => { resetSubmitValue(); }}
         >
           Accueil
         </NavLink>
@@ -21,6 +22,7 @@ function NavBar() {
           activeClassName="nav-link--active"
           className="nav-link"
           to="/ressources"
+          onClick={() => { resetSubmitValue(); }}
         >
           Ressources
         </NavLink>
@@ -31,6 +33,7 @@ function NavBar() {
           activeClassName="nav-link--active"
           className="nav-link"
           to="/mentors"
+          onClick={() => { resetSubmitValue(); }}
         >
           Mentors
         </NavLink>

@@ -17,7 +17,7 @@ import './styles.scss';
 
 function App({ getRessources, getMentors, loading, submited }) {
 
-  console.log(submited);
+  // console.log(submited);
 
   useEffect(() => {
     getRessources();
