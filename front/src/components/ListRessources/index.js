@@ -8,7 +8,7 @@ const ListRessources = ({ ressources }) => {
   console.log(ressources)
 
   return (
-    <div>
+    <div className="sources">
       {ressources.map((ressource) => (
         <Card
           key={ressource.id}

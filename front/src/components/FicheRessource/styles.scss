@@ -1,6 +1,40 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+@use '../../styles/vars';
+
+.container--card{
+  box-shadow: 0 2px 2px 2px #ccc;
+  width:20rem;
+  height:25rem;
+  border-radius: 5%;
+  
 }
 
+.card-content{
+  padding:0.8rem;
+}
+
+.card-title{
+  font-size: 1.3rem;
+  color: vars.$primaryColor;
+  
+}
+.card-description{
+  font-weight: bold;
+  line-height: 1.1rem;
+}
+.card-button {
+  color:white;
+  background: vars.$primaryColor;
+  border: none;
+  border-radius: 5%;
+  padding:0.8rem;
+  font-size: 0.8rem;
+  padding-bottom: 0.5rem;
+}
+
+.card-button:hover {
+  
+    color:black;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 2px black;
+  
+}

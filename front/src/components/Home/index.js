@@ -8,8 +8,8 @@ function Home() {
   return (
     <div>
       <HeroBanner />
-      <RecentMentors />
       <RecentRessources />
+      <RecentMentors />
     </div>
   )
 }

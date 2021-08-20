@@ -5,30 +5,36 @@ import './styles.scss';
 function NavBar() {
   return (
     <nav className="nav">
-      <NavLink
-        exact
-        activeClassName="nav-link--active"
-        className="nav-link"
-        to="/"
-      >
-        Accueil
-      </NavLink>
-      <NavLink
-        exact
-        activeClassName="nav-link--active"
-        className="nav-link"
-        to="/ressources"
-      >
-        Ressources
-      </NavLink>
-      <NavLink
-        exact
-        activeClassName="nav-link--active"
-        className="nav-link"
-        to="/mentors"
-      >
-        Mentors
-      </NavLink>
+      <div className="nav--home">
+        <NavLink
+          exact
+          activeClassName="nav-link--active"
+          className="nav-link"
+          to="/"
+        >
+          Accueil
+        </NavLink>
+      </div>
+      <div className="nav--source">
+        <NavLink
+          exact
+          activeClassName="nav-link--active"
+          className="nav-link"
+          to="/ressources"
+        >
+          Ressources
+        </NavLink>
+      </div>
+      <div className="nav--mentor">
+        <NavLink
+          exact
+          activeClassName="nav-link--active"
+          className="nav-link"
+          to="/mentors"
+        >
+          Mentors
+        </NavLink>
+      </div>
     </nav>
   )
 }

@@ -1,0 +1,65 @@
+@use '../../../styles/vars';
+
+.latestMentor {
+
+    // border: 1px vars.$primaryColor solid;
+
+    &-span {
+        color: vars.$primaryColor
+    }
+
+    &-title {
+        color: vars.$primaryContent;
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin-bottom: 2.5rem ;
+        
+    }
+
+    &-container {
+    padding: vars.$gutter;
+    margin-bottom: 15vh;
+    
+    }
+
+    &-list {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: vars.$gutter;
+    }
+
+    &-list-card-imgContainer {
+        margin-bottom: vars.$halfGutter;
+    }
+
+    &-list-card-content {
+        text-align: center;
+    }
+
+    &-list-card-content-title {
+      
+       font-weight: bold;
+       font-size: 1.3rem;
+       margin-bottom: 0.8rem;
+    }
+
+    &-list-card-content-role {
+        font-size: 1.1rem;
+    }
+
+    &-btnContainer {
+        display: flex;
+        justify-content: center;
+    }
+
+    &-btnContainer-btn {
+        color: white;
+        background-color: vars.$primaryColor;
+        text-transform: uppercase;
+        padding: vars.$halfGutter;
+        border-radius: 10px;
+        width: 25rem;
+        height: 3rem;
+    }
+
+}
