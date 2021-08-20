@@ -1,2 +1,70 @@
 @use '../../styles/vars';
 
+.container{
+  margin:1.5rem 0;
+  width: 30vw;
+  box-shadow: 0 1px 1px 2px #ccc;
+  padding: 0.5rem;
+  border-radius: 10px;
+ 
+
+  &--title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:vars.$primaryColor;
+    margin-bottom: 0.8rem;
+  }
+
+  &--description{
+    font-weight: bold;
+  }
+
+  &--author, &--date{
+    padding: 0.3rem;
+    font-size: 0.8rem;
+  }
+
+  &--techno {
+    color:rgb(75, 66, 66);
+    padding: 0.4rem;
+  }
+  
+  &--duration, &--difficulty{
+    padding: 0.3rem;
+  }
+  &--category{
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &--link{
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  &--link:hover{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+  }
+}
+
+.publication{
+  display: flex;
+}
+
+.information{
+  display: flex;
+  font-size: 0.9rem;
+}
+
+.font-color{
+  background-color: vars.$backgroundDiv;
+
+}
+
+
+
+
+
+// <div className="container--category">Type de ressource : {ressource.ressource_type_id}</div>
+// <div className="container--link">
