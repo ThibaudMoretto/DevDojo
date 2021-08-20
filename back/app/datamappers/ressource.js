@@ -1,4 +1,5 @@
 const client = require('../client');
+const slugify = require('slugify')
 
 module.exports = {
 
@@ -20,15 +21,16 @@ module.exports = {
     },
 
     async add(data) {
+        const slug = slugify(data.title);
         const result = await client.query(`
         INSERT INTO ressource (title, slug, description, link, publication_date, duration, is_free, difficulty_id, language_id, author_id, ressource_type_id)
         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
         RETURNING id, slug`,
-        [data.title, data.slug, data.description, data.link, data.publication_date, data.duration, data.is_free, data.difficulty_id, data.language_id, data.author_id, data.ressource_type_id]
+        [data.title, slug, data.description, data.link, data.publication_date, data.duration, data.is_free, data.difficulty_id, data.language_id, data.author_id, data.ressource_type_id]
         );
 
         //On renvoie le slug et l'id de la ressource créée
-        return result.rows;
+        return result.rows[0];
     },
 
     async delete(id, callback) {

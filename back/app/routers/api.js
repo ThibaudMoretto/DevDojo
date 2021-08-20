@@ -11,11 +11,11 @@ const mainController = require('../controllers/main');
 
 router.route('/ressource')
     .get(ressourceController.ressourceList)
-    //ONGOING -- .post(ressourceController.add)
+    .post(ressourceController.add)
 
 router.route('/ressource/:id(\\d+)')
     .get(ressourceController.getOne)
-    //ONGOING -- .delete(ressourceController.delete)
+    .delete(ressourceController.delete)
 
 router.route('/author')
     .get(authorController.authorList)
@@ -28,7 +28,7 @@ router.route('/author/:id(\\d+)')
 router.route('/login')
     .post(accountController.login)
 
-router.route('/token')
+//*ONGOING -- router.route('/token')
     //ONGOING -- .post(jwt.getNewToken)
 
 //Le dernier middleware de notre router est obligé de récupérer les requêtes qui ne se sont pas arrêtées avant.

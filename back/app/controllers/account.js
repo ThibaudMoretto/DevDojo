@@ -37,6 +37,8 @@ module.exports = {
             //On récupère un accessToken pour le user, et on le renvoie dans les infos du user
             account.accessToken = jwt.getAccessToken(account.email)
 
+            //On récupère un refreshToken pour le user, et on le renvoie dans les infos du user
+            account.refreshToken = jwt.getRefreshToken(account.email)
 
             // on renvoie les infos du user si tout va bien
             response.json({
