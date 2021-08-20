@@ -43,3 +43,4 @@ function NavBar({ resetSubmitValue }) {
 }
 
 export default NavBar;
+
