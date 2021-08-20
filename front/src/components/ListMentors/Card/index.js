@@ -3,19 +3,18 @@ import { Link } from 'react-router-dom';
 import './styles.scss';
 
 const Card = ({
-  id,
   name,
   description,
 }) => (
   <article className="card">
     <div className="card-content">
-      {/* Lien vers la fiche mentor avec /ressources/+name/+id */}
+      {/* Lien vers la fiche mentor avec /ressources/+name */}
       <Link to={`/mentors/${name}`}>
         <h2 className="card-name">{name}</h2>
         <p className="card-description">{description}</p>
       </Link>
     </div>
-    {/* Lien vers la fiche mentor avec /ressources/+name/+id */}
+    {/* Lien vers la fiche mentor avec /ressources/+name */}
     <Link to={`/mentors/${name}`} className="card-button">En savoir plus</Link>
   </article>
 );

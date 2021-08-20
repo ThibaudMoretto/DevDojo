@@ -14,11 +14,10 @@ function Header() {
         </div>
         <div className="header-nav">
           <NavBar />
-
-          <div className="header-search">
-            <SearchBar />
-          </div>
         </div>
+      </div>
+      <div className="header-search">
+        <SearchBar />
       </div>
     </div>
   )
