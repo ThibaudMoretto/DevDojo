@@ -1,38 +1,44 @@
 @use '../../../styles/vars';
 
-.container--card{
-  box-shadow: 0 2px 2px 2px #ccc;
-  width:20rem; 
-  height:25rem;
-  border-radius: 5%;
- 
+
+
+
+.card{
+
+  &--container{
+    box-shadow: 0 2px 2px 2px #ccc;
+    width:20rem; 
+    height:25rem;
+    border-radius: 5%; 
+  }
+  
+  
+  &-title{
+    font-size: 1.3rem;
+    color: vars.$primaryColor;
+    padding:0.8rem;
+
+  }
+
+  &-description{
+    font-weight: bold;
+    line-height: 1.2rem;
+  }
+
+  &-button {
+    color:white;
+    background: vars.$primaryColor;
+    border: none;
+    border-radius: 5%;
+    font-size: 0.8rem;
+  }
+  
+  &-button:hover {
+    
+      color:black;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 2px black;
+  }
 }
 
 
-.card-title{
-  font-size: 1.3rem;
-  color: vars.$primaryColor;
-  padding:0.8rem;
- 
-  
-}
-.card-description{
-  font-weight: bold;
-  line-height: 1.2rem;
- 
-}
-.card-button {
-  color:white;
-  background: vars.$primaryColor;
-  border: none;
-  border-radius: 5%;
-  font-size: 0.8rem;
-}
-
-.card-button:hover {
-  
-    color:black;
-    font-size: 0.9rem;
-    box-shadow: 0 2px 2px black;
-  
-}

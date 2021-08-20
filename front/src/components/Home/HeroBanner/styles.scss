@@ -37,7 +37,7 @@
   }
 }
 
-.description--color{
+.description--color{ // couleur du span
   font-size:1.2rem ;
   
 }
@@ -63,13 +63,9 @@
 }
 
 
-.button--source:hover {
+.button--source:hover, .button--mentors:hover{ 
   color:black;
   font-size: 0.9rem;
   box-shadow: 0 2px 2px black;
 }
-.button--mentors:hover {
-  color:black;
-  font-size: 0.9rem;
-  box-shadow: 0 2px 2px black;
-}
+
