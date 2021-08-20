@@ -1,3 +1,5 @@
+const bodyParser = require
+
 const ressourceDatamapper = require("../datamappers/ressource")
 const authorDatamapper = require("../datamappers/author")
 const technologyDatamapper = require("../datamappers/technology")
@@ -14,7 +16,7 @@ module.exports = {
             for (const ressource of ressources) {
                 ressource.author = await authorDatamapper.getById(ressource.author_id);
                 ressource.technologiesRelated = await technologyDatamapper.getRessourceRelated(ressource.id);
-                ressource.technologiesNeeded = await technologyDatamapper.getRessourceNeeds(ressource.id);
+                ressource.technologiesRequired = await technologyDatamapper.getRessourceNeeds(ressource.id);
             }
 
             response.json({
@@ -42,7 +44,7 @@ module.exports = {
 
             //On ajoute les technologies relatives et prérequises
             ressource.technologiesRelated = await technologyDatamapper.getRessourceRelated(ressource.id);
-            ressource.technologiesNeeded = await technologyDatamapper.getRessourceNeeds(ressource.id);
+            ressource.technologiesRequired = await technologyDatamapper.getRessourceNeeds(ressource.id);
 
             response.json({
                 data: ressource
@@ -58,23 +60,18 @@ module.exports = {
 
     async add(request, response) {
         try {
-            const ressource = await ressourceDatamapper.add(request.body);
+            const ressource = await ressourceDatamapper.add(request.body);            
 
-            // //! SUPPRIMER LA CONDITION POUR LA PROD - A tester avec de vrais données
-            // if (request.body.technologies) {
-            //     //On lie la ressource à toutes les technologies relatives
-            //     for (const tech of request.body.technologies) {
-            //         await ressourceDatamapper.linkToRequiredTechnology(ressource[0].id, tech)
-            //     }
-            // }
+            //On lie la ressource à toutes les technologies pré-requises
+            for (const tech of request.body.technologiesRequired) {
+                await ressourceDatamapper.linkToRequiredTechnology(ressource.id, tech.id)
+            }
 
-            // //! SUPPRIMER LA CONDITION POUR LA PROD - A tester avec de vrais données
-            // if (request.body.technologies) {
-            //     //On lie la ressource à toutes les technologies relatives
-            //     for (const tech of request.body.technologies) {
-            //         await ressourceDatamapper.linkToRequiredTechnology(ressource[0].id, tech)
-            //     }
-            // }
+
+            //On lie la ressource à toutes les technologies relatives
+            for (const tech of request.body.technologiesRelated) {
+                await ressourceDatamapper.linkToRelatedTechnology(ressource.id, tech.id)
+            }
 
             response.json({
                 data: ressource
@@ -101,6 +98,7 @@ module.exports = {
 
     async delete(request, response) {
         try {
+
             await ressourceDatamapper.delete(parseInt(request.params.id), () => {
                 response.json({
                     data: `Ressource supprimée`
