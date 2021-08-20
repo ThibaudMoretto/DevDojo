@@ -10,23 +10,23 @@ function FicheRessource({ ressource }) {
   console.log(ressource);
   return (
     <div>
-      <div className="container">
-        <div className="container--title">{ressource.title}</div>
-        <div className="container--description">{ressource.description}</div>
-        <div className="container--techno">JavaScript</div>
+      <div className="containers">
+        <div className="containers--title">{ressource.title}</div>
+        <div className="containers--description">{ressource.description}</div>
+        <div className="containers--techno">JavaScript</div>
           <div className="font-color">
             <div className="publication">
-              <div className="container--author">Publié par un auteur le </div>
-              <div className="container--date">{ressource.publication_date}</div>
+              <div className="containers--author">Publié par un auteur le </div>
+              <div className="containers--date">{ressource.publication_date}</div>
             </div>
 
             <div className="information">
-              <div className="container--duration">Durée : {ressource.duration}min</div>
-              <div className="container--difficulty">Difficulté : {ressource.difficulty_id}/5</div>
+              <div className="containers--duration">Durée : {ressource.duration}min</div>
+              <div className="containers--difficulty">Difficulté : {ressource.difficulty_id}/5</div>
             </div>
-            <div className="container--category">Type de ressource : {ressource.ressource_type_id}</div>
+            <div className="containers--category">Type de ressource : {ressource.ressource_type_id}</div>
           </div>
-            <div className="container--link">
+            <div className="containers--link">
           <a href="">Accéder à la ressource</a>
         </div>
         <div className="btn">

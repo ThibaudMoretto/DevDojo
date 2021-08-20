@@ -16,7 +16,7 @@ const Card = ({
       </Link>
     </div>
     {/* Lien vers la fiche mentor avec /ressources/+name */}
-   
+    
     </div>
   </article>
 );

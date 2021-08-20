@@ -10,17 +10,17 @@ function FicheMentor({ mentor }) {
   }
   console.log(mentor);
   return (
-    <div>
-      <div className="container--sourceList">
-        <div className="name">Nom : {mentor.name}</div>
-        <div className="description">Présentation : {mentor.description}</div>
-        <div className="github">Github : {mentor.github_account}</div>
-        <div className="youtube">Youtube : {mentor.youtube_account}</div>
-        <div className="website">Site Web : {mentor.website}</div>
-        <div className="twitter">Twitter : {mentor.twitter_account}</div>
-        <div className="linkedin">Linkedin : {mentor.linkedin_account}</div>
-        <div className="twitch">Twitch : {mentor.twitch_account}</div>
-        <div className="ressources"> Mes ressources :
+    <div className="containerMentor">
+      <div className="containerMentor--sourceList">
+        <div className="containerMentor--name">Nom : {mentor.name}</div>
+        <div className="containerMentor--description">Présentation : {mentor.description}</div>
+        <div className="containerMentor--github">Github : {mentor.github_account}</div>
+        <div className="containerMentor--youtube">Youtube : {mentor.youtube_account}</div>
+        <div className="containerMentor--website">Site Web : {mentor.website}</div>
+        <div className="containerMentor--witter">Twitter : {mentor.twitter_account}</div>
+        <div className="containerMentor--linkedin">Linkedin : {mentor.linkedin_account}</div>
+        <div className="containerMentor--twitch">Twitch : {mentor.twitch_account}</div>
+        <div className="containerMentor--ressources"> Mes ressources :
           {mentor.ressource.map((ress) => (
             <Card
               key={ress.id}
