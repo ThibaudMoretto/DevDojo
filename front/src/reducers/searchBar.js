@@ -32,6 +32,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         submitValue: '',
+        searchValue: '',
       };
     default:
       return state;
