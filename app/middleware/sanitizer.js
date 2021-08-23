@@ -21,12 +21,10 @@ module.exports = {
                     }
                 }
             } else if (typeof (request.body[key]) !== 'boolean' && typeof (request.body[key]) !== 'number') {
-                console.log(key + ' n\'est ni un boolean, ni un number, ni un array')
                 request.body[key] = sanitizer.escape(request.body[key]);
             }
         }
-
-        console.log(request.body)
+        
         // On continue d'envoyer notre requête avec les données sécurisées
         next();
     }

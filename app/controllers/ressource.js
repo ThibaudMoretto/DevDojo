@@ -1,5 +1,3 @@
-const bodyParser = require
-
 const ressourceDatamapper = require("../datamappers/ressource")
 const authorDatamapper = require("../datamappers/author")
 const technologyDatamapper = require("../datamappers/technology")
@@ -7,7 +5,7 @@ const technologyDatamapper = require("../datamappers/technology")
 
 module.exports = {
 
-    async ressourceList(_, response) {
+    async list(_, response) {
         // C'est ici qu'on utilise le try catch, pas dans le datamapper
         try {
             const ressources = await ressourceDatamapper.getAll();
