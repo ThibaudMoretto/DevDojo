@@ -8,6 +8,8 @@ const ListMentors = ({ mentors, isLogged }) => (
 
   <div className="containers">
 
+    <div className="mentor-title">Nos mentors</div>
+
     <div className="buttons">
       {isLogged && (
         <button className="ui primary button">Ajouter un mentor</button>

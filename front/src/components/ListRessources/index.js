@@ -9,6 +9,8 @@ const ListRessources = ({ ressources, isLogged }) => {
 
     <div className="containers">
 
+      <div className="ressource-title">Nos ressources</div>
+
       <div className="buttons">
         {isLogged && (
           <button class="ui primary button">Ajouter une ressource</button>

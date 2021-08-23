@@ -12,7 +12,7 @@ const LoginForm = ({
   handleLogin,
   handleLogout,
   isLogged,
-  loggedMessage,
+  // loggedMessage,
 }) => {
 
   const handleSubmit = (evt) => {
@@ -31,12 +31,12 @@ const LoginForm = ({
     <div className="login-form">
       {isLogged && (
         <div className="login-form-logged">
-          <p className="login-form-message">
+          {/* <p className="login-form-message">
             {loggedMessage}
-          </p>
+          </p> */}
           <button
             type="button"
-            className="login-form-button"
+            className="login-form-button ui blue button"
             onClick={() => {
               { handleLogout() };
               resetToken();
