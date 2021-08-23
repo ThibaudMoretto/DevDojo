@@ -7,15 +7,15 @@ const ListRessources = ({ ressources, isLogged }) => {
 
   return (
 
-    <div className="container">
+    <div className="containers">
 
-      <div className="container-button">
+      <div className="buttons">
         {isLogged && (
           <button class="ui primary button">Ajouter une ressource</button>
         )}
       </div>
 
-      <div className="container-sources">
+      <div className="ressources">
         {ressources.map((ressource) => (
           <Card
             key={ressource.id}
