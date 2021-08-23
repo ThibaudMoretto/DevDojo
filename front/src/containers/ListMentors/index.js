@@ -2,8 +2,10 @@ import { connect } from 'react-redux';
 
 import ListMentors from 'src/components/ListMentors';
 
+import { filterMentors } from 'src/selectors/search';
+
 const mapStateToProps = (state) => ({
-  mentors: state.mentors.list,
+  mentors: filterMentors(state.mentors.list, state.searchBar.submitValue),
 });
 
 const mapDispatchToProps = {};

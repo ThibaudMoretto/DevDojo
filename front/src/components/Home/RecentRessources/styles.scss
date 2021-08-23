@@ -1,0 +1,68 @@
+@use '../../../styles/vars';
+
+.lastRessources{
+  background-color: vars.$backgroundDiv;
+  width:100%;
+  margin-bottom: 15vh;
+}
+.lastRessources--title{
+  padding:1.2rem;
+  font-size: 2.2rem;
+  font-weight: bold;
+ 
+}
+
+.color--title{
+  color:vars.$primaryColor;
+}
+
+
+
+.container--cards{
+  background-color: white;
+  box-shadow: 0 2px 2px 2px rgb(157, 156, 156);
+  width:20rem;
+  height:20rem;
+  border-radius: 5%;
+  margin-top: 2.5rem;
+  text-align: center;
+  
+}
+
+.card--title{
+  font-size: 1.3rem;
+  font-weight: bolder; 
+  margin:0.5em;
+}
+
+.card--description{
+  padding: 0.6rem;
+  font-size: 1.1rem;
+}
+
+.container{
+ display:flex;
+ flex-wrap: wrap;
+ justify-content: space-around;
+ align-items: center;
+ padding:2rem;
+ 
+}
+
+.button--last_sources{
+  color: white;
+  background-color: vars.$primaryColor;
+  text-transform: uppercase;
+  padding: vars.$halfGutter;
+  border-radius: 10px;
+  width: 25rem;
+  height: 3rem;
+  
+}
+
+
+.button--position{
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}

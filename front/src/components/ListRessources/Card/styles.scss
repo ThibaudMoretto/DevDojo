@@ -1,24 +1,38 @@
-.card {
+@use '../../../styles/vars';
 
-  padding: 2rem;
+.container--card{
+  box-shadow: 0 2px 2px 2px #ccc;
+  width:20rem; 
+  height:25rem;
+  border-radius: 5%;
+ 
+}
 
-  &-content {
 
-  }
+.card-title{
+  font-size: 1.3rem;
+  color: vars.$primaryColor;
+  padding:0.8rem;
+ 
+  
+}
+.card-description{
+  font-weight: bold;
+  line-height: 1.2rem;
+ 
+}
+.card-button {
+  color:white;
+  background: vars.$primaryColor;
+  border: none;
+  border-radius: 5%;
+  font-size: 0.8rem;
+}
 
-  &-title {
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-
-  &-description {
-    margin-bottom: 1rem;
-  }
-
-  &-button {
-    border: 1px black solid;
-    width: 10rem;
-    display: block;
-    text-align: center;
-  }
+.card-button:hover {
+  
+    color:black;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 2px black;
+  
 }

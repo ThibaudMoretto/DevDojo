@@ -1,14 +1,14 @@
 import React from 'react'
-import ListMentors from '../ListMentors'
-import ListRessources from '../ListRessources'
+import ListMentors from 'src/containers/ListMentors'
+import ListRessources from 'src/containers/ListRessources'
 
 import './styles.scss';
 
 function SearchResults() {
   return (
     <div>
-      <ListMentors />
       <ListRessources />
+      <ListMentors />
     </div>
   )
 }
