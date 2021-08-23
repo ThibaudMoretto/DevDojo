@@ -20,6 +20,10 @@ const LoginForm = ({
     handleLogin();
   };
 
+  const resetToken = () => {
+    localStorage.setItem('token', '');
+  };
+
   const [open, setOpen] = React.useState(false)
 
   return (
@@ -35,6 +39,7 @@ const LoginForm = ({
             className="login-form-button"
             onClick={() => {
               { handleLogout() };
+              resetToken();
               setOpen(false);
             }}
           >
