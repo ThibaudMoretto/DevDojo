@@ -3,18 +3,18 @@
 .lastRessources{
   background-color: vars.$backgroundDiv;
   width:100%;
-  margin-bottom: 15vh;
+  margin-bottom: 1rem;
+  padding-bottom: 4rem;
 
   &--title{
-    padding:1.2rem;
+    font-family: 'Rampart One', cursive;
+    padding-top:2.6rem;
     font-size: 2.2rem;
     font-weight: bold;
+    text-align: center;
 }
  
 }
-
-
-
 
 .card {
 
@@ -23,6 +23,7 @@
   justify-content: space-around;
   align-items: center;
   padding:2rem;
+  margin-bottom: 3rem;
 
   &--container{
     background-color: white;

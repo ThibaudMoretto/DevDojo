@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.scss';
-import cardImg from '../../../assets/images/Card_Img.png'
+import cardImg from '../../../assets/images/Card_Img.png';
+import { Button } from 'semantic-ui-react';
 
 function RecentRessources() {
   return (
@@ -46,7 +47,8 @@ function RecentRessources() {
         </div>
           
             <div className="button">
-              <button className="button--last_sources">clickclick</button>
+              {/* <button className="button--last_sources">clickclick</button> */}
+              <Button color='red'> Afficher nos dernières ressources </Button>
             </div>
           
       </div>
