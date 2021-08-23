@@ -9,7 +9,7 @@ const ListMentors = ({ mentors, isLogged }) => (
   <div className="containers">
 
     <div className="buttons">
-      {!isLogged && (
+      {isLogged && (
         <button className="ui primary button">Ajouter un mentor</button>
       )}
     </div>

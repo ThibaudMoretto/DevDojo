@@ -13,7 +13,7 @@ function FicheMentor({ mentor, isLogged }) {
     <div className="containers">
 
       <div className="buttons">
-        {!isLogged && (
+        {isLogged && (
           <div>
             <button className="ui primary button">Modifier</button>
             <button className="ui secondary button">Supprimer</button>
