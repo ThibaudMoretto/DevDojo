@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 // Pour prévenir des failles XSS, on met en place un sanitizer qui permettra d'empêcher l'utilisateur de saisir du HTML
-//ONGOING -- app.use(sanitizer.sanitize);
+app.use(sanitizer.sanitize);
 
 //URL de connexion à l'API
 app.use('/api/v1.0', apiRouter)
