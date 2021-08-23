@@ -5,19 +5,17 @@ import './styles.scss';
 
 const ListRessources = ({ ressources, isLogged }) => {
 
-  // console.log(ressources)
-
   return (
 
-    <div className="containers">
+    <div className="container">
 
-      <div className="buttons">
-        {!isLogged && (
-          <button className="ui primary button">Ajouter une ressource</button>
+      <div className="container-button">
+        {isLogged && (
+          <button class="ui primary button">Ajouter une ressource</button>
         )}
       </div>
 
-      <div className="ressources">
+      <div className="container-sources">
         {ressources.map((ressource) => (
           <Card
             key={ressource.id}
@@ -25,7 +23,6 @@ const ListRessources = ({ ressources, isLogged }) => {
           />
         ))}
       </div>
-
     </div>
   )
 };
