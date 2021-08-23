@@ -8,17 +8,9 @@ import logo from 'src/assets/images/LogoFooter.png'
 function Footer() {
   return (
     <div className="footer">
-      <div className="container--logo">
-        <img src={logo} alt="logo" className="pictures" />
-      </div>
-
-      <div className="footer--container">
-
-        <About />
-        <Contact />
-        <LoginForm />
-
-      </div>
+      <About />
+      <Contact />
+      <LoginForm />
     </div>
   )
 }

@@ -48,11 +48,12 @@ const LoginForm = ({
         </div>
       )}
       {!isLogged && (
+
         <Modal
           onClose={() => setOpen(false)}
           onOpen={() => setOpen(true)}
           open={open}
-          trigger={<Button>Espace Admin</Button>}
+          trigger={<Button className="button">Espace admin</Button>}
         >
           <Modal.Header>Se connecter en tant qu'admin</Modal.Header>
 
@@ -61,7 +62,7 @@ const LoginForm = ({
             <form id="login-form" autoComplete="on" className="login-form-element" onSubmit={handleSubmit}>
               <Field
                 name="email"
-                placeholder="Adresse Email"
+                placeholder="Email"
                 onChange={changeField}
                 value={email}
               />
@@ -81,7 +82,7 @@ const LoginForm = ({
             <button
               form="login-form"
               type="submit"
-              className="login-form-button"
+              className="login-form-button ui blue button"
             >
               Se connecter
             </button>
