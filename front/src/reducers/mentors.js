@@ -6,6 +6,12 @@ export const initialState = {
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
 
+    case 'GET_MENTORS':
+      return {
+        ...state,
+        isLoading: true,
+      };
+
     case 'GET_MENTORS_SUCCESS':
       return {
         ...state,

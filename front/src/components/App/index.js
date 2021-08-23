@@ -18,8 +18,6 @@ import './styles.scss';
 function App({ getRessources, getMentors, loading, submited, isLogged,
   checkIsLogged }) {
 
-  console.log('Es-tu connecté ?', isLogged);
-
   useEffect(() => {
     getRessources();
     getMentors();
