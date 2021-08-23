@@ -10,7 +10,8 @@ const auth = (store) => (next) => (action) => {
         method: 'POST',
         url: '/login',
         headers: {
-          'Content-Type': 'application/json'
+
+          'content-type': 'application/json'
         },
         data: {
           "email": state.user.email,
@@ -35,17 +36,20 @@ const auth = (store) => (next) => (action) => {
     }
     case CHECK_TOKEN: {
       const token = localStorage.getItem('token');
+      console.log(token);
 
       if (token) {
-        api.get('/checkToken', {
+        api({
+        method: 'POST',
+        url: '/checkToken',
           headers: {
+            'content-type': 'application/x-www-form-urlencoded',
             authorization: `Bearer ${token}`,
           },
         })
           .then((response) => {
-            api.defaults.headers.common.authorization = `Bearer ${token}`;
 
-            const payload = { ...response.data.data };
+            const payload = response.data.user;
             const actionSaveUser = saveUser(payload);
             store.dispatch(actionSaveUser);
           })
