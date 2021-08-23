@@ -4,7 +4,7 @@ const technologyDatamapper = require('../datamappers/technology')
 
 module.exports = {
 
-    async authorList(_, response) {
+    async list(_, response) {
         // C'est ici qu'on utilise le try catch, pas dans le datamapper
         try {
             const authors = await authorDatamapper.getAll();
@@ -29,7 +29,7 @@ module.exports = {
         }
     },
 
-    async getOneAuthor(request, response, next) {
+    async getOne(request, response, next) {
         try {
             const author = await authorDatamapper.getById(request.params.id);
             //Si aucun résultat, on passe au middleware suivant (jusqu'à la 404)
