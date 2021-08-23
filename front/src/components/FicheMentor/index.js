@@ -4,13 +4,22 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 import { Redirect } from 'react-router-dom';
 
-function FicheMentor({ mentor }) {
+function FicheMentor({ mentor, isLogged }) {
   if (!mentor) {
     return <Redirect to="/error" />;
   }
-  console.log(mentor);
   return (
-    <div>
+    <div className="container">
+
+      <div className="button">
+        {isLogged && (
+          <div>
+            <button class="ui primary button">Modifier</button>
+            <button class="ui secondary button">Supprimer</button>
+          </div>
+        )}
+      </div>
+
       <div className="container--sourceList">
         <div className="name">Nom : {mentor.name}</div>
         <div className="description">Présentation : {mentor.description}</div>

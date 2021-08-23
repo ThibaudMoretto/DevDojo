@@ -6,6 +6,7 @@ import { filterMentors } from 'src/selectors/search';
 
 const mapStateToProps = (state) => ({
   mentors: filterMentors(state.mentors.list, state.searchBar.submitValue),
+  isLogged: state.user.logged,
 });
 
 const mapDispatchToProps = {};
