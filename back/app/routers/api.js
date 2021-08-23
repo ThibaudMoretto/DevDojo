@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const jwtController = require('../middleware/jwt')
-
+const jwtController = require('../controllers/jwt')
 const ressourceController = require('../controllers/ressource');
 const authorController = require('../controllers/author');
 const accountController = require('../controllers/account');
@@ -35,8 +34,11 @@ router.route('/technology/:id(\\d+)')
 router.route('/login')
     .post(accountController.login)
 
-// router.route('/verifyToken')
-//     .post(jwtController.verifyToken)
+router.route('/logout')
+    .post(accountController.logout)
+
+router.route('/checkToken')
+    .post(jwtController.checkToken)
 
 //ONGOING -- router.route('/token')
 //ONGOING -- .post(jwt.getNewToken)
