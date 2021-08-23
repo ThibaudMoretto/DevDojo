@@ -57,4 +57,7 @@ module.exports = {
         }
     },
 
+    logout (request, response) {
+        
+    }
 }
