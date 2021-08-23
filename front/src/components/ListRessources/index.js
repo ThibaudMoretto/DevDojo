@@ -9,15 +9,15 @@ const ListRessources = ({ ressources, isLogged }) => {
 
   return (
 
-    <div className="container">
+    <div className="containers">
 
-      <div className="container-button">
-        {isLogged && (
-          <button class="ui primary button">Ajouter une ressource</button>
+      <div className="buttons">
+        {!isLogged && (
+          <button className="ui primary button">Ajouter une ressource</button>
         )}
       </div>
 
-      <div className="container-sources">
+      <div className="ressources">
         {ressources.map((ressource) => (
           <Card
             key={ressource.id}
@@ -25,44 +25,9 @@ const ListRessources = ({ ressources, isLogged }) => {
           />
         ))}
       </div>
+
     </div>
   )
 };
 
 export default ListRessources;
-    // <div>
-    //   {ressources.filter(function => name.includes('J')).map(filteredName => (
-    //     <li>
-    //       {filteredName}
-    //     </li>
-    //   ))}
-    // </div>
-
-  // <div>
-  //   {ressources.map((ressource) => (
-  //     <Card
-  //       key={ressource.id}
-  //       {...ressource}
-  //     />
-  //   ))}
-  // </div>
-/**
- *
- *
- *
- * {this.state.tasks
-        .filter(function(task, index, props) {
-          return task.completed === props.completedTasks;
-        })
-        .map(function(task, index) {
-          return(
-            <Task
-              name={task.name}
-              key={task.id}
-              completed={task.completed}
-              onCompleted={function() {this.onCompletedTask(index)}.bind(this)}
-              onRemove={function() {this.onRemoveTask(index)}.bind(this)}
-            />
-          );
-        }.bind(this))}
- */

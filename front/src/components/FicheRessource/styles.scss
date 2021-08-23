@@ -6,6 +6,11 @@
   padding: 0.5rem;
   border-radius: 10px;
  
+.buttons{
+
+}
+
+.ressource{
 
   &--title{
     font-size: 1.5rem;
@@ -16,12 +21,6 @@
 
   &--description{
     font-weight: bold;
-   
-  }
-
-  &--author, &--date{
-    padding: 0.3rem;
-    font-size: 0.8rem;
   }
 
   &--techno {
@@ -29,9 +28,6 @@
     padding: 0.4rem;
   }
   
-  &--duration, &--difficulty{
-    padding: 0.3rem;
-  }
   &--category{
     font-size: 0.8rem;
     margin-bottom: 0.5rem;
@@ -46,25 +42,38 @@
     font-weight: bold;
     color: black;
   }
+
+  &--information{
+    display: flex;
+    font-size: 0.9rem;
+
+    &--duration{
+      padding: 0.3rem;
+    }
+
+    &--difficulty{
+      padding: 0.3rem; 
+    }
+  }
+
+  &--publication{
+    display: flex;
+
+    &--author{
+      padding: 0.3rem;
+      font-size: 0.8rem;
+    }
+
+    &--date{
+      padding: 0.3rem;
+      font-size: 0.8rem;
+    }
+
+  }
+
+  .font-color{
+    background-color: vars.$backgroundDiv;
+  }
 }
 
-.publication{
-  display: flex;
 }
-
-.information{
-  display: flex;
-  font-size: 0.9rem;
-}
-
-.font-color{
-  background-color: vars.$backgroundDiv;
-
-}
-
-
-
-
-
-// <div className="container--category">Type de ressource : {ressource.ressource_type_id}</div>
-// <div className="container--link">

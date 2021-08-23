@@ -6,15 +6,15 @@ import './styles.scss';
 const ListMentors = ({ mentors, isLogged }) => (
 
 
-  <div className="container">
+  <div className="containers">
 
-    <div className="container-button">
-      {isLogged && (
-        <button class="ui primary button">Ajouter un mentor</button>
+    <div className="buttons">
+      {!isLogged && (
+        <button className="ui primary button">Ajouter un mentor</button>
       )}
     </div>
 
-    <div>
+    <div className="mentors">
       {mentors.map((mentor) => (
         <Card
           key={mentor.id}
@@ -22,6 +22,7 @@ const ListMentors = ({ mentors, isLogged }) => (
         />
       ))}
     </div>
+
   </div>
 );
 

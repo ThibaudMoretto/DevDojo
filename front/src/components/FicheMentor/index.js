@@ -1,6 +1,6 @@
 import React from 'react';
-import Card from '../ListMentors/Card';
 import PropTypes from 'prop-types';
+import Card from 'src/components/ListRessources/Card';
 import './styles.scss';
 import { Redirect } from 'react-router-dom';
 
@@ -10,37 +10,40 @@ function FicheMentor({ mentor, isLogged }) {
   }
   return (
 
-    <div className="containerMentor">
+    <div className="containers">
 
-      <div className="containerButton">
-        {isLogged && (
+      <div className="buttons">
+        {!isLogged && (
           <div>
-            <button class="ui primary button">Modifier</button>
-            <button class="ui secondary button">Supprimer</button>
+            <button className="ui primary button">Modifier</button>
+            <button className="ui secondary button">Supprimer</button>
           </div>
         )}
       </div>
 
-      <div className="containerMentor--sourceList">
-        <div className="containerMentor--name">Nom : {mentor.name}</div>
-        <div className="containerMentor--description">Présentation : {mentor.description}</div>
-        <div className="containerMentor--github">Github : {mentor.github_account}</div>
-        <div className="containerMentor--youtube">Youtube : {mentor.youtube_account}</div>
-        <div className="containerMentor--website">Site Web : {mentor.website}</div>
-        <div className="containerMentor--witter">Twitter : {mentor.twitter_account}</div>
-        <div className="containerMentor--linkedin">Linkedin : {mentor.linkedin_account}</div>
-        <div className="containerMentor--twitch">Twitch : {mentor.twitch_account}</div>
-        <div className="containerMentor--ressources"> Mes ressources :
+      <div className="mentor">
+        <div className="mentor--name">Nom : {mentor.name}</div>
+        <div className="mentor--description">Présentation : {mentor.description}</div>
+        <div className="mentor--github">Github : {mentor.github_account}</div>
+        <div className="mentor--youtube">Youtube : {mentor.youtube_account}</div>
+        <div className="mentor--website">Site Web : {mentor.website}</div>
+        <div className="mentor--witter">Twitter : {mentor.twitter_account}</div>
+        <div className="mentor--linkedin">Linkedin : {mentor.linkedin_account}</div>
+        <div className="mentor--twitch">Twitch : {mentor.twitch_account}</div>
+        <div className="mentor--ressources"> Mes ressources :</div>
+      </div>
 
-        </div>
-
+      <div className="ressources">
         {mentor.ressource.map((ress) => (
           <Card
             key={ress.id}
-            {...ress}
+            name={ress.title}
+            description={ress.description}
+            slug={ress.slug}
           />
         ))}
       </div>
+
     </div>
   )
 };
