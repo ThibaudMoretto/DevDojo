@@ -1,51 +1,85 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-import Error from 'src/components/Error';
-import FicheRessource from 'src/components/FicheRessource';
-import FicheMentor from 'src/components/FicheMentor';
-import Header from '../Header'
+import Home from 'src/components/Home';
+import ListMentors from 'src/containers/ListMentors';
+import ListRessources from 'src/containers/ListRessources';
+import FicheRessource from 'src/containers/FicheRessource';
+import FicheMentor from 'src/containers/FicheMentor';
+import SearchResults from 'src/components/SearchResults';
 import Footer from 'src/components/Footer';
-import Home from '../Home';
-import ListMentors from '../ListMentors';
-import ListRessources from '../ListRessources';
-import SearchResults from '../SearchResults';
+import Error from 'src/components/Error';
+import Header from 'src/components/Header';
+import Loading from './Loading'
 
 import './styles.scss';
 
-const App = () => (
-  <div className="app">
-    <Header />
-    <Switch>
+function App({ getRessources, getMentors, loading, submited, isLogged,
+  checkIsLogged }) {
 
-      <Route exact path="/">
-        <Home />
-      </Route>
+  console.log('Es-tu connecté ?', isLogged);
 
-      <Route exact path="/ressources">
-        <ListRessources />
-      </Route>
+  useEffect(() => {
+    getRessources();
+    getMentors();
+    checkIsLogged();
+  }, []);
 
-      <Route exact path="/mentors">
-        <ListMentors />
-      </Route>
+  if (loading) {
+    return <Loading />;
+  };
 
-      <Route exact path="/ressources/:id">
-        <FicheRessource />
-      </Route>
+  return (
+    <div className="app">
 
-      <Route exact path="/mentors/:id">
-        <FicheMentor />
-      </Route>
+      {submited && (
+        <Redirect to="/search-results" />)}
 
-      <Route exact path="/search-results">
-        <SearchResults />
-      </Route>
+      <Header />
+      <Switch>
 
-      <Error />
-    </Switch>
-    <Footer />
-  </div>
-);
+        <Route exact path="/">
+          <Home />
+        </Route>
+
+        <Route exact path="/ressources">
+          <ListRessources />
+        </Route>
+
+        <Route exact path="/mentors">
+          <ListMentors />
+        </Route>
+
+        <Route exact path="/ressources/:slug" component={FicheRessource}>
+        </Route>
+
+        <Route exact path="/mentors/:name" component={FicheMentor}>
+        </Route>
+
+        <Route exact path="/search-results">
+          <SearchResults />
+        </Route>
+
+        <Error />
+      </Switch>
+      <Footer />
+    </div>
+  );
+}
+
+App.propTypes = {
+  loading: PropTypes.bool,
+  getMentors: PropTypes.func.isRequired,
+  getRessources: PropTypes.func.isRequired,
+  submited: PropTypes.bool,
+  checkIsLogged: PropTypes.func.isRequired,
+  isLogged: PropTypes.bool,
+};
+
+App.defaultProps = {
+  loading: false,
+  isLogged: false,
+};
 
 export default App;

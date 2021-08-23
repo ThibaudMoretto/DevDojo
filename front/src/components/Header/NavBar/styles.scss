@@ -1,0 +1,33 @@
+@use 'sass:color';
+@use 'src/styles/vars';
+
+.nav {
+  padding: vars.$halfGutter 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+
+  &--home,  &--source, &--mentor{
+    padding:5px;
+    margin :0 30px ;
+    font-weight: bold;
+  }
+  
+  &-link {
+    padding: vars.$halfGutter vars.$gutter;
+    transition: color .3s, box-shadow .4s;
+    color: black;
+
+    &:hover:not(&--active) {
+     
+      color: vars.$primaryColor;
+      font-size: 1.8rem;
+    }
+
+    &--active {
+      color :  vars.$primaryColor;
+      font-weight: bold;
+    }
+  }
+}

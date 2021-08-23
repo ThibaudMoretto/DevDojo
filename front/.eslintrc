@@ -1,11 +1,21 @@
 {
   "extends": "airbnb",
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "babelOptions": {
+      "configFile": "path.join(__dirname, 'babel.config.json')"
+    }
+  },
   "env": {
     "browser": true
   },
   "rules": {
-    "brace-style": ["error", "stroustrup"],
+    "import/no-unresolved": "disable",
+    "brace-style": [
+      "error",
+      "stroustrup"
+    ],
     "no-param-reassign": [
       "error",
       {
@@ -38,10 +48,18 @@
   "settings": {
     "import/resolver": {
       "alias": {
-        "extensions": [".js"],
+        "extensions": [
+          ".js"
+        ],
         "map": [
-          ["src", "./src"],
-          ["app", "./src"]
+          [
+            "src",
+            "./src"
+          ],
+          [
+            "app",
+            "./src"
+          ]
         ]
       }
     }

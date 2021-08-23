@@ -1,18 +1,19 @@
 @use 'reset';
 @use 'vars';
 
-body {
-  font-family: sans-serif;
+@import 'semantic-ui-css/semantic.min.css';
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/Poppins-Regular.ttf');
 }
 
-/* 
-  // or you can import your own font
-  @font-face {
-    font-family: 'Roboto';
-    src: url('../assets/fonts/Roboto-Regular.ttf');
-  }
+body {
+  font-family: 'Poppins', sans-serif;
+  color: vars.$primaryContent;
+}
 
-  body {
-    font-family: 'Roboto', sans-serif;
-  }
-*/
+img {
+  max-width: 100%;
+}
+

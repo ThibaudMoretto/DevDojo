@@ -1,17 +1,30 @@
 import React from 'react';
 import Card from 'src/components/ListRessources/Card';
-import Filter from 'src/components/ListRessources/Filter';
-import SearchBar from 'src/components/ListRessources/SearchBar';
+// import Filter from 'src/components/ListRessources/Filter';
 import './styles.scss';
 
-function ListRessources() {
+const ListRessources = ({ ressources, isLogged }) => {
+
   return (
-    <div>
-      <Card />
-      <Filter />
-      <SearchBar />
+
+    <div className="containers">
+
+      <div className="buttons">
+        {isLogged && (
+          <button class="ui primary button">Ajouter une ressource</button>
+        )}
+      </div>
+
+      <div className="ressources">
+        {ressources.map((ressource) => (
+          <Card
+            key={ressource.id}
+            {...ressource}
+          />
+        ))}
+      </div>
     </div>
   )
-}
+};
 
 export default ListRessources;
