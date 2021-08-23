@@ -34,8 +34,8 @@ module.exports = {
             // Pour des raisons de sécurité, on supprime le mot de passe avant de renvoyer les infos du compte
             delete account.password;
 
-            //On récupère un accessToken pour le user, et on le renvoie dans les infos du user
-            account.accessToken = jwt.getAccessToken(account.email)
+            //On récupère un token pour le user, et on le renvoie dans les infos du user
+            account.token = jwt.getAccessToken(account.email)
 
             //On récupère un refreshToken pour le user, et on le renvoie dans les infos du user
             account.refreshToken = jwt.getRefreshToken(account.email)

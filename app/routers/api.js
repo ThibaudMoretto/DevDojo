@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const jwt = require('../middleware/jwt')
+const jwtController = require('../middleware/jwt')
 
 const ressourceController = require('../controllers/ressource');
 const authorController = require('../controllers/author');
@@ -35,7 +35,10 @@ router.route('/technology/:id(\\d+)')
 router.route('/login')
     .post(accountController.login)
 
-//*ONGOING -- router.route('/token')
+// router.route('/verifyToken')
+//     .post(jwtController.verifyToken)
+
+//ONGOING -- router.route('/token')
 //ONGOING -- .post(jwt.getNewToken)
 
 //Le dernier middleware de notre router est obligé de récupérer les requêtes qui ne se sont pas arrêtées avant.
