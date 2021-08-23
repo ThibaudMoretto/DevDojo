@@ -19,10 +19,9 @@
     transition: color .3s, box-shadow .4s;
     color: black;
 
-    &:hover:not(&--active) {
+    &:hover {
      
       color: vars.$primaryColor;
-      font-size: 1.8rem;
     }
 
     &--active {
