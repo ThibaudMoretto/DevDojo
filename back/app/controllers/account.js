@@ -35,10 +35,13 @@ module.exports = {
             delete account.password;
 
             //On récupère un token pour le user, et on le renvoie dans les infos du user
-            account.token = jwt.getAccessToken(account.email)
+            account.token = jwt.getAccessToken(account.email);
 
             //On récupère un refreshToken pour le user, et on le renvoie dans les infos du user
-            account.refreshToken = jwt.getRefreshToken(account.email)
+            account.refreshToken = jwt.getRefreshToken(account.email);
+
+            //On envoie l'information indiquant le statut de connexion de l'utilisateur
+            account.logged = true;
 
             // on renvoie les infos du user si tout va bien
             response.json({
