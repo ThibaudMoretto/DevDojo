@@ -1,40 +1,79 @@
 @use '../../styles/vars';
 
-.container--card{
-  box-shadow: 0 2px 2px 2px #ccc;
-  width:20rem;
-  height:25rem;
-  border-radius: 5%;
-  
+.containers{
+  margin:1.5rem 0;
+  box-shadow: 0 1px 1px 2px #ccc;
+  padding: 0.5rem;
+  border-radius: 10px;
+ 
+.buttons{
+
 }
 
-.card-content{
-  padding:0.8rem;
-}
+.ressource{
 
-.card-title{
-  font-size: 1.3rem;
-  color: vars.$primaryColor;
-  
-}
-.card-description{
-  font-weight: bold;
-  line-height: 1.1rem;
-}
-.card-button {
-  color:white;
-  background: vars.$primaryColor;
-  border: none;
-  border-radius: 5%;
-  padding:0.8rem;
-  font-size: 0.8rem;
-  padding-bottom: 0.5rem;
-}
+  &--title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:vars.$primaryColor;
+    margin-bottom: 0.8rem;
+  }
 
-.card-button:hover {
+  &--description{
+    font-weight: bold;
+  }
+
+  &--techno {
+    color:rgb(75, 66, 66);
+    padding: 0.4rem;
+  }
   
-    color:black;
+  &--category{
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &--link{
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  &--link:hover{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+  }
+
+  &--information{
+    display: flex;
     font-size: 0.9rem;
-    box-shadow: 0 2px 2px black;
-  
+
+    &--duration{
+      padding: 0.3rem;
+    }
+
+    &--difficulty{
+      padding: 0.3rem; 
+    }
+  }
+
+  &--publication{
+    display: flex;
+
+    &--author{
+      padding: 0.3rem;
+      font-size: 0.8rem;
+    }
+
+    &--date{
+      padding: 0.3rem;
+      font-size: 0.8rem;
+    }
+
+  }
+
+  .font-color{
+    background-color: vars.$backgroundDiv;
+  }
+}
+
 }

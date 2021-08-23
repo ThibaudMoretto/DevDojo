@@ -8,8 +8,9 @@ const Card = ({
   description,
   slug,
 }) => (
+  
   <article className="card">
-    <div className="container--card">
+    <div className="card--container">
       <img src={cardImg} alt="une image" />
       <div className="card-content">
         {/* Lien externe d'origine de la ressource sur toute la div article*/}

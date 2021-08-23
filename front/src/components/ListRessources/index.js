@@ -3,57 +3,31 @@ import Card from 'src/components/ListRessources/Card';
 // import Filter from 'src/components/ListRessources/Filter';
 import './styles.scss';
 
-const ListRessources = ({ ressources }) => {
+const ListRessources = ({ ressources, isLogged }) => {
 
   // console.log(ressources)
 
   return (
-    <div className="sources">
-      {ressources.map((ressource) => (
-        <Card
-          key={ressource.id}
-          {...ressource}
-        />
-      ))}
+
+    <div className="containers">
+
+      <div className="buttons">
+        {!isLogged && (
+          <button className="ui primary button">Ajouter une ressource</button>
+        )}
+      </div>
+
+      <div className="ressources">
+        {ressources.map((ressource) => (
+          <Card
+            key={ressource.id}
+            {...ressource}
+          />
+        ))}
+      </div>
+
     </div>
   )
-
 };
 
 export default ListRessources;
-    // <div>
-    //   {ressources.filter(function => name.includes('J')).map(filteredName => (
-    //     <li>
-    //       {filteredName}
-    //     </li>
-    //   ))}
-    // </div>
-
-  // <div>
-  //   {ressources.map((ressource) => (
-  //     <Card
-  //       key={ressource.id}
-  //       {...ressource}
-  //     />
-  //   ))}
-  // </div>
-/**
- *
- *
- *
- * {this.state.tasks
-        .filter(function(task, index, props) {
-          return task.completed === props.completedTasks;
-        })
-        .map(function(task, index) {
-          return(
-            <Task
-              name={task.name}
-              key={task.id}
-              completed={task.completed}
-              onCompleted={function() {this.onCompletedTask(index)}.bind(this)}
-              onRemove={function() {this.onRemoveTask(index)}.bind(this)}
-            />
-          );
-        }.bind(this))}
- */

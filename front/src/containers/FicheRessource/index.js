@@ -7,6 +7,7 @@ import { findRessource } from 'src/selectors/ressource';
 
 const mapStateToProps = (state, ownProps) => ({
   ressource: findRessource(state.ressources.list, ownProps.match.params.slug),
+  isLogged: state.user.logged,
 });
 
 const mapDispatchToProps = {};
