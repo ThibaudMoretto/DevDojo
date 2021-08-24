@@ -5,6 +5,9 @@
   flex-direction: row;
   margin-bottom: $gutter;
 
+    background-color: #DFE6ED;
+    padding: 20px 20px 5px 20px;
+
   &--container {  // div container avec toue les éléments du header
     display: flex;
 
@@ -20,7 +23,12 @@
 
     &-logo{
       width:250px;
+      margin-left: 1rem;
     }
 
-
+    &-search{
+      background-color: #DFE6ED;
+      padding: 15px;
+      
+    }
 }

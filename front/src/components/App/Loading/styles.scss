@@ -32,7 +32,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  color: vars.$color;
+  color: #D91941;
   font-size: 2em;
   animation: fade .75s infinite alternate;
 
@@ -40,7 +40,7 @@
     content: "";
     height: 30%;
     width: 100%;
-    background-color: vars.$color;
+    background-color: #D91941;
     opacity: .3;
     position: absolute;
     top: 70%;

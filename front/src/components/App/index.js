@@ -15,13 +15,13 @@ import Loading from './Loading'
 
 import './styles.scss';
 
-function App({ getRessources, getMentors, loading, submited }) {
-
-  // console.log(submited);
+function App({ getRessources, getMentors, loading, submited, isLogged,
+  checkIsLogged }) {
 
   useEffect(() => {
     getRessources();
     getMentors();
+    checkIsLogged();
   }, []);
 
   if (loading) {
@@ -71,10 +71,13 @@ App.propTypes = {
   getMentors: PropTypes.func.isRequired,
   getRessources: PropTypes.func.isRequired,
   submited: PropTypes.bool,
+  checkIsLogged: PropTypes.func.isRequired,
+  isLogged: PropTypes.bool,
 };
 
 App.defaultProps = {
   loading: false,
+  isLogged: false,
 };
 
 export default App;

@@ -6,6 +6,7 @@ import { findMentor } from 'src/selectors/mentor';
 
 const mapStateToProps = (state, ownProps) => ({
   mentor: findMentor(state.mentors.list, ownProps.match.params.name),
+  isLogged: state.user.logged,
 });
 
 const mapDispatchToProps = {};

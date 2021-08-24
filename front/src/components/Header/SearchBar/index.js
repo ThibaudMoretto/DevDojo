@@ -4,7 +4,7 @@ import { Form, Input, Segment } from 'semantic-ui-react';
 import './styles.scss';
 
 // NOE
-const SearchBar = ({ isLoading, searchValue, onSearchChange, onSearchSubmit, }) => {
+const SearchBar = ({ searchValue, onSearchChange, onSearchSubmit, }) => {
 
   return (
     <Segment>
