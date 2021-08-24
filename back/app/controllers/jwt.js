@@ -45,5 +45,10 @@ module.exports = {
 
             response.json( {user} );
         });
+    },
+
+    getNewToken (request, response) {
+        const refreshToken = request.body.token
+        if (refreshToken == null) return res.sendStatus(401)
     }
 }

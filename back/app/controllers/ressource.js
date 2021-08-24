@@ -58,7 +58,7 @@ module.exports = {
 
     async add(request, response) {
         try {
-            const ressource = await ressourceDatamapper.add(request.body);            
+            const ressource = await ressourceDatamapper.add(request.body);
 
             //On lie la ressource à toutes les technologies pré-requises
             for (const tech of request.body.technologiesRequired) {
@@ -91,6 +91,30 @@ module.exports = {
                 data: [],
                 error: `Désolé une erreur serveur est survenue, veuillez réessayer ultérieurement.`
             });
+        }
+    },
+
+    async update(request, response, next) {
+
+        try {
+            //Avant de mettre à jour, on vérifie que la ressource existe
+            const ressource = await ressourceDatamapper.getById(request.params.id)
+
+            if (!ressource) {
+                return next();
+            }
+
+            const updateData = request.body;
+
+            const updateRessource = await ressourceDatamapper.update({
+                ...updateData
+            }, ressource.id);
+
+            response.json({
+                data: updateRessource
+            })
+        } catch (error) {
+            console.error(`message ` + error)
         }
     },
 

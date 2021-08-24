@@ -36,7 +36,7 @@ module.exports = {
             if (!author) {
                 return next();
             }
-
+            console.log(`ID de l'auteur : ${request.params.id}`)
             const ressources = await ressourceDatamapper.getByAuthorId(request.params.id)
             if (ressources) {
                 author.ressource = ressources;
@@ -82,6 +82,29 @@ module.exports = {
                 data: [],
                 error: `Désolé une erreur serveur est survenue, veuillez réessayer ultérieurement.`
             });
+        }
+    },
+
+    async update (request, response) {
+        try {
+            //Avant de mettre à jour, on vérifie que l'auteur existe
+            const author = await authorDatamapper.getById(request.params.id)
+
+            if (!author) {
+                return next();
+            }
+
+            const updateData = request.body;
+
+            const updateAuthor = await authorDatamapper.update({
+                ...updateData
+            }, author.id);
+
+            response.json({
+                data: updateAuthor
+            })
+        } catch (error) {
+            console.error(`message ` + error)
         }
     },
 
