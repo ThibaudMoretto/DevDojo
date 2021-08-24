@@ -50,5 +50,16 @@ module.exports = {
     getNewToken (request, response) {
         const refreshToken = request.body.token
         if (refreshToken == null) return res.sendStatus(401)
+
+        //! Il faudra vérifier ici si le refresh token fait partie des refresh token autorisés à générer un nouveau token dans la BDD
+        //! Si le refresh token existe en base, alors on check s'il est valide, et si oui, on génère et on renvoie un access token
+        jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, async (error, user) => {
+            //Si il y a une erreur, on envoie un statut 403 qui signifie que le token n'est pas ou plus valide
+            if(error) return response.sendStatus(403)
+            
+            const token = jwt.sign({name : user.name}, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '15s' });
+
+            response.json( {token} );
+        });
     }
 }
