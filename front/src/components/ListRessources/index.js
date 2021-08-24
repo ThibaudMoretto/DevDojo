@@ -13,7 +13,7 @@ const ListRessources = ({ ressources, isLogged }) => {
 
       <div className="buttons">
         {isLogged && (
-          <button class="ui primary button">Ajouter une ressource</button>
+          <button className="ui primary button">Ajouter une ressource</button>
         )}
       </div>
 
