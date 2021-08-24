@@ -9,6 +9,7 @@
     width:20rem; 
     height:25rem;
     border-radius: 5%; 
+    
   }
   
   
@@ -27,22 +28,9 @@
     margin-bottom: 0.5rem;
   }
 
-  &-button {
-    padding: 0.5rem;
-    color:white;
-    background: vars.$primaryColor;
-    border: none;
-    border-radius: 5%;
-    font-size: 0.8rem;
-    
-  }
-  
-  &-button:hover {
-    
-      color:white;
-      font-size: 0.9rem;
-      box-shadow: 0 2px 2px black;
-  }
+
 }
+
+
 
 

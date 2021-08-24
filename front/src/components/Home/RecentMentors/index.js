@@ -14,7 +14,7 @@ function RecentMentors() {
         <div className="latestMentor-list">
           <div className="latestMentor-list-card">
             <div className="latestMentor-list-card-imgContainer">
-              <img src={imgMentor} alt="Mentor" />
+              <img src={imgMentor} alt="Mentor" className="latestMentor--img" />
             </div>
             <div className="latestMentor-list-card-content">
               <h3 className="latestMentor-list-card-content-title">HILGEUGEU</h3>
@@ -24,7 +24,7 @@ function RecentMentors() {
 
           <div className="latestMentor-list-card">
             <div className="latestMentor-list-card-imgContainer">
-              <img src={imgMentor2} alt="Mentor" />
+              <img src={imgMentor2} alt="Mentor"  className="latestMentor--img"/>
             </div>
             <div className="latestMentor-list-card-content">
               <h3 className="latestMentor-list-card-content-title">FROTMAN</h3>
@@ -34,7 +34,7 @@ function RecentMentors() {
 
           <div className="latestMentor-list-card">
             <div className="latestMentor-list-card-imgContainer">
-              <img src={imgMentor3} alt="Mentor" />
+              <img src={imgMentor3} alt="Mentor"  className="latestMentor--img"/>
             </div>
             <div className="latestMentor-list-card-content">
               <h3 className="latestMentor-list-card-content-title">DOROTHEE</h3>

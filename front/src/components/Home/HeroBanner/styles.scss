@@ -65,3 +65,39 @@
   box-shadow: 0 2px 2px black;
 }
 
+ /*Tablets [601px -> 1200px]*/
+@media only screen and (max-width: 1100px){
+  
+  .herobanner{
+  
+    &--container{
+    justify-content: space-evenly;
+    padding:1.5rem;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 3rem ;
+  }
+
+  &--description{
+   
+    width: 29rem;
+    margin: 1em 0;
+    line-height: 1.5rem;
+  }
+}
+
+
+
+.container--button{
+  display: flex;
+  margin-right: 3rem;
+  margin-bottom: 1rem;
+
+}
+
+
+
+}
+
+ 
+
