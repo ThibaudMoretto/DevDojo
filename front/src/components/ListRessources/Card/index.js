@@ -14,11 +14,10 @@ const Card = ({
       <img src={cardImg} alt="une image" />
       <div className="card-content">
         {/* Lien externe d'origine de la ressource sur toute la div article*/}
-        <a href={`https://www.youtube.com/watch?v=oavMtUWDBTM`} target="_blank">
+        {/* <a href={`http://localhost:8080/ressources/${slug}`} target="_blank"> */}
 
           <h2 className="card-title">{title}</h2>
           <p className="card-description">{description}</p>
-        </a>
       </div>
       {/* Lien vers la fiche ressource avec /slug */}
       <Link to={`/ressources/${slug}`} className="card-button">En savoir plus</Link>
