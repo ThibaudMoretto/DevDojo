@@ -1,12 +1,12 @@
 import React from 'react';
 import './styles.scss';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
+import Loading from 'src/components/App/Loading'
 
-function FicheRessource({ ressource, isLogged }) {
-  if (!ressource) {
-    return <Redirect to="/error" />;
-  }
+function FicheRessource({ ressource, isLogged, loading }) {
+  if (loading) {
+    return <Loading />;
+  };
 
   return (
 
@@ -47,6 +47,7 @@ function FicheRessource({ ressource, isLogged }) {
 
 FicheRessource.propTypes = {
   ressource: PropTypes.object.isRequired,
+  loading: PropTypes.bool,
 };
 
 FicheRessource.defaultProps = {
