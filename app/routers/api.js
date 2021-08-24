@@ -15,6 +15,7 @@ router.route('/ressource')
 
 router.route('/ressource/:id(\\d+)')
     .get(ressourceController.getOne)
+    .put(ressourceController.update)
     .delete(ressourceController.delete)
 
 router.route('/author')
@@ -23,6 +24,7 @@ router.route('/author')
 
 router.route('/author/:id(\\d+)')
     .get(authorController.getOne)
+    .put(authorController.update)
     .delete(authorController.delete)
 
 router.route('/technology')
@@ -40,11 +42,10 @@ router.route('/logout')
 router.route('/checkToken')
     .post(jwtController.checkToken)
 
-//ONGOING -- router.route('/token')
-//ONGOING -- .post(jwt.getNewToken)
+// router.route('/refreshToken')
+//     .post(jwtController.getNewToken)
 
 //Le dernier middleware de notre router est obligé de récupérer les requêtes qui ne se sont pas arrêtées avant.
 router.use(mainController.ressourceNotFound);
-
 
 module.exports = router;

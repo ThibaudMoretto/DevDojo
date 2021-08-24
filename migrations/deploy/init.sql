@@ -108,6 +108,7 @@ CREATE TABLE IF NOT EXISTS "author" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "name" TEXT NOT NULL,
     "description" TEXT NOT NULL,
+    "image" TEXT NOT NULL DEFAULT '',
     "github_account" TEXT,
     "youtube_account" TEXT,
     "website" TEXT,
