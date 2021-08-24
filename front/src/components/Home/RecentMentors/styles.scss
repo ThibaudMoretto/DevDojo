@@ -9,23 +9,25 @@
     }
 
     &-title {
+        font-family: 'Rampart One', cursive;
         color: vars.$primaryContent;
+        text-align: center;
         font-size: 2.2rem;
         font-weight: bold;
-        margin-bottom: 2.5rem ;
+        padding-bottom: 4.5rem;
         
     }
 
     &-container {
     padding: vars.$gutter;
-    margin-bottom: 15vh;
+    padding-bottom: 6.5rem;
     
     }
 
     &-list {
         display: flex;
         justify-content: space-around;
-        margin-bottom: vars.$gutter;
+        margin-bottom: 3.5rem;
     }
 
     &-list-card-imgContainer {
@@ -50,16 +52,18 @@
     &-btnContainer {
         display: flex;
         justify-content: center;
+
     }
 
-    &-btnContainer-btn {
-        color: white;
-        background-color: vars.$primaryColor;
-        text-transform: uppercase;
-        padding: vars.$halfGutter;
-        border-radius: 10px;
-        width: 25rem;
-        height: 3rem;
-    }
+    // &-btnContainer-btn {
+    //     color: white;
+    //     background-color: vars.$primaryColor;
+    //     text-transform: uppercase;
+    //     padding: vars.$halfGutter;
+    //     border-radius: 10px;
+    //     width: 25rem;
+    //     height: 3rem;
+    // }
+    
 
 }

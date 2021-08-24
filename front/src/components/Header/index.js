@@ -10,7 +10,8 @@ function Header() {
     <div className="header">
       <div className="header--container">
         <div className="header--logo_container">
-          <img src={logo} className="header-logo" alt="logo Dev Dojo" />
+          
+          <img src={logo} className="header-logo" alt="logo Dev Dojo"/>
         </div>
         <div className="header-nav">
           <NavBar

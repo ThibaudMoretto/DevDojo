@@ -3,6 +3,7 @@ import './styles.scss';
 import imgMentor from '../../../assets/images/ImgMentor.png'
 import imgMentor2 from '../../../assets/images/ImgMentor2.png'
 import imgMentor3 from '../../../assets/images/ImgMentor3.png'
+import { Button } from 'semantic-ui-react'
 
 
 function RecentMentors() {
@@ -44,7 +45,8 @@ function RecentMentors() {
         </div>
 
         <div className="latestMentor-btnContainer">
-          <button className="latestMentor-btnContainer-btn">Tous nos mentors</button>
+          {/* <button className="latestMentor-btnContainer-btn">Tous nos mentors</button> */}
+          <Button basic color='red'> Afficher nos derniers mentors </Button>
         </div>
 
       </div>
