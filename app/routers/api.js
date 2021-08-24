@@ -8,6 +8,10 @@ const accountController = require('../controllers/account');
 const technologyController = require('../controllers/technology');
 const mainController = require('../controllers/main');
 
+const authorSchema = require('../validations/schemas/author');
+const ressourceSchema = require('../validations/schemas/ressource');
+const validate = require('../validations/validate');
+
 
 router.route('/ressource')
 /**
@@ -31,7 +35,7 @@ router.route('/ressource')
  * @param {integer} ressource_type_id.body - ID of the type of ressource
  * @returns {Object} 200 - An object with the ID of the created ressource and the slug of the new ressource
  */
-    .post(ressourceController.add)
+    .post(validate('body', ressourceSchema), ressourceController.add)
 
 router.route('/ressource/:id(\\d+)')
 /**
@@ -40,12 +44,19 @@ router.route('/ressource/:id(\\d+)')
  * @returns {Object} 200 - An object with all the data of the ressource
  */
     .get(ressourceController.getOne)
+    
+/**
+ * Adds a ressource
+ * @route PUT /ressource/id
+ * @param
+ * @returns {Object} 200 - An object with all the data of the ressource
+ */
     .put(ressourceController.update)
     .delete(ressourceController.delete)
 
 router.route('/author')
     .get(authorController.list)
-    .post(authorController.add)
+    .post(validate('body', authorSchema), authorController.add)
 
 router.route('/author/:id(\\d+)')
     .get(authorController.getOne)
