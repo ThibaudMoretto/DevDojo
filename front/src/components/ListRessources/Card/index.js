@@ -19,8 +19,11 @@ const Card = ({
           <h2 className="card-title">{title}</h2>
           <p className="card-description">{description}</p>
       </div>
-      {/* Lien vers la fiche ressource avec /slug */}
-      <Link to={`/ressources/${slug}`} className="card-button">En savoir plus</Link>
+
+      <div className="card--conButton">
+        {/* Lien vers la fiche ressource avec /slug */}
+        <Link to={`/ressources/${slug}`} className="card-button">En savoir plus</Link>
+      </div>
     </div>
   </article>
 );

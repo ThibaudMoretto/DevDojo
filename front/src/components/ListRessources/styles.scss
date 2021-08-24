@@ -1,3 +1,5 @@
+@use '../../styles/vars';
+
 .ressources {
   display: flex;
   flex-wrap: wrap;
@@ -9,4 +11,5 @@
   font-size: 2rem;
   font-weight: bold;
   padding: 1rem 0 0 1rem;
+  font-family: vars.$titleFont;
 }

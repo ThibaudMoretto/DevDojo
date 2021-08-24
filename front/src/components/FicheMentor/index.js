@@ -24,9 +24,15 @@ function FicheMentor({ mentor, isLogged }) {
       <div className="mentor">
         <div className="mentor--name">{mentor.name}</div>
         <div className="mentor--description">{mentor.description}</div>
+
+      <div className="fontColor">
         <div className="mentor--github">Github : {mentor.github_account}</div>
         <div className="mentor--youtube">Youtube : {mentor.youtube_account}</div>
-        <div className="mentor--witter">Twitter : {mentor.twitter_account}</div>
+        <div className="mentor--website">Site Web : {mentor.website}</div>
+        <div className="mentor--twitter">Twitter : {mentor.twitter_account}</div>
+        <div className="mentor--linkedin">Linkedin : {mentor.linkedin_account}</div>
+        <div className="mentor--twitch">Twitch : {mentor.twitch_account}</div>
+      </div>
       </div>
 
       <div className="ressource-title">Ses ressources</div>
@@ -55,3 +61,5 @@ FicheMentor.defaultProps = {
 };
 
 export default FicheMentor;
+
+

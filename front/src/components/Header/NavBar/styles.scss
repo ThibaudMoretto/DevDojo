@@ -9,7 +9,7 @@
   font-size: 1.8rem;
 
   &--home,  &--source, &--mentor{
-    font-family: 'Rampart One', cursive;
+    font-family: vars.$titleFont;
     padding:5px;
     margin :0 30px ;
     font-weight: bold;
