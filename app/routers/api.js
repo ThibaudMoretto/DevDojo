@@ -46,12 +46,36 @@ router.route('/ressource/:id(\\d+)')
     .get(ressourceController.getOne)
     
 /**
- * Adds a ressource
+ * Updates a ressource
  * @route PUT /ressource/id
- * @param
+ * @param {string} title.body - Title of the ressource - eg: test
+ * @param {string} description.body - Description of the ressource
+ * @param {string} link.body - Link to the ressource
+ * @param {string} publication_date.body - Date when the ressource has been published, timestampTZ format
+ * @param {integer} duration.body - Time the ressource lasts
+ * @param {boolean} is_free.body - Indicates whether the ressource is free or not
+ * @param {integer} difficulty_id.body - ID of the difficulty
+ * @param {integer} language_id.body - ID of the language
+ * @param {integer} author_id.body - ID of the author of the ressource
+ * @param {integer} ressource_type_id.body - ID of the type of ressource
  * @returns {Object} 200 - An object with all the data of the ressource
  */
     .put(ressourceController.update)
+
+/**
+ * @route DELETE /ressource/id
+ * @param {string} title.body - Title of the ressource - eg: test
+ * @param {string} description.body - Description of the ressource
+ * @param {string} link.body - Link to the ressource
+ * @param {string} publication_date.body - Date when the ressource has been published, timestampTZ format
+ * @param {integer} duration.body - Time the ressource lasts
+ * @param {boolean} is_free.body - Indicates whether the ressource is free or not
+ * @param {integer} difficulty_id.body - ID of the difficulty
+ * @param {integer} language_id.body - ID of the language
+ * @param {integer} author_id.body - ID of the author of the ressource
+ * @param {integer} ressource_type_id.body - ID of the type of ressource
+ * @returns {Object} 200 - An object with all the data of the ressource
+ */
     .delete(ressourceController.delete)
 
 router.route('/author')
@@ -73,7 +97,7 @@ router.route('/login')
     .post(accountController.login)
 
 router.route('/logout')
-    .post(accountController.logout)
+    .delete(accountController.logout)
 
 router.route('/checkToken')
     .post(jwtController.checkToken)
