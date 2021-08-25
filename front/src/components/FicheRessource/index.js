@@ -10,10 +10,8 @@ function FicheRessource({ ressource, isLogged, loading }) {
   };
 
   return (
-
-    <div className="containers">
-
-      <div className="buttons">
+    <>
+    <div className="buttons">
         {isLogged && (
           <div>
             <button className="ui primary button">Modifier</button>
@@ -21,6 +19,8 @@ function FicheRessource({ ressource, isLogged, loading }) {
           </div>
         )}
       </div>
+    <div className="containers">
+      
 
       <div className="ressource">
       <img src={image} alt="l' image de la ressource" className="ressource--img"/>
@@ -49,6 +49,7 @@ function FicheRessource({ ressource, isLogged, loading }) {
       </div>
 
     </div>
+    </>
   )
 }
 
