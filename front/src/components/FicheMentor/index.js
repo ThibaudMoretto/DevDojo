@@ -9,8 +9,7 @@ function FicheMentor({ mentor, isLogged }) {
     return <Redirect to="/error" />;
   }
   return (
-
-    <div className="containers">
+    <>
 
       <div className="buttons">
         {isLogged && (
@@ -20,6 +19,8 @@ function FicheMentor({ mentor, isLogged }) {
           </div>
         )}
       </div>
+
+    <div className="containers">
 
       <div className="mentor">
         <div className="mentor--name">{mentor.name}</div>
@@ -49,6 +50,8 @@ function FicheMentor({ mentor, isLogged }) {
       </div>
 
     </div>
+
+    </>
   )
 };
 
