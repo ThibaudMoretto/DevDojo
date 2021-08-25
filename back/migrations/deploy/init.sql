@@ -6,6 +6,7 @@ BEGIN;
 -- Soit supprimées avant de les créer.
 -- On peut supprimer plusieurs tables en même temps
 DROP TABLE IF EXISTS
+"token",
 "role",
 "language",
 "ressource_type",
@@ -22,6 +23,16 @@ DROP TABLE IF EXISTS
 "ressource_requires_technology",
 "ressource_relates_technology",
 "technology_belongsto_category";
+
+-- -----------------------------------------------------
+-- Table "token"
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS "token" (
+    "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "token" TEXT NOT NULL UNIQUE,
+    "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    "updated_at" TIMESTAMPTZ
+);
 
 -- -----------------------------------------------------
 -- Table "role"

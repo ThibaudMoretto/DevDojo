@@ -1,5 +1,6 @@
-const jwt = require('jsonwebtoken')
-const accountDatamapper = require('../datamappers/account')
+const jwt = require('jsonwebtoken');
+const accountDatamapper = require('../datamappers/account');
+const jwtDatamapper = require('../datamappers/jwt');
 
 module.exports = {
     getAccessToken (username) {
@@ -47,19 +48,54 @@ module.exports = {
         });
     },
 
-    getNewToken (request, response) {
+    async getNewToken (request, response) {
         const refreshToken = request.body.token
         if (refreshToken == null) return res.sendStatus(401)
 
-        //! Il faudra vérifier ici si le refresh token fait partie des refresh token autorisés à générer un nouveau token dans la BDD
-        //! Si le refresh token existe en base, alors on check s'il est valide, et si oui, on génère et on renvoie un access token
-        jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, async (error, user) => {
-            //Si il y a une erreur, on envoie un statut 403 qui signifie que le token n'est pas ou plus valide
-            if(error) return response.sendStatus(403)
-            
-            const token = jwt.sign({name : user.name}, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '15s' });
+        //On vérifie que le refresh token est autorisé à demander un access token
+        const tokenExists = await jwtDatamapper.get(refreshToken);
+        if(tokenExists){
+            jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, async (error, user) => {
+                //Si il y a une erreur, on envoie un statut 403 qui signifie que le token n'est pas ou plus valide
+                if(error) return response.sendStatus(403)
+                
+                const token = jwt.sign({name : user.name}, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '15s' });
+    
+                response.json( {token} );
+            });
+        }
+    },
 
-            response.json( {token} );
-        });
+    async saveToken (token) {
+        try {
+            await jwtDatamapper.add(token);
+        } catch (error) {
+            console.trace(error);
+ 
+            //Si le token existe déjà en base (le code 23505 correspond à un doublon)
+            if (error.code === '23505') {
+                return response.status(400).json({
+                    data: [],
+                    error: `Token existant`
+                });
+            }
+
+            response.status(500).json({
+                data: [],
+                error: `Désolé une erreur serveur est survenue, veuillez réessayer ultérieurement.`
+            });
+        }
+    },
+
+    async deleteToken(request, response){
+        try {
+            await jwtDatamapper.delete(request.body.token, () => {
+                response.json({
+                    data: `Token supprimé`
+                })
+            })
+        } catch (error) {
+            console.error(`message ` + error)
+        }
     }
 }

@@ -3,6 +3,7 @@
 BEGIN;
 
 DROP TABLE IF EXISTS
+"token",
 "role",
 "language",
 "ressource_type",

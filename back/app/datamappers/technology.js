@@ -33,5 +33,4 @@ module.exports = {
         `, [id]);
         return result.rows;
     },
-
 }
