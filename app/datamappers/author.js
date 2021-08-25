@@ -24,7 +24,7 @@ module.exports = {
         const result = await client.query(`
         INSERT INTO author (name, description, image, github_account, youtube_account, website, twitter_account, linkedin_acccount, twitch_account)
         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
-        RETURNING name`,
+        RETURNING id, name`,
         [data.name, data.description, data.image, data.github_account, data.youtube_account, data.website, data.twitter_account, data.linkedin_acccount, data.language_id]
         );
 
