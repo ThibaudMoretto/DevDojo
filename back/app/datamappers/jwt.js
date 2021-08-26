@@ -1,5 +1,5 @@
 //A modifier par le client REDIS si besoin
-const client = require('../client');
+const client = require('../client-pg');
 
 module.exports = {
 

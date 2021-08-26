@@ -61,14 +61,19 @@ module.exports = {
             const ressource = await ressourceDatamapper.add(request.body);
 
             //On lie la ressource à toutes les technologies pré-requises
-            for (const tech of request.body.technologiesRequired) {
-                await ressourceDatamapper.linkToRequiredTechnology(ressource.id, tech.id)
+            //Si on a des tecehnologies required
+            if (request.body.technologiesRequired) {
+                for (const tech of request.body.technologiesRequired) {
+                    await ressourceDatamapper.linkToRequiredTechnology(ressource.id, tech.id)
+                }
             }
 
-
             //On lie la ressource à toutes les technologies relatives
-            for (const tech of request.body.technologiesRelated) {
-                await ressourceDatamapper.linkToRelatedTechnology(ressource.id, tech.id)
+            //Si on a des technologies related
+            if (request.body.technologiesRelated) {
+                for (const tech of request.body.technologiesRelated) {
+                    await ressourceDatamapper.linkToRelatedTechnology(ressource.id, tech.id)
+                }
             }
 
             response.json({

@@ -15,8 +15,8 @@ module.exports = {
                     ressource.technologiesRelated = await technologyDatamapper.getRessourceRelated(ressource.id);
                     ressource.technologiesNeeded = await technologyDatamapper.getRessourceNeeds(ressource.id)
                 }
-            }
 
+            }
             response.json({
                 data: authors
             });
