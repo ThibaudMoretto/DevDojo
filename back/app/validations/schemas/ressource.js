@@ -6,7 +6,7 @@ module.exports = Joi.object({
     title: Joi.string().required(),
     description: Joi.string().required(),
     link: Joi.string(),
-    publication_date: Joi.string().isoDate(),
+    publication_date: Joi.string(),
     duration: Joi.number().integer(),
     is_free: Joi.boolean(),
     difficulty_id: Joi.number().integer(),
