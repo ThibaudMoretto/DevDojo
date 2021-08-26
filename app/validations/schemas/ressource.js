@@ -5,16 +5,16 @@ module.exports = Joi.object({
     // A l'intérieur de celui-ci on va définir la liste des propriété possibles, et les règles pour chacune d'elles
     title: Joi.string().required(),
     description: Joi.string().required(),
-    link: Joi.string().required(),
-    publication_date: Joi.string().isoDate().required(),
-    duration: Joi.number().integer().required(),
-    is_free: Joi.boolean().required(),
-    difficulty_id: Joi.number().integer().required(),
-    language_id: Joi.number().integer().required(),
-    author_id: Joi.number().integer().required(),
-    ressource_type_id: Joi.number().integer().required(),
+    link: Joi.string(),
+    publication_date: Joi.string().isoDate(),
+    duration: Joi.number().integer(),
+    is_free: Joi.boolean(),
+    difficulty_id: Joi.number().integer(),
+    language_id: Joi.number().integer(),
+    author_id: Joi.number().integer(),
+    ressource_type_id: Joi.number().integer(),
     //Doit être un tableau contenant zéro ou plusieurs objets composé d'un champ ID qui doit être un number
-    technologiesRelated: Joi.array().items(Joi.object({id: Joi.number().integer()})).required(),
+    technologiesRelated: Joi.array().items(Joi.object({id: Joi.number().integer()})),
     technologiesRequired: Joi.array().items(Joi.object({id: Joi.number().integer()})),
     
     // Il existe une rèle de validation qui dit qu'une propriété doit être obligatoire ou non.

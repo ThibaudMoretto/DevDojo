@@ -1,5 +1,4 @@
 const accountDatamapper = require('../datamappers/account');
-const jwtDatamapper = require('../datamappers/jwt');
 const jwt = require('./jwt');
 const bcrypt = require('bcrypt');
 

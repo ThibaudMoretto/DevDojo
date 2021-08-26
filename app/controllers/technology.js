@@ -1,6 +1,5 @@
 const technologyDatamapper = require("../datamappers/technology")
 
-
 module.exports = {
 
     async list(_, response) {
