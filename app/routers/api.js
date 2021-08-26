@@ -7,7 +7,7 @@ const authorController = require('../controllers/author');
 const accountController = require('../controllers/account');
 const technologyController = require('../controllers/technology');
 const mainController = require('../controllers/main');
-const redisController = require('../controllers/redis')
+//ONGOING - const redisController = require('../controllers/redis')
 
 const authorSchema = require('../validations/schemas/author');
 const ressourceSchema = require('../validations/schemas/ressource');
@@ -181,9 +181,11 @@ router.route('/token')
  */
     .post(jwtController.getNewToken)
 
+/*ONGOING
 router.route('/redistest/:key')
     .get(redisController.getTest)
     .put(redisController.setTest)
+*/
 
 //Le dernier middleware de notre router est obligé de récupérer les requêtes qui ne se sont pas arrêtées avant.
 router.use(mainController.ressourceNotFound);
