@@ -2,10 +2,10 @@ const redisDatamapper = require('../datamappers/redis')
 
 module.exports = {
 
-    async getTest(request, response){
+    async get(request, response){
         try {
             const value = await redisDatamapper.get(request.params.key);
-            response.json({[request.params.key]: password});
+            response.json({[request.params.key]: value});
 
         } catch (error) {
             console.error(error);
@@ -13,7 +13,7 @@ module.exports = {
         }
     },
 
-    async setTest(request, response){
+    async set(request, response){
         const key = request.params.key;
         const value = request.body.value;
 
@@ -35,5 +35,4 @@ module.exports = {
 
         }
     }
-    
 }

@@ -1,6 +1,7 @@
 const authorDatamapper = require("../datamappers/author");
 const ressourceDatamapper = require('../datamappers/ressource');
-const technologyDatamapper = require('../datamappers/technology')
+const technologyDatamapper = require('../datamappers/technology');
+
 
 module.exports = {
 
