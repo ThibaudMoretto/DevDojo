@@ -9,19 +9,13 @@ const technologyController = require('../controllers/technology');
 const mainController = require('../controllers/main');
 //ONGOING -- const redisController = require('../controllers/redis')
 
+const { nameCache } = require('../services/cacheStrategy');
+
 const authorSchema = require('../validations/schemas/author');
 const ressourceSchema = require('../validations/schemas/ressource');
 const validate = require('../validations/validate');
 
-/*ONGOING
-const cache = require('express-redis-cache')({
-    host: process.env.REDIS_HOST,
-    port: process.env.REDIS_PORT,
-    auth_pass: process.env.REDIS_PASSWORD,
-    // On test le renouvellement du cache via l'expiration globale de toutes les mises en cache de l'appli toutes les 60 secondes
-    expire: 60
-});
-*/
+const cache = require('express-redis-cache')({ client: require('../client-redis') });
 
 router.route('/ressource')
 /**
@@ -29,7 +23,7 @@ router.route('/ressource')
  * @route GET /ressource
  * @returns {Object} 200 - Ressource list
  */
-    .get(ressourceController.list)
+    .get(nameCache('ressource-'), cache.route(), ressourceController.list)
 /**
  * Adds a ressource
  * @route POST /ressource

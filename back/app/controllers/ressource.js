@@ -1,7 +1,7 @@
 const ressourceDatamapper = require("../datamappers/ressource")
 const authorDatamapper = require("../datamappers/author")
 const technologyDatamapper = require("../datamappers/technology")
-
+const redis = require('../client-redis');
 
 module.exports = {
 
@@ -75,6 +75,9 @@ module.exports = {
                     await ressourceDatamapper.linkToRelatedTechnology(ressource.id, tech.id)
                 }
             }
+
+            //On supprime le cache de toutes les ressources
+            redis.del('erc:ressource-');
 
             response.json({
                 data: ressource
