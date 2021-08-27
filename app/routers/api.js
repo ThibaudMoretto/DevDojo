@@ -13,6 +13,7 @@ const authorSchema = require('../validations/schemas/author');
 const ressourceSchema = require('../validations/schemas/ressource');
 const validate = require('../validations/validate');
 
+/*ONGOING
 const cache = require('express-redis-cache')({
     host: process.env.REDIS_HOST,
     port: process.env.REDIS_PORT,
@@ -20,7 +21,7 @@ const cache = require('express-redis-cache')({
     // On test le renouvellement du cache via l'expiration globale de toutes les mises en cache de l'appli toutes les 60 secondes
     expire: 60
 });
-
+*/
 
 router.route('/ressource')
 /**
@@ -28,7 +29,7 @@ router.route('/ressource')
  * @route GET /ressource
  * @returns {Object} 200 - Ressource list
  */
-    .get(cache.route(), ressourceController.list)
+    .get(ressourceController.list)
 /**
  * Adds a ressource
  * @route POST /ressource
@@ -53,7 +54,7 @@ router.route('/ressource/:id(\\d+)')
  * @param {integer} id.request - ID of the ressource wanted
  * @returns {Object} 200 - An object with all the data of the ressource
  */
-    .get(cache.route(), ressourceController.getOne)
+    .get(ressourceController.getOne)
     
 /**
  * Updates a ressource
@@ -85,7 +86,7 @@ router.route('/author')
  * @route GET /author
  * @returns {Object} 200 - Author list
  */
-    .get(cache.route(), authorController.list)
+    .get(authorController.list)
 
 /**
  * Adds an author
@@ -110,7 +111,7 @@ router.route('/author/:id(\\d+)')
  * @param {integer} id.request - ID of the author wanted
  * @returns {Object} 200 - An object with all the data of the author
  */
-    .get(cache.route(), authorController.getOne)
+    .get(authorController.getOne)
 
 /**
  * Updates an author
