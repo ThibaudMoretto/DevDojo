@@ -124,7 +124,7 @@ CREATE TABLE IF NOT EXISTS "author" (
     "youtube_account" TEXT,
     "website" TEXT,
     "twitter_account" TEXT,
-    "linkedin_acccount" TEXT,
+    "linkedin_account" TEXT,
     "twitch_account" TEXT,
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
     "updated_at" TIMESTAMPTZ
@@ -139,7 +139,7 @@ CREATE TABLE IF NOT EXISTS "ressource" (
     "slug" TEXT UNIQUE NOT NULL,
     "description" TEXT UNIQUE NOT NULL,
     "link" TEXT UNIQUE NOT NULL,
-    "publication_date" TIMESTAMPTZ NOT NULL,
+    "publication_date" TEXT NOT NULL,
     "duration" INT,
     "is_free" BOOLEAN NOT NULL DEFAULT TRUE,
     "difficulty_id" INT NOT NULL REFERENCES "difficulty"("id"),
