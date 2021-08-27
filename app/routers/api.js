@@ -23,7 +23,7 @@ router.route('/ressource')
  * @route GET /ressource
  * @returns {Object} 200 - Ressource list
  */
-    .get(nameCache('ressource-'), cache.route(), ressourceController.list)
+    .get(ressourceController.list)
 /**
  * Adds a ressource
  * @route POST /ressource
