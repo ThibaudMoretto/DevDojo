@@ -4,7 +4,7 @@
   width: 100%;
   flex-direction: row;
   margin-bottom: $gutter;
-  background-color: #dfe6ed;
+  background-color: $backgroundDiv;
   padding: 1.3rem 1.3rem 0.4rem 1.3rem;
 
   &--container {
@@ -29,7 +29,7 @@
   }
 
   &-search {
-    background-color: #dfe6ed;
+    background-color: $backgroundDiv;
     padding: 1rem;
   }
 }

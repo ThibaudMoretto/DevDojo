@@ -37,17 +37,19 @@ function App({
     <div className="app">
       {submited && <Redirect to="/search-results" />}
 
-      <Header />
       <Switch>
         <Route exact path="/">
+          <Header displaySearchBar={false} />
           <Home />
         </Route>
 
         <Route exact path="/ressources">
+          <Header displaySearchBar />
           <ListRessources />
         </Route>
 
         <Route exact path="/mentors">
+          <Header displaySearchBar />
           <ListMentors />
         </Route>
 
@@ -55,11 +57,14 @@ function App({
           exact
           path="/ressources/:slug"
           component={FicheRessource}
-        ></Route>
+        >
+          <Header displaySearchBar />
+        </Route>
 
-        <Route exact path="/mentors/:name" component={FicheMentor}></Route>
+        <Route exact path="/mentors/:name" component={FicheMentor} />
 
         <Route exact path="/search-results">
+          <Header displaySearchBar />
           <SearchResults />
         </Route>
 
@@ -82,6 +87,7 @@ App.propTypes = {
 App.defaultProps = {
   loading: false,
   isLogged: false,
+  submited: false,
 };
 
 export default App;

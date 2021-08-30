@@ -4,7 +4,7 @@ import SearchBar from 'src/containers/SearchBar';
 import logo from 'src/assets/images/Logo.png';
 import './styles.scss';
 
-function Header() {
+function Header({ displaySearchBar }) {
   return (
     <div className="header">
       <div className="header--container">
@@ -15,9 +15,11 @@ function Header() {
           <NavBar />
         </div>
       </div>
+      {displaySearchBar && (
       <div className="header-search">
         <SearchBar />
       </div>
+      )}
     </div>
   );
 }
