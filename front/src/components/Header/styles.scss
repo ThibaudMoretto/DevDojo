@@ -1,10 +1,10 @@
-@import 'src/styles/vars';
+@use 'src/styles/vars' as v;
 
 .header {
   width: 100%;
   flex-direction: row;
-  margin-bottom: $gutter;
-  background-color: $backgroundDiv;
+  margin-bottom: v.$gutter;
+  background-color: v.$color-background;
   padding: 1.3rem 1.3rem 0.4rem 1.3rem;
 
   &--container {
@@ -29,7 +29,7 @@
   }
 
   &-search {
-    background-color: $backgroundDiv;
+    background-color: v.$color-background;
     padding: 1rem;
   }
 }
@@ -40,7 +40,7 @@
     width: 100%;
 
     flex-direction: column;
-    margin-bottom: $gutter;
+    margin-bottom: v.$gutter;
     padding: 1.3rem 1.3rem 0.4rem 1.3rem;
   }
 }

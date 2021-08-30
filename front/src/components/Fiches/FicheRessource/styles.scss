@@ -1,4 +1,4 @@
-@use 'src/styles/vars';
+@use 'src/styles/vars' as v;
 
 .containers {
   .ressource {
@@ -29,8 +29,8 @@
     &--title {
       font-size: 1.8rem;
 
-      font-family: vars.$titleFont;
-      color: vars.$primaryColor;
+      font-family: v.$titleFont;
+      color: v.$color-theme1;
       margin-bottom: 0.8rem;
     }
 
@@ -85,7 +85,7 @@
     }
 
     .font-color {
-      background-color: vars.$backgroundDiv;
+      background-color: v.$color-background;
       padding: 1.2rem;
     }
   }
@@ -101,7 +101,7 @@
 }
 
 .link {
-  background-color: vars.$backgroundDiv;
+  background-color: v.$color-background;
   padding: 1.2rem;
   border-bottom: 1.5rem;
 

@@ -1,4 +1,4 @@
-@use 'src/styles/vars';
+@use 'src/styles/vars' as v;
 @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
 
 .herobanner {
@@ -7,7 +7,7 @@
     padding: 1.5rem;
     display: flex;
     margin: 4rem;
-    background-color: #EFE8DF;
+    background-color:v.$color-background;
   }
 
   &--title {
@@ -23,7 +23,7 @@
     line-height: 1.2em;
 
     &--color {
-      color: vars.$primaryColor;
+      color: v.$color-theme1;
     }
   }
 
