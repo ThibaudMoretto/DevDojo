@@ -1,0 +1,11 @@
+@use 'sass:math';
+
+$gutter: 1.5rem;
+$halfGutter: math.div($gutter, 2);
+$color: #209cee;
+$titleFont: "Rampart One", cursive;
+
+// Hero Banner
+$primaryColor: #d91940; // notre couleur rouge primaire
+$primaryContent: #452b29; // notre couleur de texte
+$backgroundDiv: #f6f8f9; // notre gris de background div

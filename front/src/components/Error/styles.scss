@@ -1,0 +1,15 @@
+@use 'src/styles/vars';
+
+.container {
+  justify-content: center;
+  display: flex;
+  margin-bottom: 0.5rem;
+
+  &--message {
+    font-size: 15rem;
+    font-weight: bold;
+    color: black;
+    text-shadow: 20px 25px 15px grey;
+    font-family: vars.$titleFont;
+  }
+}

@@ -1,0 +1,11 @@
+@use 'reset';
+@use 'vars';
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: vars.$primaryContent;
+}
+
+img {
+  max-width: 100%;
+}
