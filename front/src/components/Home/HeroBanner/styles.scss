@@ -1,5 +1,5 @@
 @use 'src/styles/vars';
-@import url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
 
 .herobanner {
   &--container {
@@ -16,7 +16,7 @@
   }
 
   &--subTitle {
-    font-family: "Rampart One", cursive;
+    font-family: 'Rampart One', cursive;
     font-size: 2rem;
     font-weight: bolder;
     line-height: 1.2em;

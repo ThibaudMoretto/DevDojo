@@ -1,19 +1,19 @@
-import React, { useEffect } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
-import PropTypes from "prop-types";
+import React, { useEffect } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-import Home from "src/containers/Home";
-import ListMentors from "src/containers/Lists/ListMentors";
-import ListRessources from "src/containers/Lists/ListRessources";
-import FicheRessource from "src/containers/Fiches/FicheRessource";
-import FicheMentor from "src/containers/Fiches/FicheMentor";
-import SearchResults from "src/components/SearchResults";
-import Footer from "src/components/Footer";
-import Error from "src/components/Error";
-import Header from "src/components/Header";
-import Loading from "./Loading";
+import Home from 'src/containers/Home';
+import ListMentors from 'src/containers/Lists/ListMentors';
+import ListRessources from 'src/containers/Lists/ListRessources';
+import FicheRessource from 'src/containers/Fiches/FicheRessource';
+import FicheMentor from 'src/containers/Fiches/FicheMentor';
+import SearchResults from 'src/components/SearchResults';
+import Footer from 'src/components/Footer';
+import Error from 'src/components/Error';
+import Header from 'src/components/Header';
+import Loading from './Loading';
 
-import "./styles.scss";
+import './styles.scss';
 
 function App({
   getRessources,

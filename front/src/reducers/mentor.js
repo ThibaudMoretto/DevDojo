@@ -2,23 +2,23 @@ import {
   CHANGE_VALUE_MENTOR,
   INITIAL_VALUE,
   MENTOR_SUCCESS,
-} from "src/actions/mentors";
+} from 'src/actions/mentors';
 
 export const initialState = {
   id: Number(),
-  name: "",
-  description: "",
-  image: "",
-  github: "",
-  linkedin: "",
-  twitch: "",
-  twitter: "",
-  website: "",
-  youtube: "",
+  name: '',
+  description: '',
+  image: '',
+  github: '',
+  linkedin: '',
+  twitch: '',
+  twitter: '',
+  website: '',
+  youtube: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
-  console.log("test", action)
+  console.log('test', action);
   switch (action.type) {
     case INITIAL_VALUE: {
       return {
@@ -45,15 +45,15 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         id: Number(),
-        name: "",
-        description: "",
-        image: "",
-        github: "",
-        linkedin: "",
-        twitch: "",
-        twitter: "",
-        website: "",
-        youtube: "",
+        name: '',
+        description: '',
+        image: '',
+        github: '',
+        linkedin: '',
+        twitch: '',
+        twitter: '',
+        website: '',
+        youtube: '',
       };
     default:
       return state;

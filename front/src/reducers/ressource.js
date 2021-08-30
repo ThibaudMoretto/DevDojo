@@ -2,20 +2,20 @@ import {
   CHANGE_VALUE_RESSOURCE,
   INITIAL_VALUE,
   RESSOURCE_SUCCESS,
-} from "src/actions/ressources";
+} from 'src/actions/ressources';
 
 export const initialState = {
   id: Number(),
-  title: "",
-  description: "",
+  title: '',
+  description: '',
   duration: Number(),
   free: Boolean(),
   author: Number(),
   language: Number(),
   type: Number(),
   difficulty: Number(),
-  link: "",
-  publicationDate: "",
+  link: '',
+  publicationDate: '',
   technologies: Array(),
 };
 
@@ -49,16 +49,16 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         id: Number(),
-        title: "",
-        description: "",
+        title: '',
+        description: '',
         duration: Number(),
         free: Boolean(),
         author: Number(),
         language: Number(),
         type: Number(),
         difficulty: Number(),
-        link: "",
-        publicationDate: "",
+        link: '',
+        publicationDate: '',
         technologies: Array(),
       };
     default:

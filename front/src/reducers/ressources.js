@@ -5,13 +5,13 @@ export const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case "GET_RESSOURCES": {
+    case 'GET_RESSOURCES': {
       return {
         ...state,
         isLoading: true,
       };
     }
-    case "GET_RESSOURCES_SUCCESS": {
+    case 'GET_RESSOURCES_SUCCESS': {
       return {
         ...state,
         list: action.ressources,

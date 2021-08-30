@@ -1,9 +1,9 @@
-import { connect } from "react-redux";
-import App from "src/components/App";
+import { connect } from 'react-redux';
+import App from 'src/components/App';
 
-import { createGetMentorsAction } from "src/actions/mentors";
-import { createGetRessourcesAction } from "src/actions/ressources";
-import { checkToken } from "src/actions/user";
+import { createGetMentorsAction } from 'src/actions/mentors';
+import { createGetRessourcesAction } from 'src/actions/ressources';
+import { checkToken } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
   loading: state.ressources.isLoading,

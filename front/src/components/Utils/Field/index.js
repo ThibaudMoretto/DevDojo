@@ -1,7 +1,7 @@
-import React from "react";
-import { Input } from "semantic-ui-react";
+import React from 'react';
+import { Input } from 'semantic-ui-react';
 
-import "./styles.scss";
+import './styles.scss';
 
 const Field = ({ value, type, name, placeholder, onChange }) => {
   const handleChange = (evt) => {
@@ -35,8 +35,8 @@ const Field = ({ value, type, name, placeholder, onChange }) => {
 };
 
 Field.defaultProps = {
-  value: "",
-  type: "text",
+  value: '',
+  type: 'text',
 };
 
 export default Field;

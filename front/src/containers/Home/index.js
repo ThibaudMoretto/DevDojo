@@ -1,7 +1,7 @@
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
-import Home from "src/components/Home";
-import { recentData } from "src/selectors/recentData";
+import Home from 'src/components/Home';
+import { recentData } from 'src/selectors/recentData';
 
 const mapStateToProps = (state) => ({
   ressources: recentData(state.ressources.list),

@@ -1,12 +1,12 @@
-import { connect } from "react-redux";
-import MentorForm from "src/components/Utils/MentorForm";
+import { connect } from 'react-redux';
+import MentorForm from 'src/components/Utils/MentorForm';
 import {
   addMentor,
   editMentor,
   changeValue,
   mentorSuccess,
   initialValue,
-} from "src/actions/mentors";
+} from 'src/actions/mentors';
 
 const mapStateToProps = (state) => ({
   id: state.mentor.id,

@@ -1,12 +1,12 @@
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
-import ListRessources from "src/components/Lists/ListRessources";
-import { filterRessources } from "src/selectors/search";
+import ListRessources from 'src/components/Lists/ListRessources';
+import { filterRessources } from 'src/selectors/search';
 
 const mapStateToProps = (state) => ({
   ressources: filterRessources(
     state.ressources.list,
-    state.searchBar.submitValue
+    state.searchBar.submitValue,
   ),
   isLogged: state.user.logged,
 });

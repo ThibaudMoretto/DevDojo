@@ -1,7 +1,7 @@
-import React from "react";
-import "./styles.scss";
-import Card from "src/components/Lists/ListRessources/Card";
-import { Button } from "semantic-ui-react";
+import React from 'react';
+import './styles.scss';
+import Card from 'src/components/Lists/ListRessources/Card';
+import { Button } from 'semantic-ui-react';
 
 function RecentRessources({ ressources }) {
   return (

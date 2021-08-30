@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import { Button, Modal } from "semantic-ui-react";
-import Field from "src/components/Utils/Field";
+import React, { useEffect } from 'react';
+import { Button, Modal } from 'semantic-ui-react';
+import Field from 'src/components/Utils/Field';
 
-import "./styles.scss";
+import './styles.scss';
 
 const mentorForm = ({
   mentor,
@@ -27,15 +27,13 @@ const mentorForm = ({
   handleAddSubmit,
   handleEditSubmit,
 }) => {
-  console.log("fiche mentor:", mentor);
+  console.log('fiche mentor:', mentor);
 
   const [open, setOpen] = React.useState(false);
 
   useEffect(() => {
     resetInitial();
   }, []);
-
- 
 
   const handleSubmit = () => {
     // event.preventDefault();

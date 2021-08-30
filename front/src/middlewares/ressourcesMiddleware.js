@@ -1,5 +1,5 @@
-import axios from "axios";
-import api from "./utils/api";
+import axios from 'axios';
+import api from './utils/api';
 import {
   createGetRessourcesAction,
   createGetRessourcesSuccessAction,
@@ -8,13 +8,13 @@ import {
   EDIT_RESSOURCE,
   DELETE_RESSOURCE,
   ressourceSuccess,
-} from "src/actions/ressources";
+} from 'src/actions/ressources';
 
 const ressourcesMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_RESSOURCES:
       axios.get(`${process.env.API_URL}/ressource`).then((response) => {
-        console.log("Réponse API ressources list :", response.data.data);
+        console.log('Réponse API ressources list :', response.data.data);
         store.dispatch(createGetRessourcesSuccessAction(response.data.data));
       });
       next(action);
@@ -24,10 +24,10 @@ const ressourcesMiddleware = (store) => (next) => (action) => {
       const state = store.getState();
 
       api({
-        method: "POST",
-        url: "/ressource",
+        method: 'POST',
+        url: '/ressource',
         headers: {
-          "content-type": "application/json",
+          'content-type': 'application/json',
         },
         data: {
           title: state.ressource.title,
@@ -46,7 +46,7 @@ const ressourcesMiddleware = (store) => (next) => (action) => {
         },
       })
         .then((response) => {
-          console.log("Une ressource a été ajouté:", response.data);
+          console.log('Une ressource a été ajouté:', response.data);
           store.dispatch(ressourceSuccess());
           store.dispatch(createGetRessourcesAction());
         })
@@ -58,10 +58,10 @@ const ressourcesMiddleware = (store) => (next) => (action) => {
       const state = store.getState();
 
       api({
-        method: "PUT",
+        method: 'PUT',
         url: `/ressource/${state.ressource.id}`,
         headers: {
-          "content-type": "application/json",
+          'content-type': 'application/json',
         },
         data: {
           // "id": state.ressource.id,
@@ -81,7 +81,7 @@ const ressourcesMiddleware = (store) => (next) => (action) => {
         },
       })
         .then((response) => {
-          console.log("Une ressource a été modifié:", response.data);
+          console.log('Une ressource a été modifié:', response.data);
           store.dispatch(ressourceSuccess());
           store.dispatch(createGetRessourcesAction());
         })
@@ -93,14 +93,14 @@ const ressourcesMiddleware = (store) => (next) => (action) => {
       const state = store.getState();
 
       api({
-        method: "DELETE",
+        method: 'DELETE',
         url: `/ressource/${state.ressource.id}`,
         headers: {
-          "content-type": "application/json",
+          'content-type': 'application/json',
         },
       })
         .then((response) => {
-          console.log("Une ressource a été supprimé:", response.data);
+          console.log('Une ressource a été supprimé:', response.data);
           store.dispatch(ressourceSuccess());
           store.dispatch(createGetRessourcesAction());
         })

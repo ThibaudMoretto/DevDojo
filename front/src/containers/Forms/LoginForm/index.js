@@ -1,6 +1,6 @@
-import { connect } from "react-redux";
-import LoginForm from "src/components/Footer/LoginForm";
-import { changeValue, login, logout } from "src/actions/user";
+import { connect } from 'react-redux';
+import LoginForm from 'src/components/Footer/LoginForm';
+import { changeValue, login, logout } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
   email: state.user.email,

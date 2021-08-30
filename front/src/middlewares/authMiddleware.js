@@ -1,5 +1,5 @@
-import { LOGIN, saveUser, CHECK_TOKEN } from "src/actions/user";
-import api from "./utils/api";
+import { LOGIN, saveUser, CHECK_TOKEN } from 'src/actions/user';
+import api from './utils/api';
 
 const auth = (store) => (next) => (action) => {
   switch (action.type) {
@@ -7,10 +7,10 @@ const auth = (store) => (next) => (action) => {
       const state = store.getState();
 
       api({
-        method: "POST",
-        url: "/login",
+        method: 'POST',
+        url: '/login',
         headers: {
-          "content-type": "application/json",
+          'content-type': 'application/json',
         },
         data: {
           email: state.user.email,
@@ -21,7 +21,7 @@ const auth = (store) => (next) => (action) => {
           // console.log('AuthMiddleware :', response.data.data)
           // console.log('AuthMiddleware token :', response.data.data.token)
 
-          localStorage.setItem("token", response.data.data.token);
+          localStorage.setItem('token', response.data.data.token);
 
           api.defaults.headers.common.authorization = `Bearer ${response.data.data.token}`;
 
@@ -33,15 +33,15 @@ const auth = (store) => (next) => (action) => {
       break;
     }
     case CHECK_TOKEN: {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem('token');
       // console.log(token);
 
       if (token) {
         api({
-          method: "POST",
-          url: "/checkToken",
+          method: 'POST',
+          url: '/checkToken',
           headers: {
-            "content-type": "application/x-www-form-urlencoded",
+            'content-type': 'application/x-www-form-urlencoded',
             authorization: `Bearer ${token}`,
           },
         })

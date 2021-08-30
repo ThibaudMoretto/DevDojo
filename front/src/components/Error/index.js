@@ -1,6 +1,6 @@
-import React from "react";
-import "./styles.scss";
-import image from "../../assets/images/404picture.png";
+import React from 'react';
+import './styles.scss';
+import image from '../../assets/images/404picture.png';
 
 function Error() {
   return (

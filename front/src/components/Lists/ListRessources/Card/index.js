@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./styles.scss";
-import cardImg from "src/assets/images/Card_Img.png";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './styles.scss';
+import cardImg from 'src/assets/images/Card_Img.png';
 
 const Card = ({ title, description, slug }) => (
   <article className="card">
