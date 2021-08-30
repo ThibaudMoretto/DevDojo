@@ -1,6 +1,7 @@
 const Joi = require('joi');
 
-//default(null) demandés par le front
+//default(null) demandés par le frontempty
+
 
 // Afin de créer les règles de validation on doit créer un objet de schéma Joi.
 module.exports = Joi.object({
@@ -10,7 +11,7 @@ module.exports = Joi.object({
     link: Joi.string(),
     publication_date: Joi.string(),
     duration: Joi.number().integer().default(null),
-    is_free: Joi.boolean(),
+    is_free: Joi.boolean().default(true),
     difficulty_id: Joi.number().integer().default(null),
     language_id: Joi.number().integer().default(null),
     author_id: Joi.number().integer().default(null),
