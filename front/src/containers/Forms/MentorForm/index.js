@@ -5,7 +5,7 @@ import {
   editMentor,
   changeValue,
   mentorSuccess,
-  initialValue,
+  initialValueMentor,
 } from 'src/actions/mentors';
 
 const mapStateToProps = (state) => ({
@@ -23,7 +23,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   initialValue: (value) => {
-    dispatch(initialValue(value));
+    dispatch(initialValueMentor(value));
   },
 
   changeValue: (value, key) => {

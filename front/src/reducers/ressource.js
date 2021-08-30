@@ -5,18 +5,18 @@ import {
 } from 'src/actions/ressources';
 
 export const initialState = {
-  id: Number(),
+  id: '',
   title: '',
   description: '',
-  duration: Number(),
-  free: Boolean(),
-  author: Number(),
-  language: Number(),
-  type: Number(),
-  difficulty: Number(),
+  duration: null,
+  free: true,
+  author: null,
+  language: null,
+  type: null,
+  difficulty: null,
   link: '',
   publicationDate: '',
-  technologies: Array(),
+  technologies: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -31,7 +31,6 @@ const reducer = (state = initialState, action = {}) => {
         free: action.value.is_free,
         difficulty: action.value.difficulty_id,
         language: action.value.language_id,
-        free: action.value.is_free,
         author: action.value.author_id,
         publicationDate: action.value.publication_date,
         type: action.value.ressource_type_id,
@@ -48,18 +47,18 @@ const reducer = (state = initialState, action = {}) => {
     case RESSOURCE_SUCCESS:
       return {
         ...state,
-        id: Number(),
+        id: '',
         title: '',
         description: '',
-        duration: Number(),
-        free: Boolean(),
-        author: Number(),
-        language: Number(),
-        type: Number(),
-        difficulty: Number(),
+        duration: null,
+        free: true,
+        author: null,
+        language: null,
+        type: null,
+        difficulty: null,
         link: '',
         publicationDate: '',
-        technologies: Array(),
+        technologies: [],
       };
     default:
       return state;

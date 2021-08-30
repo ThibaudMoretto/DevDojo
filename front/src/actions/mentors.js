@@ -1,25 +1,25 @@
-export const INITIAL_VALUE = 'INITIAL_VALUE';
+export const INITIAL_VALUE_MENTOR = 'INITIAL_VALUE_MENTOR';
 // export const INITIAL_VALUE_MENTOR = "INITIAL_VALUE_MENTOR";
 export const CHANGE_VALUE_MENTOR = 'CHANGE_VALUE_MENTOR';
 
-//GET
+// GET
 export const GET_MENTORS = 'GET_MENTORS';
 export const GET_MENTORS_SUCCESS = 'GET_MENTORS_SUCCESS';
 
 // ADD
 export const ADD_MENTOR = 'ADD_MENTOR';
 
-//EDIT
+// EDIT
 export const EDIT_MENTOR = 'EDIT_MENTOR';
 
-//SUCESS ==> reset
+// SUCESS ==> reset
 export const MENTOR_SUCCESS = 'MENTOR_SUCCESS';
 
-//DELETE
+// DELETE
 export const DELETE_MENTOR = 'DELETE_MENTOR'; // ici >>>>
 
-export const initialValue = (value) => ({
-  type: INITIAL_VALUE,
+export const initialValueMentor = (value) => ({
+  type: INITIAL_VALUE_MENTOR,
   value,
 });
 

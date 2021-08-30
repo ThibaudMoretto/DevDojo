@@ -1,6 +1,6 @@
 import {
   CHANGE_VALUE_MENTOR,
-  INITIAL_VALUE,
+  INITIAL_VALUE_MENTOR,
   MENTOR_SUCCESS,
 } from 'src/actions/mentors';
 
@@ -18,9 +18,8 @@ export const initialState = {
 };
 
 const reducer = (state = initialState, action = {}) => {
-  console.log('test', action);
   switch (action.type) {
-    case INITIAL_VALUE: {
+    case 'INITIAL_VALUE_MENTOR': {
       return {
         ...state,
         id: action.value.id,

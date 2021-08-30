@@ -51,9 +51,6 @@ const mentorsMiddleware = (store) => (next) => (action) => {
 
     case EDIT_MENTOR: {
       const state = store.getState();
-
-      console.log('ressource id:', state.ressource.id);
-
       api({
         method: 'PUT',
         url: `/author/${state.mentor.id}`,

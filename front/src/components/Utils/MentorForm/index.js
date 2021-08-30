@@ -27,8 +27,6 @@ const mentorForm = ({
   handleAddSubmit,
   handleEditSubmit,
 }) => {
-  console.log('fiche mentor:', mentor);
-
   const [open, setOpen] = React.useState(false);
 
   useEffect(() => {
@@ -47,7 +45,7 @@ const mentorForm = ({
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         open={open}
-        trigger={
+        trigger={(
           <Button
             className="button"
             color="green"
@@ -61,7 +59,7 @@ const mentorForm = ({
           >
             {buttonMessage}
           </Button>
-        }
+        )}
       >
         <Modal.Header>{headerMessage}</Modal.Header>
 

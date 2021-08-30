@@ -63,7 +63,7 @@ const RessourceForm = ({
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         open={open}
-        trigger={
+        trigger={(
           <Button
             className="button"
             color="green"
@@ -77,7 +77,7 @@ const RessourceForm = ({
           >
             {buttonMessage}
           </Button>
-        }
+        )}
       >
         <Modal.Header>{headerMessage}</Modal.Header>
 
@@ -156,7 +156,7 @@ const RessourceForm = ({
 
               <DropdownUnique
                 placeholder="Language"
-                name="languages"
+                name="language"
                 onChange={changeValue}
                 value={language}
                 options={datas.languages}

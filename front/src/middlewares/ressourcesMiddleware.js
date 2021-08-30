@@ -1,5 +1,4 @@
 import axios from 'axios';
-import api from './utils/api';
 import {
   createGetRessourcesAction,
   createGetRessourcesSuccessAction,
@@ -9,6 +8,7 @@ import {
   DELETE_RESSOURCE,
   ressourceSuccess,
 } from 'src/actions/ressources';
+import api from './utils/api';
 
 const ressourcesMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -40,9 +40,7 @@ const ressourcesMiddleware = (store) => (next) => (action) => {
           language_id: state.ressource.language,
           author_id: state.ressource.author,
           ressource_type_id: state.ressource.type,
-          technologiesRelated: state.ressource.technologies.map((id) => ({
-            id,
-          })),
+          technologiesRelated: state.ressource.technologies.map((id) => ({ id })),
         },
       })
         .then((response) => {
@@ -57,6 +55,10 @@ const ressourcesMiddleware = (store) => (next) => (action) => {
     case EDIT_RESSOURCE: {
       const state = store.getState();
 
+      const technologies = state.ressource.technologies.map((id) => ({ id }));
+
+      console.log('ressource technologies edit :', technologies);
+
       api({
         method: 'PUT',
         url: `/ressource/${state.ressource.id}`,
@@ -64,7 +66,6 @@ const ressourcesMiddleware = (store) => (next) => (action) => {
           'content-type': 'application/json',
         },
         data: {
-          // "id": state.ressource.id,
           title: state.ressource.title,
           description: state.ressource.description,
           link: state.ressource.link,
@@ -75,9 +76,7 @@ const ressourcesMiddleware = (store) => (next) => (action) => {
           language_id: state.ressource.language,
           author_id: state.ressource.author,
           ressource_type_id: state.ressource.type,
-          technologiesRelated: state.ressource.technologies.map((id) => ({
-            id,
-          })),
+          technologiesRelated: state.ressource.technologies.map((id) => ({ id })),
         },
       })
         .then((response) => {

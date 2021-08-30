@@ -20,7 +20,6 @@ const auth = (store) => (next) => (action) => {
         .then((response) => {
           // console.log('AuthMiddleware :', response.data.data)
           // console.log('AuthMiddleware token :', response.data.data.token)
-
           localStorage.setItem('token', response.data.data.token);
 
           api.defaults.headers.common.authorization = `Bearer ${response.data.data.token}`;
