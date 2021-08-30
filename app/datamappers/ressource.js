@@ -62,5 +62,5 @@ module.exports = {
         INSERT INTO ressource_relates_technology (ressource_id, technology_id)
         VALUES ($1, $2)`,
             [ressource_id, technology_id])
-    },
+    }
 }

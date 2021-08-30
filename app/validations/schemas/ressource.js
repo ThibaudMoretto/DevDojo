@@ -1,5 +1,7 @@
 const Joi = require('joi');
 
+//default(null) demandés par le front
+
 // Afin de créer les règles de validation on doit créer un objet de schéma Joi.
 module.exports = Joi.object({
     // A l'intérieur de celui-ci on va définir la liste des propriété possibles, et les règles pour chacune d'elles
@@ -7,12 +9,12 @@ module.exports = Joi.object({
     description: Joi.string().required(),
     link: Joi.string(),
     publication_date: Joi.string(),
-    duration: Joi.number().integer(),
+    duration: Joi.number().integer().default(null),
     is_free: Joi.boolean(),
-    difficulty_id: Joi.number().integer(),
-    language_id: Joi.number().integer(),
-    author_id: Joi.number().integer(),
-    ressource_type_id: Joi.number().integer(),
+    difficulty_id: Joi.number().integer().default(null),
+    language_id: Joi.number().integer().default(null),
+    author_id: Joi.number().integer().default(null),
+    ressource_type_id: Joi.number().integer().default(null),
     //Doit être un tableau contenant zéro ou plusieurs objets composé d'un champ ID qui doit être un number
     technologiesRelated: Joi.array().items(Joi.object({id: Joi.number().integer()})),
     technologiesRequired: Joi.array().items(Joi.object({id: Joi.number().integer()})),

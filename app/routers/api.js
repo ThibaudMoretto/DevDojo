@@ -7,7 +7,6 @@ const authorController = require('../controllers/author');
 const accountController = require('../controllers/account');
 const technologyController = require('../controllers/technology');
 const mainController = require('../controllers/main');
-//ONGOING -- const redisController = require('../controllers/redis')
 
 const { nameCache } = require('../services/cacheStrategy');
 
@@ -184,12 +183,6 @@ router.route('/token')
  * @returns {Object} 200 - An object with the new access token
  */
     .post(jwtController.getNewToken)
-
-/* ON GOING
-router.route('/redistest/:key')
-    .get(redisController.get)
-    .put(redisController.set)
-*/
 
 //Le dernier middleware de notre router est obligé de récupérer les requêtes qui ne se sont pas arrêtées avant.
 router.use(mainController.ressourceNotFound);

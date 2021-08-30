@@ -1,6 +1,8 @@
-const ressourceDatamapper = require("../datamappers/ressource")
-const authorDatamapper = require("../datamappers/author")
-const technologyDatamapper = require("../datamappers/technology")
+const ressourceDatamapper = require("../datamappers/ressource");
+const ressourceRelatesTechnologyDatamapper = require("../datamappers/ressource_relates_technology");
+const ressourceRequiresTechnologyDatamapper = require("../datamappers/ressource_requires_technology");
+const authorDatamapper = require("../datamappers/author");
+const technologyDatamapper = require("../datamappers/technology");
 const redis = require('../client-redis');
 
 module.exports = {
@@ -117,6 +119,60 @@ module.exports = {
             const updateRessource = await ressourceDatamapper.update({
                 ...updateData
             }, ressource.id);
+
+            //On lie la ressource à toutes les technologies pré-requises
+            //Si on a des technologies required à modifier
+            if (updateData.technologiesRelated) {
+                const updatedTech = [];
+                //Pour toutes les techs à mettre à jour, on va vérifier si la relation ressource/tech existe en base. Sinon, on la crée.
+                for (const tech of updateData.technologiesRelated) {
+                    const relationExists = await ressourceRelatesTechnologyDatamapper.getOne(ressource.id, tech.id);
+                    
+                    //Si la relation n'existe pas
+                    if(!relationExists){
+                        ressourceDatamapper.linkToRelatedTechnology(ressource.id, tech.id)
+                    }
+
+                    //On construit le tableau d'ID dont on va se servir pour comparer les relations en base et les technologies dans le jeu de données à mettre à jour
+                    updatedTech.push(parseInt(tech.id));
+                }
+
+                //Pour toutes les relations en base, on va vérifier qu'elle font partie des data à mettre à jour. Sinon on supprime.
+                const relations = await ressourceRelatesTechnologyDatamapper.getAllRelationsByRessource(ressource.id);
+
+                for (const relation of relations) {
+                    if(!updatedTech.includes(relation.technology_id)){
+                        ressourceRelatesTechnologyDatamapper.delete(ressource.id, relation.technology_id)
+                    }
+                }
+                
+            }
+
+            if (updateData.technologiesRequired) {
+                const updatedTech = [];
+                //Pour toutes les techs à mettre à jour, on va vérifier si la relation ressource/tech existe en base. Sinon, on la crée.
+                for (const tech of updateData.technologiesRequired) {
+                    const relationExists = await ressourceRequiresTechnologyDatamapper.getOne(ressource.id, tech.id);
+                    
+                    //Si la relation n'existe pas
+                    if(!relationExists){
+                        ressourceDatamapper.linkToRequiredTechnology(ressource.id, tech.id)
+                    }
+
+                    //On construit le tableau d'ID dont on va se servir pour comparer les relations en base et les technologies dans le jeu de données à mettre à jour
+                    updatedTech.push(parseInt(tech.id));
+                }
+
+                //Pour toutes les relations en base, on va vérifier qu'elle font partie des data à mettre à jour. Sinon on supprime.
+                const relations = await ressourceRequiresTechnologyDatamapper.getAllRequirementsByRessource(ressource.id);
+
+                for (const relation of relations) {
+                    if(!updatedTech.includes(relation.technology_id)){
+                        ressourceRequiresTechnologyDatamapper.delete(ressource.id, relation.technology_id)
+                    }
+                }
+                
+            }
 
             //On supprime le cache de la ressource mise à jour, ainsi que le cache de toutes les ressources
             redis.del('erc:ressource-' + ressource.id);
