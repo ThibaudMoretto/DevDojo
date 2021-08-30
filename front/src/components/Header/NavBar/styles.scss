@@ -14,12 +14,13 @@
     padding: 0.4rem;
     margin: 0 1.9rem;
     font-weight: bold;
+    
   }
 
   &-link {
     padding: v.$halfGutter v.$gutter;
     transition: color 0.3s, box-shadow 0.4s;
-    color: black;
+    color: v.$color-theme2;
 
     &:hover {
       color: v.$color-theme1;
@@ -48,12 +49,13 @@
       padding: 0.4rem;
       margin: 0 1.9rem;
       font-weight: bold;
+      color:v.$color-theme2;
     }
 
     &-link {
       padding: v.$halfGutter v.$gutter;
       transition: color 0.3s, box-shadow 0.4s;
-      color: black;
+      color: v.$color-theme2;
 
       &:hover {
         color: v.$color-theme1;

@@ -96,7 +96,7 @@ LoginForm.propTypes = {
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   isLogged: PropTypes.bool,
-  loggedMessage: PropTypes.string,
+  // loggedMessage: PropTypes.string,
   changeField: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,
   handleLogout: PropTypes.func.isRequired,
@@ -104,7 +104,7 @@ LoginForm.propTypes = {
 
 LoginForm.defaultProps = {
   isLogged: false,
-  loggedMessage: 'Connecté',
+  // loggedMessage: 'Connecté',
 };
 
 export default LoginForm;

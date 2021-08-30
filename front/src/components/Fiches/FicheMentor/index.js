@@ -5,6 +5,7 @@ import './styles.scss';
 import { Redirect } from 'react-router-dom';
 import MentorForm from 'src/containers/Forms/MentorForm';
 import MentorDelete from 'src/containers/MentorDelete';
+import image from 'src/assets/images/mentor.jpg';
 
 function FicheMentor({ mentor, isLogged }) {
   console.log('console log dans fiche mentor', mentor);
@@ -13,59 +14,64 @@ function FicheMentor({ mentor, isLogged }) {
   }
 
   return (
-    <div className="containers">
+    <>
       <div className="buttons">
         {!isLogged && (
-          <div>
-            <MentorForm
-              mentor={mentor}
-              buttonMessage="Modifier"
-              headerMessage="Modifier les informations du mentor"
-              isEdit
-            />
-            <MentorDelete
-              mentor={mentor}
-              buttonMessage="Supprimer"
-              headerMessage="Supprimer le mentor"
-              isEdit
-            />
-          </div>
+        <div className="buttons--c">
+          <MentorForm
+            mentor={mentor}
+            buttonMessage="Modifier"
+            headerMessage="Modifier les informations du mentor"
+            isEdit
+          />
+          <MentorDelete
+            mentor={mentor}
+            buttonMessage="Supprimer"
+            headerMessage="Supprimer le mentor"
+            isEdit
+          />
+        </div>
         )}
       </div>
+      <div className="containers">
 
-      <div className="mentor">
-        <div className="mentor--name">{mentor.name}</div>
-        <div className="mentor--description">{mentor.description}</div>
+        <div className="mentor">
+          <img src={image} alt="une de image mentor" className="mentor--img-mentor" />
 
-        <div className="fontColor">
-          <div className="mentor--github">Github : {mentor.github_account}</div>
-          <div className="mentor--youtube">
-            Youtube : {mentor.youtube_account}
+          <div className="mentor--information">
+            <div className="mentor--name">{mentor.name}</div>
+            <div className="mentor--description">{mentor.description}</div>
+            <div className="fontColor">
+              <div className="mentor--github">Github : {mentor.github_account}</div>
+              <div className="mentor--youtube">
+                Youtube : {mentor.youtube_account}
+              </div>
+              <div className="mentor--website">Site Web : {mentor.website}</div>
+              <div className="mentor--twitter">
+                Twitter : {mentor.twitter_account}
+              </div>
+              <div className="mentor--linkedin">
+                Linkedin : {mentor.linkedin_account}
+              </div>
+              <div className="mentor--twitch">Twitch : {mentor.twitch_account}</div>
+            </div>
           </div>
-          <div className="mentor--website">Site Web : {mentor.website}</div>
-          <div className="mentor--twitter">
-            Twitter : {mentor.twitter_account}
-          </div>
-          <div className="mentor--linkedin">
-            Linkedin : {mentor.linkedin_account}
-          </div>
-          <div className="mentor--twitch">Twitch : {mentor.twitch_account}</div>
+        </div>
+
+        <div className="ressource-title">Ses ressources</div>
+
+        <div className="ressources">
+          {mentor.ressource.map((ress) => (
+            <Card
+              key={ress.id}
+              name={ress.title}
+              description={ress.description}
+              slug={ress.slug}
+            />
+          ))}
         </div>
       </div>
-
-      <div className="ressource-title">Ses ressources</div>
-
-      <div className="ressources">
-        {mentor.ressource.map((ress) => (
-          <Card
-            key={ress.id}
-            name={ress.title}
-            description={ress.description}
-            slug={ress.slug}
-          />
-        ))}
-      </div>
-    </div>
+    </>
   );
 }
 

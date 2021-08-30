@@ -24,13 +24,13 @@ function FicheRessource({ ressource, isLogged, loading }) {
               ressource={ressource}
               buttonMessage="Modifier"
               headerMessage="Modifier la ressource"
-              isEdit={true}
+              isEdit
             />
             <RessourceDelete
               ressource={ressource}
               buttonMessage="Supprimer"
               headerMessage="Supprimer la ressource"
-              isEdit={true}
+              isEdit
             />
           </div>
         )}

@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.scss';
 import Card from 'src/components/Lists/ListRessources/Card';
 import { Button } from 'semantic-ui-react';
+// import PropTypes from 'prop-Types';
 
 function RecentRessources({ ressources }) {
   return (
@@ -23,5 +24,9 @@ function RecentRessources({ ressources }) {
     </div>
   );
 }
+
+// RecentRessources.propTypes ={
+//   ressources:PropTypes.
+// }
 
 export default RecentRessources;

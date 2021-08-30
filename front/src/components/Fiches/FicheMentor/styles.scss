@@ -3,16 +3,26 @@
 .containers {
   display: flex;
   flex-direction: column;
-  margin: 1.5rem 0;
-  padding: 0.5rem;
   border-radius: 10px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 
   .mentor {
     padding: 1rem;
     border-radius: 10px;
     display: flex;
-    flex-direction: column;
     box-shadow:v.$card-shadow;
+
+    &--img-mentor{
+      width:30rem;
+      border-radius: 5%;
+    }
+
+    &--information{
+     margin-left: 0.5rem;
+     width:70vw;
+    
+    }
 
     &--name {
       font-size: 1.8rem;
@@ -50,14 +60,26 @@
   }
 
   .fontColor {
-    background-color: v.$color-background;
+    background-color: v.$color-theme2;
     padding: 1.2rem;
+    color:v.$color-background;
+    border-radius: 10px;
+
+    &:hover{
+      background-color:v.$color-theme1 ;
+      color:white;
+      text-shadow: 1px 1px 2px black;
+      transition: 2s;
+    }
   }
 }
 
 .buttons {
-  position: absolute;
-  right: 10%;
+  justify-content:center;
+  
+  &--c{
+    display: inline-flex;
+  }
 }
 
 /*Tablets [601px -> 1200px]*/
@@ -69,8 +91,14 @@
     display: flex;
     flex-direction: column;
     box-shadow: v.$card-shadow;
+
+   
   }
   .buttons {
     padding: 1rem;
   }
+  .fontColor{
+    width: 90vw;
+  }
+  
 }

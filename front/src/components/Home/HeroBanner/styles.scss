@@ -17,10 +17,11 @@
   }
 
   &--subTitle {
-    font-family: 'Rampart One', cursive;
+    font-family: v.$titleFont;
     font-size: 2rem;
     font-weight: bolder;
     line-height: 1.2em;
+    color:v.$color-theme2;
 
     &--color {
       color: v.$color-theme1;

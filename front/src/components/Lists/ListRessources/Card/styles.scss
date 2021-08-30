@@ -29,11 +29,12 @@
     color: white;
     background: v.$color-theme1;
     border: none;
-    padding: 0.5rem;
-    font-size: 1.3rem;
-    width: 100%;
-    &:hover {
-      color: black;
-    }
+    padding:0.8rem 2.3rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5%;
+      &:hover{
+        color:white;
+      }
   }
 }

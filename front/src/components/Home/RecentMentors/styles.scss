@@ -2,6 +2,7 @@
 
 .latestMentor {
   // border: 1px vars.$primaryColor solid;
+  margin-top: 4rem;
 
   &-span {
     color: v.$color-theme1;
@@ -9,7 +10,7 @@
 
   &-title {
     font-family: v.$titleFont;
-    color: black;
+    color: v.$color-theme2;
     text-align: center;
     font-size: 2.2rem;
     font-weight: bold;
