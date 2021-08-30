@@ -1,8 +1,8 @@
-import React from "react";
-import Card from "src/components/Lists/ListMentors/Card";
-import MentorForm from "src/containers/Forms/MentorForm";
+import React from 'react';
+import Card from 'src/components/Lists/ListMentors/Card';
+import MentorForm from 'src/containers/Forms/MentorForm';
 
-import "./styles.scss";
+import './styles.scss';
 
 const ListMentors = ({ mentors, isLogged }) => (
   <>

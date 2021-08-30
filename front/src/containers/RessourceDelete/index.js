@@ -1,10 +1,10 @@
-import { connect } from "react-redux";
-import RessourceDelete from "src/components/Utils/RessourceDelete";
+import { connect } from 'react-redux';
+import RessourceDelete from 'src/components/Utils/RessourceDelete';
 import {
   deleteRessource,
   initialValue,
   ressourceSuccess,
-} from "src/actions/ressources";
+} from 'src/actions/ressources';
 
 const mapStateToProps = (state) => ({
   datas: state.datas.datas,
@@ -33,7 +33,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
 
   handleDeleteSubmit: () => {
-    console.log("clickkckcckcck");
+    console.log('clickkckcckcck');
     dispatch(deleteRessource());
   },
 });

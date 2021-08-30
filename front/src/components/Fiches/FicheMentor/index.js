@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 // import PropTypes from "prop-types";
-import Card from "src/components/Lists/ListRessources/Card";
-import "./styles.scss";
-import { Redirect } from "react-router-dom";
-import MentorForm from "src/containers/Forms/MentorForm";
-import MentorDelete from "src/containers/MentorDelete";
+import Card from 'src/components/Lists/ListRessources/Card';
+import './styles.scss';
+import { Redirect } from 'react-router-dom';
+import MentorForm from 'src/containers/Forms/MentorForm';
+import MentorDelete from 'src/containers/MentorDelete';
 
 function FicheMentor({ mentor, isLogged }) {
-  console.log( 'console log dans fiche mentor', mentor);
+  console.log('console log dans fiche mentor', mentor);
   if (!mentor) {
     return <Redirect to="/mentors" />;
   }

@@ -1,7 +1,7 @@
-import React from "react";
-import "./styles.scss";
-import Card from "src/components/Lists/ListMentors/Card";
-import { Button } from "semantic-ui-react";
+import React from 'react';
+import './styles.scss';
+import Card from 'src/components/Lists/ListMentors/Card';
+import { Button } from 'semantic-ui-react';
 
 function RecentMentors({ mentors }) {
   return (
@@ -17,8 +17,8 @@ function RecentMentors({ mentors }) {
         </div>
         <div className="latestMentor-btnContainer">
           <Button className="latestMentor-btnContainer-btn">
-            {" "}
-            Afficher nos derniers mentors{" "}
+            {' '}
+            Afficher nos derniers mentors{' '}
           </Button>
         </div>
       </div>

@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Form, Input, Segment } from "semantic-ui-react";
-import "./styles.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Form, Input, Segment } from 'semantic-ui-react';
+import './styles.scss';
 
 // NOE
 const SearchBar = ({ searchValue, onSearchChange, onSearchSubmit }) => {

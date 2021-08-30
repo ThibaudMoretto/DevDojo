@@ -1,8 +1,8 @@
-import React from "react";
-import Card from "src/components/Lists/ListRessources/Card";
-import PropTypes from "prop-types";
-import RessourceForm from "src/containers/Forms/RessourceForm";
-import "./styles.scss";
+import React from 'react';
+import Card from 'src/components/Lists/ListRessources/Card';
+import PropTypes from 'prop-types';
+import RessourceForm from 'src/containers/Forms/RessourceForm';
+import './styles.scss';
 
 const ListRessources = ({ ressources, isLogged }) => {
   return (
@@ -37,7 +37,7 @@ ListRessources.propTypes = {
     PropTypes.shape({
       slug: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
   isLogged: PropTypes.bool,
 };

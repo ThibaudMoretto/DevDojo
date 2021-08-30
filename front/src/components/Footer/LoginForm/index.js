@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Button, Modal } from "semantic-ui-react";
-import Field from "src/components/Utils/Field";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Button, Modal } from 'semantic-ui-react';
+import Field from 'src/components/Utils/Field';
 
-import "./styles.scss";
+import './styles.scss';
 
 const LoginForm = ({
   email,
@@ -19,7 +19,7 @@ const LoginForm = ({
   };
 
   const resetToken = () => {
-    localStorage.setItem("token", "");
+    localStorage.setItem('token', '');
   };
 
   const [open, setOpen] = React.useState(false);
@@ -104,7 +104,7 @@ LoginForm.propTypes = {
 
 LoginForm.defaultProps = {
   isLogged: false,
-  loggedMessage: "Connecté",
+  loggedMessage: 'Connecté',
 };
 
 export default LoginForm;

@@ -1,13 +1,13 @@
-import React from "react";
-import "./styles.scss";
-import Loading from "src/components/App/Loading";
-import image from "src/assets/images/Card_Img.png";
-import { Redirect } from "react-router-dom";
-import RessourceForm from "src/containers/Forms/RessourceForm";
-import RessourceDelete from "src/containers/RessourceDelete";
+import React from 'react';
+import './styles.scss';
+import Loading from 'src/components/App/Loading';
+import image from 'src/assets/images/Card_Img.png';
+import { Redirect } from 'react-router-dom';
+import RessourceForm from 'src/containers/Forms/RessourceForm';
+import RessourceDelete from 'src/containers/RessourceDelete';
 
 function FicheRessource({ ressource, isLogged, loading }) {
-  console.log("ressource", ressource);
+  console.log('ressource', ressource);
   if (loading) {
     return <Loading />;
   }

@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import { Button, Modal } from "semantic-ui-react";
+import React, { useEffect } from 'react';
+import { Button, Modal } from 'semantic-ui-react';
 
-import "./styles.scss";
+import './styles.scss';
 
 const RessourceDelete = ({
   ressource,

@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import { Button, Modal } from "semantic-ui-react";
+import React, { useEffect } from 'react';
+import { Button, Modal } from 'semantic-ui-react';
 
-import "./styles.scss";
+import './styles.scss';
 
 const MentorDelete = ({
   handleDeleteSubmit,
@@ -10,7 +10,6 @@ const MentorDelete = ({
   headerMessage,
   initialValue,
   resetInitial,
-  
 }) => {
   const [open, setOpen] = React.useState(false);
   useEffect(() => {

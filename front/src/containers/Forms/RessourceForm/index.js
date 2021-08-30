@@ -1,12 +1,12 @@
-import { connect } from "react-redux";
-import RessourceForm from "src/components/Utils/RessourceForm";
+import { connect } from 'react-redux';
+import RessourceForm from 'src/components/Utils/RessourceForm';
 import {
   addRessource,
   editRessource,
   changeValue,
   ressourceSuccess,
   initialValue,
-} from "src/actions/ressources";
+} from 'src/actions/ressources';
 
 const mapStateToProps = (state) => ({
   datas: state.datas.datas,

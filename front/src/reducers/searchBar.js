@@ -1,10 +1,10 @@
-import { SET_SEARCH_VALUE, SUBMIT_SEARCH } from "src/actions/searchBar";
+import { SET_SEARCH_VALUE, SUBMIT_SEARCH } from 'src/actions/searchBar';
 
-import { RESET_SUBMIT_VALUE } from "src/actions/navBar";
+import { RESET_SUBMIT_VALUE } from 'src/actions/navBar';
 
 export const initialState = {
-  searchValue: "",
-  submitValue: "",
+  searchValue: '',
+  submitValue: '',
   submited: false,
 };
 
@@ -20,14 +20,14 @@ const reducer = (state = initialState, action = {}) => {
     case SUBMIT_SEARCH:
       return {
         ...state,
-        searchValue: "",
+        searchValue: '',
         submited: true,
       };
     case RESET_SUBMIT_VALUE:
       return {
         ...state,
-        submitValue: "",
-        searchValue: "",
+        submitValue: '',
+        searchValue: '',
       };
     default:
       return state;

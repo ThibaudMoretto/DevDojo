@@ -1,10 +1,6 @@
-import { connect } from "react-redux";
-import MentorDelete from "src/components/Utils/MentorDelete";
-import {
-  deleteMentor,
-  initialValue,
-  mentorSuccess,
-} from "src/actions/mentors";
+import { connect } from 'react-redux';
+import MentorDelete from 'src/components/Utils/MentorDelete';
+import { deleteMentor, initialValue, mentorSuccess } from 'src/actions/mentors';
 
 const mapStateToProps = (state) => ({
   id: state.mentor.id,
@@ -29,7 +25,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
 
   handleDeleteSubmit: () => {
-    console.log("cloukkkkkkk");
+    console.log('cloukkkkkkk');
     dispatch(deleteMentor());
   },
 });

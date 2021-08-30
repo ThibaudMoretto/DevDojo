@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
-import { Button, Modal } from "semantic-ui-react";
-import Field from "src/components/Utils/Field";
+import React, { useEffect } from 'react';
+import { Button, Modal } from 'semantic-ui-react';
+import Field from 'src/components/Utils/Field';
 
-import DropdownUnique from "src/components/Utils/DropdownUnique";
-import DropdownUniqueSearch from "src/components/Utils/DropdownSearch";
-import DropdownMultipleSearch from "src/components/Utils/DropdownMultipleSearch";
+import DropdownUnique from 'src/components/Utils/DropdownUnique';
+import DropdownUniqueSearch from 'src/components/Utils/DropdownSearch';
+import DropdownMultipleSearch from 'src/components/Utils/DropdownMultipleSearch';
 
-import "./styles.scss";
+import './styles.scss';
 
 const RessourceForm = ({
   ressource,
@@ -54,8 +54,8 @@ const RessourceForm = ({
   }));
 
   const technologiesDatas = isEdit
-    ? ressource?.technologiesRelated?.map(({ id }) => id) || ""
-    : "";
+    ? ressource?.technologiesRelated?.map(({ id }) => id) || ''
+    : '';
 
   return (
     <div className="ressource-form">

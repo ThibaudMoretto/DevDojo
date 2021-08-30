@@ -1,9 +1,9 @@
-import { CHANGE_VALUE, SAVE_USER, LOGOUT } from "src/actions/user";
+import { CHANGE_VALUE, SAVE_USER, LOGOUT } from 'src/actions/user';
 
 export const initialState = {
-  email: "",
-  password: "",
-  firstname: "Anonyme",
+  email: '',
+  password: '',
+  firstname: 'Anonyme',
   logged: false,
 };
 
@@ -21,8 +21,8 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         firstname,
         logged,
-        email: "",
-        password: "",
+        email: '',
+        password: '',
       };
     }
     case LOGOUT: {

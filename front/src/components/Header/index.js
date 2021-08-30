@@ -1,8 +1,8 @@
-import React from "react";
-import NavBar from "src/containers/NavBar";
-import SearchBar from "src/containers/SearchBar";
-import logo from "src/assets/images/Logo.png";
-import "./styles.scss";
+import React from 'react';
+import NavBar from 'src/containers/NavBar';
+import SearchBar from 'src/containers/SearchBar';
+import logo from 'src/assets/images/Logo.png';
+import './styles.scss';
 
 function Header() {
   return (

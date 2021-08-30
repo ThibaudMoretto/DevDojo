@@ -1,8 +1,8 @@
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
-import ListMentors from "src/components/Lists/ListMentors";
+import ListMentors from 'src/components/Lists/ListMentors';
 
-import { filterMentors } from "src/selectors/search";
+import { filterMentors } from 'src/selectors/search';
 
 const mapStateToProps = (state) => ({
   mentors: filterMentors(state.mentors.list, state.searchBar.submitValue),

@@ -1,6 +1,6 @@
-import React from "react";
-import "./styles.scss";
-import { Button } from "semantic-ui-react";
+import React from 'react';
+import './styles.scss';
+import { Button } from 'semantic-ui-react';
 
 function About() {
   return (
