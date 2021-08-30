@@ -5,10 +5,10 @@ import {
 } from 'src/actions/mentors';
 
 export const initialState = {
-  id: Number(),
+  id: '',
   name: '',
   description: '',
-  image: '',
+  image: 'https://img2.freepng.fr/20181128/gif/kisspng-ninja-portable-network-graphics-computer-icons-ava-macmacmac-5bfea49c377331.5470002815434149402271.jpg',
   github: '',
   linkedin: '',
   twitch: '',
@@ -43,10 +43,10 @@ const reducer = (state = initialState, action = {}) => {
     case MENTOR_SUCCESS:
       return {
         ...state,
-        id: Number(),
+        id: '',
         name: '',
         description: '',
-        image: '',
+        image: 'https://img2.freepng.fr/20181128/gif/kisspng-ninja-portable-network-graphics-computer-icons-ava-macmacmac-5bfea49c377331.5470002815434149402271.jpg',
         github: '',
         linkedin: '',
         twitch: '',

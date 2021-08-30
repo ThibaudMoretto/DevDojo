@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Button, Modal } from 'semantic-ui-react';
+import { Button, Modal, Form } from 'semantic-ui-react';
 import Field from 'src/components/Utils/Field';
 
 import './styles.scss';
@@ -10,7 +10,6 @@ const mentorForm = ({
   headerMessage,
   isEdit,
 
-  id,
   name,
   description,
   image,
@@ -63,88 +62,126 @@ const mentorForm = ({
       >
         <Modal.Header>{headerMessage}</Modal.Header>
 
-        <Modal.Content>
-          <form
+        <Modal.Content
+          scrolling
+          size="Fullscreen"
+        >
+          <Form
+            required
             id="mentor-form"
             className="mentor-form-element"
             onSubmit={handleSubmit}
           >
-            <div className="container-infos">
-              <Field
-                placeholder="Name"
-                name="name"
-                onChange={changeValue}
-                value={name}
-                type="text"
-              />
+
+            <Field
+              id="form-input-control-name"
+              label="Nom"
+              placeholder="Nom"
+              name="name"
+              onChange={changeValue}
+              value={name}
+              control="input"
+              type="text"
+              required
+            />
+
+            <Field
+              id="form-input-control-description"
+              label="Description"
+              placeholder="Description"
+              name="description"
+              onChange={changeValue}
+              value={description}
+              control="textarea"
+              type="text"
+              required
+            />
+
+            <Field
+              id="form-input-control-image"
+              label="URL image de profil"
+              placeholder="URL image de profil"
+              name="image"
+              onChange={changeValue}
+              value={image}
+              control="input"
+              type="url"
+              required
+            />
+
+            <Form.Group widths="equal">
 
               <Field
-                placeholder="Description"
-                name="description"
-                onChange={changeValue}
-                value={description}
-                type="text"
-              />
-
-              <Field
-                placeholder="Image de profil"
-                name="image"
-                onChange={changeValue}
-                value={image}
-                type="text"
-              />
-            </div>
-
-            <div className="container-socials">
-              <Field
+                id="form-input-control-github"
+                label="Github"
                 placeholder="Github"
                 name="github"
                 onChange={changeValue}
                 value={github}
-                type="text"
+                control="input"
+                type="url"
               />
 
               <Field
+                id="form-input-control-linkedin"
+                label="Linkedin"
                 placeholder="Linkedin"
                 name="linkedin"
                 onChange={changeValue}
                 value={linkedin}
-                type="text"
+                control="input"
+                type="url"
               />
+            </Form.Group>
 
+            <Form.Group widths="equal">
               <Field
+                id="form-input-control-twtch"
+                label="Twitch"
                 placeholder="Twitch"
                 name="twitch"
                 onChange={changeValue}
                 value={twitch}
-                type="twitch"
+                control="input"
+                type="url"
               />
 
               <Field
+                id="form-input-control-twitter"
+                label="Twitter"
                 placeholder="Twitter"
                 name="twitter"
                 onChange={changeValue}
                 value={twitter}
-                type="text"
+                control="input"
+                type="url"
               />
+            </Form.Group>
 
+            <Form.Group widths="equal">
               <Field
+                id="form-input-control-website"
+                label="Siteweb personnel"
                 placeholder="Site personnel"
                 name="website"
                 onChange={changeValue}
                 value={website}
-                type="text"
+                control="input"
+                type="url"
               />
 
               <Field
-                placeholder="Youtube"
+                id="form-input-control-youtube"
+                label="YouTube"
+                placeholder="YouTube"
                 name="youtube"
                 onChange={changeValue}
                 value={youtube}
-                type="text"
+                control="input"
+                type="url"
               />
-            </div>
-          </form>
+            </Form.Group>
+          </Form>
         </Modal.Content>
         <Modal.Actions>
           <Button color="black" onClick={() => setOpen(false)}>

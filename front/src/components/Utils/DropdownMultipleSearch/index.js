@@ -11,13 +11,13 @@ const DropdownMultiple = ({
 
   return (
     <Form.Field
+      required
       id={id}
       name={name}
       label={label}
       placeholder={placeholder}
       autoComplete="off"
       lazyLoad
-      required
       clearable
       defaultValue={value}
       options={options}

@@ -15,7 +15,6 @@ const DropdownUnique = ({
       name={name}
       label={label}
       placeholder={placeholder}
-      required={required}
       autoComplete="off"
       lazyLoad
       clearable

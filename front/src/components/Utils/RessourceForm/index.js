@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import {
-  Button, Form, Modal, Select,
+  Button, Form, Modal,
 } from 'semantic-ui-react';
-import Field from 'src/components/Utils/Field';
 
+import Field from 'src/components/Utils/Field';
 import DropdownUnique from 'src/components/Utils/DropdownUnique';
 import DropdownMultipleSearch from 'src/components/Utils/DropdownMultipleSearch';
 
@@ -176,7 +176,6 @@ const RessourceForm = ({
                 onChange={changeValue}
                 value={type}
                 options={datas.types}
-                required={false}
                 search={false}
               />
 
@@ -188,7 +187,6 @@ const RessourceForm = ({
                 onChange={changeValue}
                 value={language}
                 options={datas.languages}
-                required={false}
                 search={false}
               />
             </Form.Group>
@@ -202,7 +200,6 @@ const RessourceForm = ({
                 onChange={changeValue}
                 value={free}
                 options={datas.free}
-                required={false}
                 search={false}
               />
 
@@ -214,7 +211,6 @@ const RessourceForm = ({
                 onChange={changeValue}
                 value={difficulty}
                 options={datas.levels}
-                required={false}
                 search={false}
               />
             </Form.Group>
