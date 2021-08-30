@@ -83,6 +83,7 @@ const mentorForm = ({
               control="input"
               type="text"
               required
+              autoComplete="off"
             />
 
             <Field
@@ -95,6 +96,7 @@ const mentorForm = ({
               control="textarea"
               type="text"
               required
+              autoComplete="off"
             />
 
             <Field
@@ -107,6 +109,7 @@ const mentorForm = ({
               control="input"
               type="url"
               required
+              autoComplete="off"
             />
 
             <Form.Group widths="equal">
@@ -120,6 +123,7 @@ const mentorForm = ({
                 value={github}
                 control="input"
                 type="url"
+                autoComplete="off"
               />
 
               <Field
@@ -131,6 +135,7 @@ const mentorForm = ({
                 value={linkedin}
                 control="input"
                 type="url"
+                autoComplete="off"
               />
             </Form.Group>
 
@@ -144,6 +149,7 @@ const mentorForm = ({
                 value={twitch}
                 control="input"
                 type="url"
+                autoComplete="off"
               />
 
               <Field
@@ -155,6 +161,7 @@ const mentorForm = ({
                 value={twitter}
                 control="input"
                 type="url"
+                autoComplete="off"
               />
             </Form.Group>
 
@@ -168,6 +175,7 @@ const mentorForm = ({
                 value={website}
                 control="input"
                 type="url"
+                autoComplete="off"
               />
 
               <Field
@@ -179,6 +187,7 @@ const mentorForm = ({
                 value={youtube}
                 control="input"
                 type="url"
+                autoComplete="off"
               />
             </Form.Group>
           </Form>
@@ -188,12 +197,11 @@ const mentorForm = ({
             Annuler
           </Button>
           <Button
+            form="mentor-form"
             color="green"
             type="submit"
-            className="ressource-form-button ui blue button"
-            onClick={() => handleSubmit()}
           >
-            Valider les modifications
+            Valider
           </Button>
         </Modal.Actions>
       </Modal>

@@ -4,7 +4,7 @@ import { Form } from 'semantic-ui-react';
 import './styles.scss';
 
 const Field = ({
-  value, type, name, placeholder, onChange, id, label, control, required,
+  value, type, name, placeholder, onChange, id, label, control, required, autoComplete,
 }) => {
   const handleChange = (evt) => {
     onChange(evt.target.value, name);
@@ -17,11 +17,11 @@ const Field = ({
       label={label}
       placeholder={placeholder}
       required={required}
-      autoComplete="off"
       value={value}
       onChange={handleChange}
       control={control}
       type={type}
+      autoComplete={autoComplete}
     />
   );
 };

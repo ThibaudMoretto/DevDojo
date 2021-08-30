@@ -104,6 +104,7 @@ const RessourceForm = ({
               control="input"
               type="text"
               required
+              autoComplete="off"
             />
 
             <Field
@@ -116,6 +117,7 @@ const RessourceForm = ({
               control="textarea"
               type="text"
               required
+              autoComplete="off"
             />
 
             <Field
@@ -128,6 +130,7 @@ const RessourceForm = ({
               control="input"
               type="url"
               required
+              autoComplete="off"
             />
 
             <DropdownUnique
@@ -249,7 +252,6 @@ const RessourceForm = ({
             form="ressource-form"
             color="green"
             type="submit"
-            className="ressource-form-button ui blue button"
           >
             Valider
           </Button>

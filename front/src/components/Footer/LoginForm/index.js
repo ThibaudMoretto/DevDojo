@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Modal } from 'semantic-ui-react';
+import { Button, Modal, Form } from 'semantic-ui-react';
 import Field from 'src/components/Utils/Field';
 
 import './styles.scss';
@@ -53,38 +53,49 @@ const LoginForm = ({
           <Modal.Header>Se connecter en tant qu'admin</Modal.Header>
 
           <Modal.Content>
-            <form
+            <Form
               id="login-form"
               autoComplete="on"
               className="login-form-element"
               onSubmit={handleSubmit}
             >
               <Field
-                name="email"
+                id="form-input-control-email"
+                label="Email"
                 placeholder="Email"
+                name="email"
                 onChange={changeField}
                 value={email}
+                control="input"
+                type="email"
+                required
+                autoComplete="on"
               />
               <Field
-                name="password"
-                type="password"
+                id="form-input-control-password"
+                label="Mot de passe"
                 placeholder="Mot de passe"
+                name="password"
                 onChange={changeField}
                 value={password}
+                control="input"
+                type="password"
+                autoComplete="on"
+                required
               />
-            </form>
+            </Form>
           </Modal.Content>
           <Modal.Actions>
             <Button color="black" onClick={() => setOpen(false)}>
               Annuler
             </Button>
-            <button
+            <Button
+              color="green"
               form="login-form"
               type="submit"
-              className="login-form-button ui blue button"
             >
               Se connecter
-            </button>
+            </Button>
           </Modal.Actions>
         </Modal>
       )}
