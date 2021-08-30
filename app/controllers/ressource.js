@@ -118,6 +118,10 @@ module.exports = {
                 ...updateData
             }, ressource.id);
 
+            //On supprime le cache de la ressource mise à jour, ainsi que le cache de toutes les ressources
+            redis.del('erc:ressource-' + ressource.id);
+            redis.del('erc:ressource-');
+            
             response.json({
                 data: updateRessource
             })
@@ -134,6 +138,11 @@ module.exports = {
                     data: `Ressource supprimée`
                 })
             })
+
+            //On supprime le cache de la ressource supprimée ainsi que le cache de toutes les ressources
+            redis.del('erc:ressource-' + request.params.id);
+            redis.del('erc:ressource-');
+
         } catch (error) {
             console.error(`message ` + error)
         }

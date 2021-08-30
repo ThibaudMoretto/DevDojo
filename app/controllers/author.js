@@ -1,6 +1,7 @@
 const authorDatamapper = require("../datamappers/author");
 const ressourceDatamapper = require('../datamappers/ressource');
 const technologyDatamapper = require('../datamappers/technology');
+const redis = require('../client-redis');
 
 
 module.exports = {
@@ -37,7 +38,7 @@ module.exports = {
             if (!author) {
                 return next();
             }
-            console.log(`ID de l'auteur : ${request.params.id}`)
+
             const ressources = await ressourceDatamapper.getByAuthorId(request.params.id)
             if (ressources) {
                 author.ressource = ressources;
@@ -62,6 +63,9 @@ module.exports = {
     async add(request, response) {
         try {
             const author = await authorDatamapper.add(request.body);
+
+            //On supprime le cache de toutes les ressources
+            redis.del('erc:author-');
 
             response.json({
                 data: author
@@ -101,6 +105,10 @@ module.exports = {
                 ...updateData
             }, author.id);
 
+            //On supprime le cache de l'auteur mis à jour, ainsi que le cache de tous les auteurs
+            redis.del('erc:author-' + author.id);
+            redis.del('erc:author-');
+
             response.json({
                 data: updateAuthor
             })
@@ -116,6 +124,11 @@ module.exports = {
                     data: `Auteur supprimé`
                 })
             })
+
+            //On supprime le cache de l'auteur supprimé, ainsi que le cache de tous les auteurs
+            redis.del('erc:author-' + request.params.id);
+            redis.del('erc:author-');
+            
         } catch (error) {
             console.error(`message ` + error)
         }

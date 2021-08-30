@@ -23,7 +23,7 @@ router.route('/ressource')
  * @route GET /ressource
  * @returns {Object} 200 - Ressource list
  */
-    .get(ressourceController.list)
+    .get(nameCache('ressource-'), cache.route(), ressourceController.list)
 /**
  * Adds a ressource
  * @route POST /ressource
@@ -48,7 +48,8 @@ router.route('/ressource/:id(\\d+)')
  * @param {integer} id.request - ID of the ressource wanted
  * @returns {Object} 200 - An object with all the data of the ressource
  */
-    .get(ressourceController.getOne)
+// En premier argument de nameCache, on fournit un prefix de route, et en 2ème, le nom du paramètre qui est dynamique (ici on va accéder à request.params.id)
+    .get(nameCache('ressource-', 'id'), cache.route(), ressourceController.getOne)
     
 /**
  * Updates a ressource
@@ -80,7 +81,7 @@ router.route('/author')
  * @route GET /author
  * @returns {Object} 200 - Author list
  */
-    .get(authorController.list)
+    .get(nameCache('author-'), cache.route(), authorController.list)
 
 /**
  * Adds an author
@@ -105,7 +106,7 @@ router.route('/author/:id(\\d+)')
  * @param {integer} id.request - ID of the author wanted
  * @returns {Object} 200 - An object with all the data of the author
  */
-    .get(authorController.getOne)
+    .get(nameCache('author-', 'id'), cache.route(), authorController.getOne)
 
 /**
  * Updates an author

@@ -138,14 +138,14 @@ CREATE TABLE IF NOT EXISTS "ressource" (
     "title" TEXT UNIQUE NOT NULL,
     "slug" TEXT UNIQUE NOT NULL,
     "description" TEXT UNIQUE NOT NULL,
-    "link" TEXT UNIQUE NOT NULL,
-    "publication_date" TEXT NOT NULL,
+    "link" TEXT UNIQUE,
+    "publication_date" TEXT,
     "duration" INT,
-    "is_free" BOOLEAN NOT NULL DEFAULT TRUE,
-    "difficulty_id" INT NOT NULL REFERENCES "difficulty"("id"),
-    "language_id" INT NOT NULL REFERENCES "language"("id"),
-    "author_id" INT NOT NULL REFERENCES "author"("id") ON DELETE CASCADE, --On supprime la ressource si l'author_id est supprimé
-    "ressource_type_id" INT NOT NULL REFERENCES "ressource_type"("id"),
+    "is_free" BOOLEAN DEFAULT TRUE,
+    "difficulty_id" INT REFERENCES "difficulty"("id"),
+    "language_id" INT REFERENCES "language"("id"),
+    "author_id" INT REFERENCES "author"("id") ON DELETE CASCADE, --On supprime la ressource si l'author_id est supprimé
+    "ressource_type_id" INT REFERENCES "ressource_type"("id"),
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     "updated_at" TIMESTAMPTZ
 );
