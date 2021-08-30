@@ -1,17 +1,17 @@
-const paths = require("./paths");
-const { merge } = require("webpack-merge");
-const common = require("./webpack.common.js");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const TerserJSPlugin = require("terser-webpack-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const { BundleStatsWebpackPlugin } = require("bundle-stats-webpack-plugin");
+const paths = require('./paths');
+const { merge } = require('webpack-merge');
+const common = require('./webpack.common.js');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const { BundleStatsWebpackPlugin } = require('bundle-stats-webpack-plugin');
 
 module.exports = merge(common, {
-  mode: "production",
+  mode: 'production',
   devtool: false,
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "css/[name].css",
+      filename: 'css/[name].css',
     }),
     // Stats bundle
     new BundleStatsWebpackPlugin(),
@@ -23,18 +23,18 @@ module.exports = merge(common, {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: { publicPath: "../" },
+            options: { publicPath: '../' },
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: { importLoaders: 3 },
           },
-          "postcss-loader",
-          "resolve-url-loader",
+          'postcss-loader',
+          'resolve-url-loader',
           {
-            loader: "sass-loader",
+            loader: 'sass-loader',
             options: {
-              implementation: require("sass"),
+              implementation: require('sass'),
             },
           },
         ],
@@ -52,9 +52,9 @@ module.exports = merge(common, {
 
   optimization: {
     minimizer: [new TerserJSPlugin({}), new CssMinimizerPlugin()],
-    runtimeChunk: "single",
+    runtimeChunk: 'single',
     splitChunks: {
-      chunks: "all",
+      chunks: 'all',
     },
   },
   performance: {

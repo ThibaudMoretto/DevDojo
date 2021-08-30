@@ -1,17 +1,10 @@
 {
   "extends": "airbnb",
   "parser": "@babel/eslint-parser",
-  "parserOptions": {
-    "sourceType": "module",
-    "babelOptions": {
-      "configFile": "path.join(__dirname, 'babel.config.json')"
-    }
-  },
   "env": {
     "browser": true
   },
   "rules": {
-    "import/no-unresolved": "disable",
     "brace-style": ["error", "stroustrup"],
     "no-param-reassign": [
       "error",
