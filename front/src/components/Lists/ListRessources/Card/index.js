@@ -8,7 +8,7 @@ const Card = ({ title, description, slug }) => (
     <div className="card--container">
       <img src={cardImg} alt="une image" />
       <div className="card-content">
-        {/* Lien externe d'origine de la ressource sur toute la div article*/}
+        {/* Lien externe d'origine de la ressource sur toute la div article */}
         {/* <a href={`http://localhost:8080/ressources/${slug}`} target="_blank"> */}
 
         <h2 className="card-title">{title}</h2>

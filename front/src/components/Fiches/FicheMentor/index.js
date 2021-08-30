@@ -21,13 +21,13 @@ function FicheMentor({ mentor, isLogged }) {
               mentor={mentor}
               buttonMessage="Modifier"
               headerMessage="Modifier les informations du mentor"
-              isEdit={true}
+              isEdit
             />
             <MentorDelete
               mentor={mentor}
               buttonMessage="Supprimer"
               headerMessage="Supprimer le mentor"
-              isEdit={true}
+              isEdit
             />
           </div>
         )}
