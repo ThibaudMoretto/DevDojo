@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import {
   CHANGE_VALUE_RESSOURCE,
   INITIAL_VALUE,
@@ -5,17 +6,17 @@ import {
 } from 'src/actions/ressources';
 
 export const initialState = {
-  id: '',
-  title: '',
-  description: '',
-  duration: null,
+  id: "",
+  title: "",
+  description: "",
+  duration: "",
   free: true,
-  author: null,
-  language: null,
-  type: null,
-  difficulty: null,
-  link: '',
-  publicationDate: '',
+  author: "",
+  language: "",
+  type: "",
+  difficulty: "",
+  link: "",
+  publicationDate: "",
   technologies: [],
 };
 
@@ -47,17 +48,17 @@ const reducer = (state = initialState, action = {}) => {
     case RESSOURCE_SUCCESS:
       return {
         ...state,
-        id: '',
-        title: '',
-        description: '',
-        duration: null,
+        id: "",
+        title: "",
+        description: "",
+        duration: "",
         free: true,
-        author: null,
-        language: null,
-        type: null,
-        difficulty: null,
-        link: '',
-        publicationDate: '',
+        author: "",
+        language: "",
+        type: "",
+        difficulty: "",
+        link: "",
+        publicationDate: "",
         technologies: [],
       };
     default:

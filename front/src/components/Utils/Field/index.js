@@ -1,41 +1,32 @@
 import React from 'react';
-import { Input } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 
 import './styles.scss';
 
-const Field = ({ value, type, name, placeholder, onChange }) => {
+const Field = ({
+  value, type, name, placeholder, onChange, id, label, control, required,
+}) => {
   const handleChange = (evt) => {
     onChange(evt.target.value, name);
   };
 
-  // const inputId = `field-${name}`;
-
   return (
-    <div>
-      <Input
-        defaultValue={value}
-        onChange={handleChange}
-        // id={inputId}
-        fluid
-        type={type}
-        className="field-input"
-        placeholder={placeholder}
-        name={name}
-        autoComplete="off"
-      />
-
-      {/* <label
-        htmlFor={inputId}
-        className="field-label"
-      >
-        {placeholder}
-      </label> */}
-    </div>
+    <Form.Field
+      id={id}
+      name={name}
+      label={label}
+      placeholder={placeholder}
+      required={required}
+      autoComplete="off"
+      value={value}
+      onChange={handleChange}
+      control={control}
+      type={type}
+    />
   );
 };
 
 Field.defaultProps = {
-  value: '',
   type: 'text',
 };
 

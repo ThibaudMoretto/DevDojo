@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
-import { Button, Modal } from 'semantic-ui-react';
+import {
+  Button, Form, Modal, Select,
+} from 'semantic-ui-react';
 import Field from 'src/components/Utils/Field';
 
 import DropdownUnique from 'src/components/Utils/DropdownUnique';
-import DropdownUniqueSearch from 'src/components/Utils/DropdownSearch';
 import DropdownMultipleSearch from 'src/components/Utils/DropdownMultipleSearch';
 
 import './styles.scss';
@@ -81,129 +83,179 @@ const RessourceForm = ({
       >
         <Modal.Header>{headerMessage}</Modal.Header>
 
-        <Modal.Content>
-          <form
+        <Modal.Content
+          scrolling
+          size="Fullscreen"
+        >
+          <Form
+            required
             id="ressource-form"
             className="ressource-form-element"
             onSubmit={handleSubmit}
           >
-            <div className="container-field">
-              <Field
-                placeholder="Titre"
-                name="title"
-                onChange={changeValue}
-                value={title}
-                type="text"
-              />
 
-              <Field
-                placeholder="Description"
-                name="description"
-                onChange={changeValue}
-                value={description}
-                type="text"
-              />
+            <Field
+              id="form-input-control-title"
+              label="Titre"
+              placeholder="Titre"
+              name="title"
+              onChange={changeValue}
+              value={title}
+              control="input"
+              type="text"
+              required
+            />
 
-              <Field
-                placeholder="Lien externe"
-                name="link"
-                onChange={changeValue}
-                value={link}
-                type="text"
-              />
+            <Field
+              id="form-input-control-description"
+              label="Description"
+              placeholder="Description"
+              name="description"
+              onChange={changeValue}
+              value={description}
+              control="textarea"
+              type="text"
+              required
+            />
 
+            <Field
+              id="form-input-control-link"
+              label="Lien URL"
+              placeholder="Lien externe"
+              name="link"
+              onChange={changeValue}
+              value={link}
+              control="input"
+              type="url"
+              required
+            />
+
+            <DropdownUnique
+              id="form-input-control-author"
+              label="Auteur"
+              placeholder="Auteur"
+              name="author"
+              onChange={changeValue}
+              value={author}
+              options={mentorDatas}
+              required
+              search
+            />
+
+            <Form.Group widths="equal">
               <Field
-                placeholder="Durée"
+                id="form-input-control-duration"
+                label="Durée estimée de lecture (en min)"
+                placeholder="Durée estimée de lecture (en min)"
                 name="duration"
                 onChange={changeValue}
                 value={duration}
+                control="input"
                 type="number"
+                required={false}
               />
 
               <Field
+                id="form-input-control-publicationDate"
+                label="Date de publication"
                 placeholder="Date de publication"
                 name="publicationDate"
                 onChange={changeValue}
                 value={publicationDate}
+                control="input"
                 type="month"
               />
-            </div>
+            </Form.Group>
 
-            <div className="container-dropdown">
+            <Form.Group widths="equal">
               <DropdownUnique
-                placeholder="Difficulté"
-                name="difficulty"
-                onChange={changeValue}
-                value={difficulty}
-                options={datas.levels}
-              />
-
-              <DropdownUniqueSearch
-                placeholder="Auteur"
-                name="author"
-                onChange={changeValue}
-                value={author}
-                options={mentorDatas}
-              />
-
-              <DropdownUnique
-                placeholder="Type"
+                id="form-input-control-type"
+                label="Type de contenu"
+                placeholder="Type de contenu"
                 name="type"
                 onChange={changeValue}
                 value={type}
                 options={datas.types}
+                required={false}
+                search={false}
               />
 
               <DropdownUnique
+                id="form-input-control-language"
+                label="Language"
                 placeholder="Language"
                 name="language"
                 onChange={changeValue}
                 value={language}
                 options={datas.languages}
+                required={false}
+                search={false}
               />
+            </Form.Group>
 
+            <Form.Group widths="equal">
               <DropdownUnique
-                placeholder="Gratuit"
+                id="form-input-control-isFree"
+                label="Contenu gratuit ?"
+                placeholder="Contenu gratuit ?"
                 name="free"
                 onChange={changeValue}
                 value={free}
                 options={datas.free}
+                required={false}
+                search={false}
               />
-            </div>
 
-            <div className="container-dropdownMultiple">
-              {!isEdit && (
-                <DropdownMultipleSearch
-                  placeholder="Technologies"
-                  name="technologies"
-                  onChange={changeValue}
-                  options={datas.technologies}
-                />
-              )}
+              <DropdownUnique
+                id="form-input-control-difficulté"
+                label="Niveau de difficulté"
+                placeholder="Niveau de difficulté"
+                name="difficulty"
+                onChange={changeValue}
+                value={difficulty}
+                options={datas.levels}
+                required={false}
+                search={false}
+              />
+            </Form.Group>
 
-              {isEdit && (
-                <DropdownMultipleSearch
-                  placeholder="Technologies"
-                  name="technologies"
-                  onChange={changeValue}
-                  value={technologiesDatas}
-                  options={datas.technologies}
-                />
-              )}
-            </div>
-          </form>
+            {!isEdit && (
+              <DropdownMultipleSearch
+                id="form-input-control-technologies"
+                label="Technologie(s) en lien"
+                placeholder="Technologie(s) en lien"
+                name="technologies"
+                onChange={changeValue}
+                options={datas.technologies}
+              />
+            )}
+
+            {isEdit && (
+              <DropdownMultipleSearch
+                id="form-input-control-technologies"
+                label="Technologie(s) en lien"
+                placeholder="Technologie(s) en lien"
+                name="technologies"
+                onChange={changeValue}
+                options={datas.technologies}
+                value={technologiesDatas}
+              />
+            )}
+
+          </Form>
+
         </Modal.Content>
         <Modal.Actions>
           <Button color="black" onClick={() => setOpen(false)}>
             Annuler
           </Button>
           <Button
+            form="ressource-form"
             color="green"
             type="submit"
             className="ressource-form-button ui blue button"
-            onClick={() => handleSubmit()}
           >
-            Valider les modifications
+            Valider
           </Button>
         </Modal.Actions>
       </Modal>
@@ -212,13 +264,3 @@ const RessourceForm = ({
 };
 
 export default RessourceForm;
-
-{
-  /* <button
-    form="ressource-form"
-    type="submit"
-    className="ressource-form-button ui blue button"
-    >
-  Valider
-</button> */
-}

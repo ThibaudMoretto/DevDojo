@@ -1,25 +1,31 @@
 import React from 'react';
-import { Dropdown } from 'semantic-ui-react';
+import { Form, Select } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 const DropdownMultiple = ({
-  options, placeholder, name, value, onChange,
+  options, placeholder, name, value, onChange, label, id,
 }) => {
   const handleChange = (evt, data) => {
     onChange(data.value, name);
   };
 
   return (
-    <Dropdown
+    <Form.Field
+      id={id}
+      name={name}
+      label={label}
       placeholder={placeholder}
+      autoComplete="off"
+      lazyLoad
+      required
+      clearable
+      defaultValue={value}
+      options={options}
       onChange={handleChange}
-      fluid
+      control={Select}
       multiple
       search
       selection
-      options={options}
-      name={name}
-      defaultValue={value}
     />
   );
 };
