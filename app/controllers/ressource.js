@@ -3,6 +3,9 @@ const ressourceRelatesTechnologyDatamapper = require("../datamappers/ressource_r
 const ressourceRequiresTechnologyDatamapper = require("../datamappers/ressource_requires_technology");
 const authorDatamapper = require("../datamappers/author");
 const technologyDatamapper = require("../datamappers/technology");
+const languageDatamapper = require("../datamappers/language");
+const difficultyDatamapper = require("../datamappers/difficulty");
+const ressource_typeDatamapper = require("../datamappers/ressource_type");
 const redis = require('../client-redis');
 
 module.exports = {
@@ -17,6 +20,13 @@ module.exports = {
                 ressource.author = await authorDatamapper.getById(ressource.author_id);
                 ressource.technologiesRelated = await technologyDatamapper.getRessourceRelated(ressource.id);
                 ressource.technologiesRequired = await technologyDatamapper.getRessourceNeeds(ressource.id);
+                //Demandé par le front, ajout du name du language + difficulty + ressource_type
+                const language = await languageDatamapper.getOne(ressource.language_id);
+                const difficulty = await difficultyDatamapper.getOne(ressource.difficulty_id);
+                const ressource_type = await ressource_typeDatamapper.getOne(ressource.ressource_type_id);
+                ressource.language = language.name;
+                ressource.difficulty = difficulty.name;
+                ressource.ressource_type = ressource_type.name;
             }
 
             response.json({
@@ -45,6 +55,14 @@ module.exports = {
             //On ajoute les technologies relatives et prérequises
             ressource.technologiesRelated = await technologyDatamapper.getRessourceRelated(ressource.id);
             ressource.technologiesRequired = await technologyDatamapper.getRessourceNeeds(ressource.id);
+
+            //Demandé par le front, ajout du name du language + difficulty + ressource_type
+            const language = await languageDatamapper.getOne(ressource.language_id);
+            const difficulty = await difficultyDatamapper.getOne(ressource.difficulty_id);
+            const ressource_type = await ressource_typeDatamapper.getOne(ressource.ressource_type_id);
+            ressource.language = language.name;
+            ressource.difficulty = difficulty.name;
+            ressource.ressource_type = ressource_type.name;
 
             response.json({
                 data: ressource
