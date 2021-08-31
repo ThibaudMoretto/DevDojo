@@ -96,7 +96,7 @@ router.route('/author')
  * @param {string} twitch_account.body - Twitch account of the author
  * @returns {Object} 200 - An object with the ID and the name of the created author
  */
-    .post(validate('body', authorSchema), authorController.add)
+    .post(/*validate('body', authorSchema), */authorController.add)
 
 router.route('/author/:id(\\d+)')
 /**

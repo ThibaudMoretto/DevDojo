@@ -7,6 +7,7 @@ const languageDatamapper = require("../datamappers/language");
 const difficultyDatamapper = require("../datamappers/difficulty");
 const ressource_typeDatamapper = require("../datamappers/ressource_type");
 const redis = require('../client-redis');
+const mailer = require('../nodemailer-config');
 
 module.exports = {
 
