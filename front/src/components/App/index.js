@@ -20,7 +20,7 @@ function App({
   getMentors,
   loading,
   submited,
-  isLogged,
+  // isLogged,
   checkIsLogged,
 }) {
   useEffect(() => {
@@ -53,15 +53,15 @@ function App({
           <ListMentors />
         </Route>
 
-        <Route
-          exact
-          path="/ressources/:slug"
-          component={FicheRessource}
-        >
+        <Route exact path="/ressources/:slug">
           <Header displaySearchBar />
+          <FicheRessource />
         </Route>
 
-        <Route exact path="/mentors/:name" component={FicheMentor} />
+        <Route exact path="/mentors/:name">
+          <Header displaySearchBar />
+          <FicheMentor />
+        </Route>
 
         <Route exact path="/search-results">
           <Header displaySearchBar />
@@ -81,12 +81,12 @@ App.propTypes = {
   getRessources: PropTypes.func.isRequired,
   submited: PropTypes.bool,
   checkIsLogged: PropTypes.func.isRequired,
-  isLogged: PropTypes.bool,
+  // isLogged: PropTypes.bool,
 };
 
 App.defaultProps = {
   loading: false,
-  isLogged: false,
+  // isLogged: false,
   submited: false,
 };
 
