@@ -1,4 +1,4 @@
-@use 'src/styles/vars';
+@use 'src/styles/vars' as v;
 
 .container {
   justify-content: center;
@@ -10,6 +10,6 @@
     font-weight: bold;
     color: black;
     text-shadow: 20px 25px 15px grey;
-    font-family: vars.$titleFont;
+    font-family: v.$titleFont;
   }
 }

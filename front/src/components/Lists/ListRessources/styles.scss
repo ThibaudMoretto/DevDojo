@@ -1,4 +1,4 @@
-@use 'src/styles/vars';
+@use 'src/styles/vars' as v;
 
 .ressources {
   display: flex;
@@ -11,7 +11,8 @@
   font-size: 2rem;
   font-weight: bold;
   padding: 1rem 0 0 1rem;
-  font-family: vars.$titleFont;
+  font-family: v.$titleFont;
+  color:v.$color-theme2;
 }
 
 .container--button {
