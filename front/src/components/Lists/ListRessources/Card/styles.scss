@@ -25,21 +25,34 @@
     justify-content: flex-end;
   }
 
-  &-description h3 {
+  &-content h3 {
     font-size: 2.125rem;
     font-weight: 700;
     margin-bottom: 2rem;
   }
 
-  &-description span {
+  &-content span {
     font-weight: 700;
   }
 
-  &-description-details {
+  &-content-details {
     display: flex;
     justify-content: space-between;
   }
 
+}
+
+.button-redirect{
+  background: none;
+  font-weight: 700;
+  color: white;
+  box-shadow: none;
+  border:none;
+}
+
+.button-redirect:hover{
+  transition: 1;
+  text-decoration: underline;
 }
 
 .card-ressource-1 {
@@ -59,20 +72,23 @@
   border-radius: .25rem;
   text-transform: uppercase;
 
-  &-facile {
+  &-video {
     background-color: #41CF7C;
   }
 
-  &-confirme {
+  &-podcast {
     background-color: #FEB32B;
   }
 
-  &-expert {
+  &-livre {
+    background-color: #53dff2;
+  }
+
+  &-pdf {
     background-color: #F25353;
   }
   
 }
-
 
 // .card {
 //   &--container {
