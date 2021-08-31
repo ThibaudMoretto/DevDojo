@@ -16,6 +16,7 @@ const DropdownMultiple = ({
       required
       id={id}
       name={name}
+      fluid
       label={label}
       placeholder={placeholder}
       autoComplete="off"
