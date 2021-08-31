@@ -15,13 +15,7 @@ import Loading from './Loading';
 
 import './styles.scss';
 
-function App({
-  getRessources,
-  getMentors,
-  loading,
-  submited,
-  checkIsLogged,
-}) {
+function App({ getRessources, getMentors, loading, submited, checkIsLogged }) {
   useEffect(() => {
     getRessources();
     getMentors();

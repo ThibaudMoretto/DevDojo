@@ -44,7 +44,7 @@ const mentorForm = ({
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         open={open}
-        trigger={(
+        trigger={
           <Button
             className="button"
             color="facebook"
@@ -58,21 +58,17 @@ const mentorForm = ({
           >
             {buttonMessage}
           </Button>
-        )}
+        }
       >
         <Modal.Header>{headerMessage}</Modal.Header>
 
-        <Modal.Content
-          scrolling
-          size="Fullscreen"
-        >
+        <Modal.Content scrolling size="Fullscreen">
           <Form
             required
             id="mentor-form"
             className="mentor-form-element"
             onSubmit={handleSubmit}
           >
-
             <Field
               id="form-input-control-name"
               label="Nom"
@@ -112,7 +108,6 @@ const mentorForm = ({
             />
 
             <Form.Group widths="equal">
-
               <Field
                 id="form-input-control-github"
                 label="Github"
@@ -195,11 +190,7 @@ const mentorForm = ({
           <Button color="black" onClick={() => setOpen(false)}>
             Annuler
           </Button>
-          <Button
-            form="mentor-form"
-            color="facebook"
-            type="submit"
-          >
+          <Button form="mentor-form" color="facebook" type="submit">
             Valider
           </Button>
         </Modal.Actions>

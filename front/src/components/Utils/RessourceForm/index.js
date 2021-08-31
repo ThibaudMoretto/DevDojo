@@ -1,8 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
-import {
-  Button, Form, Modal,
-} from 'semantic-ui-react';
+import { Button, Form, Modal } from 'semantic-ui-react';
 
 import Field from 'src/components/Utils/Field';
 import DropdownUnique from 'src/components/Utils/DropdownUnique';
@@ -65,7 +63,7 @@ const RessourceForm = ({
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         open={open}
-        trigger={(
+        trigger={
           <Button
             className="button"
             color="facebook"
@@ -79,21 +77,17 @@ const RessourceForm = ({
           >
             {buttonMessage}
           </Button>
-        )}
+        }
       >
         <Modal.Header>{headerMessage}</Modal.Header>
 
-        <Modal.Content
-          scrolling
-          size="Fullscreen"
-        >
+        <Modal.Content scrolling size="Fullscreen">
           <Form
             required
             id="ressource-form"
             className="ressource-form-element"
             onSubmit={handleSubmit}
           >
-
             <Field
               id="form-input-control-title"
               label="Titre"
@@ -241,19 +235,13 @@ const RessourceForm = ({
                 search={false}
               />
             </Form.Group>
-
           </Form>
-
         </Modal.Content>
         <Modal.Actions>
           <Button color="black" onClick={() => setOpen(false)}>
             Annuler
           </Button>
-          <Button
-            form="ressource-form"
-            color="facebook"
-            type="submit"
-          >
+          <Button form="ressource-form" color="facebook" type="submit">
             Valider
           </Button>
         </Modal.Actions>

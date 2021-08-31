@@ -3,7 +3,13 @@ import { Form, Select } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 const DropdownMultiple = ({
-  options, placeholder, name, value, onChange, label, id,
+  options,
+  placeholder,
+  name,
+  value,
+  onChange,
+  label,
+  id,
 }) => {
   const handleChange = (evt, data) => {
     onChange(data.value, name);

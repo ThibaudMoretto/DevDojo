@@ -16,9 +16,9 @@ function Header({ displaySearchBar }) {
         </div>
       </div>
       {displaySearchBar && (
-      <div className="header-search">
-        <SearchBar />
-      </div>
+        <div className="header-search">
+          <SearchBar />
+        </div>
       )}
     </div>
   );

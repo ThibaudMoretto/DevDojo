@@ -35,15 +35,20 @@ function FicheMentor({ mentor, isLogged }) {
         )}
       </div>
       <div className="containers">
-
         <div className="mentor">
-          <img src={image} alt="une de image mentor" className="mentor--img-mentor" />
+          <img
+            src={image}
+            alt="une de image mentor"
+            className="mentor--img-mentor"
+          />
 
           <div className="mentor--information">
             <div className="mentor--name">{mentor.name}</div>
             <div className="mentor--description">{mentor.description}</div>
             <div className="fontColor">
-              <div className="mentor--github">Github : {mentor.github_account}</div>
+              <div className="mentor--github">
+                Github : {mentor.github_account}
+              </div>
               <div className="mentor--youtube">
                 Youtube : {mentor.youtube_account}
               </div>
@@ -54,7 +59,9 @@ function FicheMentor({ mentor, isLogged }) {
               <div className="mentor--linkedin">
                 Linkedin : {mentor.linkedin_account}
               </div>
-              <div className="mentor--twitch">Twitch : {mentor.twitch_account}</div>
+              <div className="mentor--twitch">
+                Twitch : {mentor.twitch_account}
+              </div>
             </div>
           </div>
         </div>
@@ -63,11 +70,7 @@ function FicheMentor({ mentor, isLogged }) {
 
         <div className="ressources">
           {mentor.ressource.map((ressource) => (
-            <Card
-              key={ressource.id}
-              author={mentor.name}
-              {...ressource}
-            />
+            <Card key={ressource.id} author={mentor.name} {...ressource} />
           ))}
         </div>
       </div>

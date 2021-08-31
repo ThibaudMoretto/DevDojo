@@ -7,8 +7,7 @@
     margin: 3rem 1rem;
     padding: 0.5rem;
     border-radius: 10px;
-    box-shadow:0 1px 2px 2px v.$color-theme2;
-
+    box-shadow: 0 1px 2px 2px v.$color-theme2;
 
     &--img {
       max-height: 20rem;
@@ -40,7 +39,6 @@
       font-weight: bold;
       font-size: 1.3rem;
       margin-bottom: 1.2rem;
-      
     }
 
     &--techno {
@@ -55,7 +53,7 @@
       font-size: 0.8rem;
       margin-bottom: 0.5rem;
       margin-top: 1.2rem;
-      color:white;
+      color: white;
     }
 
     &--link {
@@ -63,7 +61,7 @@
       font-size: 1.2rem;
       padding: 0.8rem;
       font-weight: bold;
-    
+
       text-shadow: 1px 1px 1px black;
       text-align: center;
     }
@@ -71,7 +69,7 @@
     &--information {
       display: flex;
       font-size: 0.9rem;
-      color:white;
+      color: white;
 
       &--duration,
       &--difficulty {
@@ -81,7 +79,7 @@
 
     &--publication {
       display: flex;
-      color:white;
+      color: white;
 
       &--author,
       &--date {
@@ -93,7 +91,6 @@
     .font-color {
       background-color: v.$color-theme2;
       padding: 1.2rem;
-     
     }
   }
 }
@@ -111,12 +108,12 @@
   background-color: v.$color-background;
   padding: 1.2rem;
   border-bottom: 1.5rem;
-  color:v.$color-theme2;
+  color: v.$color-theme2;
   font-size: 1.3rem;
   font-weight: bold;
 
   &:hover {
-    color:v.$color-theme1;
+    color: v.$color-theme1;
     transition-duration: 1s;
     font-weight: bold;
   }

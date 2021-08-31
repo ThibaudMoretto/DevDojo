@@ -7,7 +7,8 @@ import './styles.scss';
 const ListMentors = ({ mentors, isLogged }) => (
   <>
     <div className="containers">
-      <div className="mentor-title">Nos <span className="mentor-title-red">mentors</span>
+      <div className="mentor-title">
+        Nos <span className="mentor-title-red">Mentors</span>
         <span className="button-add">
           {isLogged && (
             <MentorForm

@@ -8,15 +8,15 @@
 
 .mentor-title {
   color: v.$color-theme2;
-  font-family:v.$titleFont;
+  font-family: v.$titleFont;
+  font-weight: 800;
   text-align: left;
-  font-size: 2rem;
-  font-weight: bold;
-  padding: 1rem 0 ;
-  margin-left : v.$gutter;
+  font-size: 2.5rem;
+  padding: 1rem 0;
+  margin-left: v.$gutter;
   margin-bottom: v.$bigGutter;
 
-  &-red{
+  &-red {
     color: v.$color-theme1;
   }
 }

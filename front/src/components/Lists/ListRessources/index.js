@@ -9,9 +9,9 @@ const ListRessources = ({ ressources, isLogged }) => {
 
   return (
     <>
-
       <div className="containers">
-        <div className="ressource-title">Nos <span className="ressource-title-red">ressources</span>
+        <div className="ressource-title">
+          Nos <span className="ressource-title-red">Ressources</span>
           {isLogged && (
             <span className="button-add">
               <RessourceForm

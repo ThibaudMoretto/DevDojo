@@ -1,7 +1,7 @@
 @use 'src/styles/vars' as v;
 
 .card-mentor {
-  background-color: #FFF;
+  background-color: #fff;
   min-height: 11rem;
   width: 23rem;
   border-radius: 10px;
@@ -15,7 +15,7 @@
     align-items: center;
     margin-bottom: 1rem;
   }
-  
+
   &-info-title {
     margin-left: 1rem;
   }
@@ -37,7 +37,7 @@
 
   &-info-title-role {
     font-size: 1.125rem;
-    color:  v.$color-theme1;
+    color: v.$color-theme1;
   }
 
   &-technos span {
@@ -45,70 +45,45 @@
     text-transform: uppercase;
     margin-left: 0.5rem;
   }
-
 }
 
 .badge {
   display: inline-block;
-  padding: .35rem .65rem;
-  font-size: .75rem;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.75rem;
   font-weight: 700;
   line-height: 1;
   color: #fff;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   text-transform: uppercase;
 
   &-html {
-    background-color: #DD4B25;
+    background-color: #dd4b25;
   }
 
   &-css {
-    background-color: #016CB4;
+    background-color: #016cb4;
   }
 
   &-javascript {
-    background-color: #EFD81D;
+    background-color: #efd81d;
   }
 
   &-node {
-    background-color: #8BBF3D;
+    background-color: #8bbf3d;
   }
 
   &-postgresql {
-    background-color: #2E638F;
+    background-color: #2e638f;
   }
 
   &-redis {
-    background-color: #D12B1F;
+    background-color: #d12b1f;
   }
-  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // .card {
 //   &--container {

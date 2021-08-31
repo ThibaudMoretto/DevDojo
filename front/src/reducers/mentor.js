@@ -8,7 +8,8 @@ export const initialState = {
   id: '',
   name: '',
   description: '',
-  image: 'https://img2.freepng.fr/20181128/gif/kisspng-ninja-portable-network-graphics-computer-icons-ava-macmacmac-5bfea49c377331.5470002815434149402271.jpg',
+  image:
+    'https://img2.freepng.fr/20181128/gif/kisspng-ninja-portable-network-graphics-computer-icons-ava-macmacmac-5bfea49c377331.5470002815434149402271.jpg',
   github: '',
   linkedin: '',
   twitch: '',
@@ -46,7 +47,8 @@ const reducer = (state = initialState, action = {}) => {
         id: '',
         name: '',
         description: '',
-        image: 'https://img2.freepng.fr/20181128/gif/kisspng-ninja-portable-network-graphics-computer-icons-ava-macmacmac-5bfea49c377331.5470002815434149402271.jpg',
+        image:
+          'https://img2.freepng.fr/20181128/gif/kisspng-ninja-portable-network-graphics-computer-icons-ava-macmacmac-5bfea49c377331.5470002815434149402271.jpg',
         github: '',
         linkedin: '',
         twitch: '',
