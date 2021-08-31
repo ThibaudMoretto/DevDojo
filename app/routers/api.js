@@ -38,7 +38,7 @@ router.route('/ressource')
  * @param {integer} ressource_type_id.body - ID of the type of ressource
  * @returns {Object} 200 - An object with the ID of the created ressource and the slug of the new ressource
  */
-    .post(validate('body', ressourceSchema), ressourceController.add)
+    .post(/*validate('body', ressourceSchema), */ressourceController.add)
 
 router.route('/ressource/:id(\\d+)')
 /**
