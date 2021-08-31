@@ -120,6 +120,7 @@ CREATE TABLE IF NOT EXISTS "author" (
     "name" TEXT NOT NULL,
     "description" TEXT NOT NULL,
     "image" TEXT NOT NULL DEFAULT '',
+    "dev_role" TEXT DEFAULT '',
     "github_account" TEXT,
     "youtube_account" TEXT,
     "website" TEXT,
@@ -208,6 +209,15 @@ CREATE TABLE IF NOT EXISTS "technology_belongsto_category" (
   "category_id" integer REFERENCES "category"("id") ON DELETE CASCADE,
   "technology_id" integer REFERENCES "technology" ("id") ON DELETE CASCADE,
   PRIMARY KEY ("category_id", "technology_id")
+);
+
+-- -----------------------------------------------------
+-- Table "author_relates_technologies" => Pour stocker affectations des technos aux catégories
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS "author_relates_technologies" (
+  "author_id" integer REFERENCES "author"("id") ON DELETE CASCADE,
+  "technology_id" integer REFERENCES "technology" ("id") ON DELETE CASCADE,
+  PRIMARY KEY ("author_id", "technology_id")
 );
 
 -- Pour mettre fin à au bloc de transaction et l'exécuter
