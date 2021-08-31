@@ -108,7 +108,6 @@ const mentorForm = ({
               value={image}
               control="input"
               type="url"
-              required
               autoComplete="off"
             />
 
