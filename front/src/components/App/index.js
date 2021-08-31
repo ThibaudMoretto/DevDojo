@@ -20,7 +20,6 @@ function App({
   getMentors,
   loading,
   submited,
-  // isLogged,
   checkIsLogged,
 }) {
   useEffect(() => {
