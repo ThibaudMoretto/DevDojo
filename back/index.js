@@ -26,8 +26,8 @@ const options = {
          title: 'Dev Dojo API Documentation',
          version: '1.0.0',
       },
-      host: 'https://coding--dojo.herokuapp.com/api/v1.0',
-      basePath: '/api/v1.0',
+      host: 'https://coding--dojo.herokuapp.com/',
+      basePath: 'api/v1.0',
       produces: [
          "application/json"
       ],
