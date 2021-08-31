@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from 'src/containers/NavBar';
 import SearchBar from 'src/containers/SearchBar';
-import logo from 'src/assets/images/Logo.png';
+import logo from 'src/assets/images/Logo_Dev_Dojo.png';
 import './styles.scss';
 
 function Header({ displaySearchBar }) {

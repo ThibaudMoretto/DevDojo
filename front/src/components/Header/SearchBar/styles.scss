@@ -1,7 +1,9 @@
+@use 'src/styles/vars' as v;
+
 .ui.segment {
   width: 100%;
-  position: relative;
-  background: #fff;
+  // position: relative;
+  background-color: v.$color-background ;
   -webkit-box-shadow: none;
   box-shadow: none;
  
