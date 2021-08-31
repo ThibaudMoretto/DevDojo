@@ -16,7 +16,7 @@ function FicheMentor({ mentor, isLogged }) {
   return (
     <>
       <div className="buttons">
-        {!isLogged && (
+        {isLogged && (
           <div className="buttons--c">
             <MentorForm
               mentor={mentor}
