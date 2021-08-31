@@ -1,6 +1,7 @@
 const authorDatamapper = require("../datamappers/author");
 const ressourceDatamapper = require('../datamappers/ressource');
 const technologyDatamapper = require('../datamappers/technology');
+const authorRelatesTechnologyDatamapper = require('../datamappers/author_relates_technology');
 const redis = require('../client-redis');
 
 
@@ -12,6 +13,7 @@ module.exports = {
             const authors = await authorDatamapper.getAll();
 
             for (const author of authors) {
+                author.mainTechnologies = await technologyDatamapper.getAuthorTechnologies(author.id)
                 author.ressource = await ressourceDatamapper.getByAuthorId(author.id);
                 for (const ressource of author.ressource) {
                     ressource.technologiesRelated = await technologyDatamapper.getRessourceRelated(ressource.id);
@@ -39,6 +41,8 @@ module.exports = {
                 return next();
             }
 
+            author.mainTechnologies = await technologyDatamapper.getAuthorTechnologies(request.params.id)
+
             const ressources = await ressourceDatamapper.getByAuthorId(request.params.id)
             if (ressources) {
                 author.ressource = ressources;
@@ -63,6 +67,12 @@ module.exports = {
     async add(request, response) {
         try {
             const author = await authorDatamapper.add(request.body);
+
+            if (request.body.mainTechnologies) {
+                for (const tech of request.body.mainTechnologies) {
+                    await authorRelatesTechnologyDatamapper.linkToAuthor(author.id, tech.id)
+                }
+            }
 
             //On supprime le cache de toutes les ressources
             redis.del('erc:author-');
@@ -104,6 +114,32 @@ module.exports = {
             const updateAuthor = await authorDatamapper.update({
                 ...updateData
             }, author.id);
+
+
+            if (updateData.mainTechnologies) {
+                const updatedTech = [];
+                //Pour toutes les techs à mettre à jour, on va vérifier si la relation author/tech existe en base. Sinon, on la crée.
+                for (const tech of updateData.mainTechnologies) {
+                    const relationExists = await authorRelatesTechnologyDatamapper.getOne(author.id, tech.id);
+
+                    //Si la relation n'existe pas
+                    if (!relationExists) {
+                        authorRelatesTechnologyDatamapper.linkToAuthor(author.id, tech.id)
+                    }
+
+                    //On construit le tableau d'ID dont on va se servir pour comparer les relations en base et les technologies dans le jeu de données à mettre à jour
+                    updatedTech.push(parseInt(tech.id));
+                }
+
+                //Pour toutes les relations en base, on va vérifier qu'elle font partie des data à mettre à jour. Sinon on supprime.
+                const relations = await authorRelatesTechnologyDatamapper.getByAuthorId(author.id);
+
+                for (const relation of relations) {
+                    if (!updatedTech.includes(relation.technology_id)) {
+                        authorRelatesTechnologyDatamapper.delete(author.id, relation.technology_id)
+                    }
+                }
+            }
 
             //On supprime le cache de l'auteur mis à jour, ainsi que le cache de tous les auteurs
             redis.del('erc:author-' + author.id);
