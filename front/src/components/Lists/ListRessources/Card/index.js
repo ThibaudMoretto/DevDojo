@@ -8,22 +8,20 @@ import './styles.scss';
 const Card = ({
   title, slug, author, duration, ressource_type,
 }) => (
-  <Link to={`/ressources/${slug}`}>
-    <article className="card-ressource card-ressource-1">
+  <article className="card-ressource card-ressource-1">
+    <div className="card-ressource-content">
+      <div className="card-ressource-badge">
+        <span className={`badge badge-${ressource_type}`}> {ressource_type} </span>
+      </div>
       <div className="card-ressource-content">
-        <div className="card-ressource-badge">
-          <span className={`badge badge-${ressource_type}`}> {ressource_type} </span>
-        </div>
-        <div className="card-ressource-content">
-          <h3>{title}</h3>
-          <div className="card-ressource-content-details">
-            <p>par <button type="button" className="button-redirect" to={`/mentors/${author.name}`}>{author.name}</button></p>
-            <p>Durée - <span>{duration} min</span></p>
-          </div>
+        <Link to={`/ressources/${slug}`}><h3>{title}</h3></Link>
+        <div className="card-ressource-content-details">
+          <p>par <Link to={`/mentors/${author.name}`}>{author.name}</Link></p>
+          <p>Durée - <span>{duration} min</span></p>
         </div>
       </div>
-    </article>
-  </Link>
+    </div>
+  </article>
 );
 
 export default Card;
