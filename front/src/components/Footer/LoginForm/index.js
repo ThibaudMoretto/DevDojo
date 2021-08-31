@@ -28,9 +28,9 @@ const LoginForm = ({
     <div className="login-form">
       {isLogged && (
         <div className="login-form-logged">
-          <button
-            type="button"
-            className="login-form-button ui blue button"
+          <Button
+            // type="button"
+            className="facebook"
             onClick={() => {
               {
                 handleLogout();
@@ -40,7 +40,7 @@ const LoginForm = ({
             }}
           >
             Déconnexion
-          </button>
+          </Button>
         </div>
       )}
       {!isLogged && (
@@ -48,7 +48,7 @@ const LoginForm = ({
           onClose={() => setOpen(false)}
           onOpen={() => setOpen(true)}
           open={open}
-          trigger={<Button className="button">Espace admin</Button>}
+          trigger={<Button className="facebook">Espace admin</Button>}
         >
           <Modal.Header>Se connecter en tant qu'admin</Modal.Header>
 
@@ -90,7 +90,7 @@ const LoginForm = ({
               Annuler
             </Button>
             <Button
-              color="green"
+              color="facebook"
               form="login-form"
               type="submit"
             >

@@ -47,7 +47,7 @@ const mentorForm = ({
         trigger={(
           <Button
             className="button"
-            color="green"
+            color="facebook"
             onClick={() => {
               {
                 if (isEdit) {
@@ -108,7 +108,6 @@ const mentorForm = ({
               value={image}
               control="input"
               type="url"
-              required
               autoComplete="off"
             />
 
@@ -198,7 +197,7 @@ const mentorForm = ({
           </Button>
           <Button
             form="mentor-form"
-            color="green"
+            color="facebook"
             type="submit"
           >
             Valider

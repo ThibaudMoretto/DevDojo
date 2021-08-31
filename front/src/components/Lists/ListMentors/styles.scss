@@ -9,35 +9,14 @@
 .mentor-title {
   color: v.$color-theme2;
   font-family:v.$titleFont;
-  text-align: center;
+  text-align: left;
   font-size: 2rem;
   font-weight: bold;
   padding: 1rem 0 ;
-  
-}
+  margin-left : v.$gutter;
+  margin-bottom: v.$bigGutter;
 
-.container--button {
-  display: flex;
-  margin-top: -1rem;
-  justify-content: center;
-}
-
-.buttons {
-  display: flex;
-  width: auto;
-}
-
-/*Tablets [601px -> 1200px]*/
-@media only screen and (max-width: 1100px) {
-  .container--button {
-    display: flex;
-    margin-top: -1rem;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .buttons {
-    padding: 1rem;
-    width: auto;
+  &-red{
+    color: v.$color-theme1;
   }
 }

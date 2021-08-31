@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 // import PropTypes from "prop-types";
 import Card from 'src/components/Lists/ListRessources/Card';
@@ -61,12 +62,11 @@ function FicheMentor({ mentor, isLogged }) {
         <div className="ressource-title">Ses ressources</div>
 
         <div className="ressources">
-          {mentor.ressource.map((ress) => (
+          {mentor.ressource.map((ressource) => (
             <Card
-              key={ress.id}
-              name={ress.title}
-              description={ress.description}
-              slug={ress.slug}
+              key={ressource.id}
+              author={mentor.name}
+              {...ressource}
             />
           ))}
         </div>
