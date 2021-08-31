@@ -50,26 +50,7 @@ const Card = ({ name, image }) => {
 
 Card.propTypes = {
   name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  // description: PropTypes.string.isRequired,
 };
 
 export default Card;
-
-{
-  /* <article className="card">
-    <div className="card--container">
-      <div className="card-content"> */
-}
-{
-  /* Lien vers la fiche mentor avec /ressources/+name */
-}
-//       <Link to={`/mentors/${name}`}>
-//         <img src={image} alt="une de image mentor" className="card--img-mentor" />
-//         <h2 className="card-title">{name}</h2>
-
-//         <p className="card-description">{description}</p>
-//       </Link>
-//     </div>
-//     {/* Lien vers la fiche mentor avec /ressources/+name */}
-//   </div>
-// </article>
