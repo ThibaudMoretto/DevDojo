@@ -2,24 +2,27 @@ import React, { useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import Home from 'src/components/Home';
-import ListMentors from 'src/containers/ListMentors';
-import ListRessources from 'src/containers/ListRessources';
-import FicheRessource from 'src/containers/FicheRessource';
-import FicheMentor from 'src/containers/FicheMentor';
+import Home from 'src/containers/Home';
+import ListMentors from 'src/containers/Lists/ListMentors';
+import ListRessources from 'src/containers/Lists/ListRessources';
+import FicheRessource from 'src/containers/Fiches/FicheRessource';
+import FicheMentor from 'src/containers/Fiches/FicheMentor';
 import SearchResults from 'src/components/SearchResults';
 import Footer from 'src/components/Footer';
 import Error from 'src/components/Error';
 import Header from 'src/components/Header';
-import Loading from './Loading'
+import Loading from './Loading';
 
 import './styles.scss';
 
-function App({ getRessources, getMentors, loading, submited, isLogged,
-  checkIsLogged }) {
-
-  console.log('Es-tu connecté ?', isLogged);
-
+function App({
+  getRessources,
+  getMentors,
+  loading,
+  submited,
+  isLogged,
+  checkIsLogged,
+}) {
   useEffect(() => {
     getRessources();
     getMentors();
@@ -28,17 +31,14 @@ function App({ getRessources, getMentors, loading, submited, isLogged,
 
   if (loading) {
     return <Loading />;
-  };
+  }
 
   return (
     <div className="app">
-
-      {submited && (
-        <Redirect to="/search-results" />)}
+      {submited && <Redirect to="/search-results" />}
 
       <Header />
       <Switch>
-
         <Route exact path="/">
           <Home />
         </Route>
@@ -51,11 +51,9 @@ function App({ getRessources, getMentors, loading, submited, isLogged,
           <ListMentors />
         </Route>
 
-        <Route exact path="/ressources/:slug" component={FicheRessource}>
-        </Route>
+        <Route exact path="/ressources/:slug" component={FicheRessource} />
 
-        <Route exact path="/mentors/:name" component={FicheMentor}>
-        </Route>
+        <Route exact path="/mentors/:name" component={FicheMentor} />
 
         <Route exact path="/search-results">
           <SearchResults />

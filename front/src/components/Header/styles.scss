@@ -1,26 +1,46 @@
 @import 'src/styles/vars';
 
 .header {
- 
+  width: 100%;
   flex-direction: row;
   margin-bottom: $gutter;
+  background-color: #dfe6ed;
+  padding: 1.3rem 1.3rem 0.4rem 1.3rem;
 
-  &--container {  // div container avec toue les éléments du header
+  &--container {
+    // div container avec toue les éléments du header
     display: flex;
 
-    .header-nav{ //div contenant une div avec les 3 boutons d' acceuil 
-     align-items: center;
-     display: flex;
-     width: 100%;
+    .header-nav {
+      //div contenant une div avec les 3 boutons d' acceuil
+      align-items: center;
+      display: flex;
+      width: auto;
     }
   }
-    &--logo_container{ //div contenant le logo de la homepage
-      width:40%;
-    }
+  &--logo_container {
+    //div contenant le logo de la homepage
+    width: 40%;
+  }
 
-    &-logo{
-      width:250px;
-    }
+  &-logo {
+    width: 25rem;
+    margin-left: 1rem;
+  }
 
+  &-search {
+    background-color: #dfe6ed;
+    padding: 1rem;
+  }
+}
 
+@media only screen and (max-width: 1100px) {
+  /*Tablets [601px -> 1200px]*/
+  .header {
+    width: 100%;
+
+    flex-direction: column;
+    margin-bottom: $gutter;
+    padding: 1.3rem 1.3rem 0.4rem 1.3rem;
+  }
 }

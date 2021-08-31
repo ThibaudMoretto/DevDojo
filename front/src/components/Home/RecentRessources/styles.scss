@@ -1,59 +1,56 @@
-@use '../../../styles/vars';
+@use 'src/styles/vars';
 
-.lastRessources{
+.lastRessources {
   background-color: vars.$backgroundDiv;
-  width:100%;
-  margin-bottom: 15vh;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding-bottom: 4rem;
 
-  &--title{
-    padding:1.2rem;
+  &--title {
+    font-family: 'Rampart One', cursive;
+    padding-top: 2.6rem;
     font-size: 2.2rem;
     font-weight: bold;
+    text-align: center;
+  }
 }
- 
-}
-
-
-
 
 .card {
-
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  padding:2rem;
+  padding: 2rem;
+  margin-bottom: 3rem;
 
-  &--container{
+  &--container {
     background-color: white;
     box-shadow: 0 2px 2px 2px rgb(157, 156, 156);
-    width:20rem;
-    height:20rem;
+    width: 20rem;
+    height: 20rem;
     border-radius: 5%;
     margin-top: 2.5rem;
     text-align: center;
-    
   }
-  
-  &--title{
+
+  &--title {
     font-size: 1.3rem;
-    font-weight: bolder; 
-    margin:0.5em;
+    font-weight: bolder;
+    margin: 0.5em;
   }
-  
-  &--description{
+
+  &--description {
     padding: 0.6rem;
     font-size: 1.1rem;
   }
 }
 
-.button{
-
+.button {
   padding-bottom: 2rem;
   display: flex;
   justify-content: center;
 
-  &--last_sources{
+  &--last_sources {
     color: white;
     background-color: vars.$primaryColor;
     text-transform: uppercase;
@@ -61,12 +58,17 @@
     border-radius: 10px;
     width: 25rem;
     height: 3rem;
-    
   }
 }
 
+.title--color {
+  color: vars.$primaryColor;
+}
 
-.title--color{
-  color:vars.$primaryColor;
-  
+/*Tablets [601px -> 1200px]*/
+@media only screen and (max-width: 1100px) {
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }

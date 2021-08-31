@@ -1,18 +1,17 @@
 import React from 'react';
-import RecentMentors from './RecentMentors';
-import RecentRessources from './RecentRessources';
+import RecentMentors from 'src/components/Home/RecentMentors';
+import RecentRessources from 'src/components/Home/RecentRessources';
 import HeroBanner from './HeroBanner';
 import './styles.scss';
 
-function Home() {
+function Home({ ressources, mentors }) {
   return (
     <div>
       <HeroBanner />
-      <RecentRessources />
-      <RecentMentors />
+      <RecentRessources ressources={ressources} />
+      <RecentMentors mentors={mentors} />
     </div>
-  )
+  );
 }
 
 export default Home;
-

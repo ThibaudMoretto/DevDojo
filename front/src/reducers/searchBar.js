@@ -1,11 +1,6 @@
-import {
-  SET_SEARCH_VALUE,
-  SUBMIT_SEARCH,
-} from 'src/actions/searchBar';
+import { SET_SEARCH_VALUE, SUBMIT_SEARCH } from 'src/actions/searchBar';
 
-import {
-  RESET_SUBMIT_VALUE
-} from 'src/actions/navBar';
+import { RESET_SUBMIT_VALUE } from 'src/actions/navBar';
 
 export const initialState = {
   searchValue: '',

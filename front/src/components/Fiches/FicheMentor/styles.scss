@@ -1,0 +1,77 @@
+@use 'src/styles/vars';
+
+.containers {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 0;
+  box-shadow: 0 1px 1px 2px #ccc;
+  padding: 0.5rem;
+  border-radius: 10px;
+
+  .mentor {
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 2px 1px #ccc;
+
+    &--name {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: vars.$primaryColor;
+      font-family: vars.$titleFont;
+      margin-bottom: 0.8rem;
+    }
+
+    &--description {
+      font-weight: bold;
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+    }
+
+    &--ressources {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 2rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    &--github,
+    &--youtube,
+    &--website,
+    &--twitter,
+    &--linkedin,
+    &--twitch {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+  }
+
+  .fontColor {
+    background-color: vars.$backgroundDiv;
+    padding: 1.2rem;
+  }
+}
+
+.buttons {
+  position: absolute;
+  right: 10%;
+}
+
+/*Tablets [601px -> 1200px]*/
+@media only screen and (max-width: 1100px) {
+  .mentor {
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 2px 1px #ccc;
+  }
+  .buttons {
+    padding: 1rem;
+  }
+}

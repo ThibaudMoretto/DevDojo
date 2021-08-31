@@ -1,17 +1,35 @@
 import React from 'react';
 import './styles.scss';
-import imgMentor from '../../../assets/images/ImgMentor.png'
-import imgMentor2 from '../../../assets/images/ImgMentor2.png'
-import imgMentor3 from '../../../assets/images/ImgMentor3.png'
+import Card from 'src/components/Lists/ListMentors/Card';
+import { Button } from 'semantic-ui-react';
 
-
-function RecentMentors() {
+function RecentMentors({ mentors }) {
   return (
     <div className="latestMentor">
       <div className="latestMentor-container">
-        <h2 className="latestMentor-title">Nos derniers <span className="latestMentor-span">Mentors</span></h2>
+        <h2 className="latestMentor-title">
+          Nos derniers <span className="latestMentor-span">Mentors</span>
+        </h2>
         <div className="latestMentor-list">
-          <div className="latestMentor-list-card">
+          {mentors.map((mentor) => (
+            <Card key={mentor.id} {...mentor} />
+          ))}
+        </div>
+        <div className="latestMentor-btnContainer">
+          <Button className="latestMentor-btnContainer-btn">
+            {' '}
+            Afficher nos derniers mentors{' '}
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default RecentMentors;
+
+{
+  /* <div className="latestMentor-list-card">
             <div className="latestMentor-list-card-imgContainer">
               <img src={imgMentor} alt="Mentor" />
             </div>
@@ -44,12 +62,5 @@ function RecentMentors() {
         </div>
 
         <div className="latestMentor-btnContainer">
-          <button className="latestMentor-btnContainer-btn">Tous nos mentors</button>
-        </div>
-
-      </div>
-    </div>
-  )
+          {/* <button className="latestMentor-btnContainer-btn">Tous nos mentors</button> */
 }
-
-export default RecentMentors;

@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Modal } from 'semantic-ui-react'
-import Field from 'src/components/Footer/LoginForm/Field';
+import { Button, Modal, Form } from 'semantic-ui-react';
+import Field from 'src/components/Utils/Field';
 
 import './styles.scss';
 
@@ -12,9 +12,7 @@ const LoginForm = ({
   handleLogin,
   handleLogout,
   isLogged,
-  loggedMessage,
 }) => {
-
   const handleSubmit = (evt) => {
     evt.preventDefault();
     handleLogin();
@@ -24,21 +22,19 @@ const LoginForm = ({
     localStorage.setItem('token', '');
   };
 
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = React.useState(false);
 
   return (
-
     <div className="login-form">
       {isLogged && (
         <div className="login-form-logged">
-          <p className="login-form-message">
-            {loggedMessage}
-          </p>
           <button
             type="button"
-            className="login-form-button"
+            className="login-form-button ui blue button"
             onClick={() => {
-              { handleLogout() };
+              {
+                handleLogout();
+              }
               resetToken();
               setOpen(false);
             }}
@@ -52,39 +48,54 @@ const LoginForm = ({
           onClose={() => setOpen(false)}
           onOpen={() => setOpen(true)}
           open={open}
-          trigger={<Button>Espace Admin</Button>}
+          trigger={<Button className="button">Espace admin</Button>}
         >
           <Modal.Header>Se connecter en tant qu'admin</Modal.Header>
 
           <Modal.Content>
-
-            <form id="login-form" autoComplete="on" className="login-form-element" onSubmit={handleSubmit}>
+            <Form
+              id="login-form"
+              autoComplete="on"
+              className="login-form-element"
+              onSubmit={handleSubmit}
+            >
               <Field
+                id="form-input-control-email"
+                label="Email"
+                placeholder="Email"
                 name="email"
-                placeholder="Adresse Email"
                 onChange={changeField}
                 value={email}
+                control="input"
+                type="email"
+                required
+                autoComplete="on"
               />
               <Field
-                name="password"
-                type="password"
+                id="form-input-control-password"
+                label="Mot de passe"
                 placeholder="Mot de passe"
+                name="password"
                 onChange={changeField}
                 value={password}
+                control="input"
+                type="password"
+                autoComplete="on"
+                required
               />
-            </form>
+            </Form>
           </Modal.Content>
           <Modal.Actions>
-            <Button color='black' onClick={() => setOpen(false)}>
+            <Button color="black" onClick={() => setOpen(false)}>
               Annuler
             </Button>
-            <button
+            <Button
+              color="green"
               form="login-form"
               type="submit"
-              className="login-form-button"
             >
               Se connecter
-            </button>
+            </Button>
           </Modal.Actions>
         </Modal>
       )}
@@ -107,4 +118,4 @@ LoginForm.defaultProps = {
   loggedMessage: 'Connecté',
 };
 
-export default LoginForm
+export default LoginForm;

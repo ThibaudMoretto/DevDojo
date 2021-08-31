@@ -11,7 +11,9 @@ function NavBar({ resetSubmitValue }) {
           activeClassName="nav-link--active"
           className="nav-link"
           to="/"
-          onClick={() => { resetSubmitValue(); }}
+          onClick={() => {
+            resetSubmitValue();
+          }}
         >
           Accueil
         </NavLink>
@@ -22,7 +24,9 @@ function NavBar({ resetSubmitValue }) {
           activeClassName="nav-link--active"
           className="nav-link"
           to="/ressources"
-          onClick={() => { resetSubmitValue(); }}
+          onClick={() => {
+            resetSubmitValue();
+          }}
         >
           Ressources
         </NavLink>
@@ -33,14 +37,15 @@ function NavBar({ resetSubmitValue }) {
           activeClassName="nav-link--active"
           className="nav-link"
           to="/mentors"
-          onClick={() => { resetSubmitValue(); }}
+          onClick={() => {
+            resetSubmitValue();
+          }}
         >
           Mentors
         </NavLink>
       </div>
     </nav>
-  )
+  );
 }
 
 export default NavBar;
-

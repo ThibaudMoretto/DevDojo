@@ -1,13 +1,6 @@
 @use 'reset';
 @use 'vars';
 
-@import 'semantic-ui-css/semantic.min.css';
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('../assets/fonts/Poppins-Regular.ttf');
-}
-
 body {
   font-family: 'Poppins', sans-serif;
   color: vars.$primaryContent;
@@ -16,4 +9,3 @@ body {
 img {
   max-width: 100%;
 }
-

@@ -5,7 +5,6 @@ import { createGetMentorsAction } from 'src/actions/mentors';
 import { createGetRessourcesAction } from 'src/actions/ressources';
 import { checkToken } from 'src/actions/user';
 
-
 const mapStateToProps = (state) => ({
   loading: state.ressources.isLoading,
   loading: state.mentors.isLoading,

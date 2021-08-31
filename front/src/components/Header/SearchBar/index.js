@@ -4,13 +4,10 @@ import { Form, Input, Segment } from 'semantic-ui-react';
 import './styles.scss';
 
 // NOE
-const SearchBar = ({ isLoading, searchValue, onSearchChange, onSearchSubmit, }) => {
-
+const SearchBar = ({ searchValue, onSearchChange, onSearchSubmit }) => {
   return (
     <Segment>
-      <Form
-        onSubmit={onSearchSubmit}
-      >
+      <Form onSubmit={onSearchSubmit}>
         <Input
           className="search"
           fluid
@@ -19,7 +16,6 @@ const SearchBar = ({ isLoading, searchValue, onSearchChange, onSearchSubmit, }) 
           placeholder="Chercher des ressources et mentors"
           value={searchValue}
           onChange={(event) => onSearchChange(event.target.value)}
-
         />
       </Form>
     </Segment>
@@ -32,6 +28,5 @@ SearchBar.propTypes = {
   onSearchChange: PropTypes.func.isRequired,
   onSearchSubmit: PropTypes.func.isRequired,
 };
-
 
 export default SearchBar;
