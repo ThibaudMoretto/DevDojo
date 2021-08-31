@@ -6,20 +6,18 @@ import './styles.scss';
 
 const ListMentors = ({ mentors, isLogged }) => (
   <>
-    <div className="container--button">
-      <div className="buttons">
-        {isLogged && (
-          <MentorForm
-            buttonMessage="Ajouter un mentor"
-            headerMessage="Ajouter un nouveau mentor"
-            isEdit={false}
-          />
-        )}
-      </div>
-    </div>
-
     <div className="containers">
-      <div className="mentor-title">Nos mentors</div>
+      <div className="mentor-title">Nos <span className="mentor-title-red">mentors</span>
+        <span className="button-add">
+          {isLogged && (
+            <MentorForm
+              buttonMessage="Ajouter un mentor"
+              headerMessage="Ajouter un nouveau mentor"
+              isEdit={false}
+            />
+          )}
+        </span>
+      </div>
 
       <div className="mentors">
         {mentors.map((mentor) => (

@@ -68,7 +68,7 @@ const RessourceForm = ({
         trigger={(
           <Button
             className="button"
-            color="green"
+            color="facebook"
             onClick={() => {
               {
                 if (isEdit) {
@@ -251,7 +251,7 @@ const RessourceForm = ({
           </Button>
           <Button
             form="ressource-form"
-            color="green"
+            color="facebook"
             type="submit"
           >
             Valider

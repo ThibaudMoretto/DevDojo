@@ -9,20 +9,19 @@ const ListRessources = ({ ressources, isLogged }) => {
 
   return (
     <>
-      <div className="container--button">
-        {isLogged && (
-          <div className="buttons">
-            <RessourceForm
-              buttonMessage="Ajouter une ressource"
-              headerMessage="Ajouter une ressource"
-              isEdit={false}
-            />
-          </div>
-        )}
-      </div>
 
       <div className="containers">
-        <div className="ressource-title">Nos ressources</div>
+        <div className="ressource-title">Nos <span className="ressource-title-red">ressources</span>
+          {isLogged && (
+            <span className="button-add">
+              <RessourceForm
+                buttonMessage="Ajouter une ressource"
+                headerMessage="Ajouter une ressource"
+                isEdit={false}
+              />
+            </span>
+          )}
+        </div>
 
         <div className="ressources">
           {ressources.map((ressource) => (
@@ -34,14 +33,14 @@ const ListRessources = ({ ressources, isLogged }) => {
   );
 };
 
-ListRessources.propTypes = {
-  ressources: PropTypes.arrayOf(
-    PropTypes.shape({
-      slug: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-  isLogged: PropTypes.bool,
-};
+// ListRessources.propTypes = {
+//   ressources: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       slug: PropTypes.string.isRequired,
+//       description: PropTypes.string.isRequired,
+//     }),
+//   ).isRequired,
+//   isLogged: PropTypes.bool,
+// };
 
 export default ListRessources;

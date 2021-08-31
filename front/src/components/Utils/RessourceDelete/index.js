@@ -32,17 +32,17 @@ const RessourceDelete = ({
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         open={open}
-        trigger={
+        trigger={(
           <Button
             className="button"
-            color="red"
+            color="google plus"
             onClick={() => {
               initialValue(ressource);
             }}
           >
             {buttonMessage}
           </Button>
-        }
+        )}
       >
         <Modal.Header>{headerMessage}</Modal.Header>
 
