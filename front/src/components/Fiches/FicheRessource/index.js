@@ -18,7 +18,7 @@ function FicheRessource({ ressource, isLogged, loading }) {
   return (
     <>
       <div className="container--button">
-        {!isLogged && (
+        {isLogged && (
           <div className="buttons">
             <RessourceForm
               ressource={ressource}
