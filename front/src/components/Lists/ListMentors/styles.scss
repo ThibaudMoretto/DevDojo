@@ -1,3 +1,5 @@
+@use 'src/styles/vars' as v;
+
 .mentors {
   display: flex;
   flex-wrap: wrap;
@@ -5,11 +7,13 @@
 }
 
 .mentor-title {
-  font-family: 'Rampart One', cursive;
+  color: v.$color-theme2;
+  font-family:v.$titleFont;
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
-  padding: 1rem 0 0 1rem;
+  padding: 1rem 0 ;
+  
 }
 
 .container--button {

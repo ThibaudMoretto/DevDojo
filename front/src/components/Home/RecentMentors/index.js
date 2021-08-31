@@ -16,7 +16,7 @@ function RecentMentors({ mentors }) {
           ))}
         </div>
         <div className="latestMentor-btnContainer">
-          <Button className="latestMentor-btnContainer-btn">
+          <Button color="red" className="latestMentor-btnContainer-btn">
             {' '}
             Afficher nos derniers mentors{' '}
           </Button>

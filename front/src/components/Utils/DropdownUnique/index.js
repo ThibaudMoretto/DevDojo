@@ -20,6 +20,7 @@ const DropdownUnique = ({
       autoComplete="off"
       lazyLoad
       clearable
+      fluid
       defaultValue={nullValueToString}
       options={options}
       onChange={handleChange}

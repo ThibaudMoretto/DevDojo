@@ -8,7 +8,7 @@ const ListMentors = ({ mentors, isLogged }) => (
   <>
     <div className="container--button">
       <div className="buttons">
-        {!isLogged && (
+        {isLogged && (
           <MentorForm
             buttonMessage="Ajouter un mentor"
             headerMessage="Ajouter un nouveau mentor"
