@@ -1,7 +1,12 @@
-const ressourceDatamapper = require("../datamappers/ressource")
-const authorDatamapper = require("../datamappers/author")
-const technologyDatamapper = require("../datamappers/technology")
-
+const ressourceDatamapper = require("../datamappers/ressource");
+const ressourceRelatesTechnologyDatamapper = require("../datamappers/ressource_relates_technology");
+const ressourceRequiresTechnologyDatamapper = require("../datamappers/ressource_requires_technology");
+const authorDatamapper = require("../datamappers/author");
+const technologyDatamapper = require("../datamappers/technology");
+const languageDatamapper = require("../datamappers/language");
+const difficultyDatamapper = require("../datamappers/difficulty");
+const ressource_typeDatamapper = require("../datamappers/ressource_type");
+const redis = require('../client-redis');
 
 module.exports = {
 
@@ -15,6 +20,20 @@ module.exports = {
                 ressource.author = await authorDatamapper.getById(ressource.author_id);
                 ressource.technologiesRelated = await technologyDatamapper.getRessourceRelated(ressource.id);
                 ressource.technologiesRequired = await technologyDatamapper.getRessourceNeeds(ressource.id);
+                //Demandé par le front, ajout du name du language + difficulty + ressource_type
+                if (ressource.language_id) {
+                    const language = await languageDatamapper.getOne(ressource.language_id);
+                    ressource.language = language.name;
+                }
+                if (ressource.difficulty_id) {
+                    const difficulty = await difficultyDatamapper.getOne(ressource.difficulty_id);
+                    ressource.difficulty = difficulty.name;
+                }
+                if (ressource.ressource_type_id) {
+                    const ressource_type = await ressource_typeDatamapper.getOne(ressource.ressource_type_id);
+                    ressource.ressource_type = ressource_type.name;
+                }
+
             }
 
             response.json({
@@ -44,6 +63,20 @@ module.exports = {
             ressource.technologiesRelated = await technologyDatamapper.getRessourceRelated(ressource.id);
             ressource.technologiesRequired = await technologyDatamapper.getRessourceNeeds(ressource.id);
 
+            //Demandé par le front, ajout du name du language + difficulty + ressource_type
+            if (ressource.language_id) {
+                const language = await languageDatamapper.getOne(ressource.language_id);
+                ressource.language = language.name;
+            }
+            if (ressource.difficulty_id) {
+                const difficulty = await difficultyDatamapper.getOne(ressource.difficulty_id);
+                ressource.difficulty = difficulty.name;
+            }
+            if (ressource.ressource_type_id) {
+                const ressource_type = await ressource_typeDatamapper.getOne(ressource.ressource_type_id);
+                ressource.ressource_type = ressource_type.name;
+            }
+
             response.json({
                 data: ressource
             });
@@ -58,18 +91,33 @@ module.exports = {
 
     async add(request, response) {
         try {
-            const ressource = await ressourceDatamapper.add(request.body);            
+            //Le front envoie des strings vide quand il n'y a pas d'info, donc si une donnée du body est une string vide, alors je remplace par null
+            for (const key in request.body) {
+                if(request.body[key]===''){
+                    request.body[key] = null;
+                }
+            }
+
+            const ressource = await ressourceDatamapper.add(request.body);
 
             //On lie la ressource à toutes les technologies pré-requises
-            for (const tech of request.body.technologiesRequired) {
-                await ressourceDatamapper.linkToRequiredTechnology(ressource.id, tech.id)
+            //Si on a des tecehnologies required
+            if (request.body.technologiesRequired) {
+                for (const tech of request.body.technologiesRequired) {
+                    await ressourceDatamapper.linkToRequiredTechnology(ressource.id, tech.id)
+                }
             }
-
 
             //On lie la ressource à toutes les technologies relatives
-            for (const tech of request.body.technologiesRelated) {
-                await ressourceDatamapper.linkToRelatedTechnology(ressource.id, tech.id)
+            //Si on a des technologies related
+            if (request.body.technologiesRelated) {
+                for (const tech of request.body.technologiesRelated) {
+                    await ressourceDatamapper.linkToRelatedTechnology(ressource.id, tech.id)
+                }
             }
+
+            //On supprime le cache de toutes les ressources
+            redis.del('erc:ressource-');
 
             response.json({
                 data: ressource
@@ -94,6 +142,95 @@ module.exports = {
         }
     },
 
+    async update(request, response, next) {
+
+        try {
+            //Avant de mettre à jour, on vérifie que la ressource existe
+            const ressource = await ressourceDatamapper.getById(request.params.id)
+
+            if (!ressource) {
+                return next();
+            }
+
+            //Le front envoie des strings vide quand il n'y a pas d'info, donc si une donnée du body est une string vide, alors je remplace par null
+            for (const key in request.body) {
+                if(request.body[key]===''){
+                    request.body[key] = null;
+                }
+            }
+
+            const updateData = request.body;
+
+            const updateRessource = await ressourceDatamapper.update({
+                ...updateData
+            }, ressource.id);
+
+            //On lie la ressource à toutes les technologies pré-requises
+            //Si on a des technologies required à modifier
+            if (updateData.technologiesRelated) {
+                const updatedTech = [];
+                //Pour toutes les techs à mettre à jour, on va vérifier si la relation ressource/tech existe en base. Sinon, on la crée.
+                for (const tech of updateData.technologiesRelated) {
+                    const relationExists = await ressourceRelatesTechnologyDatamapper.getOne(ressource.id, tech.id);
+
+                    //Si la relation n'existe pas
+                    if (!relationExists) {
+                        ressourceDatamapper.linkToRelatedTechnology(ressource.id, tech.id)
+                    }
+
+                    //On construit le tableau d'ID dont on va se servir pour comparer les relations en base et les technologies dans le jeu de données à mettre à jour
+                    updatedTech.push(parseInt(tech.id));
+                }
+
+                //Pour toutes les relations en base, on va vérifier qu'elle font partie des data à mettre à jour. Sinon on supprime.
+                const relations = await ressourceRelatesTechnologyDatamapper.getAllRelationsByRessource(ressource.id);
+
+                for (const relation of relations) {
+                    if (!updatedTech.includes(relation.technology_id)) {
+                        ressourceRelatesTechnologyDatamapper.delete(ressource.id, relation.technology_id)
+                    }
+                }
+
+            }
+
+            if (updateData.technologiesRequired) {
+                const updatedTech = [];
+                //Pour toutes les techs à mettre à jour, on va vérifier si la relation ressource/tech existe en base. Sinon, on la crée.
+                for (const tech of updateData.technologiesRequired) {
+                    const relationExists = await ressourceRequiresTechnologyDatamapper.getOne(ressource.id, tech.id);
+
+                    //Si la relation n'existe pas
+                    if (!relationExists) {
+                        ressourceDatamapper.linkToRequiredTechnology(ressource.id, tech.id)
+                    }
+
+                    //On construit le tableau d'ID dont on va se servir pour comparer les relations en base et les technologies dans le jeu de données à mettre à jour
+                    updatedTech.push(parseInt(tech.id));
+                }
+
+                //Pour toutes les relations en base, on va vérifier qu'elle font partie des data à mettre à jour. Sinon on supprime.
+                const relations = await ressourceRequiresTechnologyDatamapper.getAllRequirementsByRessource(ressource.id);
+
+                for (const relation of relations) {
+                    if (!updatedTech.includes(relation.technology_id)) {
+                        ressourceRequiresTechnologyDatamapper.delete(ressource.id, relation.technology_id)
+                    }
+                }
+
+            }
+
+            //On supprime le cache de la ressource mise à jour, ainsi que le cache de toutes les ressources
+            redis.del('erc:ressource-' + ressource.id);
+            redis.del('erc:ressource-');
+
+            response.json({
+                data: updateRessource
+            })
+        } catch (error) {
+            console.error(`message ` + error)
+        }
+    },
+
     async delete(request, response) {
         try {
 
@@ -102,6 +239,11 @@ module.exports = {
                     data: `Ressource supprimée`
                 })
             })
+
+            //On supprime le cache de la ressource supprimée ainsi que le cache de toutes les ressources
+            redis.del('erc:ressource-' + request.params.id);
+            redis.del('erc:ressource-');
+
         } catch (error) {
             console.error(`message ` + error)
         }

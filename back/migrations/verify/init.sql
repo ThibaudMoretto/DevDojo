@@ -2,6 +2,7 @@
 
 BEGIN;
 
+SELECT * FROM "token";
 SELECT * FROM "role";
 SELECT * FROM "language";
 SELECT * FROM "ressource_type";

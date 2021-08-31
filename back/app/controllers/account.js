@@ -1,6 +1,6 @@
-const accountDatamapper = require('../datamappers/account')
-const jwt = require('./jwt')
-const bcrypt = require('bcrypt')
+const accountDatamapper = require('../datamappers/account');
+const jwt = require('./jwt');
+const bcrypt = require('bcrypt');
 
 module.exports = {
 
@@ -39,6 +39,7 @@ module.exports = {
 
             //On récupère un refreshToken pour le user, et on le renvoie dans les infos du user
             account.refreshToken = jwt.getRefreshToken(account.email);
+            await jwt.saveToken(account.refreshToken);
 
             //On envoie l'information indiquant le statut de connexion de l'utilisateur
             account.logged = true;
@@ -58,6 +59,6 @@ module.exports = {
     },
 
     logout (request, response) {
-        
+        jwt.deleteToken(request, response); 
     }
 }

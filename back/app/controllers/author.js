@@ -1,6 +1,8 @@
 const authorDatamapper = require("../datamappers/author");
 const ressourceDatamapper = require('../datamappers/ressource');
-const technologyDatamapper = require('../datamappers/technology')
+const technologyDatamapper = require('../datamappers/technology');
+const redis = require('../client-redis');
+
 
 module.exports = {
 
@@ -15,8 +17,8 @@ module.exports = {
                     ressource.technologiesRelated = await technologyDatamapper.getRessourceRelated(ressource.id);
                     ressource.technologiesNeeded = await technologyDatamapper.getRessourceNeeds(ressource.id)
                 }
-            }
 
+            }
             response.json({
                 data: authors
             });
@@ -62,6 +64,9 @@ module.exports = {
         try {
             const author = await authorDatamapper.add(request.body);
 
+            //On supprime le cache de toutes les ressources
+            redis.del('erc:author-');
+
             response.json({
                 data: author
             });
@@ -85,6 +90,33 @@ module.exports = {
         }
     },
 
+    async update (request, response) {
+        try {
+            //Avant de mettre à jour, on vérifie que l'auteur existe
+            const author = await authorDatamapper.getById(request.params.id)
+
+            if (!author) {
+                return next();
+            }
+
+            const updateData = request.body;
+
+            const updateAuthor = await authorDatamapper.update({
+                ...updateData
+            }, author.id);
+
+            //On supprime le cache de l'auteur mis à jour, ainsi que le cache de tous les auteurs
+            redis.del('erc:author-' + author.id);
+            redis.del('erc:author-');
+
+            response.json({
+                data: updateAuthor
+            })
+        } catch (error) {
+            console.error(`message ` + error)
+        }
+    },
+
     async delete(request, response) {
         try {
             await authorDatamapper.delete(parseInt(request.params.id), () => {
@@ -92,6 +124,11 @@ module.exports = {
                     data: `Auteur supprimé`
                 })
             })
+
+            //On supprime le cache de l'auteur supprimé, ainsi que le cache de tous les auteurs
+            redis.del('erc:author-' + request.params.id);
+            redis.del('erc:author-');
+            
         } catch (error) {
             console.error(`message ` + error)
         }

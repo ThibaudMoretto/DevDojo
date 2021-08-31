@@ -1,4 +1,4 @@
-const client = require('../client');
+const client = require('../client-pg');
 
 module.exports = {
     async getAll() {
@@ -33,5 +33,4 @@ module.exports = {
         `, [id]);
         return result.rows;
     },
-
 }
