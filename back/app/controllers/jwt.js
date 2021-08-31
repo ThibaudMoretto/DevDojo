@@ -6,7 +6,7 @@ module.exports = {
     getAccessToken (username) {
     
         const user = { name: username }
-        const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '15s' });
+        const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '3600s' });
 
         return accessToken;
     },
