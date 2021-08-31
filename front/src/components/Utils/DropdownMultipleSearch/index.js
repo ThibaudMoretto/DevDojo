@@ -9,6 +9,8 @@ const DropdownMultiple = ({
     onChange(data.value, name);
   };
 
+  const nullValueToString = value === null ? '' : value;
+
   return (
     <Form.Field
       required
@@ -19,7 +21,7 @@ const DropdownMultiple = ({
       autoComplete="off"
       lazyLoad
       clearable
-      defaultValue={value}
+      defaultValue={nullValueToString}
       options={options}
       onChange={handleChange}
       control={Select}
@@ -28,6 +30,10 @@ const DropdownMultiple = ({
       selection
     />
   );
+};
+
+DropdownMultiple.defaultProps = {
+  value: '',
 };
 
 export default DropdownMultiple;

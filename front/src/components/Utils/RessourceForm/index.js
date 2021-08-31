@@ -142,8 +142,32 @@ const RessourceForm = ({
               value={author}
               options={mentorDatas}
               required
+              autoComplete="off"
               search
             />
+
+            {!isEdit && (
+              <DropdownMultipleSearch
+                id="form-input-control-technologies"
+                label="Technologie(s) en lien"
+                placeholder="Technologie(s) en lien"
+                name="technologies"
+                onChange={changeValue}
+                options={datas.technologies}
+              />
+            )}
+
+            {isEdit && (
+              <DropdownMultipleSearch
+                id="form-input-control-technologies"
+                label="Technologie(s) en lien"
+                placeholder="Technologie(s) en lien"
+                name="technologies"
+                onChange={changeValue}
+                options={datas.technologies}
+                value={technologiesDatas}
+              />
+            )}
 
             <Form.Group widths="equal">
               <Field
@@ -217,29 +241,6 @@ const RessourceForm = ({
                 search={false}
               />
             </Form.Group>
-
-            {!isEdit && (
-              <DropdownMultipleSearch
-                id="form-input-control-technologies"
-                label="Technologie(s) en lien"
-                placeholder="Technologie(s) en lien"
-                name="technologies"
-                onChange={changeValue}
-                options={datas.technologies}
-              />
-            )}
-
-            {isEdit && (
-              <DropdownMultipleSearch
-                id="form-input-control-technologies"
-                label="Technologie(s) en lien"
-                placeholder="Technologie(s) en lien"
-                name="technologies"
-                onChange={changeValue}
-                options={datas.technologies}
-                value={technologiesDatas}
-              />
-            )}
 
           </Form>
 

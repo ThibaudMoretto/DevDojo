@@ -9,6 +9,8 @@ const DropdownUnique = ({
     onChange(data.value, name);
   };
 
+  const nullValueToString = value === null ? '' : value;
+
   return (
     <Form.Field
       id={id}
@@ -18,13 +20,18 @@ const DropdownUnique = ({
       autoComplete="off"
       lazyLoad
       clearable
-      defaultValue={value}
+      defaultValue={nullValueToString}
       options={options}
       onChange={handleChange}
       control={Select}
       search={search}
+      required={required}
     />
   );
+};
+
+DropdownUnique.defaultProps = {
+  value: '',
 };
 
 export default DropdownUnique;

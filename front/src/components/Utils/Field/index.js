@@ -10,6 +10,8 @@ const Field = ({
     onChange(evt.target.value, name);
   };
 
+  const nullValueToString = value === null ? '' : value;
+
   return (
     <Form.Field
       id={id}
@@ -17,7 +19,7 @@ const Field = ({
       label={label}
       placeholder={placeholder}
       required={required}
-      value={value}
+      value={nullValueToString}
       onChange={handleChange}
       control={control}
       type={type}
@@ -27,7 +29,7 @@ const Field = ({
 };
 
 Field.defaultProps = {
-  type: 'text',
+  value: '',
 };
 
 export default Field;

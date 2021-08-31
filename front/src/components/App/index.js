@@ -51,13 +51,9 @@ function App({
           <ListMentors />
         </Route>
 
-        <Route
-          exact
-          path="/ressources/:slug"
-          component={FicheRessource}
-        ></Route>
+        <Route exact path="/ressources/:slug" component={FicheRessource} />
 
-        <Route exact path="/mentors/:name" component={FicheMentor}></Route>
+        <Route exact path="/mentors/:name" component={FicheMentor} />
 
         <Route exact path="/search-results">
           <SearchResults />
