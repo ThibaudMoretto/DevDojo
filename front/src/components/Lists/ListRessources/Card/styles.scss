@@ -1,40 +1,114 @@
 @use 'src/styles/vars' as v;
 
-.card {
-  &--container {
-    box-shadow: v.$card-shadow;
-    width: 20rem;
-    height: 25rem;
-    border-radius: 5%;
+.card-ressource {
+  border-radius: 20px;
+  overflow: hidden;
+  height: 23rem;
+  width: 25rem;
+  color: #FFF;
+  font-weight: 400;
+  font-size: 0.875rem;
+  background-size: cover;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25));
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1rem;
+    min-height: 90%;
   }
 
-  &-title {
-    font-size: 1.3rem;
-    color: v.$color-theme1;
-    padding: 0.8rem;
-    font-family: v.$titleFont;
+  &-badge {
+    display: flex;
+    justify-content: flex-end;
   }
 
-  &-description {
-    font-weight: bold;
-    line-height: 1.2rem;
-    margin-bottom: 1.5rem;
+  &-description h3 {
+    font-size: 2.125rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
   }
 
-  &--conButton {
-    margin-top: 2rem;
+  &-description span {
+    font-weight: 700;
   }
 
-  &-button {
-    color: white;
-    background: v.$color-theme1;
-    border: none;
-    padding:0.8rem 2.3rem;
-    font-size: 0.9rem;
-    font-weight: bold;
-    border-radius: 5px;
-      &:hover{
-        color:white;
-      }
+  &-description-details {
+    display: flex;
+    justify-content: space-between;
   }
+
 }
+
+.card-ressource-1 {
+    background-image: linear-gradient(180.28deg, rgba(36, 42, 92, 0) -71.51%, rgba(36, 42, 92, 0.8) 99.75%), url(https://images.unsplash.com/photo-1537884944318-390069bb8665);
+}
+
+.badge {
+  display: inline-block;
+  padding: .35rem .65rem;
+  font-size: .75rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25rem;
+  text-transform: uppercase;
+
+  &-facile {
+    background-color: #41CF7C;
+  }
+
+  &-confirme {
+    background-color: #FEB32B;
+  }
+
+  &-expert {
+    background-color: #F25353;
+  }
+  
+}
+
+
+// .card {
+//   &--container {
+//     box-shadow: v.$card-shadow;
+//     width: 20rem;
+//     height: 25rem;
+//     border-radius: 5%;
+//   }
+
+//   &-title {
+//     font-size: 1.3rem;
+//     color: v.$color-theme1;
+//     padding: 0.8rem;
+//     font-family: v.$titleFont;
+//   }
+
+//   &-description {
+//     font-weight: bold;
+//     line-height: 1.2rem;
+//     margin-bottom: 1.5rem;
+//   }
+
+//   &--conButton {
+//     margin-top: 2rem;
+//   }
+
+//   &-button {
+//     color: white;
+//     background: v.$color-theme1;
+//     border: none;
+//     padding:0.8rem 2.3rem;
+//     font-size: 0.9rem;
+//     font-weight: bold;
+//     border-radius: 5px;
+//       &:hover{
+//         color:white;
+//       }
+//   }
+// }
