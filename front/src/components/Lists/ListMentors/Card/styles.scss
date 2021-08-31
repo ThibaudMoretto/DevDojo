@@ -1,19 +1,22 @@
-@use 'src/styles/vars';
+@use 'src/styles/vars' as v;
 
 .card {
   &--container {
-    box-shadow: 0 2px 2px 2px #ccc;
+    box-shadow:v.$card-shadow;
     width: 20rem;
     height: 25rem;
     border-radius: 5%;
   }
+  &--img-mentor{
+    border-radius: 5% 5% 0% 0;
+  }
 
   &-title {
     font-size: 1.3rem;
-    color: vars.$primaryColor;
+    color: v.$color-theme1;
     padding: 0.8rem;
     font-weight: bold;
-    font-family: vars.$titleFont;
+    font-family: v.$titleFont;
   }
 
   &-description {

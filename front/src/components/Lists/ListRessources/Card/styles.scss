@@ -1,8 +1,8 @@
-@use 'src/styles/vars';
+@use 'src/styles/vars' as v;
 
 .card {
   &--container {
-    box-shadow: 0 2px 2px 2px #ccc;
+    box-shadow: v.$card-shadow;
     width: 20rem;
     height: 25rem;
     border-radius: 5%;
@@ -10,9 +10,9 @@
 
   &-title {
     font-size: 1.3rem;
-    color: vars.$primaryColor;
+    color: v.$color-theme1;
     padding: 0.8rem;
-    font-family: vars.$titleFont;
+    font-family: v.$titleFont;
   }
 
   &-description {
@@ -27,13 +27,14 @@
 
   &-button {
     color: white;
-    background: vars.$primaryColor;
+    background: v.$color-theme1;
     border: none;
-    padding: 0.5rem;
-    font-size: 1.3rem;
-    width: 100%;
-    &:hover {
-      color: black;
-    }
+    padding:0.8rem 2.3rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+      &:hover{
+        color:white;
+      }
   }
 }

@@ -20,7 +20,6 @@ function App({
   getMentors,
   loading,
   submited,
-  isLogged,
   checkIsLogged,
 }) {
   useEffect(() => {
@@ -37,25 +36,34 @@ function App({
     <div className="app">
       {submited && <Redirect to="/search-results" />}
 
-      <Header />
       <Switch>
         <Route exact path="/">
+          <Header displaySearchBar={false} />
           <Home />
         </Route>
 
         <Route exact path="/ressources">
+          <Header displaySearchBar />
           <ListRessources />
         </Route>
 
         <Route exact path="/mentors">
+          <Header displaySearchBar />
           <ListMentors />
         </Route>
 
-        <Route exact path="/ressources/:slug" component={FicheRessource} />
+        <Route exact path="/ressources/:slug">
+          <Header displaySearchBar />
+          <FicheRessource />
+        </Route>
 
-        <Route exact path="/mentors/:name" component={FicheMentor} />
+        <Route exact path="/mentors/:name">
+          <Header displaySearchBar />
+          <FicheMentor />
+        </Route>
 
         <Route exact path="/search-results">
+          <Header displaySearchBar />
           <SearchResults />
         </Route>
 
@@ -72,12 +80,13 @@ App.propTypes = {
   getRessources: PropTypes.func.isRequired,
   submited: PropTypes.bool,
   checkIsLogged: PropTypes.func.isRequired,
-  isLogged: PropTypes.bool,
+  // isLogged: PropTypes.bool,
 };
 
 App.defaultProps = {
   loading: false,
-  isLogged: false,
+  // isLogged: false,
+  submited: false,
 };
 
 export default App;

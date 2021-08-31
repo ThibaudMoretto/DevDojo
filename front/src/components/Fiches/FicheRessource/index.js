@@ -18,7 +18,7 @@ function FicheRessource({ ressource, isLogged, loading }) {
   return (
     <>
       <div className="container--button">
-        {!isLogged && (
+        {isLogged && (
           <div className="buttons">
             <RessourceForm
               ressource={ressource}
@@ -48,17 +48,17 @@ function FicheRessource({ ressource, isLogged, loading }) {
             <div className="ressource--description">
               description : {ressource.description}
             </div>
-            <div className="ressource--techno">
-              languages : {ressource.language_id}
-            </div>
-
-            {ressource.technologiesRelated.map((technology) => (
-              <div className="ressource--techno" key={technology.id}>
-                technologies:{technology.name}
-              </div>
-            ))}
 
             <div className="font-color">
+              <div className="ressource--techno">
+                languages : {ressource.language_id}
+              </div>
+
+              {ressource.technologiesRelated.map((technology) => (
+                <div className="ressource--techno" key={technology.id}>
+                  technologies:{technology.name}
+                </div>
+              ))}
               <div className="ressource--publication">
                 <div className="ressource--publication--author">
                   author : {ressource.author_id}
@@ -85,7 +85,7 @@ function FicheRessource({ ressource, isLogged, loading }) {
             </div>
 
             <div className="link">link: {ressource.link}</div>
-            <div>id : {ressource.id}</div>
+            {/* <div>id : {ressource.id}</div> */}
           </div>
         </div>
       </div>
