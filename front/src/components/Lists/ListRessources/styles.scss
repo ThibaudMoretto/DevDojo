@@ -16,8 +16,18 @@
   margin-left: v.$gutter;
   margin-bottom: v.$bigGutter;
 
+  @media (max-width: 650px) {
+    font-size: 2rem;
+  }
+
   &-red {
     color: v.$color-theme1;
+  }
+}
+
+.ressource-form {
+  @media (max-width: 650px) {
+    margin-top: 2rem;
   }
 }
 
@@ -25,4 +35,8 @@
   color: v.$color;
   position: absolute;
   right: v.$gutter;
+
+  @media (max-width: 650px) {
+    position: static;
+  }
 }

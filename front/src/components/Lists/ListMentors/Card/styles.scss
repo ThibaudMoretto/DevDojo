@@ -41,74 +41,23 @@
     color: v.$color-theme1;
   }
 
-  &-technos span {
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    margin-left: 0.5rem;
+  &-technos {
+    display: flex;
+    justify-content: space-evenly;
   }
 }
 
-.badge {
-  display: inline-block;
-  padding: 0.35rem 0.65rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  line-height: 1;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
-  border-radius: 0.25rem;
-  text-transform: uppercase;
-
-  &-html {
-    background-color: #dd4b25;
-  }
-
-  &-css {
-    background-color: #016cb4;
-  }
-
-  &-javascript {
-    background-color: #efd81d;
-  }
-
-  &-node {
-    background-color: #8bbf3d;
-  }
-
-  &-postgresql {
-    background-color: #2e638f;
-  }
-
-  &-redis {
-    background-color: #d12b1f;
-  }
+.badges-techno {
+  // display: inline-block;
+  // padding: 0.35rem 0.65rem;
+  font-size: 30px;
+  color: v.$color;
+  // font-weight: 700;
+  // line-height: 1;
+  // color: #fff;
+  // text-align: center;
+  // white-space: nowrap;
+  // vertical-align: baseline;
+  // border-radius: 0.25rem;
+  // text-transform: uppercase;
 }
-
-// .card {
-//   &--container {
-//     box-shadow:v.$card-shadow;
-//     width: 20rem;
-//     height: 25rem;
-//     border-radius: 5%;
-//   }
-//   &--img-mentor{
-//     border-radius: 5% 5% 0% 0;
-//   }
-
-//   &-title {
-//     font-size: 1.3rem;
-//     color: v.$color-theme1;
-//     padding: 0.8rem;
-//     font-weight: bold;
-//     font-family: v.$titleFont;
-//   }
-
-//   &-description {
-//     padding: 0.5rem;
-//     font-weight: bold;
-//     line-height: 1.2rem;
-//     margin-bottom: 0.5rem;
-//   }
-// }

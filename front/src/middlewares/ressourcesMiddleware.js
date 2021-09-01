@@ -55,10 +55,6 @@ const ressourcesMiddleware = (store) => (next) => (action) => {
     case EDIT_RESSOURCE: {
       const state = store.getState();
 
-      const technologies = state.ressource.technologies.map((id) => ({ id }));
-
-      console.log('ressource technologies edit :', technologies);
-
       api({
         method: 'PUT',
         url: `/ressource/${state.ressource.id}`,

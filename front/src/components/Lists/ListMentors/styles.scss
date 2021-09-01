@@ -16,7 +16,17 @@
   margin-left: v.$gutter;
   margin-bottom: v.$bigGutter;
 
+  @media (max-width: 600px) {
+    font-size: 2rem;
+  }
+
   &-red {
     color: v.$color-theme1;
+  }
+}
+
+.mentor-form {
+  @media (max-width: 650px) {
+    margin-top: 2rem;
   }
 }

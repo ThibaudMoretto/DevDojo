@@ -10,6 +10,7 @@ import image from 'src/assets/images/mentor.jpg';
 
 function FicheMentor({ mentor, isLogged }) {
   console.log('console log dans fiche mentor', mentor);
+
   if (!mentor) {
     return <Redirect to="/mentors" />;
   }
