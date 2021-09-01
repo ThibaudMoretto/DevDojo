@@ -8,23 +8,25 @@ export const initialState = {
   id: '',
   name: '',
   description: '',
-  image:
-    'https://img2.freepng.fr/20181128/gif/kisspng-ninja-portable-network-graphics-computer-icons-ava-macmacmac-5bfea49c377331.5470002815434149402271.jpg',
+  role: '',
+  image: '',
   github: '',
   linkedin: '',
   twitch: '',
   twitter: '',
   website: '',
   youtube: '',
+  technologies: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case 'INITIAL_VALUE_MENTOR': {
+    case INITIAL_VALUE_MENTOR: {
       return {
         ...state,
         id: action.value.id,
         name: action.value.name,
+        role: action.value.dev_role,
         description: action.value.description,
         image: action.value.image,
         github: action.value.github_account,
@@ -33,6 +35,7 @@ const reducer = (state = initialState, action = {}) => {
         twitter: action.value.twitter_account,
         website: action.value.website,
         youtube: action.value.youtube_account,
+        technologies: action.value.mainTechnologies.map(({ id }) => (id)),
       };
     }
     case CHANGE_VALUE_MENTOR: {
@@ -43,18 +46,18 @@ const reducer = (state = initialState, action = {}) => {
     }
     case MENTOR_SUCCESS:
       return {
-        ...state,
         id: '',
         name: '',
         description: '',
-        image:
-          'https://img2.freepng.fr/20181128/gif/kisspng-ninja-portable-network-graphics-computer-icons-ava-macmacmac-5bfea49c377331.5470002815434149402271.jpg',
+        role: '',
+        image: '',
         github: '',
         linkedin: '',
         twitch: '',
         twitter: '',
         website: '',
         youtube: '',
+        technologies: [],
       };
     default:
       return state;

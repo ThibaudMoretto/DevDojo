@@ -19,7 +19,7 @@ const mapStateToProps = (state) => ({
   link: state.ressource.link,
   publicationDate: state.ressource.publicationDate,
   // categories: state.ressource.categories,
-  technologies: state.ressource.technologies,
+  // technologies: state.ressource.technologies,
   language: state.ressource.language,
   free: state.ressource.free,
   description: state.ressource.description,

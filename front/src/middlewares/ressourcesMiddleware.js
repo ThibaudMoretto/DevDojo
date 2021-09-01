@@ -40,9 +40,7 @@ const ressourcesMiddleware = (store) => (next) => (action) => {
           language_id: state.ressource.language,
           author_id: state.ressource.author,
           ressource_type_id: state.ressource.type,
-          technologiesRelated: state.ressource.technologies.map((id) => ({
-            id,
-          })),
+          technologiesRelated: state.ressource.technologies.map((id) => ({ id })),
         },
       })
         .then((response) => {

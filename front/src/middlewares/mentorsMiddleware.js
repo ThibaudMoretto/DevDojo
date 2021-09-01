@@ -31,6 +31,7 @@ const mentorsMiddleware = (store) => (next) => (action) => {
         data: {
           name: state.mentor.name,
           description: state.mentor.description,
+          dev_role: state.mentor.role,
           image: state.mentor.image,
           github_account: state.mentor.github,
           linkedin_account: state.mentor.linkedin,
@@ -38,6 +39,7 @@ const mentorsMiddleware = (store) => (next) => (action) => {
           twitter_account: state.mentor.twitter,
           website: state.mentor.website,
           youtube_account: state.mentor.youtube,
+          mainTechnologies: state.mentor.technologies.map((id) => ({ id })),
         },
       })
         .then((response) => {
@@ -51,6 +53,9 @@ const mentorsMiddleware = (store) => (next) => (action) => {
 
     case EDIT_MENTOR: {
       const state = store.getState();
+
+      console.log('state technologies:', state.mentor.technologies.map((id) => ({ id })));
+
       api({
         method: 'PUT',
         url: `/author/${state.mentor.id}`,
@@ -58,9 +63,9 @@ const mentorsMiddleware = (store) => (next) => (action) => {
           'content-type': 'application/json',
         },
         data: {
-          id: state.ressource.id,
           name: state.mentor.name,
           description: state.mentor.description,
+          dev_role: state.mentor.role,
           image: state.mentor.image,
           github_account: state.mentor.github,
           linkedin_account: state.mentor.linkedin,
@@ -68,6 +73,7 @@ const mentorsMiddleware = (store) => (next) => (action) => {
           twitter_account: state.mentor.twitter,
           website: state.mentor.website,
           youtube_account: state.mentor.youtube,
+          mainTechnologies: state.mentor.technologies.map((id) => ({ id })),
         },
       })
         .then((response) => {
