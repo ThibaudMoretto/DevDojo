@@ -54,7 +54,10 @@ const mentorsMiddleware = (store) => (next) => (action) => {
     case EDIT_MENTOR: {
       const state = store.getState();
 
-      console.log('state technologies:', state.mentor.technologies.map((id) => ({ id })));
+      console.log(
+        'state technologies:',
+        state.mentor.technologies.map((id) => ({ id })),
+      );
 
       api({
         method: 'PUT',

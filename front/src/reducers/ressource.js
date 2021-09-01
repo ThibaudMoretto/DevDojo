@@ -36,7 +36,7 @@ const reducer = (state = initialState, action = {}) => {
         publicationDate: action.value.publication_date,
         type: action.value.ressource_type_id,
         link: action.value.link,
-        technologies: action.value.technologiesRelated.map(({ id }) => (id)),
+        technologies: action.value.technologiesRelated.map(({ id }) => id),
       };
     }
     case CHANGE_VALUE_RESSOURCE: {

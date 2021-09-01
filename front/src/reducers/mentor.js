@@ -35,7 +35,7 @@ const reducer = (state = initialState, action = {}) => {
         twitter: action.value.twitter_account,
         website: action.value.website,
         youtube: action.value.youtube_account,
-        technologies: action.value.mainTechnologies.map(({ id }) => (id)),
+        technologies: action.value.mainTechnologies.map(({ id }) => id),
       };
     }
     case CHANGE_VALUE_MENTOR: {

@@ -10,9 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 library.add(fab);
 
-const Card = ({
-  name, image, dev_role, mainTechnologies,
-}) => (
+const Card = ({ name, image, dev_role, mainTechnologies }) => (
   <Link to={`/mentors/${name}`}>
     <article className="card-mentor">
       <div className="card-mentor-content">
@@ -53,8 +51,10 @@ Card.propTypes = {
 
 export default Card;
 
-{ /* <div className="card-mentor-technos">
+{
+  /* <div className="card-mentor-technos">
           <span className="badge badge-html">html</span>
           <span className="badge badge-css">css</span>
           <span className="badge badge-javascript">javascript</span>
-        </div> */ }
+        </div> */
+}
