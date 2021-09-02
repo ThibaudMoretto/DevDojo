@@ -6,72 +6,88 @@ import './styles.scss';
 import { Redirect } from 'react-router-dom';
 import MentorForm from 'src/containers/Forms/MentorForm';
 import MentorDelete from 'src/containers/MentorDelete';
-import image from 'src/assets/images/mentor.jpg';
+// import image from 'src/assets/images/mentor.jpg';
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+library.add(fab);
 
 function FicheMentor({ mentor, isLogged }) {
-  console.log('console log dans fiche mentor', mentor);
   if (!mentor) {
     return <Redirect to="/mentors" />;
   }
 
   return (
+
     <>
-      <div className="buttons">
-        {isLogged && (
-          <div className="buttons--c">
-            <MentorForm
-              mentor={mentor}
-              buttonMessage="Modifier"
-              headerMessage="Modifier les informations du mentor"
-              isEdit
-            />
-            <MentorDelete
-              mentor={mentor}
-              buttonMessage="Supprimer"
-              headerMessage="Supprimer le mentor"
-              isEdit
-            />
-          </div>
-        )}
-      </div>
+
       <div className="containers">
 
-        <div className="mentor">
-          <img src={image} alt="une de image mentor" className="mentor--img-mentor" />
+        <div className="mentor-title">
+          {mentor.name}
+          <span className="button-add">
+            {isLogged && (
+              <div className="button-edit">
+                <MentorForm
+                  mentor={mentor}
+                  buttonMessage="Modifier"
+                  headerMessage="Modifier les informations du mentor"
+                  isEdit
+                />
+                <MentorDelete
+                  className="button-delete"
+                  mentor={mentor}
+                  buttonMessage="Supprimer"
+                  headerMessage="Supprimer le mentor"
+                  isEdit
+                />
+              </div>
+            )}
+          </span>
+        </div>
 
-          <div className="mentor--information">
-            <div className="mentor--name">{mentor.name}</div>
-            <div className="mentor--description">{mentor.description}</div>
-            <div className="fontColor">
-              <div className="mentor--github">Github : {mentor.github_account}</div>
-              <div className="mentor--youtube">
-                Youtube : {mentor.youtube_account}
-              </div>
-              <div className="mentor--website">Site Web : {mentor.website}</div>
-              <div className="mentor--twitter">
-                Twitter : {mentor.twitter_account}
-              </div>
-              <div className="mentor--linkedin">
-                Linkedin : {mentor.linkedin_account}
-              </div>
-              <div className="mentor--twitch">Twitch : {mentor.twitch_account}</div>
-            </div>
+        <div className="mentor-info">
+          <div className="mentor-info-role">{mentor.dev_role}</div>
+          <div className="mentor-info-description">{mentor.description}</div>
+          <div className="mentor-info-technologies">
+            {mentor.mainTechnologies.map((technology) => (
+              <FontAwesomeIcon
+                key={technology.id}
+                className="badges-techno"
+                icon={['fab', `${technology.logo}`]}
+              />
+            ))}
+          </div>
+          <div className="mentor-info-social">
+            {mentor.github_account ? <a href={mentor.github_account} target="_blank" rel="noreferrer"> <FontAwesomeIcon className="mentor-info-social-badges" icon={['fab', 'github']} /> </a> : ''}
+            {mentor.linkedin_account ? <a href={mentor.linkedin_account} target="_blank" rel="noreferrer"> <FontAwesomeIcon className="mentor-info-social-badges" icon={['fab', 'linkedin']} /> </a> : ''}
+            {mentor.twitch_account ? <a href={mentor.twitch_account} target="_blank" rel="noreferrer"> <FontAwesomeIcon className="mentor-info-social-badges" icon={['fab', 'twitch']} /> </a> : ''}
+            {mentor.twitter_account ? <a href={mentor.twitter_account} target="_blank" rel="noreferrer"> <FontAwesomeIcon className="mentor-info-social-badges" icon={['fab', 'twitter']} /> </a> : ''}
+            {mentor.youtube_account ? <a href={mentor.youtube_account} target="_blank" rel="noreferrer"> <FontAwesomeIcon className="mentor-info-social-badges" icon={['fab', 'youtube']} /> </a> : ''}
+          </div>
+          <div className="mentor-info-website">
+            <a href={mentor.website} target="_blank" rel="noreferrer"> Site internet | Portfolio </a>
           </div>
         </div>
 
-        <div className="ressource-title">Ses ressources</div>
+        <div className="mentor-ressource">
 
-        <div className="ressources">
-          {mentor.ressource.map((ressource) => (
-            <Card
-              key={ressource.id}
-              author={mentor.name}
-              {...ressource}
-            />
-          ))}
+          <div className="ressource-title">
+            Ses <span className="ressource-title-red">Ressources</span>
+          </div>
+
+          <div className="ressources">
+            {mentor.ressource.map((ressource) => (
+              <Card key={ressource.id} author={mentor.name} {...ressource} />
+            ))}
+          </div>
         </div>
+
       </div>
     </>
+
   );
 }
 

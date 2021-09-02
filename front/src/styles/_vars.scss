@@ -3,19 +3,18 @@
 //MARGES
 
 $gutter: 2rem;
-$bigGutter:3rem;
+$bigGutter: 3rem;
 $halfGutter: math.div($gutter, 2);
 
 // COULEURS
 
 $color: #162e52;
-$color-theme1:#d91940; // notre couleur rouge primair
-$color-theme2:#162e52; //couleur bleu pour v2
-$color-background: #EFE8DF; // notre gris de background div
-
+$color-theme1: #d91940; // notre couleur rouge primair
+$color-theme2: #162e52; //couleur bleu pour v2
+$color-background: #efe8df; // notre gris de background div
 
 // DIVERS
 
-$card-shadow: 0 1px 2px 1px #162e52 ; //contour des cartes mentors et ressources 
+$card-shadow: 0 1px 2px 1px #162e52; //contour des cartes mentors et ressources
 
-$titleFont: 'Rampart One', cursive; // police texturé pour les titres 
+$titleFont: 'Poppins', sans-serif;

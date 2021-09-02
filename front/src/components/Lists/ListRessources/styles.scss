@@ -7,22 +7,36 @@
 }
 
 .ressource-title {
-  text-align: left;
-  font-size: 2rem;
-  font-weight: bold;
-  padding: 1rem 0;
+  color: v.$color-theme2;
   font-family: v.$titleFont;
-  margin-left : v.$gutter;
+  font-weight: 800;
+  text-align: left;
+  font-size: 2.5rem;
+  padding: 1rem 0;
+  margin-left: v.$gutter;
   margin-bottom: v.$bigGutter;
-  color:v.$color-theme2;
 
-  &-red{
+  @media (max-width: 650px) {
+    font-size: 2rem;
+  }
+
+  &-red {
     color: v.$color-theme1;
+  }
+}
+
+.ressource-form {
+  @media (max-width: 650px) {
+    margin-top: 2rem;
   }
 }
 
 .button-add {
   color: v.$color;
   position: absolute;
-  right:v.$gutter;
+  right: v.$gutter;
+
+  @media (max-width: 650px) {
+    position: static;
+  }
 }

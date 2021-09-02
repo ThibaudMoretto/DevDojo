@@ -6,17 +6,17 @@ import {
 } from 'src/actions/ressources';
 
 export const initialState = {
-  id: "",
-  title: "",
-  description: "",
-  duration: "",
+  id: '',
+  title: '',
+  description: '',
+  duration: '',
   free: true,
-  author: "",
-  language: "",
-  type: "",
-  difficulty: "",
-  link: "",
-  publicationDate: "",
+  author: '',
+  language: '',
+  type: '',
+  difficulty: '',
+  link: '',
+  publicationDate: '',
   technologies: [],
 };
 
@@ -36,7 +36,7 @@ const reducer = (state = initialState, action = {}) => {
         publicationDate: action.value.publication_date,
         type: action.value.ressource_type_id,
         link: action.value.link,
-        technologies: action.value.technologiesRelated,
+        technologies: action.value.technologiesRelated.map(({ id }) => id),
       };
     }
     case CHANGE_VALUE_RESSOURCE: {
@@ -48,17 +48,17 @@ const reducer = (state = initialState, action = {}) => {
     case RESSOURCE_SUCCESS:
       return {
         ...state,
-        id: "",
-        title: "",
-        description: "",
-        duration: "",
+        id: '',
+        title: '',
+        description: '',
+        duration: '',
         free: true,
-        author: "",
-        language: "",
-        type: "",
-        difficulty: "",
-        link: "",
-        publicationDate: "",
+        author: '',
+        language: '',
+        type: '',
+        difficulty: '',
+        link: '',
+        publicationDate: '',
         technologies: [],
       };
     default:

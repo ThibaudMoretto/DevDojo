@@ -5,7 +5,7 @@
   overflow: hidden;
   height: 23rem;
   width: 25rem;
-  color: #FFF;
+  color: #fff;
   font-weight: 400;
   font-size: 0.875rem;
   background-size: cover;
@@ -39,45 +39,49 @@
     display: flex;
     justify-content: space-between;
   }
-
 }
 
-.button-redirect{
+.button-redirect {
   background: none;
   font-weight: 700;
   color: white;
   box-shadow: none;
-  border:none;
+  border: none;
 }
 
-.button-redirect:hover{
+.button-redirect:hover {
   transition: 1;
   text-decoration: underline;
 }
 
 .card-ressource-1 {
-    background-image: linear-gradient(180.28deg, rgba(36, 42, 92, 0) -71.51%, rgba(36, 42, 92, 0.8) 99.75%), url(https://images.unsplash.com/photo-1537884944318-390069bb8665);
+  background-image: linear-gradient(
+      180.28deg,
+      rgba(36, 42, 92, 0) -71.51%,
+      rgba(36, 42, 92, 0.8) 99.75%
+    ),
+    url(https://images.unsplash.com/photo-1537884944318-390069bb8665);
 }
 
 .badge {
   display: inline-block;
-  padding: .35rem .65rem;
-  font-size: .75rem;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.75rem;
   font-weight: 700;
   line-height: 1;
   color: #fff;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   text-transform: uppercase;
 
   &-video {
-    background-color: #41CF7C;
+    background-color: #41cf7c;
   }
 
   &-podcast {
-    background-color: #FEB32B;
+    background-color: #feb32b;
   }
 
   &-livre {
@@ -85,9 +89,8 @@
   }
 
   &-pdf {
-    background-color: #F25353;
+    background-color: #f25353;
   }
-  
 }
 
 // .card {

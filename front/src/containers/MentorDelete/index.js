@@ -1,6 +1,10 @@
 import { connect } from 'react-redux';
 import MentorDelete from 'src/components/Utils/MentorDelete';
-import { deleteMentor, initialValueMentor, mentorSuccess } from 'src/actions/mentors';
+import {
+  deleteMentor,
+  initialValueMentor,
+  mentorSuccess,
+} from 'src/actions/mentors';
 
 const mapStateToProps = (state) => ({
   id: state.mentor.id,

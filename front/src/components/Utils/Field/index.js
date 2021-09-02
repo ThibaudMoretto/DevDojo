@@ -4,7 +4,16 @@ import { Form } from 'semantic-ui-react';
 import './styles.scss';
 
 const Field = ({
-  value, type, name, placeholder, onChange, id, label, control, required, autoComplete,
+  value,
+  type,
+  name,
+  placeholder,
+  onChange,
+  id,
+  label,
+  control,
+  required,
+  autoComplete,
 }) => {
   const handleChange = (evt) => {
     onChange(evt.target.value, name);

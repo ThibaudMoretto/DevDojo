@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import './styles.scss';
 import Loading from 'src/components/App/Loading';
@@ -5,89 +6,77 @@ import image from 'src/assets/images/Card_Img.png';
 import { Redirect } from 'react-router-dom';
 import RessourceForm from 'src/containers/Forms/RessourceForm';
 import RessourceDelete from 'src/containers/RessourceDelete';
+import Card from 'src/components/Lists/ListMentors/Card';
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+library.add(fab);
 
 function FicheRessource({ ressource, isLogged, loading }) {
-  console.log('ressource', ressource);
-  if (loading) {
-    return <Loading />;
-  }
   if (!ressource) {
     return <Redirect to="/ressources" />;
   }
 
   return (
+
     <>
-      <div className="container--button">
-        {isLogged && (
-          <div className="buttons">
-            <RessourceForm
-              ressource={ressource}
-              buttonMessage="Modifier"
-              headerMessage="Modifier la ressource"
-              isEdit
-            />
-            <RessourceDelete
-              ressource={ressource}
-              buttonMessage="Supprimer"
-              headerMessage="Supprimer la ressource"
-              isEdit
-            />
-          </div>
-        )}
-      </div>
 
       <div className="containers">
-        <div className="ressource">
-          <img
-            src={image}
-            alt="l' image de la ressource"
-            className="ressource--img"
-          />
-          <div className="ressource--files">
-            <div className="ressource--title">title : {ressource.title}</div>
-            <div className="ressource--description">
-              description : {ressource.description}
-            </div>
 
-            <div className="font-color">
-              <div className="ressource--techno">
-                languages : {ressource.language_id}
+        <div className="ressource-title">
+          {ressource.title}
+          <span className="button-add">
+            {isLogged && (
+              <div className="button-edit">
+                <RessourceForm
+                  ressource={ressource}
+                  buttonMessage="Modifier"
+                  headerMessage="Modifier la ressource"
+                  isEdit
+                />
+                <RessourceDelete
+                  ressource={ressource}
+                  buttonMessage="Supprimer"
+                  headerMessage="Supprimer la ressource"
+                  isEdit
+                />
               </div>
+            )}
+          </span>
+        </div>
 
-              {ressource.technologiesRelated.map((technology) => (
-                <div className="ressource--techno" key={technology.id}>
-                  technologies:{technology.name}
-                </div>
-              ))}
-              <div className="ressource--publication">
-                <div className="ressource--publication--author">
-                  author : {ressource.author_id}
-                </div>
-                <div className="ressource--publication--date">
-                  publication Date: {ressource.publication_date}
-                </div>
-              </div>
-              <div className="ressource--information">
-                <div className="ressource--information--duration">
-                  duration : {ressource.duration}
-                </div>
-                <div className="ressource--information--difficulty">
-                  difficulty : {ressource.difficulty_id}
-                </div>
-              </div>
-              <div className="ressource--category">
-                type : {ressource.ressource_type_id}
-              </div>
-            </div>
+        <div className="ressource-info">
+          <div className="ressource-info-description">{ressource.description}</div>
+          <div className="ressource-info-publicationDate">Date de publication : {ressource.publication_date}</div>
+          {/* Mettre plus tard des badges de difficulmté ici comme pour les badges de type de ressource */}
+          <div className="ressource-info-difficulty">Niveau de difficulté : {ressource.difficulty}</div>
+          <div className="ressource-info-duration">Durée estimée de lecture : {ressource.duration} min</div>
+          <div className="ressource-info-language">Langue : {ressource.language}</div>
+          {/* Reprendre les badges de couleur pour le type de ressource comme dans les cards ressources */}
+          <div className="ressource-info-description">Type de ressource : {ressource.ressource_type}</div>
+          <div className="ressource-info-link"> <a href={ressource.link} target="_blank" rel="noreferrer">Lien vers la ressource</a> </div>
 
-            <div className="ressource--free">
-              free : {String(ressource.is_free)}
-            </div>
-
-            <div className="link">link: {ressource.link}</div>
-            {/* <div>id : {ressource.id}</div> */}
+          <div className="ressource-info-technologies">
+            {ressource.technologiesRelated.map((technology) => (
+              <FontAwesomeIcon
+                key={technology.id}
+                className="badges-techno"
+                icon={['fab', `${technology.logo}`]}
+              />
+            ))}
           </div>
         </div>
+
+        <div className="ressource-mentor">
+          <div className="mentors">
+            <Card
+              {...ressource.author}
+            />
+          </div>
+        </div>
+
       </div>
     </>
   );

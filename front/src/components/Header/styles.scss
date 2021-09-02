@@ -1,46 +1,41 @@
-@use 'src/styles/vars' as v;
+// @use 'src/styles/vars' as v;
 
-.header {
-  width: 100%;
-  flex-direction: row;
-  margin-bottom: v.$gutter;
-  background-color: v.$color-background;
-  padding: 1.3rem 1.3rem 0.4rem 1.3rem;
+// .header {
+//   width: 100%;
+//   flex-direction: row;
+//   margin-bottom: v.$gutter;
+//   background-color: v.$color-background;
+//   padding: 1.3rem 1.3rem 0.4rem 1.3rem;
 
-  &--container {
-    // div container avec toue les éléments du header
-    display: flex;
+//   &--container {
+//     // div container avec toue les éléments du header
+//     display: flex;
 
-    .header-nav {
-      //div contenant une div avec les 3 boutons d' acceuil
-      align-items: center;
-      display: flex;
-      width: auto;
-    }
-  }
-  &--logo_container {
-    //div contenant le logo de la homepage
-    width: 40%;
-  }
+//     .header-nav {
+//       //div contenant une div avec les 3 boutons d' acceuil
+//       align-items: center;
+//       display: flex;
+//       width: auto;
+//     }
+//   }
+//   &--logo_container {
+//     //div contenant le logo de la homepage
+//     width: 40%;
+//   }
 
-  &-logo {
-    width: 20rem;
-    margin-left: 1rem;
-  }
+//   &-logo {
+//     width: 20rem;
+//     margin-left: 1rem;
+//   }
 
-  &-search {
-    background-color: v.$color-background;
-    padding: 1rem;
-  }
-}
+//   &-search {
+//     background-color: v.$color-background;
+//     padding: 1rem;
+//   }
+// }
 
-@media only screen and (max-width: 1100px) {
-  /*Tablets [601px -> 1200px]*/
-  .header {
-    width: 100%;
-
-    flex-direction: column;
-    margin-bottom: v.$gutter;
-    padding: 1.3rem 1.3rem 0.4rem 1.3rem;
-  }
-}
+// .nav {
+//   @media (max-width: 1100px) {
+//     display: none;
+//   }
+// }

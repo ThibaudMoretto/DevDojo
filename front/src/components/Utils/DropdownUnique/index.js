@@ -2,7 +2,15 @@ import React from 'react';
 import { Form, Select } from 'semantic-ui-react';
 
 const DropdownUnique = ({
-  options, placeholder, name, value, onChange, label, required, id, search,
+  options,
+  placeholder,
+  name,
+  value,
+  onChange,
+  label,
+  required,
+  id,
+  search,
 }) => {
   const handleChange = (evt, data) => {
     // onChange(evt.target.textContent, name);

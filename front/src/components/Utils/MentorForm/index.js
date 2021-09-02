@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Button, Modal, Form } from 'semantic-ui-react';
+
 import Field from 'src/components/Utils/Field';
+import DropdownMultipleSearch from 'src/components/Utils/DropdownMultipleSearch';
 
 import './styles.scss';
 
@@ -12,6 +14,7 @@ const mentorForm = ({
 
   name,
   description,
+  role,
   image,
   github,
   linkedin,
@@ -19,6 +22,8 @@ const mentorForm = ({
   twitter,
   website,
   youtube,
+
+  datas,
 
   initialValue,
   resetInitial,
@@ -38,13 +43,17 @@ const mentorForm = ({
     setOpen(false);
   };
 
+  const technologiesDatas = isEdit
+    ? mentor?.mainTechnologies?.map(({ id }) => id) || ''
+    : '';
+
   return (
     <div className="mentor-form">
       <Modal
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         open={open}
-        trigger={(
+        trigger={
           <Button
             className="button"
             color="facebook"
@@ -58,21 +67,17 @@ const mentorForm = ({
           >
             {buttonMessage}
           </Button>
-        )}
+        }
       >
         <Modal.Header>{headerMessage}</Modal.Header>
 
-        <Modal.Content
-          scrolling
-          size="Fullscreen"
-        >
+        <Modal.Content scrolling size="Fullscreen">
           <Form
             required
             id="mentor-form"
             className="mentor-form-element"
             onSubmit={handleSubmit}
           >
-
             <Field
               id="form-input-control-name"
               label="Nom"
@@ -80,6 +85,19 @@ const mentorForm = ({
               name="name"
               onChange={changeValue}
               value={name}
+              control="input"
+              type="text"
+              required
+              autoComplete="off"
+            />
+
+            <Field
+              id="form-input-control-role"
+              label="Spécialité"
+              placeholder="Spécialité"
+              name="role"
+              onChange={changeValue}
+              value={role}
               control="input"
               type="text"
               required
@@ -95,9 +113,31 @@ const mentorForm = ({
               value={description}
               control="textarea"
               type="text"
-              required
               autoComplete="off"
             />
+
+            {!isEdit && (
+              <DropdownMultipleSearch
+                id="form-input-control-mainTechnologies"
+                label="Principales technologies"
+                placeholder="Principales technologies"
+                name="technologies"
+                onChange={changeValue}
+                options={datas.technologies}
+              />
+            )}
+
+            {isEdit && (
+              <DropdownMultipleSearch
+                id="form-input-control-mainTechnologies"
+                label="Principales technologies"
+                placeholder="Principales technologies"
+                name="technologies"
+                onChange={changeValue}
+                options={datas.technologies}
+                value={technologiesDatas}
+              />
+            )}
 
             <Field
               id="form-input-control-image"
@@ -112,7 +152,6 @@ const mentorForm = ({
             />
 
             <Form.Group widths="equal">
-
               <Field
                 id="form-input-control-github"
                 label="Github"
@@ -195,11 +234,7 @@ const mentorForm = ({
           <Button color="black" onClick={() => setOpen(false)}>
             Annuler
           </Button>
-          <Button
-            form="mentor-form"
-            color="facebook"
-            type="submit"
-          >
+          <Button form="mentor-form" color="facebook" type="submit">
             Valider
           </Button>
         </Modal.Actions>

@@ -1,71 +1,157 @@
 @use 'sass:color';
 @use 'src/styles/vars' as v;
 
-.nav {
-  padding: v.$halfGutter 0;
+.navbar {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
-  font-size: 1.8rem;
+  position: sticky;
+  top: 0px;
+  padding: 0.5rem;
+  width: 100%;
+  min-height: 5rem;
+  background-color: v.$color-background;
+  z-index: 200;
+  margin-bottom: 1rem;
+}
 
-  &--home,
-  &--source,
-  &--mentor {
-    font-family: v.$titleFont;
-    padding: 0.4rem;
-    margin: 0 1.9rem;
-    font-weight: bold;
-    
-  }
+.navbar__links {
+  display: flex;
+}
 
-  &-link {
-    padding: v.$halfGutter v.$gutter;
-    transition: color 0.3s, box-shadow 0.4s;
-    color: v.$color-theme2;
+.navbar__link {
+  font-family: v.$titleFont;
+  padding: 0 0.3rem;
+  color: v.$color;
+  font-weight: 800;
+  font-size: 2rem;
+  padding: 0 1rem;
+}
 
-    &:hover {
-      color: v.$color-theme1;
-      font-size: 1.8rem;
-    }
-
-    &--active {
-      color: v.$color-theme1;
-      font-weight: bold;
-    }
-  }
+.navbar__burger {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: transparent;
+  border: none;
+  color: inherit;
 }
 
 @media only screen and (max-width: 1100px) {
-  .nav {
-    padding: v.$halfGutter 0;
-    display: flex;
+  .navbar__links {
     flex-direction: column;
-    justify-content: space-between;
-    font-size: 1.8rem;
-
-    &--home,
-    &--source,
-    &--mentor {
-      font-family: v.$titleFont;
-      padding: 0.4rem;
-      margin: 0 1.9rem;
-      font-weight: bold;
-      color:v.$color-theme2;
-    }
-
-    &-link {
-      padding: v.$halfGutter v.$gutter;
-      transition: color 0.3s, box-shadow 0.4s;
-      color: v.$color-theme2;
-
-      &:hover {
-        color: v.$color-theme1;
-        font-size: 1.8rem;
-      }
-
-      &--active {
-        color: v.$color-theme1;
-        font-weight: bold;
-      }
-    }
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: -100vw;
+    bottom: 0;
+    width: 0;
+    height: 100vh;
+    padding: 2rem;
+    visibility: hidden;
+    background-color: v.$color-background;
+    transition: all 0.8s ease-out;
   }
+
+  .show-nav .navbar__links {
+    width: 100vw;
+    right: 0;
+    visibility: visible;
+  }
+
+  /* BONUS */
+
+  .navbar__item::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 3vw;
+    height: 1px;
+    background-color: v.$color;
+  }
+
+  /* BONUS */
+
+  .navbar__link {
+    display: block;
+    padding: 1.5rem;
+    font-size: 5vw;
+  }
+
+  .navbar__burger:hover {
+    cursor: pointer;
+  }
+
+  .burger-bar,
+  .burger-bar::before,
+  .burger-bar::after {
+    display: block;
+    width: 2.5rem;
+    height: 0.2rem;
+    position: relative;
+    border-radius: 3px;
+    background-color: v.$color;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .burger-bar::before,
+  .burger-bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  .burger-bar::before {
+    transform: translateY(-0.75rem);
+  }
+
+  .burger-bar::after {
+    transform: translateY(0.75rem);
+  }
+
+  .show-nav .burger-bar {
+    width: 0;
+    background: transparent;
+  }
+
+  .show-nav .burger-bar::before {
+    transform: rotate(45deg);
+  }
+
+  .show-nav .burger-bar::after {
+    transform: rotate(-45deg);
+  }
+
+  /* BONUS */
+
+  .navbar__item {
+    transform: translateY(100vh);
+  }
+
+  .show-nav .navbar__item {
+    transform: translateY(0);
+  }
+
+  .show-nav .slideInDown-1 {
+    transition: all 1s ease-out;
+  }
+
+  .show-nav .slideInDown-2 {
+    transition: all 1.1s ease-out;
+  }
+
+  .show-nav .slideInDown-3 {
+    transition: all 1.2s ease-out;
+  }
+
+  /* BONUS */
+}
+
+.navbar__link--active {
+  color: v.$color-theme1;
+}
+
+.navbar__link:hover {
+  transition: 0.5s;
+  color: v.$color-theme1;
 }

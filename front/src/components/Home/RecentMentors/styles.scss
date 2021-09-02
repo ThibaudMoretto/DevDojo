@@ -12,9 +12,9 @@
     font-family: v.$titleFont;
     color: v.$color-theme2;
     text-align: center;
-    font-size: 2.2rem;
-    font-weight: bold;
-    padding-bottom: 4.5rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+    padding: v.$bigGutter 0;
   }
 
   &-container {

@@ -89,11 +89,7 @@ const LoginForm = ({
             <Button color="black" onClick={() => setOpen(false)}>
               Annuler
             </Button>
-            <Button
-              color="facebook"
-              form="login-form"
-              type="submit"
-            >
+            <Button color="facebook" form="login-form" type="submit">
               Se connecter
             </Button>
           </Modal.Actions>

@@ -1,13 +1,11 @@
 @use 'src/styles/vars' as v;
 
 .ui.segment {
-  width: 100%;
-  // position: relative;
-  background-color: v.$color-background ;
+  background-color: v.$color-background;
   -webkit-box-shadow: none;
   box-shadow: none;
-  margin: 0;
-  padding: 0;
+  margin: v.$gutter;
+  padding: 1rem 0;
   border-radius: none;
   border: none;
 }
