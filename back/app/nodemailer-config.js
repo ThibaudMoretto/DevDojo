@@ -19,7 +19,7 @@ module.exports = {
     let info = await transporter.sendMail({
       from: '"Dev Dojo ⛩" <dev.dojo.tardis@gmail.com>', // sender address
       to: "dev.dojo.tardis@gmail.com", // list of receivers, separate with a comma
-      subject: `${data.subject}`, // Subject line
+      subject: `${data.name} : ${data.subject}`, // Subject line
       //text: "Hello world", // plain text body
       html: `${data.body}`, // html body
     });
