@@ -184,6 +184,10 @@ router.route('/token')
  */
     .post(jwtController.getNewToken)
 
+
+router.route('/contact')
+    .post(mainController.contact)
+
 //Le dernier middleware de notre router est obligé de récupérer les requêtes qui ne se sont pas arrêtées avant.
 router.use(mainController.ressourceNotFound);
 

@@ -19,6 +19,8 @@ module.exports = {
             //Pour chaque ressource, on ajoute son auteur dans la réponse
             for (const ressource of ressources) {
                 ressource.author = await authorDatamapper.getById(ressource.author_id);
+                ressource.author.mainTechnologies = await technologyDatamapper.getAuthorTechnologies(ressource.author_id)
+
                 ressource.technologiesRelated = await technologyDatamapper.getRessourceRelated(ressource.id);
                 ressource.technologiesRequired = await technologyDatamapper.getRessourceNeeds(ressource.id);
                 //Demandé par le front, ajout du name du language + difficulty + ressource_type
@@ -59,6 +61,7 @@ module.exports = {
 
             //On ajoute l'auteur de la ressource à la réponse
             ressource.author = await authorDatamapper.getById(ressource.author_id)
+            ressource.author.mainTechnologies = await technologyDatamapper.getAuthorTechnologies(ressource.author_id)
 
             //On ajoute les technologies relatives et prérequises
             ressource.technologiesRelated = await technologyDatamapper.getRessourceRelated(ressource.id);

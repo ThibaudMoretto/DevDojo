@@ -22,7 +22,7 @@ module.exports = {
     async checkToken (request, response) {
         const authHeader = request.headers['authorization'];
 
-        //Si on a un authHeader, alors on renvoie le second paramètre de authHeader, sinon undefined
+        //Si on a un authHeader, alors on renvoie le second paramètre de authHeader (qui est le token), sinon undefined
         const token = authHeader && authHeader.split(' ')[1]
 
         //Si pas de token, alors on renvoie un statut 401 => Unauthorized (pas de token, pas d'autorisation)

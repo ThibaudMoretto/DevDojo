@@ -91,7 +91,6 @@ CREATE TABLE IF NOT EXISTS "difficulty" (
 CREATE TABLE IF NOT EXISTS "technology" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "name" TEXT NOT NULL,
-    "color" TEXT NOT NULL,
     "logo" TEXT,
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
     "updated_at" TIMESTAMPTZ

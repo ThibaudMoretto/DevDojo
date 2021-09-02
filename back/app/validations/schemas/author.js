@@ -6,6 +6,7 @@ module.exports = Joi.object({
     name: Joi.string().required(),
     description: Joi.string().required(),
     image: Joi.string().allow(''), //On rajoute allow('') pour autoriser la valeur vide car une string vide n'est pas autorisée par défaut
+    dev_role: Joi.string().allow(''),
     github_account: Joi.string().allow(''),
     youtube_account: Joi.string().allow(''),
     website: Joi.string().allow(''),
