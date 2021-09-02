@@ -1,138 +1,52 @@
 @use 'src/styles/vars' as v;
 
 .button-edit {
-  display:flex;
+  display: flex;
 }
 
-.general-container{
- display: flex;
+.general-container {
+  display: flex;
 }
 
-.mentor--img{
+.mentor--img {
   text-align: center;
-  padding:2rem;
+  padding: 2rem;
   min-width: 20vw;
 }
 
-.mentor-info{
+.mentor-info {
   margin-left: 2rem;
-  margin-right: 1rem;;
+  margin-right: 1rem;
   flex-direction: column;
   line-height: 2rem;
   max-width: 60vw;
 
-    &-role{
-      color:v.$color-theme1;
-      font-size: 1.2rem;
+  &-role {
+    color: v.$color-theme1;
+    font-size: 1.2rem;
+  }
 
-    }
+  &-description {
+    font-size: 1.5rem;
+    color: v.$color-theme2;
+    font-weight: normal;
+  }
 
-    &-description{
-      
-      font-size: 1.5rem;
-      color:v.$color-theme2;
-      font-weight: normal;
-    }
-
-    &-website{
-      color:v.$color-theme2;
-      font-size: 1.5rem;
-      margin-top: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    
-    
+  &-website {
+    color: v.$color-theme2;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
 }
 
-.badges-techno-fm{
+.badges-techno-fm {
   font-size: 5rem;
-  color:v.$color-theme2;
-  padding:0.4rem;
+  color: v.$color-theme2;
+  padding: 0.4rem;
   margin-right: 1.5rem;
   margin-top: 2rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // .containers {
 //   display: flex;

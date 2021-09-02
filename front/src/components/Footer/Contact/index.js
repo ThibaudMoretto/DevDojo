@@ -13,22 +13,23 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('En cours...');
-    const {
-      name, email, subject, body,
-    } = e.target.elements;
+    const { name, email, subject, body } = e.target.elements;
     const details = {
       name: name.value,
       email: email.value,
       subject: subject.value,
       body: body.value,
     };
-    const response = await fetch('https://coding--dojo.herokuapp.com/api/v1.0/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8',
+    const response = await fetch(
+      'https://coding--dojo.herokuapp.com/api/v1.0/contact',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+        },
+        body: JSON.stringify(details),
       },
-      body: JSON.stringify(details),
-    });
+    );
     setStatus('Envoyé');
     setName('');
     setEmail('');
@@ -37,11 +38,8 @@ const ContactForm = () => {
   };
 
   return (
-
     <div className="containers-form">
-
       <div className="container-form">
-
         <Form
           required
           id="contact-form"
@@ -88,12 +86,12 @@ const ContactForm = () => {
             required
             autoComplete="off"
           />
-          <Button color="facebook" type="submit">{status}</Button>
+          <Button color="facebook" type="submit">
+            {status}
+          </Button>
         </Form>
-
       </div>
     </div>
-
   );
 };
 

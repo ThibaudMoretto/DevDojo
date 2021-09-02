@@ -7,9 +7,11 @@ function Error() {
   return (
     <div className="container">
       <div>
-      <img src={image} alt="page 404" />
+        <img src={image} alt="page 404" />
       </div>
-      <a href="/"><Button color="red">REVENIR VERS LE DROIT CHEMIN</Button></a>
+      <a href="/">
+        <Button color="red">REVENIR VERS LE DROIT CHEMIN</Button>
+      </a>
     </div>
   );
 }

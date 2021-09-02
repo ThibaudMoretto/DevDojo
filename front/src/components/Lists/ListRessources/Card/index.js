@@ -3,7 +3,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles.scss';
-// import cardImg from 'src/assets/images/Card_Img.png';
 
 const Card = ({ title, slug, author, duration, ressource_type }) => (
   <article className="card-ressource card-ressource-1">
