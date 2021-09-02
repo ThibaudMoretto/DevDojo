@@ -10,7 +10,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 library.add(fab);
 
-const Card = ({ name, image, dev_role, mainTechnologies }) => (
+const Card = ({
+  name, image, dev_role, mainTechnologies,
+}) => (
   <Link to={`/mentors/${name}`}>
     <article className="card-mentor">
       <div className="card-mentor-content">
@@ -31,7 +33,7 @@ const Card = ({ name, image, dev_role, mainTechnologies }) => (
           </div>
         </div>
         <div className="card-mentor-technos">
-          {mainTechnologies.map((technology) => (
+          {mainTechnologies?.map((technology) => (
             <FontAwesomeIcon
               key={technology.id}
               className="badges-techno"
