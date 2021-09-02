@@ -89,7 +89,7 @@ function FicheMentor({ mentor, isLogged }) {
 
           <div className="ressources">
             {mentor.ressource.map((ressource) => (
-              <Card key={ressource.id} author={mentor.name} {...ressource} />
+              <Card key={ressource.id} author={mentor} {...ressource} />
             ))}
           </div>
         </div>
