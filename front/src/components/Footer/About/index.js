@@ -16,7 +16,7 @@ function About() {
       <div className="container-team">
         <article className="card-team">
           <div className="profile">
-            <img src={Remi} alt="photo team rémi" />
+            <img src={Remi} alt="team rémi" />
             <h3>Rémi</h3>
             <p>Scrum Master</p>
           </div>
@@ -41,7 +41,7 @@ function About() {
 
         <article className="card-team">
           <div className="profile">
-            <img src={Anthony} alt="photo team anthony" />
+            <img src={Anthony} alt="team anthony" />
             <h3>Anthony</h3>
             <p>Lead Dev Front</p>
           </div>
@@ -66,7 +66,7 @@ function About() {
 
         <article className="card-team">
           <div className="profile">
-            <img src={Thibaud} alt="photo team thibaud" />
+            <img src={Thibaud} alt="team thibaud" />
             <h3>Thibaud</h3>
             <p>Lead Dev Back</p>
           </div>
@@ -91,7 +91,7 @@ function About() {
 
         <article className="card-team">
           <div className="profile">
-            <img src={Michel} alt="photo team michel" />
+            <img src={Michel} alt="team michel" />
             <h3>Michel</h3>
             <p>Git Master</p>
           </div>
@@ -116,7 +116,7 @@ function About() {
 
         <article className="card-team">
           <div className="profile">
-            <img src={Francois} alt="photo team françois" />
+            <img src={Francois} alt="team françois" />
             <h3>François</h3>
             <p>Product Owner</p>
           </div>
