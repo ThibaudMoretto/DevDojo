@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 import './styles.scss';
 // import cardImg from 'src/assets/images/Card_Img.png';
 
-const Card = ({ title, slug, author, duration, ressource_type }) => (
+const Card = ({
+  title, slug, author, duration, ressource_type,
+}) => (
   <article className="card-ressource card-ressource-1">
     <div className="card-ressource-content">
       <div className="card-ressource-badge">
