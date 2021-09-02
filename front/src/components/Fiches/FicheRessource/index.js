@@ -73,15 +73,6 @@ function FicheRessource({ ressource, isLogged }) {
               <div className="ressource-info-publicationDate">Date de publication : {ressource.publication_date}</div>
               <div className="ressource-info-duration">Durée estimée de lecture : {ressource.duration} min</div>
               <div className="ressource-info-link"> <a href={ressource.link} target="_blank" rel="noreferrer">Lien vers la ressource</a> </div>
-              <div className="ressource-info-technologies">
-                {ressource.technologiesRelated.map((technology) => (
-                  <FontAwesomeIcon
-                    key={technology.id}
-                    className="badges-techno"
-                    icon={['fab', `${technology.logo}`]}
-                  />
-                ))}
-              </div>
 
             </div>
           </div>

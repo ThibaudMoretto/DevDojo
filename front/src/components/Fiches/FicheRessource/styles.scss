@@ -2,22 +2,20 @@
 
 .general-container{
   display: flex; 
-
   margin-bottom: 5rem;
   margin-left: 2rem;
  
  }
 
  .details{
-  
   line-height: 2rem;
-  padding: 0.5rem;
  }
 
 
  .container-description{
   min-width: 60vw;
   max-width: 60vw;
+ 
 }
 
 .img{
@@ -98,6 +96,6 @@
      &-description{
        margin-bottom: 2rem;;
    }
-}
+  }
  
  }
