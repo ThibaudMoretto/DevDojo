@@ -13,14 +13,14 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('En cours...');
-    const { name, email, subject, body } = e.target.elements;
+    // const { name, email, subject, body } = e.target.elements;
     const details = {
-      name: name.value,
-      email: email.value,
-      subject: subject.value,
-      body: body.value,
+      name: name,
+      email: email,
+      subject: subject,
+      body: body,
     };
-    const response = await fetch(
+    await fetch(
       'https://coding--dojo.herokuapp.com/api/v1.0/contact',
       {
         method: 'POST',

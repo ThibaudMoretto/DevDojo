@@ -1,20 +1,14 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './styles.scss';
-import Loading from 'src/components/App/Loading';
-import image from 'src/assets/images/Card_Img.png';
 import { Redirect } from 'react-router-dom';
 import RessourceForm from 'src/containers/Forms/RessourceForm';
 import RessourceDelete from 'src/containers/RessourceDelete';
 import Card from 'src/components/Lists/ListMentors/Card';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-library.add(fab);
-
-function FicheRessource({ ressource, isLogged, loading }) {
+function FicheRessource({ ressource, isLogged }) {
   if (!ressource) {
     return <Redirect to="/ressources" />;
   }
@@ -92,5 +86,14 @@ function FicheRessource({ ressource, isLogged, loading }) {
     </>
   );
 }
+
+FicheRessource.propTypes = {
+  ressource: PropTypes.object,
+  isLogged: PropTypes.bool.isRequired,
+};
+
+FicheRessource.defaultProps = {
+  ressource: null,
+};
 
 export default FicheRessource;
