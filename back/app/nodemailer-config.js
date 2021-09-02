@@ -18,7 +18,7 @@ module.exports = {
     // send mail with defined transport object
     let info = await transporter.sendMail({
       from: '"Dev Dojo ⛩" <dev.dojo.tardis@gmail.com>', // sender address
-      to: "thibaud.moretto@gmail.com, dev.dojo.tardis@gmail.com", // list of receivers, separate with a comma
+      to: "dev.dojo.tardis@gmail.com", // list of receivers, separate with a comma
       subject: `${data.subject}`, // Subject line
       //text: "Hello world", // plain text body
       html: `${data.body}`, // html body
