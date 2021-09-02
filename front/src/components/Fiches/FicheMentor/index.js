@@ -6,7 +6,6 @@ import './styles.scss';
 import { Redirect } from 'react-router-dom';
 import MentorForm from 'src/containers/Forms/MentorForm';
 import MentorDelete from 'src/containers/MentorDelete';
-// import image from 'src/assets/images/mentor.jpg';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -27,6 +26,7 @@ function FicheMentor({ mentor, isLogged }) {
 
         <div className="mentor-title">
           {mentor.name}
+          <div className="mentor-info-role">{mentor.dev_role}</div>
           <span className="button-add">
             {isLogged && (
               <div className="button-edit">
@@ -47,31 +47,40 @@ function FicheMentor({ mentor, isLogged }) {
             )}
           </span>
         </div>
+        <div className="general-container">
 
-        <div className="mentor-info">
-          <div className="mentor-info-role">{mentor.dev_role}</div>
-          <div className="mentor-info-description">{mentor.description}</div>
-          <div className="mentor-info-technologies">
-            {mentor.mainTechnologies.map((technology) => (
-              <FontAwesomeIcon
-                key={technology.id}
-                className="badges-techno"
-                icon={['fab', `${technology.logo}`]}
-              />
-            ))}
+          <div className="mentor--img">
+
+            <div className="card-mentor-info-image">
+              <img src="https://edovel.com/wp-content/uploads/2019/06/Quentin.jpg" alt="img" />
+            </div>
+
           </div>
-          <div className="mentor-info-social">
-            {mentor.github_account ? <a href={mentor.github_account} target="_blank" rel="noreferrer"> <FontAwesomeIcon className="mentor-info-social-badges" icon={['fab', 'github']} /> </a> : ''}
-            {mentor.linkedin_account ? <a href={mentor.linkedin_account} target="_blank" rel="noreferrer"> <FontAwesomeIcon className="mentor-info-social-badges" icon={['fab', 'linkedin']} /> </a> : ''}
-            {mentor.twitch_account ? <a href={mentor.twitch_account} target="_blank" rel="noreferrer"> <FontAwesomeIcon className="mentor-info-social-badges" icon={['fab', 'twitch']} /> </a> : ''}
-            {mentor.twitter_account ? <a href={mentor.twitter_account} target="_blank" rel="noreferrer"> <FontAwesomeIcon className="mentor-info-social-badges" icon={['fab', 'twitter']} /> </a> : ''}
-            {mentor.youtube_account ? <a href={mentor.youtube_account} target="_blank" rel="noreferrer"> <FontAwesomeIcon className="mentor-info-social-badges" icon={['fab', 'youtube']} /> </a> : ''}
+          <div className="mentor-info">
+
+            <div className="mentor-info-description">{mentor.description}</div>
+            <div className="mentor-info-technologies">
+              {mentor.mainTechnologies.map((technology) => (
+                <FontAwesomeIcon
+                  key={technology.id}
+                  className="badges-techno-fm"
+                  icon={['fab', `${technology.logo}`]}
+                />
+              ))}
+            </div>
+            <div className="mentor-info-social">
+              {mentor.github_account ? <a href={mentor.github_account} target="_blank" rel="noreferrer"> <FontAwesomeIcon className="mentor-info-social-badges" icon={['fab', 'github']} /> </a> : ''}
+              {mentor.linkedin_account ? <a href={mentor.linkedin_account} target="_blank" rel="noreferrer"> <FontAwesomeIcon className="mentor-info-social-badges" icon={['fab', 'linkedin']} /> </a> : ''}
+              {mentor.twitch_account ? <a href={mentor.twitch_account} target="_blank" rel="noreferrer"> <FontAwesomeIcon className="mentor-info-social-badges" icon={['fab', 'twitch']} /> </a> : ''}
+              {mentor.twitter_account ? <a href={mentor.twitter_account} target="_blank" rel="noreferrer"> <FontAwesomeIcon className="mentor-info-social-badges" icon={['fab', 'twitter']} /> </a> : ''}
+              {mentor.youtube_account ? <a href={mentor.youtube_account} target="_blank" rel="noreferrer"> <FontAwesomeIcon className="mentor-info-social-badges" icon={['fab', 'youtube']} /> </a> : ''}
+            </div>
+            <div className="mentor-info-website">
+              <a href={mentor.website} target="_blank" rel="noreferrer"> Site internet | Portfolio </a>
+            </div>
           </div>
-          <div className="mentor-info-website">
-            <a href={mentor.website} target="_blank" rel="noreferrer"> Site internet | Portfolio </a>
-          </div>
+
         </div>
-
         <div className="mentor-ressource">
 
           <div className="ressource-title">
