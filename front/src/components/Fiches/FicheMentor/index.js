@@ -52,7 +52,7 @@ function FicheMentor({ mentor, isLogged }) {
           <div className="mentor--img">
 
             <div className="card-mentor-info-image">
-              <img src="https://edovel.com/wp-content/uploads/2019/06/Quentin.jpg" alt="une image" className="img" />
+              <img src="https://edovel.com/wp-content/uploads/2019/06/Quentin.jpg" alt="img" />
             </div>
 
           </div>
@@ -63,7 +63,7 @@ function FicheMentor({ mentor, isLogged }) {
               {mentor.mainTechnologies.map((technology) => (
                 <FontAwesomeIcon
                   key={technology.id}
-                  className="badges-techno"
+                  className="badges-techno-fm"
                   icon={['fab', `${technology.logo}`]}
                 />
               ))}
