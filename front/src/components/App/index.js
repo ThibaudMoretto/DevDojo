@@ -11,11 +11,15 @@ import SearchResults from 'src/components/SearchResults';
 import Footer from 'src/components/Footer';
 import Error from 'src/components/Error';
 import Header from 'src/components/Header';
+import Contact from 'src/components/Footer/Contact';
+import About from 'src/components/Footer/About';
 import Loading from './Loading';
 
 import './styles.scss';
 
-function App({ getRessources, getMentors, loading, submited, checkIsLogged }) {
+function App({
+  getRessources, getMentors, loading, submited, checkIsLogged,
+}) {
   useEffect(() => {
     getRessources();
     getMentors();
@@ -59,6 +63,16 @@ function App({ getRessources, getMentors, loading, submited, checkIsLogged }) {
         <Route exact path="/search-results">
           <Header displaySearchBar />
           <SearchResults />
+        </Route>
+
+        <Route exact path="/contact">
+          <Header displaySearchBar />
+          <Contact />
+        </Route>
+
+        <Route exact path="/about">
+          <Header displaySearchBar />
+          <About />
         </Route>
 
         <Error />

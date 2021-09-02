@@ -1,16 +1,24 @@
 import React from 'react';
-import About from 'src/components/Footer/About';
-import Contact from 'src/components/Footer/Contact';
 import LoginForm from 'src/containers/Forms/LoginForm';
+import { Link } from 'react-router-dom';
+import { Button } from 'semantic-ui-react';
 import './styles.scss';
 import Logo from 'src/components/Footer/Logo';
 
 function Footer() {
   return (
     <div className="footer">
+
       <Logo />
-      <About />
-      <Contact />
+
+      <div className="button-container">
+        <Button className="button" as={Link} to="/about">A propos</Button>
+      </div>
+
+      <div className="button-container">
+        <Button className="button" as={Link} to="/contact">Contact</Button>
+      </div>
+
       <LoginForm />
     </div>
   );
