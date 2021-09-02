@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import RecentMentors from 'src/components/Home/RecentMentors';
 import RecentRessources from 'src/components/Home/RecentRessources';
 import HeroBanner from './HeroBanner';
@@ -13,5 +14,15 @@ function Home({ ressources, mentors }) {
     </div>
   );
 }
+
+Home.propTypes = {
+  ressources: PropTypes.array,
+  mentors: PropTypes.array,
+};
+
+Home.defaultProps = {
+  ressources: null,
+  mentors: null,
+};
 
 export default Home;

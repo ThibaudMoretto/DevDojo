@@ -20,16 +20,13 @@ const ContactForm = () => {
       subject: subject,
       body: body,
     };
-    await fetch(
-      'https://coding--dojo.herokuapp.com/api/v1.0/contact',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8',
-        },
-        body: JSON.stringify(details),
+    await fetch('https://coding--dojo.herokuapp.com/api/v1.0/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
       },
-    );
+      body: JSON.stringify(details),
+    });
     setStatus('Envoyé');
     setName('');
     setEmail('');

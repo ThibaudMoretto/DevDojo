@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Button, Modal, Form } from 'semantic-ui-react';
 
 import Field from 'src/components/Utils/Field';

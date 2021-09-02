@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Button, Form, Modal } from 'semantic-ui-react';
 
 import Field from 'src/components/Utils/Field';

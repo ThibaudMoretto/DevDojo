@@ -1,4 +1,4 @@
-@use 'src/styles/vars';
+@use 'src/styles/vars' as v;
 
 @keyframes fade {
   0% {
@@ -32,7 +32,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  color: #d91941;
+  color: v.$color;
   font-size: 2em;
   animation: fade 0.75s infinite alternate;
 
@@ -40,7 +40,7 @@
     content: '';
     height: 30%;
     width: 100%;
-    background-color: #d91941;
+    background-color: v.$color-theme1;
     opacity: 0.3;
     position: absolute;
     top: 70%;

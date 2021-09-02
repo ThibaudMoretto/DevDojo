@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
 import './styles.scss';
 import Logo from 'src/assets/images/Logo_Dev_Dojo.png';
@@ -78,5 +78,9 @@ function NavBar({ resetSubmitValue }) {
     </>
   );
 }
+
+NavBar.propTypes = {
+  resetSubmitValue: PropTypes.func.isRequired,
+};
 
 export default NavBar;

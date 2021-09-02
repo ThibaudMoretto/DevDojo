@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './styles.scss';
 import Card from 'src/components/Lists/ListMentors/Card';
 import { Button } from 'semantic-ui-react';
@@ -25,5 +26,13 @@ function RecentMentors({ mentors }) {
     </div>
   );
 }
+
+RecentMentors.propTypes = {
+  mentors: PropTypes.array,
+};
+
+RecentMentors.defaultProps = {
+  mentors: null,
+};
 
 export default RecentMentors;

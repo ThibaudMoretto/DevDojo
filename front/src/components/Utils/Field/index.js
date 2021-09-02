@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Form } from 'semantic-ui-react';
 
 import './styles.scss';
@@ -37,8 +38,28 @@ const Field = ({
   );
 };
 
+Field.propTypes = {
+  placeholder: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  control: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.bool,
+    PropTypes.array,
+    PropTypes.number,
+  ]),
+  onChange: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  required: PropTypes.bool,
+  autoComplete: PropTypes.string,
+};
+
 Field.defaultProps = {
   value: '',
+  required: false,
+  autoComplete: 'off',
 };
 
 export default Field;

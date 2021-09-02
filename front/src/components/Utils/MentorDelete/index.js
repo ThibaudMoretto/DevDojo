@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Button, Modal } from 'semantic-ui-react';
 
 import './styles.scss';
@@ -42,7 +43,7 @@ const MentorDelete = ({
         <Modal.Header>{headerMessage}</Modal.Header>
 
         <Modal.Content>
-          <div>Voulez vraiment supprimer définitivement ce mentor?</div>
+          <div>Voulez vraiment supprimer définitivement ce mentor?</div>
         </Modal.Content>
         <Modal.Actions>
           <Button color="black" onClick={() => setOpen(false)}>
@@ -60,6 +61,15 @@ const MentorDelete = ({
       </Modal>
     </div>
   );
+};
+
+MentorDelete.propTypes = {
+  handleDeleteSubmit: PropTypes.func.isRequired,
+  mentor: PropTypes.object.isRequired,
+  buttonMessage: PropTypes.string.isRequired,
+  headerMessage: PropTypes.string.isRequired,
+  initialValue: PropTypes.func.isRequired,
+  resetInitial: PropTypes.func.isRequired,
 };
 
 export default MentorDelete;

@@ -22,9 +22,7 @@ import './styles.scss';
 
 library.add(fab);
 
-function App({
-  getRessources, getMentors, loading, submited, checkIsLogged,
-}) {
+function App({ getRessources, getMentors, loading, submited, checkIsLogged }) {
   useEffect(() => {
     getRessources();
     getMentors();
