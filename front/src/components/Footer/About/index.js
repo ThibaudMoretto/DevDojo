@@ -23,7 +23,7 @@ function About() {
             <p>Scrum Master</p>
           </div>
           <div className="description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor dolor a enim semper, ac sodales ligula ullamcorper.</p>
+            <p>"Si tu téléphones à une voyante et qu'elle ne décroche pas avant que ça sonne, raccroche."</p>
           </div>
           <ul className="social">
               <li><FontAwesomeIcon icon={["fab", "github"]} /></li>
@@ -39,7 +39,7 @@ function About() {
             <p>Lead Dev Front</p>
           </div>
           <div className="description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor dolor a enim semper, ac sodales ligula ullamcorper.</p>
+            <p>"Si tu parles à ton eau de Javel pendant que tu fais la vaisselle, elle est moins concentrée."</p>
           </div>
           <ul className="social">
               <li><FontAwesomeIcon icon={["fab", "github"]} /></li>
@@ -55,7 +55,7 @@ function About() {
             <p>Lead Dev Back</p>
           </div>
           <div className="description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor dolor a enim semper, ac sodales ligula ullamcorper.</p>
+            <p>"Moi, Adam et Eve, j'y crois plus, parce que je suis pas un idiot : la pomme ça peut pas être mauvais, c'est plein de pectine..."</p>
           </div>
           <ul className="social">
               <li><FontAwesomeIcon icon={["fab", "github"]} /></li>
@@ -71,7 +71,7 @@ function About() {
             <p>Git Master</p>
           </div>
           <div className="description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor dolor a enim semper, ac sodales ligula ullamcorper.</p>
+            <p>"Moi un Jean Valjean des temps modernes ? Euh, non, je n'ai jamais vu son film !"</p>
           </div>
           <ul className="social">
               <li><FontAwesomeIcon icon={["fab", "github"]} /></li>
@@ -87,7 +87,7 @@ function About() {
             <p>Product Owner</p>
           </div>
           <div className="description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor dolor a enim semper, ac sodales ligula ullamcorper.</p>
+            <p>"L'air tu peux pas le toucher... ça existe et ça existe pas... Ca nourrit l'homme sans qu'il ait faim."</p>
           </div>
           <ul className="social">
               <li><FontAwesomeIcon icon={["fab", "github"]} /></li>
