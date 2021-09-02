@@ -1,7 +1,5 @@
 import React from 'react';
 import './styles.scss';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Remi from 'src/assets/images/Team_Remi.jpg';
 import Anthony from 'src/assets/images/Team_Anthony.jpg';
@@ -9,12 +7,12 @@ import Thibaud from 'src/assets/images/Team_Thibaud.jpg';
 import Michel from 'src/assets/images/Team_Michel.jpg';
 import Francois from 'src/assets/images/Team_Francois.jpg';
 
-library.add(fab);
-
 function About() {
   return (
     <div className="container-global">
-      <h2>Notre <span>Equipe</span></h2>
+      <h2>
+        Notre <span>Equipe</span>
+      </h2>
       <div className="container-team">
         <article className="card-team">
           <div className="profile">
@@ -23,12 +21,21 @@ function About() {
             <p>Scrum Master</p>
           </div>
           <div className="description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor dolor a enim semper, ac sodales ligula ullamcorper.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+              tempor dolor a enim semper, ac sodales ligula ullamcorper.
+            </p>
           </div>
           <ul className="social">
-              <li><FontAwesomeIcon icon={["fab", "github"]} /></li>
-              <li><FontAwesomeIcon icon={["fab", "linkedin"]} /></li>
-              <li><FontAwesomeIcon icon={["fab", "twitter"]} /></li>
+            <li>
+              <FontAwesomeIcon icon={['fab', 'github']} />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={['fab', 'linkedin']} />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={['fab', 'twitter']} />
+            </li>
           </ul>
         </article>
 
@@ -39,12 +46,21 @@ function About() {
             <p>Lead Dev Front</p>
           </div>
           <div className="description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor dolor a enim semper, ac sodales ligula ullamcorper.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+              tempor dolor a enim semper, ac sodales ligula ullamcorper.
+            </p>
           </div>
           <ul className="social">
-              <li><FontAwesomeIcon icon={["fab", "github"]} /></li>
-              <li><FontAwesomeIcon icon={["fab", "linkedin"]} /></li>
-              <li><FontAwesomeIcon icon={["fab", "twitter"]} /></li>
+            <li>
+              <FontAwesomeIcon icon={['fab', 'github']} />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={['fab', 'linkedin']} />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={['fab', 'twitter']} />
+            </li>
           </ul>
         </article>
 
@@ -55,12 +71,21 @@ function About() {
             <p>Lead Dev Back</p>
           </div>
           <div className="description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor dolor a enim semper, ac sodales ligula ullamcorper.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+              tempor dolor a enim semper, ac sodales ligula ullamcorper.
+            </p>
           </div>
           <ul className="social">
-              <li><FontAwesomeIcon icon={["fab", "github"]} /></li>
-              <li><FontAwesomeIcon icon={["fab", "linkedin"]} /></li>
-              <li><FontAwesomeIcon icon={["fab", "twitter"]} /></li>
+            <li>
+              <FontAwesomeIcon icon={['fab', 'github']} />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={['fab', 'linkedin']} />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={['fab', 'twitter']} />
+            </li>
           </ul>
         </article>
 
@@ -71,12 +96,21 @@ function About() {
             <p>Git Master</p>
           </div>
           <div className="description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor dolor a enim semper, ac sodales ligula ullamcorper.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+              tempor dolor a enim semper, ac sodales ligula ullamcorper.
+            </p>
           </div>
           <ul className="social">
-              <li><FontAwesomeIcon icon={["fab", "github"]} /></li>
-              <li><FontAwesomeIcon icon={["fab", "linkedin"]} /></li>
-              <li><FontAwesomeIcon icon={["fab", "twitter"]} /></li>
+            <li>
+              <FontAwesomeIcon icon={['fab', 'github']} />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={['fab', 'linkedin']} />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={['fab', 'twitter']} />
+            </li>
           </ul>
         </article>
 
@@ -87,12 +121,21 @@ function About() {
             <p>Product Owner</p>
           </div>
           <div className="description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor dolor a enim semper, ac sodales ligula ullamcorper.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+              tempor dolor a enim semper, ac sodales ligula ullamcorper.
+            </p>
           </div>
           <ul className="social">
-              <li><FontAwesomeIcon icon={["fab", "github"]} /></li>
-              <li><FontAwesomeIcon icon={["fab", "linkedin"]} /></li>
-              <li><FontAwesomeIcon icon={["fab", "twitter"]} /></li>
+            <li>
+              <FontAwesomeIcon icon={['fab', 'github']} />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={['fab', 'linkedin']} />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={['fab', 'twitter']} />
+            </li>
           </ul>
         </article>
       </div>
