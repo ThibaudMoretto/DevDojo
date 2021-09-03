@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.scss';
-import heroBanner from 'src/assets/images/HeroBanner.png';
 import SearchBar from 'src/containers/SearchBar';
+import heroBanner from 'src/assets/images/Herobanner.png';
 
 function HeroBanner() {
   return (
@@ -28,7 +28,7 @@ function HeroBanner() {
 
         <img
           src={heroBanner}
-          alt="ninja ne qui fonctionne pas "
+          alt="img"
           className="home--picture"
         />
       </div>
@@ -37,5 +37,3 @@ function HeroBanner() {
 }
 
 export default HeroBanner;
-
-//

@@ -40,20 +40,22 @@ function FicheRessource({ ressource, isLogged }) {
         </div>
       </div>
 
-      <div className="c--img">
-        <img
-          src="https://images.unsplash.com/photo-1537884944318-390069bb8665"
-          alt="img"
-          className="img"
-        />
-      </div>
       <div className="general-container">
+      <div className="c--img">
+
+        <img src="https://images.unsplash.com/photo-1537884944318-390069bb8665" alt="img" className="img" />
+      <div className="ressource-mentor">
+        <div className="mentors">
+          <Card {...ressource.author} />
+        </div>
+      </div>
+
+      </div>
         <div className="container-description">
           <p className="ressource-info-description-t">Description:</p>
           <div className="ressource-info-description">
             {ressource.description}
           </div>
-        </div>
 
         <div className="ressource-info">
           <div className="details">
@@ -73,9 +75,9 @@ function FicheRessource({ ressource, isLogged }) {
                 />
               ))}
             </div>
-            <div className="ressource-info-description">
-              Type de ressource : {ressource.ressource_type}
-            </div>
+
+            <div className="ressource-info-description-type">Type de ressource : {ressource.ressource_type}</div>
+
 
             <div className="ressource-info-second-info">
               <div className="ressource-info-publicationDate">
@@ -93,13 +95,11 @@ function FicheRessource({ ressource, isLogged }) {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="ressource-mentor">
-        <div className="mentors">
-          <Card {...ressource.author} />
         </div>
       </div>
+
+
+
     </>
   );
 }
