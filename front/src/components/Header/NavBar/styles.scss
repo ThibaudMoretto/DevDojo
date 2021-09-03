@@ -155,3 +155,11 @@
   transition: 0.5s;
   color: v.$color-theme1;
 }
+
+.hide-nav {
+  margin: 0 0 0 v.$gutter;
+}
+
+.navbar__burger{
+  margin: 0 4rem 0 0;
+}
