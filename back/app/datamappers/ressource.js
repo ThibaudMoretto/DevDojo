@@ -23,10 +23,10 @@ module.exports = {
     async add(data) {
         const slug = slugify(data.title);
         const result = await client.query(`
-        INSERT INTO ressource (title, slug, description, link, publication_date, duration, is_free, difficulty_id, language_id, author_id, ressource_type_id)
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+        INSERT INTO ressource (title, slug, description, link, publication_date, duration, is_free, difficulty_id, language_id, author_id, ressource_type_id, ressource_image)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
         RETURNING id, slug`,
-            [data.title, slug, data.description, data.link, data.publication_date, data.duration, data.is_free, data.difficulty_id, data.language_id, data.author_id, data.ressource_type_id]
+            [data.title, slug, data.description, data.link, data.publication_date, data.duration, data.is_free, data.difficulty_id, data.language_id, data.author_id, data.ressource_type_id, data.ressource_image]
         );
 
         //On renvoie le slug et l'id de la ressource créée
@@ -39,9 +39,9 @@ module.exports = {
             slug = slugify(data.title);
         }
         const result = await client.query(`
-        UPDATE ressource SET title = $1, slug = $2, description = $3, link = $4, publication_date = $5, duration = $6, is_free = $7, difficulty_id = $8, language_id = $9, author_id = $10, ressource_type_id = $11, updated_at = NOW() WHERE id = $12 RETURNING *
+        UPDATE ressource SET title = $1, slug = $2, description = $3, link = $4, publication_date = $5, duration = $6, is_free = $7, difficulty_id = $8, language_id = $9, author_id = $10, ressource_type_id = $11, ressource_image = $12, updated_at = NOW() WHERE id = $13 RETURNING *
         `,
-            [data.title, slug, data.description, data.link, data.publication_date, data.duration, data.is_free, data.difficulty_id, data.language_id, data.author_id, data.ressource_type_id, id]);
+            [data.title, slug, data.description, data.link, data.publication_date, data.duration, data.is_free, data.difficulty_id, data.language_id, data.author_id, data.ressource_type_id, data.ressource_image, id]);
         //On renvoie toutes les infos de la ressource modifiée
         return result.rows;
     },
