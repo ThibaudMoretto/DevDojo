@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+
 import Home from 'src/containers/Home';
 import ListMentors from 'src/containers/Lists/ListMentors';
 import ListRessources from 'src/containers/Lists/ListRessources';
@@ -16,6 +19,8 @@ import About from 'src/components/Footer/About';
 import Loading from './Loading';
 
 import './styles.scss';
+
+library.add(fab);
 
 function App({
   getRessources, getMentors, loading, submited, checkIsLogged,
@@ -75,7 +80,11 @@ function App({
           <About />
         </Route>
 
-        <Error />
+        <>
+          <Header displaySearchBar />
+          <Error />
+        </>
+
       </Switch>
       <Footer />
     </div>
@@ -84,16 +93,14 @@ function App({
 
 App.propTypes = {
   loading: PropTypes.bool,
+  submited: PropTypes.bool,
   getMentors: PropTypes.func.isRequired,
   getRessources: PropTypes.func.isRequired,
-  submited: PropTypes.bool,
   checkIsLogged: PropTypes.func.isRequired,
-  // isLogged: PropTypes.bool,
 };
 
 App.defaultProps = {
   loading: false,
-  // isLogged: false,
   submited: false,
 };
 

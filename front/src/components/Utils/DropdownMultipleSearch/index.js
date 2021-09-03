@@ -39,6 +39,21 @@ const DropdownMultiple = ({
   );
 };
 
+DropdownMultiple.propTypes = {
+  options: PropTypes.array.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.bool,
+    PropTypes.array,
+    PropTypes.number,
+  ]),
+  onChange: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+};
+
 DropdownMultiple.defaultProps = {
   value: '',
 };

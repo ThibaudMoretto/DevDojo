@@ -29,14 +29,13 @@ const ListRessources = ({ ressources, isLogged }) => (
   </>
 );
 
-// ListRessources.propTypes = {
-//   ressources: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       slug: PropTypes.string.isRequired,
-//       description: PropTypes.string.isRequired,
-//     }),
-//   ).isRequired,
-//   isLogged: PropTypes.bool,
-// };
+ListRessources.propTypes = {
+  ressources: PropTypes.array.isRequired,
+  isLogged: PropTypes.bool,
+};
+
+ListRessources.defaultProps = {
+  isLogged: false,
+};
 
 export default ListRessources;

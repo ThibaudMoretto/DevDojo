@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './styles.scss';
 import Card from 'src/components/Lists/ListMentors/Card';
 import { Button } from 'semantic-ui-react';
@@ -16,9 +18,9 @@ function RecentMentors({ mentors }) {
           ))}
         </div>
         <div className="latestMentor-btnContainer">
-          <Button color="red" className="latestMentor-btnContainer-btn">
+          <Button color="red" as={Link} to="/mentors" className="latestMentor-btnContainer-btn">
             {' '}
-            Afficher nos derniers mentors{' '}
+            Afficher nos mentors{' '}
           </Button>
         </div>
       </div>
@@ -26,41 +28,12 @@ function RecentMentors({ mentors }) {
   );
 }
 
+RecentMentors.propTypes = {
+  mentors: PropTypes.array,
+};
+
+RecentMentors.defaultProps = {
+  mentors: null,
+};
+
 export default RecentMentors;
-
-{
-  /* <div className="latestMentor-list-card">
-            <div className="latestMentor-list-card-imgContainer">
-              <img src={imgMentor} alt="Mentor" />
-            </div>
-            <div className="latestMentor-list-card-content">
-              <h3 className="latestMentor-list-card-content-title">HILGEUGEU</h3>
-              <p className="latestMentor-list-card-content-role">Spécialiste Javascript</p>
-            </div>
-          </div>
-
-          <div className="latestMentor-list-card">
-            <div className="latestMentor-list-card-imgContainer">
-              <img src={imgMentor2} alt="Mentor" />
-            </div>
-            <div className="latestMentor-list-card-content">
-              <h3 className="latestMentor-list-card-content-title">FROTMAN</h3>
-              <p className="latestMentor-list-card-content-role">Spécialiste Froti Frota</p>
-            </div>
-          </div>
-
-          <div className="latestMentor-list-card">
-            <div className="latestMentor-list-card-imgContainer">
-              <img src={imgMentor3} alt="Mentor" />
-            </div>
-            <div className="latestMentor-list-card-content">
-              <h3 className="latestMentor-list-card-content-title">DOROTHEE</h3>
-              <p className="latestMentor-list-card-content-role">Spécialiste Jacky Show</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div className="latestMentor-btnContainer">
-          {/* <button className="latestMentor-btnContainer-btn">Tous nos mentors</button> */
-}

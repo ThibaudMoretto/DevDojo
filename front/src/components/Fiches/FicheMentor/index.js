@@ -1,18 +1,12 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
-// import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import Card from 'src/components/Lists/ListRessources/Card';
 import './styles.scss';
 import { Redirect } from 'react-router-dom';
 import MentorForm from 'src/containers/Forms/MentorForm';
 import MentorDelete from 'src/containers/MentorDelete';
-// import image from 'src/assets/images/mentor.jpg';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-library.add(fab);
 
 function FicheMentor({ mentor, isLogged }) {
   if (!mentor) {
@@ -20,11 +14,8 @@ function FicheMentor({ mentor, isLogged }) {
   }
 
   return (
-
     <>
-
       <div className="containers">
-
         <div className="mentor-title">
           {mentor.name}
           <span className="button-add">
@@ -46,34 +37,114 @@ function FicheMentor({ mentor, isLogged }) {
               </div>
             )}
           </span>
-        </div>
-
-        <div className="mentor-info">
           <div className="mentor-info-role">{mentor.dev_role}</div>
-          <div className="mentor-info-description">{mentor.description}</div>
-          <div className="mentor-info-technologies">
-            {mentor.mainTechnologies.map((technology) => (
-              <FontAwesomeIcon
-                key={technology.id}
-                className="badges-techno"
-                icon={['fab', `${technology.logo}`]}
+        </div>
+        <div className="general-container">
+          <div className="mentor--img">
+            <div className="card-mentor-info-image">
+              <img
+                src="https://edovel.com/wp-content/uploads/2019/06/Quentin.jpg"
+                alt="img"
               />
-            ))}
+            </div>
           </div>
-          <div className="mentor-info-social">
-            {mentor.github_account ? <a href={mentor.github_account} target="_blank" rel="noreferrer"> <FontAwesomeIcon className="mentor-info-social-badges" icon={['fab', 'github']} /> </a> : ''}
-            {mentor.linkedin_account ? <a href={mentor.linkedin_account} target="_blank" rel="noreferrer"> <FontAwesomeIcon className="mentor-info-social-badges" icon={['fab', 'linkedin']} /> </a> : ''}
-            {mentor.twitch_account ? <a href={mentor.twitch_account} target="_blank" rel="noreferrer"> <FontAwesomeIcon className="mentor-info-social-badges" icon={['fab', 'twitch']} /> </a> : ''}
-            {mentor.twitter_account ? <a href={mentor.twitter_account} target="_blank" rel="noreferrer"> <FontAwesomeIcon className="mentor-info-social-badges" icon={['fab', 'twitter']} /> </a> : ''}
-            {mentor.youtube_account ? <a href={mentor.youtube_account} target="_blank" rel="noreferrer"> <FontAwesomeIcon className="mentor-info-social-badges" icon={['fab', 'youtube']} /> </a> : ''}
-          </div>
-          <div className="mentor-info-website">
-            <a href={mentor.website} target="_blank" rel="noreferrer"> Site internet | Portfolio </a>
+          <div className="mentor-info">
+            <div className="mentor-info-description">{mentor.description}</div>
+            <div className="mentor-info-technologies">
+              {mentor.mainTechnologies.map((technology) => (
+                <FontAwesomeIcon
+                  key={technology.id}
+                  className="badges-techno-fm"
+                  icon={['fab', `${technology.logo}`]}
+                />
+              ))}
+            </div>
+            <div className="mentor-info-social">
+              {mentor.github_account ? (
+                <a
+                  href={mentor.github_account}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {' '}
+                  <FontAwesomeIcon
+                    className="mentor-info-social-badges"
+                    icon={['fab', 'github']}
+                  />{' '}
+                </a>
+              ) : (
+                ''
+              )}
+              {mentor.linkedin_account ? (
+                <a
+                  href={mentor.linkedin_account}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {' '}
+                  <FontAwesomeIcon
+                    className="mentor-info-social-badges"
+                    icon={['fab', 'linkedin']}
+                  />{' '}
+                </a>
+              ) : (
+                ''
+              )}
+              {mentor.twitch_account ? (
+                <a
+                  href={mentor.twitch_account}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {' '}
+                  <FontAwesomeIcon
+                    className="mentor-info-social-badges"
+                    icon={['fab', 'twitch']}
+                  />{' '}
+                </a>
+              ) : (
+                ''
+              )}
+              {mentor.twitter_account ? (
+                <a
+                  href={mentor.twitter_account}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {' '}
+                  <FontAwesomeIcon
+                    className="mentor-info-social-badges"
+                    icon={['fab', 'twitter']}
+                  />{' '}
+                </a>
+              ) : (
+                ''
+              )}
+              {mentor.youtube_account ? (
+                <a
+                  href={mentor.youtube_account}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {' '}
+                  <FontAwesomeIcon
+                    className="mentor-info-social-badges"
+                    icon={['fab', 'youtube']}
+                  />{' '}
+                </a>
+              ) : (
+                ''
+              )}
+            </div>
+            <div className="mentor-info-website">
+              <a href={mentor.website} target="_blank" rel="noreferrer">
+                {' '}
+                Site internet | Portfolio{' '}
+              </a>
+            </div>
           </div>
         </div>
-
         <div className="mentor-ressource">
-
           <div className="ressource-title">
             Ses <span className="ressource-title-red">Ressources</span>
           </div>
@@ -84,19 +155,18 @@ function FicheMentor({ mentor, isLogged }) {
             ))}
           </div>
         </div>
-
       </div>
     </>
-
   );
 }
 
-// FicheMentor.propTypes = {
-//   mentor: PropTypes.object.isRequired,
-// };
+FicheMentor.propTypes = {
+  mentor: PropTypes.object,
+  isLogged: PropTypes.bool.isRequired,
+};
 
-// FicheMentor.defaultProps = {
-//   mentor: null,
-// };
+FicheMentor.defaultProps = {
+  mentor: null,
+};
 
 export default FicheMentor;

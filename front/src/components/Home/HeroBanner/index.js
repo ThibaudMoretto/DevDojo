@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.scss';
-import heroBanner from 'src/assets/images/Herobanner.png';
 import SearchBar from 'src/containers/SearchBar';
+import heroBanner from 'src/assets/images/Herobanner.png';
 
 function HeroBanner() {
   return (
@@ -22,20 +22,13 @@ function HeroBanner() {
             faciliter votre apprentissage et vous faire gagner du temps.
           </p>
           <div className="container--searchbar">
-            {/* <button className="button--source"> Découvrez les ressources</button>
-          <button className="button--mentors"> Trouvez votre mentor</button> */}
             <SearchBar />
-            {/* <Button color="red"> Découvrez les ressources </Button>
-            <Button basic color="red">
-              {' '}
-              Trouvez votre mentor{' '}
-            </Button> */}
           </div>
         </div>
 
         <img
           src={heroBanner}
-          alt="une image de ninja qui fonctionne pas "
+          alt="img"
           className="home--picture"
         />
       </div>
@@ -44,5 +37,3 @@ function HeroBanner() {
 }
 
 export default HeroBanner;
-
-//
