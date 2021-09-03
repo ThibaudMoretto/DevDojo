@@ -8,7 +8,7 @@
 
 .containers{
   margin: 0 v.$gutter;
-  min-height: 78vh;
+  min-height: 100vh;
 }
 
 .ressource-title {
@@ -22,6 +22,7 @@
 
   @media (max-width: 650px) {
     font-size: 2rem;
+    margin-bottom: 0;
   }
 
   &-red {
