@@ -26,9 +26,9 @@ function About() {
             <p>"Si tu téléphones à une voyante et qu'elle ne décroche pas avant que ça sonne, raccroche."</p>
           </div>
           <ul className="social">
-              <li><FontAwesomeIcon icon={["fab", "github"]} /></li>
-              <li><FontAwesomeIcon icon={["fab", "linkedin"]} /></li>
-              <li><FontAwesomeIcon icon={["fab", "twitter"]} /></li>
+            <li><FontAwesomeIcon icon={['fab', 'github']} /></li>
+            <li><FontAwesomeIcon icon={['fab', 'linkedin']} /></li>
+            <li><FontAwesomeIcon icon={['fab', 'twitter']} /></li>
           </ul>
         </article>
 
@@ -42,9 +42,9 @@ function About() {
             <p>"Si tu parles à ton eau de Javel pendant que tu fais la vaisselle, elle est moins concentrée."</p>
           </div>
           <ul className="social">
-              <li><FontAwesomeIcon icon={["fab", "github"]} /></li>
-              <li><FontAwesomeIcon icon={["fab", "linkedin"]} /></li>
-              <li><FontAwesomeIcon icon={["fab", "twitter"]} /></li>
+            <li><FontAwesomeIcon icon={['fab', 'github']} /></li>
+            <li><FontAwesomeIcon icon={['fab', 'linkedin']} /></li>
+            <li><FontAwesomeIcon icon={['fab', 'twitter']} /></li>
           </ul>
         </article>
 
@@ -58,9 +58,9 @@ function About() {
             <p>"Moi, Adam et Eve, j'y crois plus, parce que je suis pas un idiot : la pomme ça peut pas être mauvais, c'est plein de pectine..."</p>
           </div>
           <ul className="social">
-              <li><FontAwesomeIcon icon={["fab", "github"]} /></li>
-              <li><FontAwesomeIcon icon={["fab", "linkedin"]} /></li>
-              <li><FontAwesomeIcon icon={["fab", "twitter"]} /></li>
+            <li><FontAwesomeIcon icon={['fab', 'github']} /></li>
+            <li><FontAwesomeIcon icon={['fab', 'linkedin']} /></li>
+            <li><FontAwesomeIcon icon={['fab', 'twitter']} /></li>
           </ul>
         </article>
 
@@ -74,9 +74,9 @@ function About() {
             <p>"Moi un Jean Valjean des temps modernes ? Euh, non, je n'ai jamais vu son film !"</p>
           </div>
           <ul className="social">
-              <li><FontAwesomeIcon icon={["fab", "github"]} /></li>
-              <li><FontAwesomeIcon icon={["fab", "linkedin"]} /></li>
-              <li><FontAwesomeIcon icon={["fab", "twitter"]} /></li>
+            <li><FontAwesomeIcon icon={['fab', 'github']} /></li>
+            <li><FontAwesomeIcon icon={['fab', 'linkedin']} /></li>
+            <li><FontAwesomeIcon icon={['fab', 'twitter']} /></li>
           </ul>
         </article>
 
@@ -90,9 +90,9 @@ function About() {
             <p>"L'air tu peux pas le toucher... ça existe et ça existe pas... Ca nourrit l'homme sans qu'il ait faim."</p>
           </div>
           <ul className="social">
-              <li><FontAwesomeIcon icon={["fab", "github"]} /></li>
-              <li><FontAwesomeIcon icon={["fab", "linkedin"]} /></li>
-              <li><FontAwesomeIcon icon={["fab", "twitter"]} /></li>
+            <li><FontAwesomeIcon icon={['fab', 'github']} /></li>
+            <li><FontAwesomeIcon icon={['fab', 'linkedin']} /></li>
+            <li><FontAwesomeIcon icon={['fab', 'twitter']} /></li>
           </ul>
         </article>
       </div>
