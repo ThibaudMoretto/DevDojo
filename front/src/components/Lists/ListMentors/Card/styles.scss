@@ -39,11 +39,19 @@
     font-weight: 700;
     font-size: 1.375rem;
     text-transform: uppercase;
+
+    @media (max-width: 540px) {
+      font-size: 1.15rem;
+    }
   }
 
   &-info-title-role {
     font-size: 1.125rem;
     color: v.$color-theme1;
+
+    @media (max-width: 540px) {
+      font-size: 0.9rem;
+    }
   }
 
   &-technos {
