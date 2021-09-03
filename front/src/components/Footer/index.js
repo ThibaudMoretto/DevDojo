@@ -8,15 +8,18 @@ import Logo from 'src/components/Footer/Logo';
 function Footer() {
   return (
     <div className="footer">
-
       <Logo />
 
       <div className="button-container">
-        <Button className="button" as={Link} to="/about">A propos</Button>
+        <Button className="button" as={Link} to="/about">
+          A propos
+        </Button>
       </div>
 
       <div className="button-container">
-        <Button className="button" as={Link} to="/contact">Contact</Button>
+        <Button className="button" as={Link} to="/contact">
+          Contact
+        </Button>
       </div>
 
       <LoginForm />
