@@ -22,14 +22,7 @@ function HeroBanner() {
             faciliter votre apprentissage et vous faire gagner du temps.
           </p>
           <div className="container--searchbar">
-            {/* <button className="button--source"> Découvrez les ressources</button>
-          <button className="button--mentors"> Trouvez votre mentor</button> */}
             <SearchBar />
-            {/* <Button color="red"> Découvrez les ressources </Button>
-            <Button basic color="red">
-              {' '}
-              Trouvez votre mentor{' '}
-            </Button> */}
           </div>
         </div>
 

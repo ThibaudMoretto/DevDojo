@@ -1,13 +1,10 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable jsx-a11y/img-redundant-alt */
+/* eslint-disable camelcase */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './styles.scss';
 import defaultImage from 'src/assets/images/defaultMentor.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-// library.add(fab);
 
 const Card = ({ name, image, dev_role, mainTechnologies }) => (
   <Link to={`/mentors/${name}`}>
@@ -42,7 +39,13 @@ const Card = ({ name, image, dev_role, mainTechnologies }) => (
 
 Card.propTypes = {
   name: PropTypes.string.isRequired,
-  // description: PropTypes.string.isRequired,
+  dev_role: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  mainTechnologies: PropTypes.array,
+};
+
+Card.defaultProps = {
+  mainTechnologies: null,
 };
 
 export default Card;

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Button, Modal } from 'semantic-ui-react';
 
 import './styles.scss';
@@ -8,12 +9,8 @@ const RessourceDelete = ({
   buttonMessage,
   headerMessage,
 
-  datas,
-  mentors,
-
   initialValue,
   resetInitial,
-  changeValue,
   handleDeleteSubmit,
 }) => {
   const [open, setOpen] = React.useState(false);
@@ -32,7 +29,7 @@ const RessourceDelete = ({
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         open={open}
-        trigger={
+        trigger={(
           <Button
             className="button"
             color="google plus"
@@ -42,7 +39,7 @@ const RessourceDelete = ({
           >
             {buttonMessage}
           </Button>
-        }
+        )}
       >
         <Modal.Header>{headerMessage}</Modal.Header>
 
@@ -65,6 +62,16 @@ const RessourceDelete = ({
       </Modal>
     </div>
   );
+};
+
+RessourceDelete.propTypes = {
+  ressource: PropTypes.object.isRequired,
+  buttonMessage: PropTypes.string.isRequired,
+  headerMessage: PropTypes.string.isRequired,
+
+  initialValue: PropTypes.func.isRequired,
+  resetInitial: PropTypes.func.isRequired,
+  handleDeleteSubmit: PropTypes.func.isRequired,
 };
 
 export default RessourceDelete;

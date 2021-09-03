@@ -80,7 +80,11 @@ function App({
           <About />
         </Route>
 
-        <Error />
+        <>
+          <Header displaySearchBar />
+          <Error />
+        </>
+
       </Switch>
       <Footer />
     </div>

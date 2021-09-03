@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Card from 'src/components/Lists/ListMentors/Card';
 import MentorForm from 'src/containers/Forms/MentorForm';
 
@@ -28,5 +29,14 @@ const ListMentors = ({ mentors, isLogged }) => (
     </div>
   </>
 );
+
+ListMentors.propTypes = {
+  mentors: PropTypes.array,
+  isLogged: PropTypes.bool.isRequired,
+};
+
+ListMentors.defaultProps = {
+  mentors: null,
+};
 
 export default ListMentors;

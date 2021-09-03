@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './styles.scss';
 import Card from 'src/components/Lists/ListMentors/Card';
 import { Button } from 'semantic-ui-react';
@@ -16,14 +18,22 @@ function RecentMentors({ mentors }) {
           ))}
         </div>
         <div className="latestMentor-btnContainer">
-          <Button color="red" className="latestMentor-btnContainer-btn">
+          <Button color="red" as={Link} to="/mentors" className="latestMentor-btnContainer-btn">
             {' '}
-            Afficher nos derniers mentors{' '}
+            Afficher nos mentors{' '}
           </Button>
         </div>
       </div>
     </div>
   );
 }
+
+RecentMentors.propTypes = {
+  mentors: PropTypes.array,
+};
+
+RecentMentors.defaultProps = {
+  mentors: null,
+};
 
 export default RecentMentors;

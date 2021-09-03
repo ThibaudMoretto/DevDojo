@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Button, Form, Modal } from 'semantic-ui-react';
 
 import Field from 'src/components/Utils/Field';
@@ -62,21 +62,19 @@ const RessourceForm = ({
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         open={open}
-        trigger={
+        trigger={(
           <Button
             className="button"
             color="facebook"
             onClick={() => {
-              {
-                if (isEdit) {
-                  initialValue(ressource);
-                }
+              if (isEdit) {
+                initialValue(ressource);
               }
             }}
           >
             {buttonMessage}
           </Button>
-        }
+        )}
       >
         <Modal.Header>{headerMessage}</Modal.Header>
 
@@ -142,8 +140,8 @@ const RessourceForm = ({
             {!isEdit && (
               <DropdownMultipleSearch
                 id="form-input-control-technologies"
-                label="Technologie(s) en lien"
-                placeholder="Technologie(s) en lien"
+                label="Technologie(s) en lien (3 max)"
+                placeholder="Technologie(s) en lien (3 max)"
                 name="technologies"
                 onChange={changeValue}
                 options={datas.technologies}
@@ -153,8 +151,8 @@ const RessourceForm = ({
             {isEdit && (
               <DropdownMultipleSearch
                 id="form-input-control-technologies"
-                label="Technologie(s) en lien"
-                placeholder="Technologie(s) en lien"
+                label="Technologie(s) en lien (3 max)"
+                placeholder="Technologie(s) en lien (3 max)"
                 name="technologies"
                 onChange={changeValue}
                 options={datas.technologies}
