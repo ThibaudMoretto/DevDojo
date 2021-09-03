@@ -27,3 +27,13 @@
     font-size: 1rem;
   }
 }
+
+.ui.modal>.header:not(.ui) {
+  font-size: 1.42857143rem;
+  line-height: 1.28571429em;
+  font-weight: 700;
+
+  @media (max-width: 400px) {
+    font-size: 1.2rem;
+  }
+}
