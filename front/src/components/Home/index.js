@@ -7,7 +7,7 @@ import './styles.scss';
 
 function Home({ ressources, mentors }) {
   return (
-    <div>
+    <div className="container-home">
       <HeroBanner />
       <RecentRessources ressources={ressources} />
       <RecentMentors mentors={mentors} />
