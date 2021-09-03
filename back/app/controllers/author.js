@@ -2,6 +2,9 @@ const authorDatamapper = require("../datamappers/author");
 const ressourceDatamapper = require('../datamappers/ressource');
 const technologyDatamapper = require('../datamappers/technology');
 const authorRelatesTechnologyDatamapper = require('../datamappers/author_relates_technology');
+const languageDatamapper = require("../datamappers/language");
+const difficultyDatamapper = require("../datamappers/difficulty");
+const ressource_typeDatamapper = require("../datamappers/ressource_type");
 const redis = require('../client-redis');
 
 
@@ -18,6 +21,20 @@ module.exports = {
                 for (const ressource of author.ressource) {
                     ressource.technologiesRelated = await technologyDatamapper.getRessourceRelated(ressource.id);
                     ressource.technologiesNeeded = await technologyDatamapper.getRessourceNeeds(ressource.id)
+
+                    //Demandé par le front, ajout du name du language + difficulty + ressource_type
+                    if (ressource.language_id) {
+                        const language = await languageDatamapper.getOne(ressource.language_id);
+                        ressource.language = language.name;
+                    }
+                    if (ressource.difficulty_id) {
+                        const difficulty = await difficultyDatamapper.getOne(ressource.difficulty_id);
+                        ressource.difficulty = difficulty.name;
+                    }
+                    if (ressource.ressource_type_id) {
+                        const ressource_type = await ressource_typeDatamapper.getOne(ressource.ressource_type_id);
+                        ressource.ressource_type = ressource_type.name;
+                    }
                 }
 
             }
@@ -49,6 +66,20 @@ module.exports = {
                 for (const ressource of author.ressource) {
                     ressource.technologiesRelated = await technologyDatamapper.getRessourceRelated(ressource.id);
                     ressource.technologiesNeeded = await technologyDatamapper.getRessourceNeeds(ressource.id)
+
+                    //Demandé par le front, ajout du name du language + difficulty + ressource_type
+                    if (ressource.language_id) {
+                        const language = await languageDatamapper.getOne(ressource.language_id);
+                        ressource.language = language.name;
+                    }
+                    if (ressource.difficulty_id) {
+                        const difficulty = await difficultyDatamapper.getOne(ressource.difficulty_id);
+                        ressource.difficulty = difficulty.name;
+                    }
+                    if (ressource.ressource_type_id) {
+                        const ressource_type = await ressource_typeDatamapper.getOne(ressource.ressource_type_id);
+                        ressource.ressource_type = ressource_type.name;
+                    }
                 }
             }
 
@@ -100,7 +131,7 @@ module.exports = {
         }
     },
 
-    async update (request, response) {
+    async update(request, response) {
         try {
             //Avant de mettre à jour, on vérifie que l'auteur existe
             const author = await authorDatamapper.getById(request.params.id)
@@ -164,7 +195,7 @@ module.exports = {
             //On supprime le cache de l'auteur supprimé, ainsi que le cache de tous les auteurs
             redis.del('erc:author-' + request.params.id);
             redis.del('erc:author-');
-            
+
         } catch (error) {
             console.error(`message ` + error)
         }
