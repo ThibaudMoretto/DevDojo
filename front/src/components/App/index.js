@@ -22,7 +22,9 @@ import './styles.scss';
 
 library.add(fab);
 
-function App({ getRessources, getMentors, loading, submited, checkIsLogged }) {
+function App({
+  getRessources, getMentors, loading, submited, checkIsLogged,
+}) {
   useEffect(() => {
     getRessources();
     getMentors();
@@ -78,7 +80,11 @@ function App({ getRessources, getMentors, loading, submited, checkIsLogged }) {
           <About />
         </Route>
 
-        <Error />
+        <>
+          <Header displaySearchBar />
+          <Error />
+        </>
+
       </Switch>
       <Footer />
     </div>
