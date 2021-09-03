@@ -13,7 +13,7 @@ library.add(fab);
 
 function About() {
   return (
-    <div className="container-global">
+    <div className="containers">
       <h2>Notre <span>Equipe</span></h2>
       <div className="container-team">
         <article className="card-team">

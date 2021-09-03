@@ -35,58 +35,60 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="containers-form">
-      <div className="container-form">
-        <Form
-          required
-          id="contact-form"
-          className="contact-form-element"
-          onSubmit={handleSubmit}
-        >
-          <Form.Input
-            id="name"
-            label="Nom"
-            placeholder="Nom"
-            name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            autoComplete="on"
-          />
-          <Form.Input
-            id="mail"
-            label="Adresse email"
-            placeholder="john.doe@gmail.com"
-            type="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+    <div className="containers">
+      <div className="containers-form">
+        <div className="container-form">
+          <Form
             required
-            autoComplete="on"
-          />
-          <Form.Input
-            id="subject"
-            label="Objet"
-            placeholder="Objet"
-            name="subject"
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
-            required
-            autoComplete="off"
-          />
-          <Form.TextArea
-            id="body"
-            label="Votre message"
-            placeholder="Votre message"
-            name="body"
-            value={body}
-            onChange={(e) => setBody(e.target.value)}
-            required
-            autoComplete="off"
-          />
-          <Button color="facebook" type="submit">
-            {status}
-          </Button>
-        </Form>
+            id="contact-form"
+            className="contact-form-element"
+            onSubmit={handleSubmit}
+          >
+            <Form.Input
+              id="name"
+              label="Nom"
+              placeholder="Nom"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              autoComplete="on"
+            />
+            <Form.Input
+              id="mail"
+              label="Adresse email"
+              placeholder="john.doe@gmail.com"
+              type="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              autoComplete="on"
+            />
+            <Form.Input
+              id="subject"
+              label="Objet"
+              placeholder="Objet"
+              name="subject"
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+              required
+              autoComplete="off"
+            />
+            <Form.TextArea
+              id="body"
+              label="Votre message"
+              placeholder="Votre message"
+              name="body"
+              value={body}
+              onChange={(e) => setBody(e.target.value)}
+              required
+              autoComplete="off"
+            />
+            <Button color="facebook" type="submit">
+              {status}
+            </Button>
+          </Form>
+        </div>
       </div>
     </div>
   );
