@@ -157,9 +157,9 @@
 }
 
 .hide-nav {
-  margin: 0 0 0 v.$gutter;
-}
+  padding: 0.5rem v.$gutter;
 
-.navbar__burger{
-  margin: 0 4rem 0 0;
+  @media (max-width: 400px) {
+    padding: 0.5rem v.$gutter;
+  }
 }
