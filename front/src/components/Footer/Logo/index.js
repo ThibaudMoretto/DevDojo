@@ -5,7 +5,7 @@ import LogoFooter from 'src/assets/images/Logo_Dev_Dojo_Footer.png';
 
 function Logo() {
   return (
-    <div className="button-container">
+    <div className="logo-container">
       <Link to="/">
         <img src={LogoFooter} alt="logo dev dojo footer" />
       </Link>

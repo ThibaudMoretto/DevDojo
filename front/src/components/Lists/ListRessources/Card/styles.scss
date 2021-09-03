@@ -12,6 +12,11 @@
   margin-bottom: 2rem;
   filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25));
 
+  @media (max-width: 540px) {
+    height: 16rem;
+    width: 18rem;
+  }
+
   &-content {
     display: flex;
     flex-direction: column;
@@ -78,6 +83,7 @@
   border-radius: 0.25rem;
   text-transform: uppercase;
 
+
   &-video {
     background-color: #41cf7c;
   }
@@ -101,6 +107,10 @@
 
 .badges-techno-card{
   color:white;
+
+  @media (max-width: 540px) {
+    font-size: 20px;
+  }
 }
 
 .author {

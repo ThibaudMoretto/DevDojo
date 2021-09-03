@@ -11,4 +11,10 @@
   font-weight: bold;
   padding: 1rem;
   align-items: center;
+
+  .ui.button {
+    @media (max-width: 540px) {
+      font-size: 0.8rem;
+    }
+  }
 }

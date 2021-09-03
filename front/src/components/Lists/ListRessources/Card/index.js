@@ -24,7 +24,7 @@ const Card = ({
           <h3>{title}</h3>
           <div className="card-ressource-content-details">
             <span className="author">
-              par {author.name}
+              {author.name}
             </span>
             <span className="ressource-info-technologies">
               {technologiesRelated.map((technology) => (
