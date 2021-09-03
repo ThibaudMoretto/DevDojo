@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import './styles.scss';
 import Card from 'src/components/Lists/ListRessources/Card';
 import { Button } from 'semantic-ui-react';
@@ -19,7 +20,7 @@ function RecentRessources({ ressources }) {
         </div>
 
         <div className="button">
-          <Button color="red"> Afficher nos dernières ressources </Button>
+          <Button color="red" as={Link} to="/ressources"> Afficher nos ressources </Button>
         </div>
       </div>
     </div>

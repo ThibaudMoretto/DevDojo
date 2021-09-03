@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './styles.scss';
 import Card from 'src/components/Lists/ListMentors/Card';
@@ -17,9 +18,9 @@ function RecentMentors({ mentors }) {
           ))}
         </div>
         <div className="latestMentor-btnContainer">
-          <Button color="red" className="latestMentor-btnContainer-btn">
+          <Button color="red" as={Link} to="/mentors" className="latestMentor-btnContainer-btn">
             {' '}
-            Afficher nos derniers mentors{' '}
+            Afficher nos mentors{' '}
           </Button>
         </div>
       </div>

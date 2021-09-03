@@ -3,7 +3,7 @@
 .mentors {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .mentor-title {
@@ -13,7 +13,7 @@
   text-align: left;
   font-size: 2.5rem;
   padding: 1rem 0;
-  margin-left: v.$gutter;
+  // margin-left: v.$gutter;
   margin-bottom: v.$bigGutter;
 
   @media (max-width: 600px) {

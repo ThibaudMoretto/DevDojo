@@ -18,7 +18,6 @@ function FicheMentor({ mentor, isLogged }) {
       <div className="containers">
         <div className="mentor-title">
           {mentor.name}
-          <div className="mentor-info-role">{mentor.dev_role}</div>
           <span className="button-add">
             {isLogged && (
               <div className="button-edit">
@@ -38,6 +37,7 @@ function FicheMentor({ mentor, isLogged }) {
               </div>
             )}
           </span>
+          <div className="mentor-info-role">{mentor.dev_role}</div>
         </div>
         <div className="general-container">
           <div className="mentor--img">
