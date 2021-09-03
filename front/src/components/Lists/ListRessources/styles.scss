@@ -3,11 +3,12 @@
 .ressources {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .containers{
   margin: 0 v.$gutter;
+  min-height: 100vh;
 }
 
 .ressource-title {
@@ -16,8 +17,7 @@
   font-weight: 800;
   text-align: left;
   font-size: 2.5rem;
-  padding: 1rem 0;
-  margin-bottom: v.$bigGutter;
+  margin: v.$gutter 0;
 
   @media (max-width: 650px) {
     font-size: 2rem;

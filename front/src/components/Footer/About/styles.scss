@@ -2,13 +2,13 @@
 
 /* GLOBAL */
 
-.container-global {
-  padding: 2rem;
+.containers {
   color: v.$color-theme2;
 
   & h2 {
     font-size: 2.5rem;
     font-weight: 700;
+    margin-top: 1rem;
     margin-bottom: 3rem;
   }
 

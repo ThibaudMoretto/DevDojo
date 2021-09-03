@@ -8,7 +8,7 @@ function Header({ displaySearchBar }) {
   return (
     <>
       <NavBar />
-      <div>
+      <div className="container-searchBar">
         {displaySearchBar && (
           <div className="header-search">
             <SearchBar />

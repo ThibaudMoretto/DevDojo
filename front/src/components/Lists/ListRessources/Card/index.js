@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import './styles.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock } from '@fortawesome/free-solid-svg-icons';
 
 const Card = ({
   title, slug, author, duration, ressource_type, technologiesRelated,
@@ -17,13 +18,13 @@ const Card = ({
             {' '}
             {ressource_type}{' '}
           </span>
-          <span>Durée de lecture - {duration} min</span>
+          <span><FontAwesomeIcon icon={faClock} /> {duration} min</span>
         </div>
         <div className="card-ressource-content">
           <h3>{title}</h3>
           <div className="card-ressource-content-details">
             <span className="author">
-              par {author.name}
+              {author.name}
             </span>
             <span className="ressource-info-technologies">
               {technologiesRelated.map((technology) => (

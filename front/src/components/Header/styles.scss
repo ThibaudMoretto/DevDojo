@@ -1,4 +1,4 @@
-// @use 'src/styles/vars' as v;
+@use 'src/styles/vars' as v;
 
 // .header {
 //   width: 100%;
@@ -39,3 +39,7 @@
 //     display: none;
 //   }
 // }
+
+.header-search{
+  margin : 0 v.$gutter;
+}

@@ -21,9 +21,7 @@ function HeroBanner() {
             les ressources les plus efficaces et pertinentes du Web pour
             faciliter votre apprentissage et vous faire gagner du temps.
           </p>
-          <div className="container--searchbar">
-            <SearchBar />
-          </div>
+          <SearchBar />
         </div>
 
         <img

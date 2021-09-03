@@ -38,68 +38,64 @@ function FicheRessource({ ressource, isLogged }) {
             )}
           </span>
         </div>
-      </div>
 
-      <div className="general-container">
-      <div className="c--img">
+        <div className="general-container">
+          <div className="c--img">
 
-        <img src="https://images.unsplash.com/photo-1537884944318-390069bb8665" alt="img" className="img" />
-      <div className="ressource-mentor">
-        <div className="mentors">
-          <Card {...ressource.author} />
-        </div>
-      </div>
+            <img src="https://images.unsplash.com/photo-1537884944318-390069bb8665" alt="img" className="img" />
+            <div className="ressource-mentor">
+              <div className="mentors">
+                <Card {...ressource.author} />
+              </div>
+            </div>
 
-      </div>
-        <div className="container-description">
-          <p className="ressource-info-description-t">Description:</p>
-          <div className="ressource-info-description">
-            {ressource.description}
           </div>
-
-        <div className="ressource-info">
-          <div className="details">
-            <p className="ressource-info-details"> Details</p>
-            <div className="ressource-info-difficulty">
-              Niveau de difficulté : {ressource.difficulty}
-            </div>
-            <div className="ressource-info-language">
-              Langue : {ressource.language}
-            </div>
-            <div className="ressource-info-technologies">
-              {ressource.technologiesRelated.map((technology) => (
-                <FontAwesomeIcon
-                  key={technology.id}
-                  className="badges-techno"
-                  icon={['fab', `${technology.logo}`]}
-                />
-              ))}
+          <div className="container-description">
+            <p className="ressource-info-description-t">Description:</p>
+            <div className="ressource-info-description">
+              {ressource.description}
             </div>
 
-            <div className="ressource-info-description-type">Type de ressource : {ressource.ressource_type}</div>
+            <div className="ressource-info">
+              <div className="details">
+                <p className="ressource-info-details"> Details</p>
+                <div className="ressource-info-difficulty">
+                  Niveau de difficulté : {ressource.difficulty}
+                </div>
+                <div className="ressource-info-language">
+                  Langue : {ressource.language}
+                </div>
+                <div className="ressource-info-technologies">
+                  {ressource.technologiesRelated.map((technology) => (
+                    <FontAwesomeIcon
+                      key={technology.id}
+                      className="badges-techno"
+                      icon={['fab', `${technology.logo}`]}
+                    />
+                  ))}
+                </div>
 
+                <div className="ressource-info-description-type">Type de ressource : {ressource.ressource_type}</div>
 
-            <div className="ressource-info-second-info">
-              <div className="ressource-info-publicationDate">
-                Date de publication : {ressource.publication_date}
-              </div>
-              <div className="ressource-info-duration">
-                Durée estimée de lecture : {ressource.duration} min
-              </div>
-              <div className="ressource-info-link">
-                {' '}
-                <a href={ressource.link} target="_blank" rel="noreferrer">
-                  Lien vers la ressource
-                </a>{' '}
+                <div className="ressource-info-second-info">
+                  <div className="ressource-info-publicationDate">
+                    Date de publication : {ressource.publication_date}
+                  </div>
+                  <div className="ressource-info-duration">
+                    Durée estimée de lecture : {ressource.duration} min
+                  </div>
+                  <div className="ressource-info-link">
+                    {' '}
+                    <a href={ressource.link} target="_blank" rel="noreferrer">
+                      Lien vers la ressource
+                    </a>{' '}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        </div>
       </div>
-
-
-
     </>
   );
 }

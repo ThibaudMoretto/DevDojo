@@ -2,7 +2,6 @@
 
 .latestMentor {
   // border: 1px vars.$primaryColor solid;
-  margin-top: 4rem;
 
   &-span {
     color: v.$color-theme1;
@@ -18,9 +17,8 @@
   }
 
   &-container {
-    padding: v.$gutter;
-    padding-bottom: 6.5rem;
-    margin-bottom: 4rem;
+    padding: 0 v.$gutter v.$gutter v.$gutter;
+    padding-bottom: 4rem;
   }
 
   &-list {
