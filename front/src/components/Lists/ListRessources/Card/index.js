@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './styles.scss';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 const Card = ({
-  title, slug, author, duration, ressource_type,
+  title, slug, author, duration, ressource_type, technologiesRelated,
 }) => (
   <Link to={`/ressources/${slug}`}>
     <article className="card-ressource card-ressource-1">
@@ -15,16 +17,23 @@ const Card = ({
             {' '}
             {ressource_type}{' '}
           </span>
+          <span>Durée de lecture - {duration} min</span>
         </div>
         <div className="card-ressource-content">
           <h3>{title}</h3>
           <div className="card-ressource-content-details">
-            <p>
+            <span className="author">
               par {author.name}
-            </p>
-            <p>
-              Durée - <span>{duration} min</span>
-            </p>
+            </span>
+            <span className="ressource-info-technologies">
+              {technologiesRelated.map((technology) => (
+                <FontAwesomeIcon
+                  key={technology.id}
+                  className="badges-techno badges-techno-card"
+                  icon={['fab', `${technology.logo}`]}
+                />
+              ))}
+            </span>
           </div>
         </div>
       </div>
@@ -34,6 +43,7 @@ const Card = ({
 
 Card.propTypes = {
   title: PropTypes.string.isRequired,
+  technologiesRelated: PropTypes.array,
   slug: PropTypes.string.isRequired,
   author: PropTypes.object.isRequired,
   duration: PropTypes.number,
@@ -43,6 +53,7 @@ Card.propTypes = {
 Card.defaultProps = {
   duration: null,
   ressource_type: '',
+  technologiesRelated: null,
 };
 
 export default Card;
