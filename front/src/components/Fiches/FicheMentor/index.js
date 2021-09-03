@@ -1,6 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
-// import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import Card from 'src/components/Lists/ListRessources/Card';
 import './styles.scss';
 import { Redirect } from 'react-router-dom';
@@ -161,12 +160,9 @@ function FicheMentor({ mentor, isLogged }) {
   );
 }
 
-// FicheMentor.propTypes = {
-//   mentor: PropTypes.object.isRequired,
-// };
-
-// FicheMentor.defaultProps = {
-//   mentor: null,
-// };
+FicheMentor.propTypes = {
+  mentor: PropTypes.object.isRequired,
+  isLogged: PropTypes.bool.isRequired,
+};
 
 export default FicheMentor;

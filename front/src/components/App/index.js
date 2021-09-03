@@ -87,16 +87,14 @@ function App({ getRessources, getMentors, loading, submited, checkIsLogged }) {
 
 App.propTypes = {
   loading: PropTypes.bool,
+  submited: PropTypes.bool,
   getMentors: PropTypes.func.isRequired,
   getRessources: PropTypes.func.isRequired,
-  submited: PropTypes.bool,
   checkIsLogged: PropTypes.func.isRequired,
-  // isLogged: PropTypes.bool,
 };
 
 App.defaultProps = {
   loading: false,
-  // isLogged: false,
   submited: false,
 };
 

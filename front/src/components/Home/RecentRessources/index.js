@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './styles.scss';
 import Card from 'src/components/Lists/ListRessources/Card';
 import { Button } from 'semantic-ui-react';
@@ -25,8 +26,12 @@ function RecentRessources({ ressources }) {
   );
 }
 
-// RecentRessources.propTypes ={
-//   ressources:PropTypes.
-// }
+RecentRessources.propTypes = {
+  ressources: PropTypes.array,
+};
+
+RecentRessources.defaultProps = {
+  ressources: null,
+};
 
 export default RecentRessources;

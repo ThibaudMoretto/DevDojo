@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './styles.scss';
 
@@ -29,5 +29,18 @@ const Card = ({ title, slug, author, duration, ressource_type }) => (
     </div>
   </article>
 );
+
+Card.propTypes = {
+  title: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
+  author: PropTypes.object.isRequired,
+  duration: PropTypes.number,
+  ressource_type: PropTypes.string,
+};
+
+Card.defaultProps = {
+  duration: null,
+  ressource_type: '',
+};
 
 export default Card;

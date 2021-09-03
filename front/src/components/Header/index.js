@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import NavBar from 'src/containers/NavBar';
 import SearchBar from 'src/containers/SearchBar';
 import './styles.scss';
@@ -17,5 +18,9 @@ function Header({ displaySearchBar }) {
     </>
   );
 }
+
+Header.propTypes = {
+  displaySearchBar: PropTypes.bool.isRequired,
+};
 
 export default Header;
