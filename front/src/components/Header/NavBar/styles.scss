@@ -163,3 +163,11 @@
     padding: 0.5rem v.$gutter;
   }
 }
+
+.show-nav{
+  padding: 0.5rem v.$gutter;
+
+  @media (max-width: 400px) {
+    padding: 0.5rem v.$gutter;
+  }
+}
