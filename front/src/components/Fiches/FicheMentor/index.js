@@ -161,8 +161,12 @@ function FicheMentor({ mentor, isLogged }) {
 }
 
 FicheMentor.propTypes = {
-  mentor: PropTypes.object.isRequired,
+  mentor: PropTypes.object,
   isLogged: PropTypes.bool.isRequired,
+};
+
+FicheMentor.defaultProps = {
+  mentor: null,
 };
 
 export default FicheMentor;
