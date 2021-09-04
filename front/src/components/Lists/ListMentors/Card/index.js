@@ -6,7 +6,9 @@ import './styles.scss';
 import defaultImage from 'src/assets/images/defaultMentor.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Card = ({ name, image, dev_role, mainTechnologies }) => (
+const Card = ({
+  name, image, dev_role, mainTechnologies,
+}) => (
   <Link to={`/mentors/${name}`}>
     <article className="card-mentor">
       <div className="card-mentor-content">

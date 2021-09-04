@@ -1,7 +1,7 @@
 export const INITIAL_VALUE = 'INITIAL_VALUE';
 export const CHANGE_VALUE_RESSOURCE = 'CHANGE_VALUE_RESSOURCE';
 
-//GET
+// GET
 export const GET_RESSOURCES = 'GET_RESSOURCES';
 export const GET_RESSOURCES_SUCCESS = 'GET_RESSOURCES_SUCCESS';
 
@@ -11,10 +11,10 @@ export const ADD_RESSOURCE = 'ADD_RESSOURCE';
 // DELETE
 export const DELETE_RESSOURCE = 'DELETE_RESSOURCE';
 
-//EDIT
+// EDIT
 export const EDIT_RESSOURCE = 'EDIT_RESSOURCE';
 
-//SUCESS ==> reset
+// SUCESS ==> reset
 export const RESSOURCE_SUCCESS = 'RESSOURCE_SUCCESS';
 
 export const initialValue = (value) => ({

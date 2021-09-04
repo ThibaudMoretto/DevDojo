@@ -23,6 +23,7 @@ const mapStateToProps = (state) => ({
   language: state.ressource.language,
   free: state.ressource.free,
   description: state.ressource.description,
+  image: state.ressource.image,
 });
 
 const mapDispatchToProps = (dispatch) => ({

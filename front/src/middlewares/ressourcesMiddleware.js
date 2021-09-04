@@ -39,6 +39,7 @@ const ressourcesMiddleware = (store) => (next) => (action) => {
           difficulty_id: state.ressource.difficulty,
           language_id: state.ressource.language,
           author_id: state.ressource.author,
+          ressource_image: state.ressource.image,
           ressource_type_id: state.ressource.type,
           technologiesRelated: state.ressource.technologies.map((id) => ({
             id,
@@ -74,6 +75,7 @@ const ressourcesMiddleware = (store) => (next) => (action) => {
           language_id: state.ressource.language,
           author_id: state.ressource.author,
           ressource_type_id: state.ressource.type,
+          ressource_image: state.ressource.image,
           technologiesRelated: state.ressource.technologies.map((id) => ({
             id,
           })),
