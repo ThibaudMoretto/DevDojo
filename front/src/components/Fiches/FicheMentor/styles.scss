@@ -6,6 +6,7 @@
 
 .general-container {
   display: flex;
+
 }
 
 .mentor--img {
@@ -26,10 +27,18 @@
     font-size: 1.2rem;
   }
 
-  &-description {
+  &-title-description {
     font-size: 1.5rem;
     color: v.$color-theme2;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  &-description {
+    font-size: 1rem;
+    color: v.$color-theme2;
     font-weight: normal;
+    margin-bottom: 2rem;
   }
 
   &-website {
@@ -44,6 +53,24 @@
   font-size: 5rem;
   color: v.$color-theme2;
   padding: 0.4rem;
-  margin-right: 1.5rem;
-  margin-top: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.mentor-info-social-badges{
+  font-size: 4rem;
+  color: v.$color-theme2;
+  padding: 0.4rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card-mentor-info-image2 img {
+  border-radius: 50%;
+  height: 200px;
+  min-height: 200px;
+  min-width: 200px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 200px;
 }
