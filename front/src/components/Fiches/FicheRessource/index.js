@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
-import { Link } from 'react-router-dom';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import RessourceForm from 'src/containers/Forms/RessourceForm';
 import RessourceDelete from 'src/containers/RessourceDelete';
 import Card from 'src/components/Lists/ListMentors/Card';
@@ -79,13 +78,13 @@ function FicheRessource({ ressource, isLogged }) {
 
                 <div className="ressource-info-description-type"><span className="d-bold">Type de ressource :</span> {ressource.ressource_type}</div>
                 <div className="ressource-info-link">
-                    {/* {' '}
+                  {/* {' '}
                   <a href={ressource.link} target="_blank" rel="noreferrer">
                     Lien vers la ressource
                   </a>{' '} */}
                   {/* <button class="ui facebook button button">Lien Ressource</button> */}
                   <Button className="ui facebook button button" as={Link} href={ressource.link}>
-                  Lien Ressource
+                    Lien Ressource
                   </Button>
                 </div>
 

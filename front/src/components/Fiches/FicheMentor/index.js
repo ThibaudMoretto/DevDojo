@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'src/components/Lists/ListRessources/Card';
 import './styles.scss';
+import defaultImage from 'src/assets/images/defaultMentor.jpg';
 import { Redirect } from 'react-router-dom';
 import MentorForm from 'src/containers/Forms/MentorForm';
 import MentorDelete from 'src/containers/MentorDelete';
@@ -42,10 +43,11 @@ function FicheMentor({ mentor, isLogged }) {
         <div className="general-container">
           <div className="mentor--img">
             <div className="card-mentor-info-image2">
-              <img
-                src="https://yt3.ggpht.com/ytc/AKedOLQTUKCd7fvyRbIUni52wocYLSD0BdItSCTbjru2=s900-c-k-c0x00ffffff-no-rj"
-                alt="img"
-              />
+              {mentor.image === '' ? (
+                <img src={defaultImage} alt="mentor" />
+              ) : (
+                <img src={mentor.image} alt="mentor" />
+              )}
             </div>
           </div>
           <div className="mentor-info">
