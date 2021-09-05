@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import RessourceForm from 'src/containers/Forms/RessourceForm';
 import RessourceDelete from 'src/containers/RessourceDelete';
 import Card from 'src/components/Lists/ListMentors/Card';

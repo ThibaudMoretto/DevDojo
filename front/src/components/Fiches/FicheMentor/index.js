@@ -6,6 +6,7 @@ import defaultImage from 'src/assets/images/defaultMentor.jpg';
 import { Redirect } from 'react-router-dom';
 import MentorForm from 'src/containers/Forms/MentorForm';
 import MentorDelete from 'src/containers/MentorDelete';
+import { Button } from 'semantic-ui-react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -142,10 +143,11 @@ function FicheMentor({ mentor, isLogged }) {
               )}
             </div>
             <div className="mentor-info-website">
-              <a href={mentor.website} target="_blank" rel="noreferrer">
-                {' '}
-                Site internet | Portfolio{' '}
-              </a>
+              {mentor.website ? (
+                <Button className="ui facebook button" target="_blank" rel="noreferrer" href={mentor.website}>
+                  Site internet | Portfolio
+                </Button>
+              ) : ('')}
             </div>
           </div>
         </div>
