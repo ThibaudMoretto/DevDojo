@@ -76,7 +76,7 @@ function FicheRessource({ ressource, isLogged }) {
                   ))}
                 </div>
 
-                <div className="ressource-info-description-type"><span className="d-bold">Type de ressource :</span> {ressource.ressource_type}</div>
+                <div className="ressource-info-description-type"><span className="d-bold">Type de ressource :</span> <span className={`badge badge-${ressource.ressource_type}`}>{ressource.ressource_type}</span></div>
                 <div className="ressource-info-link">
                   {/* {' '}
                   <a href={ressource.link} target="_blank" rel="noreferrer">
