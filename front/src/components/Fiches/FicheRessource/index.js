@@ -83,7 +83,7 @@ function FicheRessource({ ressource, isLogged }) {
                     Lien vers la ressource
                   </a>{' '} */}
                   {/* <button class="ui facebook button button">Lien Ressource</button> */}
-                  <Button className="ui facebook button button" as={Link} href={ressource.link}>
+                  <Button className="ui facebook button" target="_blank" rel="noreferrer" href={ressource.link}>
                     Lien Ressource
                   </Button>
                 </div>
