@@ -41,59 +41,57 @@ function FicheRessource({ ressource, isLogged }) {
         </div>
 
         <div className="general-container">
-          <div className="c--img">
+          <div className="container-img">
             <img src={ressourceImage} alt="img" className="img" />
-
-          </div>
-          <div className="container-description">
-            <p className="ressource-info-description-t">Description:</p>
-            <div className="ressource-info-description">
-              {ressource.description}
-            </div>
-            <p className="ressource-info-description-t">Auteur:</p>
             <div className="ressource-mentor">
-              <div className="mentors mentors-start">
+              <div className="mentors mentors-desktop">
                 <Card {...ressource.author} />
               </div>
             </div>
+          </div>
+          <div className="container-description">
+            <p className="ressource-info-description-t">Description :</p>
+            <div className="ressource-info-description">
+              {ressource.description}
+            </div>
+
             <div className="ressource-info">
               <div className="details">
-                <p className="ressource-info-details">Details:</p>
+                <div className="ressource-info-publicationDate">
+                  Date de publication : {ressource.publication_date}
+                </div>
+                <div className="ressource-info-duration">
+                  Durée : {ressource.duration} min
+                </div>
                 <div className="ressource-info-difficulty">
-                  <span className="d-bold">Niveau:</span> {ressource.difficulty}
+                  <span className="d-bold">Niveau :</span> {ressource.difficulty}
                 </div>
                 <div className="ressource-info-language">
                   <span className="d-bold">Langues :</span> {ressource.language}
                 </div>
-                <div><span className="d-bold">Technologies:</span></div>
-                <div className="ressource-info-technologies">
-                  {ressource.technologiesRelated.map((technology) => (
-                    <FontAwesomeIcon
-                      key={technology.id}
-                      className="badges-techno badges-techno2"
-                      icon={['fab', `${technology.logo}`]}
-                    />
-                  ))}
-                </div>
 
                 <div className="ressource-info-description-type"><span className="d-bold">Type de ressource :</span> <span className={`badge badge-${ressource.ressource_type}`}>{ressource.ressource_type}</span></div>
-                <div className="ressource-info-link">
-                  {/* {' '}
-                  <a href={ressource.link} target="_blank" rel="noreferrer">
-                    Lien vers la ressource
-                  </a>{' '} */}
-                  {/* <button class="ui facebook button button">Lien Ressource</button> */}
-                  <Button className="ui facebook button" target="_blank" rel="noreferrer" href={ressource.link}>
-                    Lien Ressource
-                  </Button>
-                </div>
 
                 <div className="ressource-info-second-info">
-                  <div className="ressource-info-publicationDate">
-                    Date de publication : {ressource.publication_date}
+                  <div><span className="d-bold">Technologies :</span></div>
+                  <div className="ressource-info-technologies">
+                    {ressource.technologiesRelated.map((technology) => (
+                      <FontAwesomeIcon
+                        key={technology.id}
+                        className="badges-techno badges-techno2"
+                        icon={['fab', `${technology.logo}`]}
+                      />
+                    ))}
                   </div>
-                  <div className="ressource-info-duration">
-                    Durée : {ressource.duration} min
+                  <div className="ressource-info-link">
+                    <Button className="ui facebook button" target="_blank" rel="noreferrer" href={ressource.link}>
+                      Lien Ressource
+                    </Button>
+                  </div>
+                </div>
+                <div className="ressource-mentor">
+                  <div className="mentors mentors-start">
+                    <Card {...ressource.author} />
                   </div>
                 </div>
               </div>
