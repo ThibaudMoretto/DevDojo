@@ -27,7 +27,7 @@ const Card = ({
       background-size: cover;
       margin-bottom: 2rem;
       filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25));
-      background-image: linear-gradient(180.28deg,rgba(36, 42, 92, 0) -71.51%,rgba(36, 42, 92, 0.8) 99.75%),url(${ressourceImage});
+      background-image: linear-gradient(180.28deg,rgba(36, 42, 92, 0.3) -71.51%,rgba(36, 42, 92, 1) 99.75%),url(${ressourceImage});
       background-position: center center;
       @media (max-width: 540px) {
         height: 16rem;
