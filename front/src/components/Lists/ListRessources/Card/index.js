@@ -21,6 +21,10 @@ const Card = ({
       overflow: hidden;
       height: 23rem;
       width: 25rem;
+      @media (max-width: 540px) {
+        height: 16rem;
+        width: 18rem;
+      }
       color: #fff;
       font-weight: 400;
       font-size: 0.875rem;
