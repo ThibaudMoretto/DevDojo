@@ -50,6 +50,7 @@ const mentorsMiddleware = (store) => (next) => (action) => {
           console.log('Un mentor a été ajouté:', response.data);
           store.dispatch(mentorSuccess());
           store.dispatch(createGetMentorsAction());
+          store.dispatch(createGetRessourcesAction());
         })
         .catch((error) => console.log(error));
       break;
@@ -82,6 +83,7 @@ const mentorsMiddleware = (store) => (next) => (action) => {
           console.log('Un mentor a été modifié:', response.data);
           store.dispatch(mentorSuccess());
           store.dispatch(createGetMentorsAction());
+          store.dispatch(createGetRessourcesAction());
         })
         .catch((error) => console.log(error));
       break;

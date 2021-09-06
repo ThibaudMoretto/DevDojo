@@ -53,6 +53,7 @@ const ressourcesMiddleware = (store) => (next) => (action) => {
           console.log('Une ressource a été ajouté:', response.data);
           store.dispatch(ressourceSuccess());
           store.dispatch(createGetRessourcesAction());
+          store.dispatch(createGetMentorsAction());
         })
         .catch((error) => console.log(error));
       break;
@@ -88,6 +89,7 @@ const ressourcesMiddleware = (store) => (next) => (action) => {
           console.log('Une ressource a été modifié:', response.data);
           store.dispatch(ressourceSuccess());
           store.dispatch(createGetRessourcesAction());
+          store.dispatch(createGetMentorsAction());
         })
         .catch((error) => console.log(error));
       break;
