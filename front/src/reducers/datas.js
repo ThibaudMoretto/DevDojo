@@ -24,7 +24,7 @@ export const initialState = {
       { key: 'Npm', text: 'Npm', value: 15 },
       { key: 'Aws', text: 'Aws', value: 16 },
       { key: 'Wordpress', text: 'Wordpress', value: 17 },
-      { key: 'Symphony', text: 'Symphony', value: 18 },
+      { key: 'Symfony', text: 'Symfony', value: 18 },
       { key: 'Java', text: 'Java', value: 19 },
       { key: 'Android', text: 'Android', value: 20 },
       { key: 'iOS', text: 'iOS', value: 21 },
