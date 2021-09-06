@@ -23,28 +23,28 @@ export function filterRessources(ressources, submitValue) {
 export function selectorFilter(ressources, stateFilter) {
   console.log(ressources);
   const selectorFilter = ressources.filter((ressource) => (
-    ressource.language.includes(stateFilter)
+    ressource.language.toLowerCase().includes(stateFilter)
   ));
   console.log(selectorFilter);
   return selectorFilter;
 }
 // FILTER TECHNO
-export function filterTechno(ressources, stateTechno) {
-  let filterTechno = ressources.filter((ressource) => (
+export function selectorTechno(ressources, stateTechno) {
+  let selectorTechno = ressources.filter((ressource) => (
     ressource.technologiesRelated.map((ressource) => (ressource.name)).includes(stateTechno)
   ));
-  if (filterTechno.length < 1) {
-    filterTechno = ressources;
+  if (selectorTechno.length < 1) {
+    selectorTechno = ressources;
   }
-  console.log(filterTechno);
-  return filterTechno;
+  console.log(selectorTechno);
+  return selectorTechno;
 }
 
 // Fonction de la mort qui tue
 export async function makeFilter(ressources, submitValue, stateFilter, stateTechno) {
   const search = await filterRessources(ressources, submitValue);
-  const firstFilter = await filterLanguage(search, stateFilter);
-  const secondFilter = await filterTechno(firstFilter, stateTechno);
+  const firstFilter = await selectorFilter(search, stateFilter);
+  const secondFilter = await selectorTechno(firstFilter, stateTechno);
   console.log(secondFilter);
   return secondFilter;
 }

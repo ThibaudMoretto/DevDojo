@@ -8,7 +8,7 @@ export const initialState = {
 
     technologies: [
       { key: 'Javascript', text: 'Javascript', value: 1 },
-      { key: 'ReactJS', text: 'ReactJS', value: 2 },
+      { key: 'React', text: 'React', value: 2 },
       { key: 'NodeJS', text: 'NodeJS', value: 3 },
       { key: 'SQL', text: 'SQL', value: 4 },
       { key: 'Angular', text: 'Angular', value: 5 },
@@ -24,7 +24,7 @@ export const initialState = {
       { key: 'Npm', text: 'Npm', value: 15 },
       { key: 'Aws', text: 'Aws', value: 16 },
       { key: 'Wordpress', text: 'Wordpress', value: 17 },
-      { key: 'Symphony', text: 'Symphony', value: 18 },
+      { key: 'Symfony', text: 'Symfony', value: 18 },
       { key: 'Java', text: 'Java', value: 19 },
       { key: 'Android', text: 'Android', value: 20 },
       { key: 'iOS', text: 'iOS', value: 21 },

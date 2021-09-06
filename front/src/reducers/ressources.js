@@ -2,6 +2,7 @@ export const initialState = {
   list: [],
   isLoading: true,
   filter: '',
+  techno: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -24,6 +25,12 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         filter: action.value,
       };
+    }
+    case 'FILTER_TECHNOLOGIES': {
+      return {
+        ...state,
+        techno: action.value,
+      }
     }
     default:
       return state;

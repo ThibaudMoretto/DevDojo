@@ -14,7 +14,7 @@ const DropdownFilter = ({
   search,
 }) => {
   const handleChange = (evt) => {
-    onChange(evt.target.innerText);
+    onChange(evt.target.innerText.toLowerCase());
   };
 
   const nullValueToString = value === null ? '' : value;
