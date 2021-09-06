@@ -8,6 +8,10 @@ import {
   DELETE_MENTOR,
   mentorSuccess,
 } from 'src/actions/mentors';
+import {
+  createGetRessourcesAction,
+} from 'src/actions/ressources';
+
 import api from './utils/api';
 
 const mentorsMiddleware = (store) => (next) => (action) => {
@@ -98,6 +102,7 @@ const mentorsMiddleware = (store) => (next) => (action) => {
           console.log('Un mentor a été supprimé:', response.data);
           store.dispatch(mentorSuccess());
           store.dispatch(createGetMentorsAction());
+          store.dispatch(createGetRessourcesAction());
         })
         .catch((error) => console.log(error));
       break;

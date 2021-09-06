@@ -8,6 +8,9 @@ import {
   DELETE_RESSOURCE,
   ressourceSuccess,
 } from 'src/actions/ressources';
+import {
+  createGetMentorsAction,
+} from 'src/actions/mentors';
 import api from './utils/api';
 
 const ressourcesMiddleware = (store) => (next) => (action) => {
@@ -104,6 +107,7 @@ const ressourcesMiddleware = (store) => (next) => (action) => {
           console.log('Une ressource a été supprimé:', response.data);
           store.dispatch(ressourceSuccess());
           store.dispatch(createGetRessourcesAction());
+          store.dispatch(createGetMentorsAction());
         })
         .catch((error) => console.log(error));
       break;
