@@ -17,6 +17,8 @@ export const EDIT_RESSOURCE = 'EDIT_RESSOURCE';
 // SUCESS ==> reset
 export const RESSOURCE_SUCCESS = 'RESSOURCE_SUCCESS';
 
+export const FILTER_LANGUAGE = 'FILTER_LANGUAGE';
+
 export const initialValue = (value) => ({
   type: INITIAL_VALUE,
   value,
@@ -56,4 +58,9 @@ export const editRessource = () => ({
 // SUCCESS = reset du state
 export const ressourceSuccess = () => ({
   type: RESSOURCE_SUCCESS,
+});
+
+export const filterLanguageAction = (value) => ({
+  type: FILTER_LANGUAGE,
+  value,
 });

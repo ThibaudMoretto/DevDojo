@@ -1,6 +1,7 @@
 export const initialState = {
   list: [],
   isLoading: true,
+  filter: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -16,6 +17,12 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         list: action.ressources,
         isLoading: false,
+      };
+    }
+    case 'FILTER_LANGUAGE': {
+      return {
+        ...state,
+        filter: action.value,
       };
     }
     default:
