@@ -105,8 +105,12 @@ module.exports = {
                 }
             }
 
-            //On supprime le cache de toutes les ressources
-            redis.del('erc:author-');
+            //On supprime le cache
+            redis.flushdb(function (err, succeeded) {
+                if(succeeded){
+                    console.log('Cache vidé');
+                } 
+            });
 
             response.json({
                 data: author
@@ -172,9 +176,12 @@ module.exports = {
                 }
             }
 
-            //On supprime le cache de l'auteur mis à jour, ainsi que le cache de tous les auteurs
-            redis.del('erc:author-' + author.id);
-            redis.del('erc:author-');
+            //On supprime le cache
+            redis.flushdb(function (err, succeeded) {
+                if(succeeded){
+                    console.log('Cache vidé');
+                } 
+            });
 
             response.json({
                 data: updateAuthor
@@ -192,9 +199,12 @@ module.exports = {
                 })
             })
 
-            //On supprime le cache de l'auteur supprimé, ainsi que le cache de tous les auteurs
-            redis.del('erc:author-' + request.params.id);
-            redis.del('erc:author-');
+            //On supprime le cache
+            redis.flushdb(function (err, succeeded) {
+                if(succeeded){
+                    console.log('Cache vidé');
+                } 
+            });
 
         } catch (error) {
             console.error(`message ` + error)

@@ -120,8 +120,12 @@ module.exports = {
                 }
             }
 
-            //On supprime le cache de toutes les ressources
-            redis.del('erc:ressource-');
+            //On supprime le cache
+            redis.flushdb(function (err, succeeded) {
+                if(succeeded){
+                    console.log('Cache vidé');
+                } 
+            });
 
             response.json({
                 data: ressource
@@ -223,9 +227,12 @@ module.exports = {
 
             }
 
-            //On supprime le cache de la ressource mise à jour, ainsi que le cache de toutes les ressources
-            redis.del('erc:ressource-' + ressource.id);
-            redis.del('erc:ressource-');
+            //On supprime le cache
+            redis.flushdb(function (err, succeeded) {
+                if(succeeded){
+                    console.log('Cache vidé');
+                } 
+            });
 
             response.json({
                 data: updateRessource
@@ -244,9 +251,12 @@ module.exports = {
                 })
             })
 
-            //On supprime le cache de la ressource supprimée ainsi que le cache de toutes les ressources
-            redis.del('erc:ressource-' + request.params.id);
-            redis.del('erc:ressource-');
+            //On supprime le cache
+            redis.flushdb(function (err, succeeded) {
+                if(succeeded){
+                    console.log('Cache vidé');
+                } 
+            });
 
         } catch (error) {
             console.error(`message ` + error)
