@@ -17,6 +17,7 @@ export const initialState = {
   difficulty: '',
   link: '',
   publicationDate: '',
+  image: '',
   technologies: [],
 };
 
@@ -36,6 +37,7 @@ const reducer = (state = initialState, action = {}) => {
         publicationDate: action.value.publication_date,
         type: action.value.ressource_type_id,
         link: action.value.link,
+        image: action.value.ressource_image,
         technologies: action.value.technologiesRelated.map(({ id }) => id),
       };
     }
@@ -59,6 +61,7 @@ const reducer = (state = initialState, action = {}) => {
         difficulty: '',
         link: '',
         publicationDate: '',
+        image: '',
         technologies: [],
       };
     default:

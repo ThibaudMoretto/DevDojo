@@ -28,7 +28,7 @@ const MentorDelete = ({
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         open={open}
-        trigger={
+        trigger={(
           <Button
             className="button"
             color="google plus"
@@ -38,12 +38,14 @@ const MentorDelete = ({
           >
             {buttonMessage}
           </Button>
-        }
+        )}
       >
         <Modal.Header>{headerMessage}</Modal.Header>
 
         <Modal.Content>
-          <div>Voulez vraiment supprimer définitivement ce mentor?</div>
+          <div>Voulez vraiment supprimer définitivement ce mentor ainsi que ses
+            ressources associées?
+          </div>
         </Modal.Content>
         <Modal.Actions>
           <Button color="black" onClick={() => setOpen(false)}>

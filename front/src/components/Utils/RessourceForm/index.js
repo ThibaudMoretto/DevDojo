@@ -23,6 +23,7 @@ const RessourceForm = ({
   author,
   link,
   publicationDate,
+  image,
 
   datas,
   mentors,
@@ -135,6 +136,18 @@ const RessourceForm = ({
               required
               autoComplete="off"
               search
+            />
+
+            <Field
+              id="form-input-control-image"
+              label="URL image de couverture"
+              placeholder="URL image de couverture"
+              name="image"
+              onChange={changeValue}
+              value={image}
+              control="input"
+              type="url"
+              autoComplete="off"
             />
 
             {!isEdit && (

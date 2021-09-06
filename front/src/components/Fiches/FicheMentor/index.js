@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'src/components/Lists/ListRessources/Card';
 import './styles.scss';
+import defaultImage from 'src/assets/images/defaultMentor.jpg';
 import { Redirect } from 'react-router-dom';
 import MentorForm from 'src/containers/Forms/MentorForm';
 import MentorDelete from 'src/containers/MentorDelete';
+import { Button } from 'semantic-ui-react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -41,15 +43,18 @@ function FicheMentor({ mentor, isLogged }) {
         </div>
         <div className="general-container">
           <div className="mentor--img">
-            <div className="card-mentor-info-image">
-              <img
-                src="https://edovel.com/wp-content/uploads/2019/06/Quentin.jpg"
-                alt="img"
-              />
+            <div className="card-mentor-info-image2">
+              {mentor.image === '' ? (
+                <img src={defaultImage} alt="mentor" />
+              ) : (
+                <img src={mentor.image} alt="mentor" />
+              )}
             </div>
           </div>
           <div className="mentor-info">
+            <div className="mentor-info-title-description">Description:</div>
             <div className="mentor-info-description">{mentor.description}</div>
+            <div className="mentor-info-title-description">Technologies:</div>
             <div className="mentor-info-technologies">
               {mentor.mainTechnologies.map((technology) => (
                 <FontAwesomeIcon
@@ -59,6 +64,7 @@ function FicheMentor({ mentor, isLogged }) {
                 />
               ))}
             </div>
+            <div className="mentor-info-title-description">Plateformes:</div>
             <div className="mentor-info-social">
               {mentor.github_account ? (
                 <a
@@ -137,10 +143,11 @@ function FicheMentor({ mentor, isLogged }) {
               )}
             </div>
             <div className="mentor-info-website">
-              <a href={mentor.website} target="_blank" rel="noreferrer">
-                {' '}
-                Site internet | Portfolio{' '}
-              </a>
+              {mentor.website ? (
+                <Button className="ui facebook button" target="_blank" rel="noreferrer" href={mentor.website}>
+                  Site internet | Portfolio
+                </Button>
+              ) : ('')}
             </div>
           </div>
         </div>
