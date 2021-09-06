@@ -14,6 +14,5 @@ module.exports = {
         } catch(error) {
             console.error( `message ` + error)
         }
-        
     }
 }
