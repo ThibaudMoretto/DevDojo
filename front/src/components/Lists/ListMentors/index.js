@@ -28,36 +28,42 @@ function ListMentors({
           {!searchResult && (
             <>
               {isLogged && (
-              <>
-                <span className="button-add">
-                  <MentorForm
-                    buttonMessage="Ajouter un mentor"
-                    headerMessage="Ajouter un nouveau mentor"
-                    isEdit={false}
-                  />
-                </span>
-              </>
+                <>
+                  <span className="button-add">
+                    <MentorForm
+                      buttonMessage="Ajouter un mentor"
+                      headerMessage="Ajouter un nouveau mentor"
+                      isEdit={false}
+                    />
+                  </span>
+                </>
               )}
-              <DropdownFilter
-                id="form-input-control-dev-role"
-                label=""
-                placeholder="- Choisissez une spécialité -"
-                name="Catégorie"
-                onChange={filterCategoryAction}
-                value={stateCategory}
-                options={categories}
-                search={false}
-              />
-              <DropdownFilter
-                id="form-input-control-dev-techno"
-                label=""
-                placeholder="- Choisissez une technologie -"
-                name="Technologies"
-                onChange={filterTechnologiesAuthor}
-                value={stateTechno}
-                options={technologies}
-                search={false}
-              />
+              <div className="container-filter">
+                <div className="filter">
+                  <DropdownFilter
+                    id="form-input-control-dev-role"
+                    label=""
+                    placeholder="Spécialités"
+                    name="Catégorie"
+                    onChange={filterCategoryAction}
+                    value={stateCategory}
+                    options={categories}
+                    search={false}
+                  />
+                </div>
+                <div className="filter">
+                  <DropdownFilter
+                    id="form-input-control-dev-techno"
+                    label=""
+                    placeholder="Technologies"
+                    name="Technologies"
+                    onChange={filterTechnologiesAuthor}
+                    value={stateTechno}
+                    options={technologies}
+                    search={false}
+                  />
+                </div>
+              </div>
             </>
           )}
         </div>
