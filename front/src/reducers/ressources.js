@@ -30,7 +30,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         techno: action.value,
-      }
+      };
     }
     default:
       return state;

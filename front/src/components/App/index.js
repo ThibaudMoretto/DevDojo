@@ -47,12 +47,12 @@ function App({
 
         <Route exact path="/ressources">
           <Header displaySearchBar />
-          <ListRessources />
+          <ListRessources searchResult={false} />
         </Route>
 
         <Route exact path="/mentors">
           <Header displaySearchBar />
-          <ListMentors />
+          <ListMentors searchResult={false} />
         </Route>
 
         <Route exact path="/ressources/:slug">

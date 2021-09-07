@@ -3,7 +3,7 @@ export const initialState = {
     categories: [
       { key: 'Front-End', text: 'Front-End', value: 1 },
       { key: 'Back-End', text: 'Back-End', value: 2 },
-      { key: 'Autre', text: 'Autre', value: 3 },
+      { key: 'Full-Stack', text: 'Full-Stack', value: 3 },
     ],
 
     technologies: [

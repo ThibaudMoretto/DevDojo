@@ -18,14 +18,20 @@ export function filterRessources(ressources, submitValue) {
   ));
   return filterRessources;
 }
+// FILTER SEARCHBAR MENTOR
+export function filterMentors(mentors, submitValue) {
+  const filterMentors = mentors.filter((mentor) => (
+    mentor.name.toLowerCase().includes(submitValue.toLowerCase())
+    || mentor.dev_role.toLowerCase().includes(submitValue.toLowerCase())
+  ));
+  return filterMentors;
+}
 
 // FILTER LANGUAGE
 export function selectorFilter(ressources, stateFilter) {
-  console.log(ressources);
   const selectorFilter = ressources.filter((ressource) => (
     ressource.language.toLowerCase().includes(stateFilter)
   ));
-  console.log(selectorFilter);
   return selectorFilter;
 }
 // FILTER TECHNO
@@ -36,8 +42,25 @@ export function selectorTechno(ressources, stateTechno) {
   if (selectorTechno.length < 1) {
     selectorTechno = ressources;
   }
-  console.log(selectorTechno);
   return selectorTechno;
+}
+
+// FILTER CATEGORY
+export function selectorCategory(mentors, stateCategory) {
+  const selectorCategory = mentors.filter((mentor) => (
+    mentor.dev_role.toLowerCase().includes(stateCategory)
+  ));
+  return selectorCategory;
+}
+
+export function selectorTechnoAuthor(mentors, stateTechnoAuthor) {
+  let selectorTechnoAuthor = mentors.filter((mentor) => (
+    mentor.mainTechnologies.map((mentor) => (mentor.name)).includes(stateTechnoAuthor)
+  ));
+  if (selectorTechnoAuthor.length < 1) {
+    selectorTechnoAuthor = mentors;
+  }
+  return selectorTechnoAuthor;
 }
 
 // Fonction de la mort qui tue
@@ -45,6 +68,12 @@ export async function makeFilter(ressources, submitValue, stateFilter, stateTech
   const search = await filterRessources(ressources, submitValue);
   const firstFilter = await selectorFilter(search, stateFilter);
   const secondFilter = await selectorTechno(firstFilter, stateTechno);
-  console.log(secondFilter);
+  return secondFilter;
+}
+
+export async function makeFilterAuthor(mentors, submitValue, stateCategory, stateTechnoAuthor) {
+  const search = await filterMentors(mentors, submitValue);
+  const firstFilter = await selectorCategory(search, stateCategory);
+  const secondFilter = await selectorTechnoAuthor(firstFilter, stateTechnoAuthor);
   return secondFilter;
 }

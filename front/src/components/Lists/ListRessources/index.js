@@ -7,7 +7,7 @@ import DropdownFilter from 'src/components/Utils/DropdownFilter';
 import './styles.scss';
 
 function ListRessources({
-  ressources, isLogged, languages, stateFilter, filterLanguageAction, filterTechnologiesAction, stateTechno, technologies,
+  ressources, isLogged, languages, stateFilter, filterLanguageAction, filterTechnologiesAction, stateTechno, technologies, searchResult,
 }) {
   const [func, setFunc] = React.useState([]);
 
@@ -24,35 +24,41 @@ function ListRessources({
       <div className="containers">
         <div className="ressource-title">
           Nos <span className="ressource-title-red">Ressources</span>
-          {isLogged && (
-          <span className="button-add">
-            <RessourceForm
-              buttonMessage="Ajouter une ressource"
-              headerMessage="Ajouter une ressource"
-              isEdit={false}
-            />
-          </span>
+          {!searchResult && (
+            <>
+              {isLogged && (
+              <>
+                <span className="button-add">
+                  <RessourceForm
+                    buttonMessage="Ajouter une ressource"
+                    headerMessage="Ajouter une ressource"
+                    isEdit={false}
+                  />
+                </span>
+              </>
+              )}
+              <DropdownFilter
+                id="form-input-control-language"
+                label=""
+                placeholder="- Choisissez une langue -"
+                name="Langue"
+                onChange={filterLanguageAction}
+                value={stateFilter}
+                options={languages}
+                search={false}
+              />
+              <DropdownFilter
+                id="form-input-control-technologies"
+                label=""
+                placeholder="- Choisissez une technologie -"
+                name="technologies"
+                onChange={filterTechnologiesAction}
+                value={stateTechno}
+                options={technologies}
+                search={false}
+              />
+            </>
           )}
-          <DropdownFilter
-            id="form-input-control-language"
-            label="Language"
-            placeholder="Language"
-            name="language"
-            onChange={filterLanguageAction}
-            value={stateFilter}
-            options={languages}
-            search={false}
-          />
-          <DropdownFilter
-            id="form-input-control-technologies"
-            label="Technologie"
-            placeholder="Technologie"
-            name="technologies"
-            onChange={filterTechnologiesAction}
-            value={stateTechno}
-            options={technologies}
-            search={false}
-          />
         </div>
 
         <div className="ressources">
@@ -66,7 +72,7 @@ function ListRessources({
 }
 
 ListRessources.propTypes = {
-  ressources: PropTypes.array.isRequired,
+  ressources: PropTypes.object.isRequired,
   isLogged: PropTypes.bool,
   languages: PropTypes.array.isRequired,
   technologies: PropTypes.array.isRequired,
@@ -74,6 +80,7 @@ ListRessources.propTypes = {
   stateTechno: PropTypes.string.isRequired,
   filterLanguageAction: PropTypes.func.isRequired,
   filterTechnologiesAction: PropTypes.func.isRequired,
+  searchResult: PropTypes.bool.isRequired,
 };
 
 ListRessources.defaultProps = {

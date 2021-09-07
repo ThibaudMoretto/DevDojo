@@ -17,6 +17,10 @@ export const MENTOR_SUCCESS = 'MENTOR_SUCCESS';
 
 // DELETE
 export const DELETE_MENTOR = 'DELETE_MENTOR'; // ici >>>>
+// FILTER MENTOR CATEGORY
+export const FILTER_CATEGORY = 'FILTER_CATEGORY';
+// FILTER MENTOR TECHNOLOGIES
+export const FILTER_TECHNO_AUTHOR = 'FILTER_TECHNO_AUTHOR';
 
 export const initialValueMentor = (value) => ({
   type: INITIAL_VALUE_MENTOR,
@@ -58,4 +62,14 @@ export const deleteMentor = () => ({
 // SUCCESS = reset du state
 export const mentorSuccess = () => ({
   type: MENTOR_SUCCESS,
+});
+
+export const filterCategoryAction = (value) => ({
+  type: FILTER_CATEGORY,
+  value,
+});
+
+export const filterTechnologiesAuthor = (value) => ({
+  type: FILTER_TECHNO_AUTHOR,
+  value,
 });
