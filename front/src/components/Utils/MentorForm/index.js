@@ -9,7 +9,6 @@ const mentorForm = ({
   mentor,
   buttonMessage,
   headerMessage,
-  isEdit,
 
   name,
   description,
@@ -23,12 +22,15 @@ const mentorForm = ({
   youtube,
 
   datas,
+  isEdit,
+  isProposal,
 
   initialValue,
   resetInitial,
   changeValue,
   handleAddSubmit,
   handleEditSubmit,
+  handleProposalSubmit,
 }) => {
   const [open, setOpen] = React.useState(false);
 
@@ -38,8 +40,12 @@ const mentorForm = ({
 
   const handleSubmit = () => {
     // event.preventDefault();
-    isEdit ? handleEditSubmit() : handleAddSubmit();
+    isEdit ? handleEditSubmit() : handleProposal();
     setOpen(false);
+  };
+
+  const handleProposal = () => {
+    isProposal ? handleProposalSubmit() : handleAddSubmit();
   };
 
   const technologiesDatas = isEdit

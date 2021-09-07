@@ -27,6 +27,18 @@ function ListMentors({
           Nos <span className="mentor-title-red">Mentors</span>
           {!searchResult && (
             <>
+              {!isLogged && (
+                <>
+                  <span className="button-add">
+                    <MentorForm
+                      buttonMessage="Proposer un mentor"
+                      headerMessage="Proposer un nouveau mentor"
+                      isEdit={false}
+                      isProposal
+                    />
+                  </span>
+                </>
+              )}
               {isLogged && (
                 <>
                   <span className="button-add">
@@ -34,6 +46,7 @@ function ListMentors({
                       buttonMessage="Ajouter un mentor"
                       headerMessage="Ajouter un nouveau mentor"
                       isEdit={false}
+                      isProposal={false}
                     />
                   </span>
                 </>

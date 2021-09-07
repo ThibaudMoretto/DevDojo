@@ -30,7 +30,7 @@ function ListRessources({
                 <span className="button-add">
                   <RessourceForm
                     buttonMessage="Proposer une ressource"
-                    headerMessage="Proposer une ressource"
+                    headerMessage="Proposer une nouvelle ressource"
                     isEdit={false}
                     isProposal
                   />
@@ -41,7 +41,7 @@ function ListRessources({
                   <span className="button-add">
                     <RessourceForm
                       buttonMessage="Ajouter une ressource"
-                      headerMessage="Ajouter une ressource"
+                      headerMessage="Ajouter une nouvelle ressource"
                       isEdit={false}
                       isProposal={false}
                     />

@@ -9,6 +9,9 @@ export const GET_MENTORS_SUCCESS = 'GET_MENTORS_SUCCESS';
 // ADD
 export const ADD_MENTOR = 'ADD_MENTOR';
 
+// PROPOSAL
+export const PROPOSAL_MENTOR = 'PROPOSAL_MENTOR';
+
 // EDIT
 export const EDIT_MENTOR = 'EDIT_MENTOR';
 
@@ -46,6 +49,11 @@ export const createGetMentorsSuccessAction = (mentors) => ({
 // ADD
 export const addMentor = () => ({
   type: ADD_MENTOR,
+});
+
+// PROPOSAL
+export const proposalMentor = () => ({
+  type: PROPOSAL_MENTOR,
 });
 
 // PUT
