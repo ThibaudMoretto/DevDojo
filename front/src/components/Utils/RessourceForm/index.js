@@ -6,8 +6,6 @@ import Field from 'src/components/Utils/Field';
 import DropdownUnique from 'src/components/Utils/DropdownUnique';
 import DropdownMultipleSearch from 'src/components/Utils/DropdownMultipleSearch';
 
-import './styles.scss';
-
 const RessourceForm = ({
   ressource,
   buttonMessage,

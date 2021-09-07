@@ -5,8 +5,6 @@ import { Button, Modal, Form } from 'semantic-ui-react';
 import Field from 'src/components/Utils/Field';
 import DropdownMultipleSearch from 'src/components/Utils/DropdownMultipleSearch';
 
-import './styles.scss';
-
 const mentorForm = ({
   mentor,
   buttonMessage,
@@ -54,7 +52,7 @@ const mentorForm = ({
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         open={open}
-        trigger={
+        trigger={(
           <Button
             className="button"
             color="facebook"
@@ -68,7 +66,7 @@ const mentorForm = ({
           >
             {buttonMessage}
           </Button>
-        }
+        )}
       >
         <Modal.Header>{headerMessage}</Modal.Header>
 

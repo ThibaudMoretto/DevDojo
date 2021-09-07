@@ -27,36 +27,54 @@ function ListRessources({
           {!searchResult && (
             <>
               {isLogged && (
-              <>
-                <span className="button-add">
-                  <RessourceForm
-                    buttonMessage="Ajouter une ressource"
-                    headerMessage="Ajouter une ressource"
-                    isEdit={false}
-                  />
-                </span>
-              </>
+                <>
+                  <span className="button-add">
+                    <RessourceForm
+                      buttonMessage="Ajouter une ressource"
+                      headerMessage="Ajouter une ressource"
+                      isEdit={false}
+                    />
+                  </span>
+                </>
               )}
-              <DropdownFilter
-                id="form-input-control-language"
-                label=""
-                placeholder="- Choisissez une langue -"
-                name="Langue"
-                onChange={filterLanguageAction}
-                value={stateFilter}
-                options={languages}
-                search={false}
-              />
-              <DropdownFilter
-                id="form-input-control-technologies"
-                label=""
-                placeholder="- Choisissez une technologie -"
-                name="technologies"
-                onChange={filterTechnologiesAction}
-                value={stateTechno}
-                options={technologies}
-                search={false}
-              />
+              <div className="container-filter">
+                <div className="filter">
+                  <DropdownFilter
+                    id="form-input-control-language"
+                    label=""
+                    placeholder="Langues"
+                    name="Langue"
+                    onChange={filterLanguageAction}
+                    value={stateFilter}
+                    options={languages}
+                    search={false}
+                  />
+                </div>
+                <div className="filter">
+                  <DropdownFilter
+                    id="form-input-control-technologies"
+                    label=""
+                    placeholder="Technologies"
+                    name="technologies"
+                    onChange={filterTechnologiesAction}
+                    value={stateTechno}
+                    options={technologies}
+                    search={false}
+                  />
+                </div>
+                <div className="filter">
+                  <DropdownFilter
+                    id="form-input-control-technologies"
+                    label=""
+                    placeholder="Types"
+                    name="technologies"
+                    onChange={filterTechnologiesAction}
+                    value={stateTechno}
+                    options={technologies}
+                    search={false}
+                  />
+                </div>
+              </div>
             </>
           )}
         </div>
