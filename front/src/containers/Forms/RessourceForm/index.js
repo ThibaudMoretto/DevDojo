@@ -3,6 +3,7 @@ import RessourceForm from 'src/components/Utils/RessourceForm';
 import {
   addRessource,
   editRessource,
+  proposalRessource,
   changeValue,
   ressourceSuccess,
   initialValue,
@@ -45,6 +46,10 @@ const mapDispatchToProps = (dispatch) => ({
 
   handleEditSubmit: () => {
     dispatch(editRessource());
+  },
+
+  handleProposalSubmit: () => {
+    dispatch(proposalRessource());
   },
 });
 

@@ -26,12 +26,14 @@ const RessourceForm = ({
   datas,
   mentors,
   isEdit,
+  isProposal,
 
   initialValue,
   resetInitial,
   changeValue,
   handleAddSubmit,
   handleEditSubmit,
+  handleProposalSubmit,
 }) => {
   useEffect(() => {
     resetInitial();
@@ -40,9 +42,12 @@ const RessourceForm = ({
   const [open, setOpen] = React.useState(false);
 
   const handleSubmit = () => {
-    // event.preventDefault();
-    isEdit ? handleEditSubmit() : handleAddSubmit();
+    isEdit ? handleEditSubmit() : handleProposal();
     setOpen(false);
+  };
+
+  const handleProposal = () => {
+    isProposal ? handleProposalSubmit() : handleAddSubmit();
   };
 
   const mentorDatas = mentors.map(({ name, id }) => ({

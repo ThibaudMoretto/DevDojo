@@ -8,6 +8,9 @@ export const GET_RESSOURCES_SUCCESS = 'GET_RESSOURCES_SUCCESS';
 // ADD
 export const ADD_RESSOURCE = 'ADD_RESSOURCE';
 
+// ADD
+export const PROPOSAL_RESSOURCE = 'PROPOSAL_RESSOURCE';
+
 // DELETE
 export const DELETE_RESSOURCE = 'DELETE_RESSOURCE';
 
@@ -47,6 +50,11 @@ export const createGetRessourcesSuccessAction = (ressources) => ({
 // ADD
 export const addRessource = () => ({
   type: ADD_RESSOURCE,
+});
+
+// PROPOSAL
+export const proposalRessource = () => ({
+  type: PROPOSAL_RESSOURCE,
 });
 
 // DELETE

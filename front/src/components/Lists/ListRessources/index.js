@@ -26,6 +26,16 @@ function ListRessources({
           Nos <span className="ressource-title-red">Ressources</span>
           {!searchResult && (
             <>
+              {!isLogged && (
+                <span className="button-add">
+                  <RessourceForm
+                    buttonMessage="Proposer une ressource"
+                    headerMessage="Proposer une ressource"
+                    isEdit={false}
+                    isProposal
+                  />
+                </span>
+              )}
               {isLogged && (
                 <>
                   <span className="button-add">
@@ -33,6 +43,7 @@ function ListRessources({
                       buttonMessage="Ajouter une ressource"
                       headerMessage="Ajouter une ressource"
                       isEdit={false}
+                      isProposal={false}
                     />
                   </span>
                 </>
