@@ -23,6 +23,7 @@ export function filterMentors(mentors, submitValue) {
   const filterMentors = mentors.filter((mentor) => (
     mentor.name.toLowerCase().includes(submitValue.toLowerCase())
     || mentor.dev_role.toLowerCase().includes(submitValue.toLowerCase())
+    || mentor.mainTechnologies.map((mentor) => (mentor.name)).includes(submitValue.toLowerCase())
   ));
   return filterMentors;
 }
@@ -44,6 +45,13 @@ export function selectorTechno(ressources, stateTechno) {
   }
   return selectorTechno;
 }
+// FILTER TYPE
+export function selectorType(ressources, stateType) {
+  const selectorType = ressources.filter((ressource) => (
+    ressource.ressource_type.toLowerCase().includes(stateType)
+  ));
+  return selectorType;
+}
 
 // FILTER CATEGORY
 export function selectorCategory(mentors, stateCategory) {
@@ -64,11 +72,12 @@ export function selectorTechnoAuthor(mentors, stateTechnoAuthor) {
 }
 
 // Fonction de la mort qui tue
-export async function makeFilter(ressources, submitValue, stateFilter, stateTechno) {
+export async function makeFilter(ressources, submitValue, stateFilter, stateTechno, stateType) {
   const search = await filterRessources(ressources, submitValue);
   const firstFilter = await selectorFilter(search, stateFilter);
   const secondFilter = await selectorTechno(firstFilter, stateTechno);
-  return secondFilter;
+  const thirdFilter = await selectorType(secondFilter, stateType);
+  return thirdFilter;
 }
 
 export async function makeFilterAuthor(mentors, submitValue, stateCategory, stateTechnoAuthor) {

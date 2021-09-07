@@ -3,6 +3,7 @@ export const initialState = {
   isLoading: true,
   filter: '',
   techno: '',
+  type: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -30,6 +31,12 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         techno: action.value,
+      };
+    }
+    case 'FILTER_TYPE': {
+      return {
+        ...state,
+        type: action.value,
       };
     }
     default:
