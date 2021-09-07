@@ -58,10 +58,10 @@ function FicheRessource({ ressource, isLogged }) {
             <div className="ressource-info">
               <div className="details">
                 <div className="ressource-info-publicationDate">
-                  Date de publication : {ressource.publication_date}
+                  <span className="d-bold">Date de publication :</span> {ressource.publication_date}
                 </div>
                 <div className="ressource-info-duration">
-                  Durée : {ressource.duration} min
+                  <span className="d-bold">Durée :</span> {ressource.duration} min
                 </div>
                 <div className="ressource-info-difficulty">
                   <span className="d-bold">Niveau :</span> {ressource.difficulty}
@@ -72,7 +72,7 @@ function FicheRessource({ ressource, isLogged }) {
 
                 <div className="ressource-info-description-type"><span className="d-bold">Type de ressource :</span> <span className={`badge badge-${ressource.ressource_type}`}>{ressource.ressource_type}</span></div>
 
-                <div className="ressource-info-second-info">
+                <div>
                   <div><span className="d-bold">Technologies :</span></div>
                   <div className="ressource-info-technologies">
                     {ressource.technologiesRelated.map((technology) => (
