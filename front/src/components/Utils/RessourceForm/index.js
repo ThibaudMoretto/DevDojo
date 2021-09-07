@@ -203,7 +203,7 @@ const RessourceForm = ({
 
             <Form.Group widths="equal">
               <DropdownUnique
-                id="form-input-control-type"
+                id="form-input-control-types"
                 label="Type de contenu"
                 placeholder="Type de contenu"
                 name="type"
