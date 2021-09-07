@@ -52,9 +52,9 @@ function FicheMentor({ mentor, isLogged }) {
             </div>
           </div>
           <div className="mentor-info">
-            <div className="mentor-info-title-description">Description:</div>
+            <div className="mentor-info-title-description">Description :</div>
             <div className="mentor-info-description">{mentor.description}</div>
-            <div className="mentor-info-title-description">Technologies:</div>
+            <div className="mentor-info-title-description">Technologies :</div>
             <div className="mentor-info-technologies">
               {mentor.mainTechnologies.map((technology) => (
                 <FontAwesomeIcon
@@ -64,7 +64,7 @@ function FicheMentor({ mentor, isLogged }) {
                 />
               ))}
             </div>
-            <div className="mentor-info-title-description">Plateformes:</div>
+            <div className="mentor-info-title-description">Plateformes :</div>
             <div className="mentor-info-social">
               {mentor.github_account ? (
                 <a
