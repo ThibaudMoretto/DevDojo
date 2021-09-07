@@ -23,6 +23,8 @@ export const FILTER_LANGUAGE = 'FILTER_LANGUAGE';
 // FILTRE TECHNOLOGIES
 export const FILTER_TECHNOLOGIES = 'FILTER_TECHNOLOGIES';
 
+export const FILTER_TYPE = 'FILTER_TYPE';
+
 export const initialValue = (value) => ({
   type: INITIAL_VALUE,
   value,
@@ -71,5 +73,10 @@ export const filterLanguageAction = (value) => ({
 
 export const filterTechnologiesAction = (value) => ({
   type: FILTER_TECHNOLOGIES,
+  value,
+});
+
+export const filterTypeAction = (value) => ({
+  type: FILTER_TYPE,
   value,
 });

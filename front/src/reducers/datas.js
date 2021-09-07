@@ -49,7 +49,7 @@ export const initialState = {
     ],
 
     types: [
-      { key: 'Vidéo', text: 'Vidéo', value: 1 },
+      { key: 'Video', text: 'Video', value: 1 },
       { key: 'Podcast', text: 'Podcast', value: 2 },
       { key: 'Livre', text: 'Livre', value: 3 },
       { key: 'PDF', text: 'PDF', value: 4 },

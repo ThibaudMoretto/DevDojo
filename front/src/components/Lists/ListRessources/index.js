@@ -7,7 +7,7 @@ import DropdownFilter from 'src/components/Utils/DropdownFilter';
 import './styles.scss';
 
 function ListRessources({
-  ressources, isLogged, languages, stateFilter, filterLanguageAction, filterTechnologiesAction, stateTechno, technologies, searchResult,
+  ressources, isLogged, languages, stateFilter, filterLanguageAction, filterTechnologiesAction, stateTechno, technologies, searchResult, stateType, filterTypeAction, types,
 }) {
   const [func, setFunc] = React.useState([]);
 
@@ -64,13 +64,13 @@ function ListRessources({
                 </div>
                 <div className="filter">
                   <DropdownFilter
-                    id="form-input-control-technologies"
+                    id="form-input-control-type"
                     label=""
-                    placeholder="Types"
-                    name="technologies"
-                    onChange={filterTechnologiesAction}
-                    value={stateTechno}
-                    options={technologies}
+                    placeholder="Type"
+                    name="Type"
+                    onChange={filterTypeAction}
+                    value={stateType}
+                    options={types}
                     search={false}
                   />
                 </div>
@@ -94,8 +94,11 @@ ListRessources.propTypes = {
   isLogged: PropTypes.bool,
   languages: PropTypes.array.isRequired,
   technologies: PropTypes.array.isRequired,
+  types: PropTypes.array.isRequired,
   stateFilter: PropTypes.string.isRequired,
   stateTechno: PropTypes.string.isRequired,
+  stateType: PropTypes.string.isRequired,
+  filterTypeAction: PropTypes.func.isRequired,
   filterLanguageAction: PropTypes.func.isRequired,
   filterTechnologiesAction: PropTypes.func.isRequired,
   searchResult: PropTypes.bool.isRequired,
