@@ -26,7 +26,7 @@ function HeroBanner() {
         </div>
 
         <img
-          src={DevDojo}
+          src={heroBanner}
           alt="img"
           className="home--picture"
         />
