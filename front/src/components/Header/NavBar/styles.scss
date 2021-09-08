@@ -1,6 +1,7 @@
 @use 'sass:color';
 @use 'src/styles/vars' as v;
 
+
 .navbar {
   display: flex;
   flex-wrap: wrap;
@@ -11,9 +12,10 @@
   padding: 0.5rem;
   width: 100%;
   min-height: 5rem;
-  background-color: v.$color-background;
+  background-color: v.$color-theme2;
   z-index: 200;
   margin-bottom: 1rem;
+  box-shadow: 0px 3px 12px 0 rgba(0, 0, 0, 0.5);
 }
 
 .navbar__links {
@@ -23,7 +25,7 @@
 .navbar__link {
   font-family: v.$titleFont;
   padding: 0 0.3rem;
-  color: v.$color;
+  color: v.$color-nav;
   font-weight: 800;
   font-size: 2rem;
   padding: 0 1rem;
@@ -49,7 +51,7 @@
     height: 100vh;
     padding: 2rem;
     visibility: hidden;
-    background-color: v.$color-background;
+    background-color: v.$color;
     transition: all 0.8s ease-out;
   }
 
@@ -75,7 +77,7 @@
   .navbar__link {
     display: block;
     padding: 1.5rem;
-    font-size: 5vw;
+    font-size: 15vw;
   }
 
   .navbar__burger:hover {
@@ -90,7 +92,7 @@
     height: 0.2rem;
     position: relative;
     border-radius: 3px;
-    background-color: v.$color;
+    background-color: v.$color-burger;
     transition: all 0.5s ease-in-out;
   }
 
