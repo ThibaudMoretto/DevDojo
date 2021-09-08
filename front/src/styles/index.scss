@@ -1,8 +1,13 @@
 @use 'reset';
 @use 'vars' as v;
 
+@font-face {
+  font-family: "Michel";
+  src: url("../assets/fonts/go3v2.ttf");
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Michel", serif;
   color: black;
   background-color: v.$color-background;
 }
