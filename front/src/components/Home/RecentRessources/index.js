@@ -11,7 +11,7 @@ function RecentRessources({ ressources }) {
     <div className="lastRessources">
       <div className="lastRessources--container">
         <h2 className=" lastRessources--title">
-          Les dernières <span className="title--color">Ressources</span>
+          Nos dernières <span className="title--color">Ressources</span>
         </h2>
         <div className="card">
           {ressources.map((ressource) => (
