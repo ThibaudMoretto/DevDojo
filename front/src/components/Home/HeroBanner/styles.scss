@@ -32,7 +32,8 @@
   }
 
   &--description {
-    width: 29rem;
+    width: 75%;
+    text-align: justify;
     margin: 1.5em 0;
     line-height: 1.7rem;
   }
@@ -62,7 +63,6 @@
       width: auto;
       margin: 1em 0;
       line-height: 1.5rem;
-      margin-bottom: 2remrem;
     }
   }
 
