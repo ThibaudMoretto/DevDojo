@@ -71,7 +71,7 @@ function About() {
             <p>Git Master</p>
           </div>
           <div className="description">
-            <p>"Moi un Jean Valjean des temps modernes ? Euh, non, je n'ai jamais vu son film !"</p>
+            <p>"Pour survivre à la guerre, il faut devenir la guerre."</p>
           </div>
           <ul className="social">
             <li><FontAwesomeIcon icon={['fab', 'github']} /></li>
