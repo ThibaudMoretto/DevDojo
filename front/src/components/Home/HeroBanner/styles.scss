@@ -12,8 +12,11 @@
 
   &--title {
     //contient toute la partie de gauche
-
     padding-top: 0.5rem;
+
+    @media (min-width: 1101px) {
+      margin-right: 2rem;
+    }
   }
 
   &--subTitle {

@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Modal } from 'semantic-ui-react';
 
-import './styles.scss';
-
 const MentorDelete = ({
   handleDeleteSubmit,
   mentor,

@@ -5,13 +5,10 @@ import { Button, Modal, Form } from 'semantic-ui-react';
 import Field from 'src/components/Utils/Field';
 import DropdownMultipleSearch from 'src/components/Utils/DropdownMultipleSearch';
 
-import './styles.scss';
-
 const mentorForm = ({
   mentor,
   buttonMessage,
   headerMessage,
-  isEdit,
 
   name,
   description,
@@ -25,12 +22,15 @@ const mentorForm = ({
   youtube,
 
   datas,
+  isEdit,
+  isProposal,
 
   initialValue,
   resetInitial,
   changeValue,
   handleAddSubmit,
   handleEditSubmit,
+  handleProposalSubmit,
 }) => {
   const [open, setOpen] = React.useState(false);
 
@@ -40,8 +40,12 @@ const mentorForm = ({
 
   const handleSubmit = () => {
     // event.preventDefault();
-    isEdit ? handleEditSubmit() : handleAddSubmit();
+    isEdit ? handleEditSubmit() : handleProposal();
     setOpen(false);
+  };
+
+  const handleProposal = () => {
+    isProposal ? handleProposalSubmit() : handleAddSubmit();
   };
 
   const technologiesDatas = isEdit
@@ -54,7 +58,7 @@ const mentorForm = ({
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         open={open}
-        trigger={
+        trigger={(
           <Button
             className="button"
             color="facebook"
@@ -68,7 +72,7 @@ const mentorForm = ({
           >
             {buttonMessage}
           </Button>
-        }
+        )}
       >
         <Modal.Header>{headerMessage}</Modal.Header>
 

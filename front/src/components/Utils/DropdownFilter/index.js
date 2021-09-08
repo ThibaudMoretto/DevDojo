@@ -1,21 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Form } from 'semantic-ui-react';
+import { Form, Select } from 'semantic-ui-react';
 
-const Field = ({
-  value,
-  type,
-  name,
+const DropdownFilter = ({
+  options,
   placeholder,
+  name,
+  value,
   onChange,
-  id,
   label,
-  control,
   required,
-  autoComplete,
+  id,
+  search,
 }) => {
   const handleChange = (evt) => {
-    onChange(evt.target.value, name);
+    onChange(evt.target.innerText.toLowerCase());
   };
 
   const nullValueToString = value === null ? '' : value;
@@ -24,23 +23,26 @@ const Field = ({
     <Form.Field
       id={id}
       name={name}
-      label={label}
       placeholder={placeholder}
-      required={required}
-      value={nullValueToString}
+      label={label}
+      autoComplete="off"
+      lazyLoad
+      clearable
+      fluid
+      defaultValue={nullValueToString}
+      options={options}
       onChange={handleChange}
-      control={control}
-      type={type}
-      autoComplete={autoComplete}
+      control={Select}
+      search={search}
+      required={required}
     />
   );
 };
 
-Field.propTypes = {
+DropdownFilter.propTypes = {
+  options: PropTypes.array.isRequired,
   placeholder: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  control: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.bool,
@@ -51,13 +53,12 @@ Field.propTypes = {
   label: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   required: PropTypes.bool,
-  autoComplete: PropTypes.string,
+  search: PropTypes.bool.isRequired,
 };
 
-Field.defaultProps = {
+DropdownFilter.defaultProps = {
   value: '',
   required: false,
-  autoComplete: 'off',
 };
 
-export default Field;
+export default DropdownFilter;

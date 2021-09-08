@@ -5,9 +5,14 @@ import {
   GET_MENTORS,
   ADD_MENTOR,
   EDIT_MENTOR,
+  PROPOSAL_MENTOR,
   DELETE_MENTOR,
   mentorSuccess,
 } from 'src/actions/mentors';
+import {
+  createGetRessourcesAction,
+} from 'src/actions/ressources';
+
 import api from './utils/api';
 
 const mentorsMiddleware = (store) => (next) => (action) => {
@@ -46,6 +51,7 @@ const mentorsMiddleware = (store) => (next) => (action) => {
           console.log('Un mentor a été ajouté:', response.data);
           store.dispatch(mentorSuccess());
           store.dispatch(createGetMentorsAction());
+          store.dispatch(createGetRessourcesAction());
         })
         .catch((error) => console.log(error));
       break;
@@ -78,6 +84,38 @@ const mentorsMiddleware = (store) => (next) => (action) => {
           console.log('Un mentor a été modifié:', response.data);
           store.dispatch(mentorSuccess());
           store.dispatch(createGetMentorsAction());
+          store.dispatch(createGetRessourcesAction());
+        })
+        .catch((error) => console.log(error));
+      break;
+    }
+
+    case PROPOSAL_MENTOR: {
+      const state = store.getState();
+
+      api({
+        method: 'POST',
+        url: '/suggestion',
+        headers: {
+          'content-type': 'application/json',
+        },
+        data: {
+          name: state.mentor.name,
+          description: state.mentor.description,
+          dev_role: state.mentor.role,
+          image: state.mentor.image,
+          github_account: state.mentor.github,
+          linkedin_account: state.mentor.linkedin,
+          twitch_account: state.mentor.twitch,
+          twitter_account: state.mentor.twitter,
+          website: state.mentor.website,
+          youtube_account: state.mentor.youtube,
+          mainTechnologies: state.mentor.technologies.map((id) => ({ id })),
+        },
+      })
+        .then((response) => {
+          console.log('Un mentor a été proposé:', response.data);
+          store.dispatch(mentorSuccess());
         })
         .catch((error) => console.log(error));
       break;
@@ -98,6 +136,7 @@ const mentorsMiddleware = (store) => (next) => (action) => {
           console.log('Un mentor a été supprimé:', response.data);
           store.dispatch(mentorSuccess());
           store.dispatch(createGetMentorsAction());
+          store.dispatch(createGetRessourcesAction());
         })
         .catch((error) => console.log(error));
       break;

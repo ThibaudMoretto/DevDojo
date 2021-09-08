@@ -3,6 +3,7 @@ import MentorForm from 'src/components/Utils/MentorForm';
 import {
   addMentor,
   editMentor,
+  proposalMentor,
   changeValue,
   mentorSuccess,
   initialValueMentor,
@@ -43,6 +44,10 @@ const mapDispatchToProps = (dispatch) => ({
 
   handleEditSubmit: () => {
     dispatch(editMentor());
+  },
+
+  handleProposalSubmit: () => {
+    dispatch(proposalMentor());
   },
 });
 

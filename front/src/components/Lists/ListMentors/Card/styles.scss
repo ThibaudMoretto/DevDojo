@@ -39,6 +39,7 @@
     font-weight: 700;
     font-size: 1.375rem;
     text-transform: uppercase;
+    color: v.$color;
 
     @media (max-width: 540px) {
       font-size: 1.15rem;

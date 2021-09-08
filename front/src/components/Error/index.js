@@ -6,7 +6,7 @@ import { Button } from 'semantic-ui-react';
 
 function Error() {
   return (
-    <div className="container">
+    <div className="container-footer">
       <div>
         <img src={image} alt="page 404" />
       </div>

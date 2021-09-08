@@ -7,8 +7,8 @@ import './styles.scss';
 function SearchResults() {
   return (
     <div>
-      <ListRessources />
-      <ListMentors />
+      <ListRessources searchResult />
+      <ListMentors searchResult />
     </div>
   );
 }

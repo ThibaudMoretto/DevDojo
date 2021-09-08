@@ -6,8 +6,6 @@ import Field from 'src/components/Utils/Field';
 import DropdownUnique from 'src/components/Utils/DropdownUnique';
 import DropdownMultipleSearch from 'src/components/Utils/DropdownMultipleSearch';
 
-import './styles.scss';
-
 const RessourceForm = ({
   ressource,
   buttonMessage,
@@ -28,12 +26,14 @@ const RessourceForm = ({
   datas,
   mentors,
   isEdit,
+  isProposal,
 
   initialValue,
   resetInitial,
   changeValue,
   handleAddSubmit,
   handleEditSubmit,
+  handleProposalSubmit,
 }) => {
   useEffect(() => {
     resetInitial();
@@ -42,9 +42,12 @@ const RessourceForm = ({
   const [open, setOpen] = React.useState(false);
 
   const handleSubmit = () => {
-    // event.preventDefault();
-    isEdit ? handleEditSubmit() : handleAddSubmit();
+    isEdit ? handleEditSubmit() : handleProposal();
     setOpen(false);
+  };
+
+  const handleProposal = () => {
+    isProposal ? handleProposalSubmit() : handleAddSubmit();
   };
 
   const mentorDatas = mentors.map(({ name, id }) => ({
@@ -152,7 +155,7 @@ const RessourceForm = ({
 
             {!isEdit && (
               <DropdownMultipleSearch
-                id="form-input-control-technologies"
+                id="form-input-control-technologie"
                 label="Technologie(s) en lien (3 max)"
                 placeholder="Technologie(s) en lien (3 max)"
                 name="technologies"
@@ -163,7 +166,7 @@ const RessourceForm = ({
 
             {isEdit && (
               <DropdownMultipleSearch
-                id="form-input-control-technologies"
+                id="form-input-control-technologie"
                 label="Technologie(s) en lien (3 max)"
                 placeholder="Technologie(s) en lien (3 max)"
                 name="technologies"
@@ -200,7 +203,7 @@ const RessourceForm = ({
 
             <Form.Group widths="equal">
               <DropdownUnique
-                id="form-input-control-type"
+                id="form-input-control-types"
                 label="Type de contenu"
                 placeholder="Type de contenu"
                 name="type"
@@ -211,7 +214,7 @@ const RessourceForm = ({
               />
 
               <DropdownUnique
-                id="form-input-control-language"
+                id="form-input-language"
                 label="Language"
                 placeholder="Language"
                 name="language"
