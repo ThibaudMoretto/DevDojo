@@ -67,7 +67,7 @@ module.exports = {
       <p><b>Nom :</b> ${data.name}</p>
       <p><b>Description :</b> ${data.description}</p>
       <p><b>Rôle :</b> ${data.dev_role}</p>
-      <p><b>Image :</b> ${data.image}</p>
+      <p><b>Image :</b> ${data.ressource_image}</p>
       <p><b>Github :</b> ${data.github_account}</p>
       <p><b>LinkedIn :</b> ${data.linkedin_account}</p>
       <p><b>Twitch :</b> ${data.twitch_account}</p>
@@ -103,7 +103,7 @@ module.exports = {
       <p><b>Langue :</b> ${language.name}</p>
       <p><b>Auteur :</b> ${author.name}</p>
       <p><b>Type de ressource :</b> ${ressource_type.name}</p>
-      <p><b>Image :</b> ${data.image}</p>
+      <p><b>Image :</b> ${data.ressource_image}</p>
       <p><b>Technos abordées :</b> ${technologiesRelated.toString()}</p>
       `
     }
