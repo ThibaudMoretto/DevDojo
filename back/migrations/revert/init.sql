@@ -3,6 +3,7 @@
 BEGIN;
 
 DROP TABLE IF EXISTS
+"token",
 "role",
 "language",
 "ressource_type",
@@ -17,6 +18,7 @@ DROP TABLE IF EXISTS
 "user_checked_ressource",
 "ressource_requires_technology",
 "ressource_relates_technology",
-"technology_belongsto_category";
+"technology_belongsto_category",
+"author_relates_technologies";
 
 COMMIT;

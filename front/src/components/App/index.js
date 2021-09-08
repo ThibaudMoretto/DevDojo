@@ -2,24 +2,29 @@ import React, { useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import Home from 'src/components/Home';
-import ListMentors from 'src/containers/ListMentors';
-import ListRessources from 'src/containers/ListRessources';
-import FicheRessource from 'src/containers/FicheRessource';
-import FicheMentor from 'src/containers/FicheMentor';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+
+import Home from 'src/containers/Home';
+import ListMentors from 'src/containers/Lists/ListMentors';
+import ListRessources from 'src/containers/Lists/ListRessources';
+import FicheRessource from 'src/containers/Fiches/FicheRessource';
+import FicheMentor from 'src/containers/Fiches/FicheMentor';
 import SearchResults from 'src/components/SearchResults';
 import Footer from 'src/components/Footer';
 import Error from 'src/components/Error';
 import Header from 'src/components/Header';
-import Loading from './Loading'
+import Contact from 'src/components/Footer/Contact';
+import About from 'src/components/Footer/About';
+import Loading from './Loading';
 
 import './styles.scss';
 
-function App({ getRessources, getMentors, loading, submited, isLogged,
-  checkIsLogged }) {
+library.add(fab);
 
-  console.log('Es-tu connecté ?', isLogged);
-
+function App({
+  getRessources, getMentors, loading, submited, checkIsLogged,
+}) {
   useEffect(() => {
     getRessources();
     getMentors();
@@ -28,40 +33,58 @@ function App({ getRessources, getMentors, loading, submited, isLogged,
 
   if (loading) {
     return <Loading />;
-  };
+  }
 
   return (
     <div className="app">
+      {submited && <Redirect to="/search-results" />}
 
-      {submited && (
-        <Redirect to="/search-results" />)}
-
-      <Header />
       <Switch>
-
         <Route exact path="/">
+          <Header displaySearchBar={false} />
           <Home />
         </Route>
 
         <Route exact path="/ressources">
-          <ListRessources />
+          <Header displaySearchBar />
+          <ListRessources searchResult={false} />
         </Route>
 
         <Route exact path="/mentors">
-          <ListMentors />
+          <Header displaySearchBar />
+          <ListMentors searchResult={false} />
         </Route>
 
-        <Route exact path="/ressources/:slug" component={FicheRessource}>
+        <Route exact path="/ressources/:slug">
+          <Header displaySearchBar />
+          <FicheRessource />
         </Route>
 
-        <Route exact path="/mentors/:name" component={FicheMentor}>
+        <Route exact path="/mentors/:name">
+          <Header displaySearchBar />
+          <FicheMentor />
         </Route>
 
         <Route exact path="/search-results">
+          <Header displaySearchBar />
           <SearchResults />
         </Route>
 
-        <Error />
+        <Route exact path="/contact">
+          <Header displaySearchBar />
+          <Contact />
+        </Route>
+
+        <Route exact path="/about">
+          <Header displaySearchBar />
+          <About />
+        </Route>
+
+        <>
+          <Header displaySearchBar />
+          <Error />
+        </>
+
       </Switch>
       <Footer />
     </div>
@@ -70,16 +93,15 @@ function App({ getRessources, getMentors, loading, submited, isLogged,
 
 App.propTypes = {
   loading: PropTypes.bool,
+  submited: PropTypes.bool,
   getMentors: PropTypes.func.isRequired,
   getRessources: PropTypes.func.isRequired,
-  submited: PropTypes.bool,
   checkIsLogged: PropTypes.func.isRequired,
-  isLogged: PropTypes.bool,
 };
 
 App.defaultProps = {
   loading: false,
-  isLogged: false,
+  submited: false,
 };
 
 export default App;

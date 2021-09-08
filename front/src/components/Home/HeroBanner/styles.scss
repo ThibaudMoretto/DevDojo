@@ -1,71 +1,94 @@
-@use '../../../styles/vars';
+@use 'src/styles/vars' as v;
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
 
-.herobanner{
-  
-    &--container{
-   
-    padding:1.5rem;
+.herobanner {
+  &--container {
+    justify-content: space-evenly;
+    padding: 1.5rem;
     display: flex;
-    margin-bottom: 15vh;
+    margin: 4rem;
+    background-color: v.$color-background;
   }
 
-  &--title{ //contient toute la partie de gauche
-   
-    width: 50%;
-   
-  }
+  &--title {
+    //contient toute la partie de gauche
+    padding-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 
-  &--subTitle{
-  
-    font-size: 2rem;
-    font-weight: bolder; 
-    width: 50%;
-    line-height: 1.2em;
-    
+    @media (min-width: 1101px) {
+      margin-right: 2rem;
+    }
 
-     &--color{
-      color: vars.$primaryColor;
+    .ui.segment{
+      max-width: 80%;
+      @media (max-width: 1100px) {
+        max-width: 100%;
+      }
     }
   }
 
-  &--description{
-   
+  &--subTitle {
+    font-family: v.$titleFont;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2em;
+    color: v.$color-theme2;
+
+    @media (max-width: 1100px) {
+      font-size: 2rem;
+    }
+
+    &--color {
+      color: v.$color-theme1;
+    }
+  }
+
+  &--description {
     width: 80%;
-    margin: 1.5em;
-    font-weight: bold;
-    line-height: 1.2rem;
+    text-align: justify;
+    margin: 1.5em 0;
+    line-height: 1.7rem;
   }
 }
 
-.description--color{ // couleur du span
-  font-size:1.2rem ;
-  
+// .description--color{ // couleur du span
+//   font-size:1.2rem ;
+
+// }
+
+/*Tablets [601px -> 1200px]*/
+@media only screen and (max-width: 1100px) {
+  .herobanner {
+    &--container {
+      justify-content: space-evenly;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      margin: 2rem 1.5rem;
+
+      @media (max-width: 540px) {
+        margin: 1rem 1.5rem;
+      }
+    }
+
+    &--description {
+      width: auto;
+      margin: 1em 0;
+      line-height: 1.5rem;
+    }
+  }
+
+  .container--button {
+    display: flex;
+    margin-right: 3rem;
+    margin-bottom: 1rem;
+  }
 }
 
-.container--button{
-
-  flex-wrap: wrap;
-  align-items: center;
-  display: flex;
-  width: 53%;
-  justify-content: space-between;
-  margin-left: 1.4rem;
-
+.home--picture {
+  @media (max-width: 540px) {
+    display: none;
+  }
 }
-
-.button--source,.button--mentors {
-  color:white;
-  background: vars.$primaryColor;
-  border: none;
-  border-radius: 8%;
-  padding:0.8rem;
-  font-size: 0.8rem;
-}
-
-
-.button--source:hover, .button--mentors:hover{ 
-  color:black;
-  font-size: 0.9rem;
-  box-shadow: 0 2px 2px black;
-}
-

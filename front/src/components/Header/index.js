@@ -1,27 +1,26 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import NavBar from 'src/containers/NavBar';
 import SearchBar from 'src/containers/SearchBar';
-import logo from 'src/assets/images/Logo.png'
 import './styles.scss';
 
-function Header() {
-
+function Header({ displaySearchBar }) {
   return (
-    <div className="header">
-      <div className="header--container">
-        <div className="header--logo_container">
-          <img src={logo} className="header-logo" alt="logo Dev Dojo" />
-        </div>
-        <div className="header-nav">
-          <NavBar
-          />
-        </div>
+    <>
+      <NavBar />
+      <div className="container-searchBar">
+        {displaySearchBar && (
+          <div className="header-search">
+            <SearchBar />
+          </div>
+        )}
       </div>
-      <div className="header-search">
-        <SearchBar />
-      </div>
-    </div>
-  )
+    </>
+  );
 }
+
+Header.propTypes = {
+  displaySearchBar: PropTypes.bool.isRequired,
+};
 
 export default Header;

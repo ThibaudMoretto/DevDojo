@@ -1,72 +1,62 @@
-@use '../../../styles/vars';
+@use 'src/styles/vars' as v;
 
-.lastRessources{
-  background-color: vars.$backgroundDiv;
-  width:100%;
-  margin-bottom: 15vh;
+.lastRessources {
+  background-color: v.$color-theme2;
+  width: 100%;
+  padding-bottom: 2rem;
 
-  &--title{
-    padding:1.2rem;
-    font-size: 2.2rem;
-    font-weight: bold;
+  &--title {
+    font-family: v.$titleFont;
+    color: white;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    padding: v.$bigGutter 0;
+  }
 }
- 
-}
-
-
-
 
 .card {
-
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  padding:2rem;
+  padding: 2rem;
+  margin-bottom: 3rem;
 
-  &--container{
+  &--container {
     background-color: white;
-    box-shadow: 0 2px 2px 2px rgb(157, 156, 156);
-    width:20rem;
-    height:20rem;
+    width: 20rem;
+    height: 20rem;
     border-radius: 5%;
     margin-top: 2.5rem;
     text-align: center;
-    
   }
-  
-  &--title{
+
+  &--title {
     font-size: 1.3rem;
-    font-weight: bolder; 
-    margin:0.5em;
+    font-weight: bolder;
+    margin: 0.5em;
+    color: white;
   }
-  
-  &--description{
+
+  &--description {
     padding: 0.6rem;
     font-size: 1.1rem;
   }
 }
 
-.button{
-
+.title--color {
+  color: v.$color-theme1;
+}
+.button {
   padding-bottom: 2rem;
   display: flex;
   justify-content: center;
-
-  &--last_sources{
-    color: white;
-    background-color: vars.$primaryColor;
-    text-transform: uppercase;
-    padding: vars.$halfGutter;
-    border-radius: 10px;
-    width: 25rem;
-    height: 3rem;
-    
-  }
 }
-
-
-.title--color{
-  color:vars.$primaryColor;
-  
+/*Tablets [601px -> 1200px]*/
+@media only screen and (max-width: 1100px) {
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }

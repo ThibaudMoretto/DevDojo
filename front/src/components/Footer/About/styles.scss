@@ -1,0 +1,198 @@
+@use 'src/styles/vars' as v;
+
+/* GLOBAL */
+
+.containers {
+  color: v.$color-theme2;
+
+  & h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  & h2 span {
+    color: v.$color-theme1;
+  }
+}
+
+.container-team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+article {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+article:hover {
+  transform: translateY(-15px);
+  filter: drop-shadow(0px 2px 20px rgba(0, 0, 0, 0.2));
+}
+
+/* CARD */
+
+.card-team {
+  background-color: white;
+  max-width: 23rem;
+  max-height: 20rem;
+  padding: 1rem;
+  border-radius: 10px;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
+  margin-bottom: 2rem;
+}
+
+.profile {
+  text-align: center;
+  margin-bottom: 1rem;
+
+  & img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+  }
+
+  & h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  & p {
+    // font-family: 'Oleo Script';
+    font-size: 1.2rem;
+    color: v.$color-theme1;
+  }
+}
+
+.description p {
+  margin-bottom: 1rem;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+
+  & li {
+    margin-left: 1rem;
+    font-size: 2rem;
+  }
+
+  & li:first-child {
+    margin-left: 0;
+  }
+}
+
+.fa-github {
+  color: #000;
+}
+
+.fa-linkedin {
+  color: #0274b3;
+}
+
+.fa-twitter {
+  color: #1da1f2;
+}
+
+.fa-twitch {
+  color: #9147FF;
+}
+
+.fa-youtube {
+  color: #FD0100;
+}
+
+.fa-js {
+  color: #F7E018;
+}
+
+.fa-react {
+  color: #61DBFB;
+}
+
+.fa-buffer {
+  color: #006EC0;
+}
+
+.fa-html5 {
+  color: #F16524;
+}
+
+.fa-vuejs {
+  color: #41B883;
+}
+
+.fa-angular {
+  color: #DD0031;
+}
+
+.fa-node {
+  color: #68A063;
+}
+
+.fa-figma {
+  color: #1ABCFE;
+}
+
+.fa-bootstrap {
+  color: #653E94;
+}
+
+.fa-sass {
+  color: #C76494;
+}
+
+.fa-php {
+  color: #787CB4;
+}
+
+.fa-git {
+  color: #F05030;
+}
+
+.fa-npm {
+  color: #000;
+}
+
+.fa-aws {
+  color: #FF9900;
+}
+
+.fa-wordpress {
+  color: #21759A;
+}
+
+.fa-java {
+  color: #E11F22;
+}
+
+.fa-android {
+  color: #2EDF85;
+}
+
+.fa-app-store-ios {
+  color: #1C81F3;
+}
+
+.fa-css3-alt {
+  color: #379AD6;
+}
+
+
+
+
+
+
+
+

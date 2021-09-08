@@ -1,0 +1,14 @@
+@use 'src/styles/vars' as v;
+
+.container-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+  min-height: 75vh;
+}
+
+.container img {
+  margin: 3rem auto;
+}

@@ -1,46 +1,86 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { Link, NavLink } from 'react-router-dom';
 import './styles.scss';
+import Logo from 'src/assets/images/Logo_Dev_Dojo.png';
 
 function NavBar({ resetSubmitValue }) {
+  const [showLinks, setShowLinks] = useState(false);
+
+  const handleShowLinks = () => {
+    setShowLinks(!showLinks);
+  };
+
   return (
-    <nav className="nav">
-      <div className="nav--home">
-        <NavLink
-          exact
-          activeClassName="nav-link--active"
-          className="nav-link"
+    <>
+      <nav className={`navbar ${showLinks ? 'show-nav' : 'hide-nav'}`}>
+        <Link
+          className="navbar__logo"
           to="/"
-          onClick={() => { resetSubmitValue(); }}
+          onClick={() => {
+            resetSubmitValue();
+          }}
         >
-          Accueil
-        </NavLink>
-      </div>
-      <div className="nav--source">
-        <NavLink
-          exact
-          activeClassName="nav-link--active"
-          className="nav-link"
-          to="/ressources"
-          onClick={() => { resetSubmitValue(); }}
+          <img src={Logo} alt="Dev Dojo Logo" width="80%" />
+        </Link>
+
+        <ul className="navbar__links">
+          <NavLink
+            exact
+            activeClassName="navbar__link--active"
+            className="navbar__link slideInDown-1"
+            to="/"
+            onClick={() => {
+              resetSubmitValue();
+              handleShowLinks();
+            }}
+          >
+            Accueil
+          </NavLink>
+          <span className="navbar__item" />
+          <NavLink
+            exact
+            activeClassName="navbar__link--active"
+            className="navbar__link slideInDown-2"
+            to="/ressources"
+            onClick={() => {
+              resetSubmitValue();
+              handleShowLinks();
+            }}
+          >
+            Ressources
+          </NavLink>
+
+          <span className="navbar__item" />
+
+          <NavLink
+            exact
+            activeClassName="navbar__link--active"
+            className="navbar__link slideInDown-3"
+            to="/mentors"
+            onClick={() => {
+              resetSubmitValue();
+              handleShowLinks();
+            }}
+          >
+            Mentors
+          </NavLink>
+        </ul>
+
+        <button
+          type="button"
+          className="navbar__burger"
+          onClick={handleShowLinks}
         >
-          Ressources
-        </NavLink>
-      </div>
-      <div className="nav--mentor">
-        <NavLink
-          exact
-          activeClassName="nav-link--active"
-          className="nav-link"
-          to="/mentors"
-          onClick={() => { resetSubmitValue(); }}
-        >
-          Mentors
-        </NavLink>
-      </div>
-    </nav>
-  )
+          <span className="burger-bar" />
+        </button>
+      </nav>
+    </>
+  );
 }
 
-export default NavBar;
+NavBar.propTypes = {
+  resetSubmitValue: PropTypes.func.isRequired,
+};
 
+export default NavBar;

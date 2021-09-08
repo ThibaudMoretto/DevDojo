@@ -1,10 +1,21 @@
 @use 'sass:math';
 
-$gutter: 1.5rem;
-$halfGutter: math.div($gutter, 2);
-$color: #209CEE;
+//MARGES
 
-// Hero Banner
-$primaryColor: #D91940; // notre couleur rouge primaire
-$primaryContent: #452B29; // notre couleur de texte
-$backgroundDiv: #F6F8F9; // notre gris de background div
+$gutter: 2rem;
+$bigGutter: 3rem;
+$halfGutter: math.div($gutter, 2);
+
+// COULEURS
+
+$color: #162e52;
+$color-theme1: #d91940; // notre couleur rouge primair
+$color-theme2: #162e52; //couleur bleu pour v2
+$color-background: #efe8df; // notre gris de background div
+$color-nav: #ffffff; // Navbar link
+$color-burger: #d91940; // Burger menu
+// DIVERS
+
+$card-shadow: 0 1px 2px 1px #162e52; //contour des cartes mentors et ressources
+
+$titleFont: 'Michel', cursive;

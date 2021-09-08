@@ -9,16 +9,18 @@
  */
 
 export function filterRessources(ressources, submitValue) {
-  const filterRessources = ressources.filter(ressource => {
-    return ressource.title.toLowerCase().includes(submitValue.toLowerCase()) ||
+  const filterRessources = ressources.filter((ressource) => {
+    return (
+      ressource.title.toLowerCase().includes(submitValue.toLowerCase()) ||
       ressource.description.toLowerCase().includes(submitValue.toLowerCase())
+    );
   });
   return filterRessources;
-};
+}
 
 export function filterMentors(mentors, submitValue) {
-  const filterMentors = mentors.filter(mentor => {
-    return mentor.name.toLowerCase().includes(submitValue.toLowerCase())
+  const filterMentors = mentors.filter((mentor) => {
+    return mentor.name.toLowerCase().includes(submitValue.toLowerCase());
   });
   return filterMentors;
-};
+}

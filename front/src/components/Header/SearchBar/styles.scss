@@ -1,4 +1,11 @@
-.form {
- padding:1em;
+@use 'src/styles/vars' as v;
 
+.ui.segment {
+  background-color: v.$color-background;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 1rem 0;
+  border-radius: none;
+  border: none;
 }

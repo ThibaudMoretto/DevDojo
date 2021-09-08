@@ -1,19 +1,17 @@
 @use 'reset';
-@use 'vars';
-
-@import 'semantic-ui-css/semantic.min.css';
+@use 'vars' as v;
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('../assets/fonts/Poppins-Regular.ttf');
+  font-family: "Michel";
+  src: url("../assets/fonts/go3v2.ttf");
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  color: vars.$primaryContent;
+  font-family: "Michel", serif;
+  color: black;
+  background-color: v.$color-background;
 }
 
 img {
   max-width: 100%;
 }
-

@@ -1,4 +1,4 @@
-const client = require('../client');
+const client = require('../client-pg');
 
 module.exports = {
     async getAll() {
@@ -34,4 +34,14 @@ module.exports = {
         return result.rows;
     },
 
+    async getAuthorTechnologies(id) {
+        const result = await client.query(`
+        SELECT technology.*
+        FROM author_relates_technologies
+        JOIN technology
+        ON author_relates_technologies.technology_id = technology.id
+        WHERE author_relates_technologies.author_id = $1
+        `, [id]);
+        return result.rows;
+    }
 }

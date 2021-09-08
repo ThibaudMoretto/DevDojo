@@ -1,18 +1,28 @@
 import React from 'react';
-import RecentMentors from './RecentMentors';
-import RecentRessources from './RecentRessources';
+import PropTypes from 'prop-types';
+import RecentMentors from 'src/components/Home/RecentMentors';
+import RecentRessources from 'src/components/Home/RecentRessources';
 import HeroBanner from './HeroBanner';
 import './styles.scss';
 
-function Home() {
+function Home({ ressources, mentors }) {
   return (
-    <div>
+    <div className="container-home">
       <HeroBanner />
-      <RecentRessources />
-      <RecentMentors />
+      <RecentRessources ressources={ressources} />
+      <RecentMentors mentors={mentors} />
     </div>
-  )
+  );
 }
 
-export default Home;
+Home.propTypes = {
+  ressources: PropTypes.array,
+  mentors: PropTypes.array,
+};
 
+Home.defaultProps = {
+  ressources: null,
+  mentors: null,
+};
+
+export default Home;

@@ -1,0 +1,15 @@
+@use 'src/styles/vars' as v;
+
+.button-container {
+  .button {
+    background-color: v.$color-theme2;
+    color: white;
+    font-size: 1rem;
+  }
+}
+
+.logo-container{
+  @media (max-width: 540px) {
+    display: none;
+  }
+}

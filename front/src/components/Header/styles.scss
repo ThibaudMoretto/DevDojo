@@ -1,26 +1,45 @@
-@import 'src/styles/vars';
+@use 'src/styles/vars' as v;
 
-.header {
- 
-  flex-direction: row;
-  margin-bottom: $gutter;
+// .header {
+//   width: 100%;
+//   flex-direction: row;
+//   margin-bottom: v.$gutter;
+//   background-color: v.$color-background;
+//   padding: 1.3rem 1.3rem 0.4rem 1.3rem;
 
-  &--container {  // div container avec toue les éléments du header
-    display: flex;
+//   &--container {
+//     // div container avec toue les éléments du header
+//     display: flex;
 
-    .header-nav{ //div contenant une div avec les 3 boutons d' acceuil 
-     align-items: center;
-     display: flex;
-     width: 100%;
-    }
-  }
-    &--logo_container{ //div contenant le logo de la homepage
-      width:40%;
-    }
+//     .header-nav {
+//       //div contenant une div avec les 3 boutons d' acceuil
+//       align-items: center;
+//       display: flex;
+//       width: auto;
+//     }
+//   }
+//   &--logo_container {
+//     //div contenant le logo de la homepage
+//     width: 40%;
+//   }
 
-    &-logo{
-      width:250px;
-    }
+//   &-logo {
+//     width: 20rem;
+//     margin-left: 1rem;
+//   }
 
+//   &-search {
+//     background-color: v.$color-background;
+//     padding: 1rem;
+//   }
+// }
 
+// .nav {
+//   @media (max-width: 1100px) {
+//     display: none;
+//   }
+// }
+
+.header-search{
+  margin : 0 v.$gutter;
 }

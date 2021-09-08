@@ -1,65 +1,69 @@
-@use '../../../styles/vars';
+@use 'src/styles/vars' as v;
 
 .latestMentor {
+  // border: 1px vars.$primaryColor solid;
 
-    // border: 1px vars.$primaryColor solid;
+  &-span {
+    color: v.$color-theme1;
+  }
 
-    &-span {
-        color: vars.$primaryColor
-    }
+  &-title {
+    font-family: v.$titleFont;
+    color: v.$color-theme2;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    padding: v.$bigGutter 0;
+  }
 
-    &-title {
-        color: vars.$primaryContent;
-        font-size: 2.2rem;
-        font-weight: bold;
-        margin-bottom: 2.5rem ;
-        
-    }
+  &-container {
+    padding: 0 v.$gutter v.$gutter v.$gutter;
+    padding-bottom: 4rem;
+  }
 
-    &-container {
-    padding: vars.$gutter;
-    margin-bottom: 15vh;
-    
-    }
+  &-list {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3.5rem;
+  }
 
+  &-list-card-imgContainer {
+    margin-bottom: v.$halfGutter;
+  }
+
+  &-list-card-content {
+    text-align: center;
+  }
+
+  &-list-card-content-title {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  &-list-card-content-role {
+    font-size: 1.1rem;
+  }
+
+  &-btnContainer {
+    display: flex;
+    justify-content: center;
+    font-family: 'Oleo Script';
+  }
+}
+
+/*Tablets [601px -> 1100px]*/
+@media only screen and (max-width: 1100px) {
+  .latestMentor {
     &-list {
-        display: flex;
-        justify-content: space-around;
-        margin-bottom: vars.$gutter;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 3.5rem;
     }
-
-    &-list-card-imgContainer {
-        margin-bottom: vars.$halfGutter;
+    &-list-card {
+      align-items: center;
+      margin-bottom: 1.8rem;
     }
-
-    &-list-card-content {
-        text-align: center;
-    }
-
-    &-list-card-content-title {
-      
-       font-weight: bold;
-       font-size: 1.3rem;
-       margin-bottom: 0.8rem;
-    }
-
-    &-list-card-content-role {
-        font-size: 1.1rem;
-    }
-
-    &-btnContainer {
-        display: flex;
-        justify-content: center;
-    }
-
-    &-btnContainer-btn {
-        color: white;
-        background-color: vars.$primaryColor;
-        text-transform: uppercase;
-        padding: vars.$halfGutter;
-        border-radius: 10px;
-        width: 25rem;
-        height: 3rem;
-    }
-
+  }
 }

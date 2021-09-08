@@ -6,6 +6,7 @@ BEGIN;
 -- Soit supprimées avant de les créer.
 -- On peut supprimer plusieurs tables en même temps
 DROP TABLE IF EXISTS
+"token",
 "role",
 "language",
 "ressource_type",
@@ -22,6 +23,16 @@ DROP TABLE IF EXISTS
 "ressource_requires_technology",
 "ressource_relates_technology",
 "technology_belongsto_category";
+
+-- -----------------------------------------------------
+-- Table "token"
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS "token" (
+    "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "token" TEXT NOT NULL UNIQUE,
+    "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    "updated_at" TIMESTAMPTZ
+);
 
 -- -----------------------------------------------------
 -- Table "role"
@@ -80,7 +91,6 @@ CREATE TABLE IF NOT EXISTS "difficulty" (
 CREATE TABLE IF NOT EXISTS "technology" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "name" TEXT NOT NULL,
-    "color" TEXT NOT NULL,
     "logo" TEXT,
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
     "updated_at" TIMESTAMPTZ
@@ -108,11 +118,13 @@ CREATE TABLE IF NOT EXISTS "author" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "name" TEXT NOT NULL,
     "description" TEXT NOT NULL,
+    "image" TEXT NOT NULL DEFAULT '',
+    "dev_role" TEXT DEFAULT '',
     "github_account" TEXT,
     "youtube_account" TEXT,
     "website" TEXT,
     "twitter_account" TEXT,
-    "linkedin_acccount" TEXT,
+    "linkedin_account" TEXT,
     "twitch_account" TEXT,
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
     "updated_at" TIMESTAMPTZ
@@ -126,14 +138,14 @@ CREATE TABLE IF NOT EXISTS "ressource" (
     "title" TEXT UNIQUE NOT NULL,
     "slug" TEXT UNIQUE NOT NULL,
     "description" TEXT UNIQUE NOT NULL,
-    "link" TEXT UNIQUE NOT NULL,
-    "publication_date" TIMESTAMPTZ NOT NULL,
+    "link" TEXT UNIQUE,
+    "publication_date" TEXT,
     "duration" INT,
-    "is_free" BOOLEAN NOT NULL DEFAULT TRUE,
-    "difficulty_id" INT NOT NULL REFERENCES "difficulty"("id"),
-    "language_id" INT NOT NULL REFERENCES "language"("id"),
-    "author_id" INT NOT NULL REFERENCES "author"("id") ON DELETE CASCADE, --On supprime la ressource si l'author_id est supprimé
-    "ressource_type_id" INT NOT NULL REFERENCES "ressource_type"("id"),
+    "is_free" BOOLEAN DEFAULT TRUE,
+    "difficulty_id" INT REFERENCES "difficulty"("id"),
+    "language_id" INT REFERENCES "language"("id"),
+    "author_id" INT REFERENCES "author"("id") ON DELETE CASCADE, --On supprime la ressource si l'author_id est supprimé
+    "ressource_type_id" INT REFERENCES "ressource_type"("id"),
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     "updated_at" TIMESTAMPTZ
 );
@@ -196,6 +208,15 @@ CREATE TABLE IF NOT EXISTS "technology_belongsto_category" (
   "category_id" integer REFERENCES "category"("id") ON DELETE CASCADE,
   "technology_id" integer REFERENCES "technology" ("id") ON DELETE CASCADE,
   PRIMARY KEY ("category_id", "technology_id")
+);
+
+-- -----------------------------------------------------
+-- Table "author_relates_technologies" => Pour stocker affectations des technos aux catégories
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS "author_relates_technologies" (
+  "author_id" integer REFERENCES "author"("id") ON DELETE CASCADE,
+  "technology_id" integer REFERENCES "technology" ("id") ON DELETE CASCADE,
+  PRIMARY KEY ("author_id", "technology_id")
 );
 
 -- Pour mettre fin à au bloc de transaction et l'exécuter
