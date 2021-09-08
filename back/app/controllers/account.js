@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 module.exports = {
 
     async login(request, response) {
+        console.log(request)
         try {
             const account = await accountDatamapper.getByEmail(request.body.email);
             // Soit on a pas trouvé le username et on génère une erreur que l'on renvoie en json

@@ -7,7 +7,6 @@ const languageDatamapper = require("../datamappers/language");
 const difficultyDatamapper = require("../datamappers/difficulty");
 const ressource_typeDatamapper = require("../datamappers/ressource_type");
 const redis = require('../client-redis');
-const mailer = require('../nodemailer-config');
 
 module.exports = {
 
@@ -60,7 +59,7 @@ module.exports = {
             }
 
             //On ajoute l'auteur de la ressource à la réponse
-            ressource.author = await authorDatamapper.getById(ressource.author_id)
+            ressource.author = await authorDatamapper.getById(ressource.author_id);
             ressource.author.mainTechnologies = await technologyDatamapper.getAuthorTechnologies(ressource.author_id)
 
             //On ajoute les technologies relatives et prérequises
