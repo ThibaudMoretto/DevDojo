@@ -101,7 +101,7 @@ const ressourcesMiddleware = (store) => (next) => (action) => {
 
       api({
         method: 'POST',
-        url: '/contact',
+        url: '/suggestion',
         headers: {
           'content-type': 'application/json',
         },
