@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.scss';
 import SearchBar from 'src/containers/SearchBar';
 import heroBanner from 'src/assets/images/Herobanner.png';
+import DevDojo from 'src/assets/images/DevDojo.gif';
 
 function HeroBanner() {
   return (
@@ -25,7 +26,7 @@ function HeroBanner() {
         </div>
 
         <img
-          src={heroBanner}
+          src={DevDojo}
           alt="img"
           className="home--picture"
         />

@@ -10,7 +10,7 @@ const SearchBar = ({ searchValue, onSearchChange, onSearchSubmit }) => (
         className="search"
         fluid
         icon="search"
-        placeholder="Chercher des ressources et mentors"
+        placeholder="Rechercher..."
         value={searchValue}
         onChange={(event) => onSearchChange(event.target.value)}
       />
